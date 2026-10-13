@@ -6,53 +6,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sophie Deahl — 2026 Portfolio</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .landing {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 6.3% 6.3% 8%;
+    }
+
+    .landing-inner {
+      max-width: 1700px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .landing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+    }
+
+    .landing .identity {
+      font-size: clamp(25px, 2.5vw, 38px);
+    }
+
+    .landing-nav {
+      display: flex;
+      gap: clamp(35px, 7vw, 120px);
+      align-items: flex-end;
+      padding-bottom: 5px;
+    }
+
+    .landing-nav a {
+      font-size: clamp(16px, 1.6vw, 25px);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      white-space: nowrap;
+    }
+
+    .landing-nav a:hover {
+      font-style: italic;
+    }
+
+    .landing-line {
+      height: 3px;
+      background: #9747ff;
+      margin-top: 35px;
+    }
+
+    @media (max-width: 650px) {
+      .landing {
+        padding: 8% 5% 12%;
+      }
+
+      .landing-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+      }
+
+      .landing-nav {
+        gap: 35px;
+      }
+
+      .landing-line {
+        margin-top: 25px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <header class="site-header">
-    <a class="identity" href="index.html">
-      <strong>SOPHIE DEAHL</strong>
-      <em>2026 PORTFOLIO</em>
-      <span>URBAN RESEARCHER<br>& DESIGNER</span>
-    </a>
+  <main class="landing">
+    <div class="landing-inner">
 
-    <a class="resume-link" href="resume.html">ABOUT ME</a>
-  </header>
+      <div class="landing-row">
 
-  <main>
-    <section class="projects" aria-label="Projects" id="projects"></section>
+        <a class="identity" href="index.html">
+          <strong>SOPHIE DEAHL</strong>
+          <em>2026 PORTFOLIO</em>
+          <span>URBAN RESEARCHER<br>& DESIGNER</span>
+        </a>
+
+        <nav class="landing-nav" aria-label="Main navigation">
+          <a href="resume.html">ABOUT ME</a>
+          <a href="projects.html">PROJECTS</a>
+        </nav>
+
+      </div>
+
+      <div class="landing-line"></div>
+
+    </div>
   </main>
-
-  <footer>© 2026 SOPHIE DEAHL</footer>
-
-  <script src="projects.js"></script>
-  <script>
-    const grid = document.getElementById('projects');
-
-    for (const p of projects) {
-      const a = document.createElement('a');
-      a.className = 'project';
-      a.href = 'project.html?id=' + encodeURIComponent(p.id);
-
-      const thumb = document.createElement('div');
-      thumb.className = 'thumb';
-
-      const img = document.createElement('img');
-      img.src = p.image;
-      img.alt = p.title;
-
-      const overlay = document.createElement('div');
-      overlay.className = 'overlay';
-
-      const title = document.createElement('span');
-      title.textContent = p.title;
-
-      overlay.appendChild(title);
-      thumb.append(img, overlay);
-      a.appendChild(thumb);
-      grid.appendChild(a);
-    }
-  </script>
 
 </body>
 </html>
