@@ -11,69 +11,81 @@
     .landing {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6.3%;
+      align-items: center;
+      padding: 6.3% 5.5%;
     }
 
     .landing-inner {
-      max-width: 1700px;
       width: 100%;
+      max-width: 1700px;
       margin: 0 auto;
+    }
+
+    .landing-line {
+      width: 100%;
+      height: 1px;
+      background: #aaa;
     }
 
     .landing-row {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      gap: 30px;
+      align-items: stretch;
+      gap: 40px;
+      padding: 50px 5px;
     }
 
     .landing .identity {
-      font-size: clamp(25px, 2.5vw, 38px);
+      font-size: clamp(30px, 4vw, 60px);
+      line-height: 1.12;
+      letter-spacing: -.055em;
     }
 
     .landing-nav {
       display: flex;
-      gap: clamp(35px, 7vw, 120px);
-      align-items: flex-end;
-      padding-bottom: 5px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      min-width: 37%;
     }
 
     .landing-nav a {
-      font-size: clamp(16px, 1.6vw, 25px);
-      font-weight: 400;
-      letter-spacing: -.035em;
+      font-size: clamp(30px, 3.5vw, 54px);
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: -.05em;
+      line-height: 1.12;
       white-space: nowrap;
     }
 
-    .landing-nav a:hover {
+    .landing-nav a:hover,
+    .landing-nav a:focus-visible {
+      font-weight: 400;
       font-style: italic;
     }
 
-    .landing-line {
-      height: 1px;
-      background: #aaa;
-      margin-top: 35px;
-    }
-
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
       .landing {
         padding: 8% 5%;
       }
 
       .landing-row {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 35px;
+        gap: 50px;
+        padding: 35px 5px;
+      }
+
+      .landing .identity {
+        font-size: clamp(26px, 6vw, 40px);
       }
 
       .landing-nav {
-        gap: 35px;
+        min-width: 0;
+        gap: 25px;
       }
 
-      .landing-line {
-        margin-top: 25px;
+      .landing-nav a {
+        font-size: clamp(26px, 6vw, 40px);
       }
     }
   </style>
@@ -83,6 +95,8 @@
 
   <main class="landing">
     <div class="landing-inner">
+
+      <div class="landing-line"></div>
 
       <div class="landing-row">
 
