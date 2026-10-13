@@ -92,6 +92,8 @@
       display: block;
     }
 
+    /* ABOUT ME IMAGE */
+
     #about {
       max-width: none;
       padding-top: 0;
@@ -99,13 +101,26 @@
       padding-right: 5.5%;
     }
 
+    .about-image-frame {
+      width: 100%;
+      max-width: 1700px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
     .about-image {
       display: block;
       width: 100%;
-      max-width: 1700px;
       height: auto;
-      margin: 0 auto;
+
+      /*
+        Hide the empty top portion of the PNG.
+        Adjust this number if needed.
+      */
+      margin-top: -10%;
     }
+
+    /* PROJECT GRID */
 
     .content-section .projects {
       padding: 0;
@@ -116,6 +131,7 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -161,6 +177,10 @@
         padding-left: 5%;
         padding-right: 5%;
       }
+
+      .about-image {
+        margin-top: -10%;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -182,6 +202,8 @@
 <body>
 
   <main>
+
+    <!-- HOMEPAGE / HEADER -->
 
     <section class="landing" id="landing">
       <div class="landing-inner">
@@ -208,13 +230,19 @@
       </div>
     </section>
 
+    <!-- ABOUT ME -->
+
     <section class="content-section" id="about" aria-label="About Me">
-      <img
-        class="about-image"
-        src="assets/resume.png"
-        alt="About Me — Sophie Deahl"
-      >
+      <div class="about-image-frame">
+        <img
+          class="about-image"
+          src="assets/resume.png"
+          alt="About Me — Sophie Deahl"
+        >
+      </div>
     </section>
+
+    <!-- PROJECTS -->
 
     <section class="content-section" id="projects" aria-label="Projects">
       <div class="projects" id="project-grid"></div>
@@ -231,6 +259,8 @@
     const aboutLink = document.getElementById('about-link');
     const projectsLink = document.getElementById('projects-link');
     const grid = document.getElementById('project-grid');
+
+    // Build the existing project grid.
 
     for (const p of projects) {
       const a = document.createElement('a');
@@ -256,14 +286,30 @@
       grid.appendChild(a);
     }
 
+    // Open the selected section.
+
     function showSection(section) {
       landing.classList.add('open');
 
-      aboutSection.classList.toggle('visible', section === 'about');
-      projectsSection.classList.toggle('visible', section === 'projects');
+      aboutSection.classList.toggle(
+        'visible',
+        section === 'about'
+      );
 
-      aboutLink.classList.toggle('active', section === 'about');
-      projectsLink.classList.toggle('active', section === 'projects');
+      projectsSection.classList.toggle(
+        'visible',
+        section === 'projects'
+      );
+
+      aboutLink.classList.toggle(
+        'active',
+        section === 'about'
+      );
+
+      projectsLink.classList.toggle(
+        'active',
+        section === 'projects'
+      );
 
       window.scrollTo({
         top: 0,
@@ -271,17 +317,25 @@
       });
     }
 
+    // About Me navigation.
+
     aboutLink.addEventListener('click', function(event) {
       event.preventDefault();
+
       history.pushState(null, '', '#about');
       showSection('about');
     });
 
+    // Projects navigation.
+
     projectsLink.addEventListener('click', function(event) {
       event.preventDefault();
+
       history.pushState(null, '', '#projects');
       showSection('projects');
     });
+
+    // Browser back button.
 
     window.addEventListener('popstate', function() {
       const section = location.hash.replace('#', '');
@@ -296,6 +350,8 @@
         projectsLink.classList.remove('active');
       }
     });
+
+    // Open a section directly from a link.
 
     const initialSection = location.hash.replace('#', '');
 
