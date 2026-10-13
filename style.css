@@ -74,7 +74,7 @@ a{color:inherit;text-decoration:none}
 
 .thumb{
   position:relative;
-  aspect-ratio:1;
+  aspect-ratio:0.71;
   overflow:hidden;
   border-radius:0;
   background:#e9e9e9;
@@ -85,7 +85,7 @@ a{color:inherit;text-decoration:none}
   height:100%;
   object-fit:cover;
   display:block;
-  filter:grayscale(1) contrast(1.3);
+  filter:grayscale(1) contrast(1.4) brightness(.85);
   transition:filter .35s,transform .35s;
 }
 
@@ -94,12 +94,12 @@ a{color:inherit;text-decoration:none}
   inset:0;
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:flex-start;
   text-align:left;
-  padding:clamp(12px,1.5vw,24px);
-  background:rgba(0,0,0,.32);
+  padding:clamp(12px,1.4vw,22px);
+  background:rgba(0,0,0,.12);
   color:#fff;
-  font-size:clamp(17px,2.15vw,34px);
+  font-size:clamp(19px,2.35vw,38px);
   font-weight:700;
   font-style:italic;
   letter-spacing:-.065em;
@@ -116,15 +116,14 @@ a{color:inherit;text-decoration:none}
 
 .project:hover img,
 .project:focus-visible img{
-  filter:grayscale(0) contrast(1);
+  filter:grayscale(0) contrast(1) brightness(1);
   transform:scale(1.025);
 }
 
 .project:hover .overlay,
 .project:focus-visible .overlay{
-  opacity:1;
   color:#111;
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.16);
 }
 
 .project:focus-visible{
@@ -182,7 +181,7 @@ footer{
     padding-top:55px;
   }
   .overlay{
-    font-size:clamp(20px,3.8vw,34px);
+    font-size:clamp(22px,3.8vw,38px);
   }
 }
 
@@ -204,7 +203,7 @@ footer{
     grid-template-columns:1fr;
   }
   .overlay{
-    font-size:clamp(26px,7vw,42px);
+    font-size:clamp(30px,7vw,44px);
     padding:22px;
   }
   .page{
@@ -219,12 +218,10 @@ footer{
 @media(hover:none){
   .overlay{
     opacity:1;
-    background:linear-gradient(transparent 25%,rgba(0,0,0,.78));
+    background:rgba(0,0,0,.12);
     color:#fff;
-    align-items:flex-end;
-    padding-bottom:18px;
   }
   .thumb img{
-    filter:grayscale(1) contrast(1.3);
+    filter:grayscale(1) contrast(1.4) brightness(.85);
   }
 }
