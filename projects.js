@@ -7,13 +7,13 @@ const projects = [
   {id:'interactive-explainers',category:'Commissioned Projects',title:'Interactive Explainers for Dutch Metropolitan Innovations',image:'assets/commissioned-4.png',pdf:'projects/interactive-explainers.pdf'},
 
   // MSC PROJECTS (4) — replace titles and images with your own
-  {id:'msc-1',category:'MSc Projects',title:'MSc Project 1',image:'assets/msc-1.png',pdf:'projects/msc-1.png'},
-  {id:'msc-2',category:'MSc Projects',title:'MSc Project 2',image:'assets/msc-2.png',pdf:'projects/msc-2.png'},
-  {id:'msc-3',category:'MSc Projects',title:'MSc Project 3',image:'assets/msc-3.png',pdf:'projects/msc-3.png'},
-  {id:'msc-4',category:'MSc Projects',title:'MSc Project 4',image:'assets/msc-4.png',pdf:'projects/msc-4.png'},
+  {id:'msc-1',category:'MSc Projects',title:'MSc Project 1',image:'assets/msc-1.png',pdf:'projects/msc-1.pdf'},
+  {id:'msc-2',category:'MSc Projects',title:'MSc Project 2',image:'assets/msc-2.png',pdf:'projects/msc-2.pdf'},
+  {id:'msc-3',category:'MSc Projects',title:'MSc Project 3',image:'assets/msc-3.png',pdf:'projects/msc-3.pdf'},
+  {id:'msc-4',category:'MSc Projects',title:'MSc Project 4',image:'assets/msc-4.png',pdf:'projects/msc-4.pdf'},
 
   // OTHER PROJECTS (3) — replace titles and images with your own
-  {id:'other-1',category:'Other Projects',title:'Other Project 1',image:'assets/other-1.png',pdf:'projects/other-1.png'},
-  {id:'other-2',category:'Other Projects',title:'Other Project 2',image:'assets/other-2.png',pdf:'projects/other-2.png'},
-  {id:'other-3',category:'Other Projects',title:'Other Project 3',image:'assets/other-3.png',pdf:'projects/other-3.png'}
+  {id:'other-1',category:'Other Projects',title:'Other Project 1',image:'assets/other-1.png',pdf:'projects/other-1.pdf'},
+  {id:'other-2',category:'Other Projects',title:'Other Project 2',image:'assets/other-2.png',pdf:'projects/other-2.pdf'},
+  {id:'other-3',category:'Other Projects',title:'Other Project 3',image:'assets/other-3.png',pdf:'projects/other-3.pdf'}
 ];
