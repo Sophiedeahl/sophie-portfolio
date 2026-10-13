@@ -5,34 +5,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Me — Sophie Deahl</title>
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #fafafa;
+    .about-content {
+      max-width: 1700px;
+      margin: 0 auto;
+      padding: 24px 6.3% 70px;
     }
 
     .about-image {
       display: block;
       width: 100%;
-      max-width: 1200px;
       height: auto;
       margin: 0 auto;
     }
+
+    @media (max-width: 520px) {
+      .about-content {
+        padding: 18px 5% 40px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <img
-    class="about-image"
-    src="assets/resume.png"
-    alt="About Me — Sophie Deahl"
-  >
+  <header class="site-header">
+    <a class="identity" href="index.html">
+      <strong>SOPHIE DEAHL</strong>
+      <em>2026 PORTFOLIO</em>
+      <span>URBAN RESEARCHER<br>& DESIGNER</span>
+    </a>
+
+    <a class="resume-link" href="resume.html">ABOUT ME</a>
+  </header>
+
+  <main class="about-content">
+    <img
+      class="about-image"
+      src="assets/resume.png"
+      alt="About Me — Sophie Deahl"
+    >
+  </main>
 
 </body>
 </html>
