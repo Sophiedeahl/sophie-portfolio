@@ -34,28 +34,28 @@ const projects = [
   {
     id: 'Participatory Mapping: Understanding Gentrification',
     category: 'MSc Projects',
-    title: 'MSc Project 1',
+    title: 'Participatory Mapping: Understanding Gentrification'',
     image: 'assets/msc-1.png',
     pdf: 'projects/msc-1.pdf'
   },
   {
     id: 'Collaboration in Urban Densification',
     category: 'MSc Projects',
-    title: 'MSc Project 2',
+    title: 'Collaboration in Urban Densification',
     image: 'assets/msc-2.png',
     pdf: 'projects/msc-2.pdf'
   },
   {
     id: 'Just Energy Transition — Bridging Communities and Institutions',
     category: 'MSc Projects',
-    title: 'MSc Project 3',
+    title: 'Just Energy Transition — Bridging Communities and Institutions',
     image: 'assets/msc-3.png',
     pdf: 'projects/msc-3.pdf'
   },
   {
     id: 'Zaanstraat — Visualising a New Neighbourhood',
     category: 'MSc Projects',
-    title: 'MSc Project 4',
+    title: 'Zaanstraat — Visualising a New Neighbourhood',
     image: 'assets/msc-4.png',
     pdf: 'projects/msc-4.pdf'
   },
@@ -64,21 +64,21 @@ const projects = [
   {
     id: 'Root Hunt — From Drawing to Playable Game',
     category: 'Other Projects',
-    title: 'Other Project 1',
+    title: 'Root Hunt — From Drawing to Playable Game'',
     image: 'assets/other-1.png',
     pdf: 'projects/other-1.pdf'
   },
   {
     id: 'Female Interaction Design for TomTom',
     category: 'Other Projects',
-    title: 'Other Project 2',
+    title: 'Female Interaction Design for TomTom',
     image: 'assets/other-2.png',
     pdf: 'projects/other-2.pdf'
   },
   {
     id: 'Social entrepreneurship in Zanzibar, Tanzania',
     category: 'Other Projects',
-    title: 'Other Project 3',
+    title: 'Social entrepreneurship in Zanzibar, Tanzania',
     image: 'assets/other-3.png',
     pdf: 'projects/other-3.pdf'
   }
