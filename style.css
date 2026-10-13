@@ -41,19 +41,24 @@ a{color:inherit;text-decoration:none}
 }
 
 .projects{
+  width:100%;
   max-width:1700px;
-  margin:auto;
+  margin:0 auto;
   padding:23px 6.3% 70px;
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:24px 18px;
 }
 
-.project{display:block}
+.project{
+  display:block;
+  min-width:0;
+}
 
 .thumb{
   position:relative;
-  aspect-ratio:1;
+  width:100%;
+  aspect-ratio:1 / 1;
   overflow:hidden;
   border-radius:0;
   background:#e9e9e9;
