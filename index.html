@@ -22,7 +22,7 @@
 
     .landing.open {
       min-height: 0;
-      padding-top: 50px;
+      padding-top: 28px;
       padding-bottom: 20px;
     }
 
@@ -50,14 +50,16 @@
       font-size: clamp(30px, 4vw, 60px);
       line-height: 1.12;
       letter-spacing: -.055em;
+      flex-shrink: 0;
     }
 
     .landing-nav {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: flex-start;
-      min-width: 37%;
+      align-items: flex-end;
+      min-width: 0;
+      text-align: right;
     }
 
     .landing-nav a {
@@ -90,10 +92,18 @@
       display: block;
     }
 
+    #about {
+      max-width: none;
+      padding-left: 5.5%;
+      padding-right: 5.5%;
+    }
+
     .about-image {
       display: block;
       width: 100%;
+      max-width: 1700px;
       height: auto;
+      margin: 0 auto;
     }
 
     .content-section .projects {
@@ -132,7 +142,8 @@
       }
 
       .landing-nav {
-        min-width: 0;
+        align-items: flex-start;
+        text-align: left;
         gap: 25px;
       }
 
@@ -142,6 +153,11 @@
 
       .content-section {
         padding: 20px 5% 50px;
+      }
+
+      #about {
+        padding-left: 5%;
+        padding-right: 5%;
       }
     }
 
