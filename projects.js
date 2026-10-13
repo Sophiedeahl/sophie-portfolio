@@ -30,11 +30,10 @@ const projects = [
     pdf: 'projects/interactive-explainers.pdf'
   },
 
- 
   {
     id: 'Participatory Mapping: Understanding Gentrification',
     category: 'MSc Projects',
-    title: 'Participatory Mapping: Understanding Gentrification'',
+    title: 'Participatory Mapping: Understanding Gentrification',
     image: 'assets/msc-1.png',
     pdf: 'projects/msc-1.pdf'
   },
@@ -60,11 +59,10 @@ const projects = [
     pdf: 'projects/msc-4.pdf'
   },
 
-
   {
     id: 'Root Hunt — From Drawing to Playable Game',
     category: 'Other Projects',
-    title: 'Root Hunt — From Drawing to Playable Game'',
+    title: 'Root Hunt — From Drawing to Playable Game',
     image: 'assets/other-1.png',
     pdf: 'projects/other-1.pdf'
   },
