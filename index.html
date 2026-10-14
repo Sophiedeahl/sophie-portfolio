@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Sophie Deahl — 2026 Portfolio</title>
 
   <link rel="stylesheet" href="style.css">
@@ -97,7 +98,7 @@
       display: block;
     }
 
-    /* ABOUT ME — APPROVED DESIGN */
+    /* ABOUT ME */
 
     #about {
       max-width: none;
@@ -189,6 +190,20 @@
 
     .about-middle section p {
       margin-bottom: 0;
+    }
+
+    /* EDUCATION LINKS — NEW */
+
+    .education-link {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .education-link:hover,
+    .education-link:focus-visible {
+      font-style: italic;
     }
 
     /* RIGHT COLUMN */
@@ -444,17 +459,30 @@
             thinking and hands-on creative work.
           </p>
 
+          <!-- EDUCATION WITH CLICKABLE LINKS -->
+
           <section>
             <h2>EDUCATION</h2>
 
             <p>
               Bachelor in Engineering, Design &amp; Innovation,
-              direction Product Design at the University of
-              Applied Sciences Amsterdam (2010-2015)
+              direction
+              <a
+                class="education-link"
+                href="https://www.hva.nl/opleidingen/engineering-product-ontwerpen"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Product Design</a>
+              at the University of Applied Sciences Amsterdam (2010-2015)
               <br>
-              Master of Science in Metropolitan Analysis Design
-              &amp; Engineering at the Technical Universtity
-              of Delft and University of Wageningen (2024-2026)
+              Master of Science in
+              <a
+                class="education-link"
+                href="https://www.tudelft.nl/onderwijs/opleidingen/masters/made/msc-metropolitan-analysis-design-and-engineering"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Metropolitan Analysis Design &amp; Engineering</a>
+              at the Technical Universtity of Delft and University of Wageningen (2024-2026)
             </p>
           </section>
 
