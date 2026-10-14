@@ -23,21 +23,27 @@
     }
 
     /* =====================================
+       SHARED ALIGNMENT
+       Header and project use the same edges
+       ===================================== */
+
+    .page-width {
+      width: calc(100% - 9.6%);
+      max-width: 1700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* =====================================
        HEADER
        ===================================== */
 
     .project-header {
-      padding: 20px 4.8% 0;
-    }
-
-    .header-inner {
-      max-width: 1700px;
-      margin: 0 auto;
+      padding-top: 20px;
     }
 
     .header-line {
       height: 1px;
-      width: 100%;
       background: #b5b5b5;
     }
 
@@ -97,19 +103,23 @@
     }
 
     /* =====================================
-       PROJECT PAGE LAYOUT
+       PROJECT LAYOUT
        ===================================== */
 
     .project-content {
-      max-width: 1700px;
-      margin: 0 auto;
-      padding: 75px 6.7% 110px;
+      padding-top: 48px;
+      padding-bottom: 110px;
     }
 
     .project-layout {
       display: grid;
-      grid-template-columns: 35% minmax(0, 1fr);
-      column-gap: 7%;
+
+      /* Both columns fit exactly between
+         the header's left and right edges */
+
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: 48px;
+
       align-items: start;
     }
 
@@ -118,7 +128,8 @@
        ===================================== */
 
     .project-text {
-      max-width: 410px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .project-title {
@@ -128,6 +139,7 @@
       font-weight: 700;
       font-style: italic;
       margin: 0 0 34px;
+      max-width: 410px;
     }
 
     .project-year {
@@ -141,8 +153,6 @@
       line-height: 1.4;
       margin-bottom: 42px;
     }
-
-    /* PROJECT DESCRIPTION */
 
     .project-text p {
       font-family: Arial, Helvetica, sans-serif;
@@ -173,6 +183,7 @@
       flex-direction: column;
       gap: 20px;
       min-width: 0;
+      width: 100%;
     }
 
     .project-image-large {
@@ -183,15 +194,17 @@
 
     .project-image-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 20px;
       align-items: start;
+      width: 100%;
     }
 
     .project-image-small {
       display: block;
       width: 100%;
       height: auto;
+      min-width: 0;
     }
 
     /* =====================================
@@ -200,8 +213,12 @@
 
     @media (max-width: 700px) {
 
+      .page-width {
+        width: 90%;
+      }
+
       .project-header {
-        padding: 20px 5% 0;
+        padding-top: 20px;
       }
 
       .header-row {
@@ -225,16 +242,13 @@
       }
 
       .project-content {
-        padding: 40px 6% 70px;
+        padding-top: 40px;
+        padding-bottom: 70px;
       }
 
       .project-layout {
         grid-template-columns: 1fr;
         gap: 35px;
-      }
-
-      .project-text {
-        max-width: none;
       }
 
       .project-title {
@@ -251,38 +265,35 @@
       }
     }
   </style>
+
 </head>
 
 <body>
 
   <!-- =====================================
-       PORTFOLIO HEADER
+       HEADER
        ===================================== -->
 
-  <header class="project-header">
+  <header class="project-header page-width">
 
-    <div class="header-inner">
+    <div class="header-line"></div>
 
-      <div class="header-line"></div>
+    <div class="header-row">
 
-      <div class="header-row">
+      <a class="identity" href="index.html">
+        <strong>SOPHIE DEAHL</strong>
+        <em>2026 PORTFOLIO</em>
+        <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
+      </a>
 
-        <a class="identity" href="index.html">
-          <strong>SOPHIE DEAHL</strong>
-          <em>2026 PORTFOLIO</em>
-          <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
-        </a>
-
-        <nav class="header-nav" aria-label="Main navigation">
-          <a href="index.html#about">ABOUT ME</a>
-          <a href="index.html#projects">PROJECTS</a>
-        </nav>
-
-      </div>
-
-      <div class="header-line"></div>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="index.html#about">ABOUT ME</a>
+        <a href="index.html#projects">PROJECTS</a>
+      </nav>
 
     </div>
+
+    <div class="header-line"></div>
 
   </header>
 
@@ -291,11 +302,11 @@
        PROJECT CONTENT
        ===================================== -->
 
-  <main class="project-content">
+  <main class="project-content page-width">
 
     <div class="project-layout">
 
-      <!-- LEFT: TITLE AND DESCRIPTION -->
+      <!-- LEFT COLUMN -->
 
       <section class="project-text">
 
@@ -309,17 +320,9 @@
 
         <div class="project-collaboration">
           Collaboration with
-          <a
-            href="https://advier.nl/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Advier</a>
+          <a href="https://advier.nl/" target="_blank" rel="noopener noreferrer">Advier</a>
           &amp;
-          <a
-            href="https://www.svp-svp.nl/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >SVP</a>
+          <a href="https://www.svp-svp.nl/" target="_blank" rel="noopener noreferrer">SVP</a>
         </div>
 
         <p>
@@ -353,11 +356,11 @@
       </section>
 
 
-      <!-- RIGHT: PROJECT IMAGES -->
+      <!-- RIGHT COLUMN -->
 
       <section class="project-images">
 
-        <!-- BIG IMAGE: SAME AS PROJECT THUMBNAIL -->
+        <!-- BIG IMAGE: SAME AS THUMBNAIL -->
 
         <img
           class="project-image-large"
@@ -369,15 +372,11 @@
 
         <div class="project-image-row">
 
-          <!-- BOTTOM LEFT -->
-
           <img
             class="project-image-small"
             src="assets/commissioned1-smallleft.png"
             alt="Mobility Hub research methodology"
           >
-
-          <!-- BOTTOM RIGHT -->
 
           <img
             class="project-image-small"
