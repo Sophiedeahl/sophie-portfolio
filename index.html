@@ -12,6 +12,8 @@
       scroll-behavior: smooth;
     }
 
+    /* ORIGINAL HOMEPAGE HEADER — UNCHANGED */
+
     .landing {
       min-height: 100vh;
       display: flex;
@@ -92,7 +94,7 @@
       display: block;
     }
 
-    /* ABOUT ME IMAGE */
+    /* ABOUT ME SECTION */
 
     #about {
       max-width: none;
@@ -101,20 +103,126 @@
       padding-right: 5.5%;
     }
 
-    .about-image-frame {
+    .about-layout {
       width: 100%;
       max-width: 1700px;
       margin: 0 auto;
+      padding: 28px 7% 65px;
+      background: #f8f8f8;
+      display: grid;
+      grid-template-columns: 1.03fr 1.8fr .95fr;
+      column-gap: 7%;
+      align-items: start;
     }
 
-    .about-image {
+    /* LEFT COLUMN */
+
+    .about-left {
+      padding-top: 86px;
+      min-width: 0;
+    }
+
+    .about-photo {
       display: block;
       width: 100%;
-      height: auto;
-      margin-top: 0;
+      max-width: 265px;
+      aspect-ratio: .95;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      background: #e9e9e6;
     }
 
-    /* PROJECT GRID */
+    .about-contact {
+      padding: 26px 8px 0;
+    }
+
+    .about-contact h2 {
+      margin: 0 0 14px;
+      font-size: clamp(25px, 2.4vw, 34px);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -.055em;
+      line-height: 1.05;
+      white-space: nowrap;
+    }
+
+    .about-contact p,
+    .about-contact a {
+      display: block;
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.15;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .about-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* MIDDLE COLUMN */
+
+    .about-middle {
+      min-width: 0;
+    }
+
+    .about-middle p {
+      margin: 0 0 20px;
+      font-size: 17px;
+      line-height: 1.2;
+      letter-spacing: -.025em;
+      text-align: justify;
+    }
+
+    .about-middle h2 {
+      margin: 0 0 22px;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -.025em;
+    }
+
+    .about-middle section {
+      margin-top: 46px;
+    }
+
+    .about-middle section p {
+      margin-bottom: 0;
+    }
+
+    /* RIGHT COLUMN */
+
+    .about-right {
+      min-width: 0;
+    }
+
+    .about-right section + section {
+      margin-top: 54px;
+    }
+
+    .about-right h2 {
+      margin: 0 0 24px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -.025em;
+    }
+
+    .about-right ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .about-right li {
+      font-size: 17px;
+      line-height: 1.2;
+      font-style: italic;
+      letter-spacing: -.025em;
+    }
+
+    /* ORIGINAL PROJECT GRID */
 
     .content-section .projects {
       padding: 0;
@@ -131,6 +239,26 @@
         transform: translateY(0);
       }
     }
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+      .about-layout {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 38px;
+        padding: 30px 5% 55px;
+      }
+
+      .about-right {
+        grid-column: 2;
+      }
+
+      .about-left {
+        padding-top: 55px;
+      }
+    }
+
+    /* MOBILE */
 
     @media (max-width: 700px) {
       .landing {
@@ -171,6 +299,28 @@
         padding-left: 5%;
         padding-right: 5%;
       }
+
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 28px 22px 45px;
+      }
+
+      .about-left {
+        padding-top: 0;
+      }
+
+      .about-photo {
+        max-width: 265px;
+      }
+
+      .about-contact {
+        padding-left: 0;
+      }
+
+      .about-right {
+        grid-column: auto;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -193,7 +343,7 @@
 
   <main>
 
-    <!-- HOMEPAGE / HEADER -->
+    <!-- ORIGINAL HOMEPAGE / HEADER -->
 
     <section class="landing" id="landing">
       <div class="landing-inner">
@@ -220,19 +370,135 @@
       </div>
     </section>
 
-    <!-- ABOUT ME -->
+    <!-- ABOUT ME — EDITABLE HTML -->
 
     <section class="content-section" id="about" aria-label="About Me">
-      <div class="about-image-frame">
-        <img
-          class="about-image"
-          src="assets/resume.png"
-          alt="About Me — Sophie Deahl"
-        >
+
+      <div class="about-layout">
+
+        <!-- LEFT: PHOTO AND CONTACT -->
+
+        <div class="about-left">
+
+          <img
+            class="about-photo"
+            src="assets/about.png"
+            alt="Portrait of Sophie Deahl"
+          >
+
+          <div class="about-contact">
+            <h2>SOPHIE DEAHL</h2>
+
+            <p>Dutch / British</p>
+
+            <a href="mailto:deahl@hotmail.com">
+              deahl@hotmail.com
+            </a>
+
+            <a href="tel:+31639238922">
+              +31 6 39238922
+            </a>
+          </div>
+
+        </div>
+
+        <!-- MIDDLE: BIOGRAPHY, EDUCATION, EXPERIENCE -->
+
+        <div class="about-middle">
+
+          <p>
+            I’m a multidisciplinary researcher and designer working
+            across urban development, design research and visual
+            communication.
+          </p>
+
+          <p>
+            My work combines spatial analysis, participatory research
+            and creative design to explore how places function and how
+            people experience them. I enjoy translating complex
+            questions and research findings into clear insights,
+            engaging visuals and practical concepts that others can
+            understand and use.
+          </p>
+
+          <p>
+            I enjoy working across disciplines, connecting different
+            perspectives and moving between analytical thinking and
+            hands-on creative work.
+          </p>
+
+          <section>
+            <h2>EDUCATION</h2>
+
+            <p>
+              Bachelor in Engineering, Design &amp; Innovation,
+              direction Product Design at the University of Applied
+              Sciences Amsterdam (2010-2015)
+              <br>
+              Master of Science in Metropolitan Analysis Design &amp;
+              Engineering at the Technical Universtity of Delft and
+              University of Wageningen (2024-2026)
+            </p>
+          </section>
+
+          <section>
+            <h2>EXPERIENCE</h2>
+
+            <p>
+              I have experience in urban development research,
+              design and consultancy, focusing on sustainable
+              cities and creative, human-centred solutions.
+            </p>
+          </section>
+
+        </div>
+
+        <!-- RIGHT: SKILLS AND SOFTWARE -->
+
+        <aside class="about-right">
+
+          <section>
+            <h2>SKILLS</h2>
+
+            <ul>
+              <li>Creative Direction</li>
+              <li>Creative Facilitation</li>
+              <li>Video Editing</li>
+              <li>Game Design</li>
+              <li>Product Design</li>
+              <li>Web &amp;Graphic Design</li>
+              <li>Qualitative Research</li>
+              <li>Data Analysis</li>
+              <li>Concept Development</li>
+              <li>Participatory Tool Design</li>
+              <li>Basic HTML coding</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>SOFTWARE</h2>
+
+            <ul>
+              <li>Photoshop</li>
+              <li>Houdini</li>
+              <li>Unreal Engine</li>
+              <li>Github</li>
+              <li>Solidworks</li>
+              <li>Excell &amp; Word</li>
+              <li>Indesign</li>
+              <li>Canva</li>
+              <li>Imovie</li>
+              <li>Illustrator</li>
+            </ul>
+          </section>
+
+        </aside>
+
       </div>
+
     </section>
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS — UNCHANGED -->
 
     <section class="content-section" id="projects" aria-label="Projects">
       <div class="projects" id="project-grid"></div>
@@ -257,9 +523,6 @@
     for (const p of projects) {
       const a = document.createElement('a');
       a.className = 'project';
-
-      // Use the dedicated HTML link if it exists.
-      // Otherwise keep the original project page as fallback.
 
       a.href = p.href || (
         'project.html?id=' + encodeURIComponent(p.id)
