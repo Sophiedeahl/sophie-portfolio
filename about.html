@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Me — Sophie Deahl</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #fafafa;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* HEADER — SAME AS PROJECT PAGES */
+
+    .landing {
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      padding: 28px 5.5% 0;
+    }
+
+    .landing-inner {
+      width: 100%;
+      max-width: 1700px;
+      margin: 0 auto;
+    }
+
+    .landing-line {
+      width: 100%;
+      height: 1px;
+      background: #aaa;
+    }
+
+    .landing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 40px;
+      padding: 50px 5px;
+    }
+
+    .landing .identity {
+      font-size: clamp(30px, 4vw, 60px);
+      line-height: 1.12;
+      letter-spacing: -.055em;
+      flex-shrink: 0;
+    }
+
+    .landing-nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      min-width: 0;
+      text-align: right;
+    }
+
+    .landing-nav a {
+      font-size: clamp(30px, 3.5vw, 54px);
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: -.05em;
+      line-height: 1.12;
+      white-space: nowrap;
+      cursor: pointer;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .landing-nav a:hover,
+    .landing-nav a:focus-visible {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    /* ABOUT PAGE */
+
+    .about-content {
+      width: 100%;
+      max-width: 1700px;
+      margin: 0 auto;
+      padding: 65px 5.5% 110px;
+    }
+
+    .about-heading {
+      margin: 0 0 45px;
+      font-size: clamp(48px, 7vw, 105px);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -.065em;
+      line-height: 1;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.3fr)
+        minmax(0, 0.85fr);
+      gap: 5%;
+      align-items: start;
+    }
+
+    /* PORTRAIT */
+
+    .portrait-frame {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: #e9e9e6;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portrait-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portrait-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .portrait-frame.has-image .portrait-placeholder {
+      display: none;
+    }
+
+    /* TEXT */
+
+    .about-section {
+      margin-bottom: 42px;
+    }
+
+    .about-section h2 {
+      font-size: clamp(22px, 2vw, 30px);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -.045em;
+      margin: 0 0 14px;
+    }
+
+    .about-rule {
+      height: 1px;
+      background: #bbb;
+      margin-bottom: 20px;
+    }
+
+    .about-section p,
+    .about-section li {
+      font-size: clamp(17px, 1.35vw, 20px);
+      line-height: 1.45;
+      letter-spacing: -.02em;
+    }
+
+    .about-section p {
+      margin: 0 0 18px;
+    }
+
+    .about-section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .about-section li {
+      margin-bottom: 9px;
+    }
+
+    .about-section a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .about-section a:hover {
+      font-style: italic;
+    }
+
+    .entry {
+      margin-bottom: 24px;
+    }
+
+    .entry-title {
+      font-weight: 700;
+    }
+
+    .entry-date {
+      font-size: 15px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(0, 1.4fr);
+        gap: 35px;
+      }
+
+      .about-sidebar {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+        gap: 30px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .landing {
+        padding: 25px 5% 0;
+      }
+
+      .landing-row {
+        flex-direction: column;
+        gap: 50px;
+        padding: 35px 5px;
+      }
+
+      .landing .identity {
+        font-size: clamp(26px, 6vw, 40px);
+      }
+
+      .landing-nav {
+        align-items: flex-start;
+        text-align: left;
+        gap: 25px;
+      }
+
+      .landing-nav a {
+        font-size: clamp(26px, 6vw, 40px);
+      }
+
+      .about-content {
+        padding: 45px 5% 70px;
+      }
+
+      .about-heading {
+        margin-bottom: 30px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .portrait-frame {
+        max-width: 420px;
+      }
+
+      .about-sidebar {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="landing">
+    <div class="landing-inner">
+
+      <div class="landing-line"></div>
+
+      <div class="landing-row">
+
+        <a class="identity" href="index.html">
+          <strong>SOPHIE DEAHL</strong>
+          <em>2026 PORTFOLIO</em>
+          <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
+        </a>
+
+        <nav class="landing-nav" aria-label="Main navigation">
+          <a href="about.html" aria-current="page">ABOUT ME</a>
+          <a href="index.html#projects">PROJECTS</a>
+        </nav>
+
+      </div>
+
+      <div class="landing-line"></div>
+
+    </div>
+  </header>
+
+  <!-- ABOUT ME CONTENT -->
+
+  <main class="about-content">
+
+    <h1 class="about-heading">About Me</h1>
+
+    <div class="about-grid">
+
+      <!-- LEFT COLUMN: PORTRAIT -->
+
+      <div class="about-portrait">
+
+        <div class="portrait-frame">
+
+          <div class="portrait-placeholder">
+            Portrait photograph<br>
+            coming soon
+          </div>
+
+          <img
+            src="assets/about.png"
+            alt="Portrait of Sophie Deahl"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.style.display='none'"
+          >
+
+        </div>
+
+      </div>
+
+      <!-- MIDDLE COLUMN: ABOUT, EDUCATION, EXPERIENCE -->
+
+      <div class="about-main">
+
+        <section class="about-section">
+          <h2>Introduction</h2>
+          <div class="about-rule"></div>
+
+          <p>
+            Add your introduction here. This is where
+            your current About Me text will go.
+          </p>
+
+        </section>
+
+        <section class="about-section">
+          <h2>Education</h2>
+          <div class="about-rule"></div>
+
+          <div class="entry">
+            <p class="entry-title">
+              MSc Metropolitan Analysis, Design and Engineering
+            </p>
+            <p class="entry-date">
+              Add university and dates
+            </p>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Add another qualification
+            </p>
+            <p class="entry-date">
+              Add institution and dates
+            </p>
+          </div>
+
+        </section>
+
+        <section class="about-section">
+          <h2>Experience</h2>
+          <div class="about-rule"></div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Add position or organisation
+            </p>
+            <p>
+              Add a short description of your work.
+            </p>
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN: SKILLS, SOFTWARE, CONTACT -->
+
+      <aside class="about-sidebar">
+
+        <section class="about-section">
+          <h2>Skills</h2>
+          <div class="about-rule"></div>
+
+          <ul>
+            <li>Add skill</li>
+            <li>Add skill</li>
+            <li>Add skill</li>
+          </ul>
+        </section>
+
+        <section class="about-section">
+          <h2>Software</h2>
+          <div class="about-rule"></div>
+
+          <ul>
+            <li>Add software</li>
+            <li>Add software</li>
+            <li>Add software</li>
+          </ul>
+        </section>
+
+        <section class="about-section">
+          <h2>Contact</h2>
+          <div class="about-rule"></div>
+
+          <p>
+            Add your email or professional links here.
+          </p>
+        </section>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <script src="projects.js"></script>
+
+</body>
+</html>
