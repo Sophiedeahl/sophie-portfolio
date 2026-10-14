@@ -89,3 +89,93 @@ const projects = [
     href:'msc-4.html'
   }
 ];
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Only add navigation on individual project pages
+  const hero = document.querySelector(".project-hero");
+  if (!hero) return;
+
+  // Find which project page is currently open
+  const currentPage = window.location.pathname.split("/").pop();
+
+  const currentIndex = projects.findIndex(
+    project => project.href === currentPage
+  );
+
+  if (currentIndex === -1) return;
+
+  // Find previous and next projects
+  const previous =
+    projects[(currentIndex - 1 + projects.length) % projects.length];
+
+  const next =
+    projects[(currentIndex + 1) % projects.length];
+
+  // Create navigation
+  const navigation = document.createElement("nav");
+  navigation.className = "project-top-navigation";
+  navigation.setAttribute("aria-label", "Project navigation");
+
+  const previousLink = document.createElement("a");
+  previousLink.href = previous.href;
+  previousLink.textContent = "← PREVIOUS PROJECT";
+
+  const nextLink = document.createElement("a");
+  nextLink.href = next.href;
+  nextLink.textContent = "NEXT PROJECT →";
+
+  navigation.appendChild(previousLink);
+  navigation.appendChild(nextLink);
+
+  // Position buttons directly above the large project image
+  hero.parentNode.insertBefore(navigation, hero);
+
+  // Add styling
+  const style = document.createElement("style");
+
+  style.textContent = `
+    .project-top-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      margin-bottom: 18px;
+    }
+
+    .project-top-navigation a {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(14px, 1.3vw, 18px);
+      font-weight: 700;
+      letter-spacing: -.05em;
+      color: #111;
+      text-decoration: none;
+    }
+
+    .project-top-navigation a:hover,
+    .project-top-navigation a:focus-visible {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .project-top-navigation a:last-child {
+      text-align: right;
+    }
+
+    @media (max-width: 700px) {
+      .project-top-navigation {
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .project-top-navigation a {
+        font-size: 13px;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+
+});
+
