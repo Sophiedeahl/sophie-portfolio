@@ -11,7 +11,7 @@ const projects = [
     id:'msc-2',
     category:'MSc Projects',
     title:'Collaboration in Urban Densification',
-    image:'assets/msc-2.png',
+    image:'assets/msc-2.jpg',
     pdf:'projects/msc-2.pdf'
   },
   {
