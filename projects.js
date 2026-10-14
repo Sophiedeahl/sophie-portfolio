@@ -144,13 +144,15 @@ document.addEventListener("DOMContentLoaded", function () {
       margin-bottom: 18px;
     }
 
-    .project-top-navigation a {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(14px, 1.3vw, 18px);
-      font-weight: 700;
-      letter-spacing: -.05em;
-      color: #111;
-      text-decoration: none;
+   .project-top-navigation a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(14px, 1.3vw, 18px);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -.05em;
+  color: #111;
+  text-decoration: none;
+}
     }
 
     .project-top-navigation a:hover,
