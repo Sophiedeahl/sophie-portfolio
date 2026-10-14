@@ -22,8 +22,7 @@
     }
 
     /* =====================================
-       HEADER — MATCHES INDEX.HTML
-       WHEN PROJECTS IS OPEN
+       HEADER — KEEP EXACTLY AS APPROVED
        ===================================== */
 
     .landing {
@@ -88,22 +87,27 @@
     }
 
     /* =====================================
-       PROJECT CONTENT
+       PROJECT CONTENT — NEW ALIGNMENT
        ===================================== */
 
     .project-content {
       width: 100%;
       max-width: 1700px;
       margin: 0 auto;
-      padding: 36px 5.5% 110px;
+      padding: 48px 5.5% 110px;
     }
 
     .project-layout {
       display: grid;
+
+      /* Narrow left text column,
+         wider right image column */
+
       grid-template-columns:
-        minmax(0, 1fr)
+        minmax(0, 32%)
         minmax(0, 1fr);
-      column-gap: 35px;
+
+      column-gap: 6%;
       align-items: start;
     }
 
@@ -113,6 +117,8 @@
 
     .project-text {
       min-width: 0;
+      max-width: 340px;
+      margin-left: 35px;
     }
 
     .project-title {
@@ -121,7 +127,6 @@
       letter-spacing: -.055em;
       font-weight: 700;
       font-style: italic;
-      max-width: 410px;
       margin: 0 0 34px;
     }
 
@@ -158,12 +163,13 @@
     }
 
     /* =====================================
-       RIGHT COLUMN
+       RIGHT COLUMN — STACKED IMAGES
        ===================================== */
 
     .project-images {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       gap: 15px;
       min-width: 0;
       width: 100%;
@@ -176,23 +182,21 @@
     }
 
     .project-image-row {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-      gap: 15px;
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
       width: 100%;
     }
 
     .project-image-small {
       display: block;
-      width: 100%;
+      width: 65%;
       height: auto;
     }
 
     /* =====================================
-       MOBILE — MATCHES INDEX.HTML
+       MOBILE
        ===================================== */
 
     @media (max-width: 700px) {
@@ -230,6 +234,11 @@
         gap: 35px;
       }
 
+      .project-text {
+        max-width: none;
+        margin-left: 0;
+      }
+
       .project-title {
         font-size: 38px;
       }
@@ -239,8 +248,8 @@
         line-height: 1.2;
       }
 
-      .project-image-row {
-        gap: 12px;
+      .project-image-small {
+        width: 85%;
       }
     }
   </style>
@@ -369,7 +378,7 @@
           alt="Mobility Hub research map of Utrecht"
         >
 
-        <!-- TWO SMALL IMAGES -->
+        <!-- TWO SMALL IMAGES, STACKED -->
 
         <div class="project-image-row">
 
