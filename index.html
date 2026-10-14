@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sophie Deahl — 2026 Portfolio</title>
+
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -12,7 +13,7 @@
       scroll-behavior: smooth;
     }
 
-    /* ORIGINAL HOMEPAGE HEADER — UNCHANGED */
+    /* ORIGINAL HOMEPAGE HEADER */
 
     .landing {
       min-height: 100vh;
@@ -81,6 +82,8 @@
       font-style: italic;
     }
 
+    /* CONTENT SECTIONS */
+
     .content-section {
       width: 100%;
       max-width: 1700px;
@@ -94,11 +97,11 @@
       display: block;
     }
 
-    /* ABOUT ME SECTION */
+    /* ABOUT ME — APPROVED DESIGN */
 
     #about {
       max-width: none;
-      padding-top: 65px;
+      padding-top: 45px;
       padding-left: 5.5%;
       padding-right: 5.5%;
     }
@@ -107,26 +110,33 @@
       width: 100%;
       max-width: 1700px;
       margin: 0 auto;
-      padding: 28px 7% 65px;
       background: #f8f8f8;
+
       display: grid;
-      grid-template-columns: 1.03fr 1.8fr .95fr;
-      column-gap: 7%;
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(0, 1.38fr)
+        minmax(0, .72fr);
+
+      column-gap: 5.5%;
       align-items: start;
+
+      padding: 30px 4% 70px;
     }
 
-    /* LEFT COLUMN */
+    /* LEFT COLUMN: PORTRAIT AND CONTACT */
 
     .about-left {
-      padding-top: 86px;
       min-width: 0;
+      padding-top: 10px;
     }
 
     .about-photo {
       display: block;
       width: 100%;
-      max-width: 265px;
-      aspect-ratio: .95;
+      max-width: 390px;
+      aspect-ratio: .92;
+      height: auto;
       object-fit: cover;
       object-position: center;
       border-radius: 8px;
@@ -134,26 +144,16 @@
     }
 
     .about-contact {
-      padding: 26px 8px 0;
-    }
-
-    .about-contact h2 {
-      margin: 0 0 14px;
-      font-size: clamp(25px, 2.4vw, 34px);
-      font-weight: 700;
-      font-style: italic;
-      letter-spacing: -.055em;
-      line-height: 1.05;
-      white-space: nowrap;
+      padding: 28px 5px 0;
     }
 
     .about-contact p,
     .about-contact a {
       display: block;
       margin: 0;
-      font-size: 17px;
-      line-height: 1.15;
-      color: inherit;
+      color: #111;
+      font-size: clamp(18px, 1.45vw, 22px);
+      line-height: 1.18;
       text-decoration: none;
     }
 
@@ -168,23 +168,23 @@
     }
 
     .about-middle p {
-      margin: 0 0 20px;
-      font-size: 17px;
-      line-height: 1.2;
+      margin: 0 0 22px;
+      font-size: clamp(19px, 1.55vw, 23px);
+      line-height: 1.22;
       letter-spacing: -.025em;
       text-align: justify;
     }
 
     .about-middle h2 {
       margin: 0 0 22px;
-      font-size: 20px;
-      line-height: 1.2;
+      font-size: clamp(22px, 1.7vw, 26px);
       font-weight: 700;
-      letter-spacing: -.025em;
+      line-height: 1.15;
+      letter-spacing: -.035em;
     }
 
     .about-middle section {
-      margin-top: 46px;
+      margin-top: 48px;
     }
 
     .about-middle section p {
@@ -198,26 +198,27 @@
     }
 
     .about-right section + section {
-      margin-top: 54px;
+      margin-top: 65px;
     }
 
     .about-right h2 {
-      margin: 0 0 24px;
-      font-size: 20px;
+      margin: 0 0 25px;
+      font-size: clamp(22px, 1.7vw, 26px);
       font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -.025em;
+      line-height: 1.15;
+      letter-spacing: -.035em;
     }
 
     .about-right ul {
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
 
     .about-right li {
-      font-size: 17px;
-      line-height: 1.2;
+      margin: 0;
+      font-size: clamp(19px, 1.5vw, 23px);
+      line-height: 1.28;
       font-style: italic;
       letter-spacing: -.025em;
     }
@@ -244,17 +245,27 @@
 
     @media (max-width: 1000px) {
       .about-layout {
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(0, 1.4fr);
         gap: 38px;
-        padding: 30px 5% 55px;
+        padding: 30px 5% 60px;
       }
 
       .about-right {
         grid-column: 2;
       }
 
-      .about-left {
-        padding-top: 55px;
+      .about-photo {
+        max-width: 350px;
+      }
+
+      .about-middle p {
+        font-size: 19px;
+      }
+
+      .about-right li {
+        font-size: 19px;
       }
     }
 
@@ -295,15 +306,15 @@
       }
 
       #about {
-        padding-top: 65px;
+        padding-top: 35px;
         padding-left: 5%;
         padding-right: 5%;
       }
 
       .about-layout {
         grid-template-columns: 1fr;
-        gap: 36px;
-        padding: 28px 22px 45px;
+        gap: 42px;
+        padding: 28px 22px 50px;
       }
 
       .about-left {
@@ -311,15 +322,23 @@
       }
 
       .about-photo {
-        max-width: 265px;
+        max-width: 390px;
       }
 
       .about-contact {
         padding-left: 0;
       }
 
+      .about-middle p {
+        font-size: 18px;
+      }
+
       .about-right {
         grid-column: auto;
+      }
+
+      .about-right li {
+        font-size: 18px;
       }
     }
 
@@ -343,7 +362,7 @@
 
   <main>
 
-    <!-- ORIGINAL HOMEPAGE / HEADER -->
+    <!-- ORIGINAL HOMEPAGE HEADER -->
 
     <section class="landing" id="landing">
       <div class="landing-inner">
@@ -370,13 +389,13 @@
       </div>
     </section>
 
-    <!-- ABOUT ME — EDITABLE HTML -->
+    <!-- ABOUT ME -->
 
     <section class="content-section" id="about" aria-label="About Me">
 
       <div class="about-layout">
 
-        <!-- LEFT: PHOTO AND CONTACT -->
+        <!-- LEFT: PORTRAIT AND CONTACT -->
 
         <div class="about-left">
 
@@ -387,8 +406,6 @@
           >
 
           <div class="about-contact">
-            <h2>SOPHIE DEAHL</h2>
-
             <p>Dutch / British</p>
 
             <a href="mailto:deahl@hotmail.com">
@@ -407,24 +424,24 @@
         <div class="about-middle">
 
           <p>
-            I’m a multidisciplinary researcher and designer working
-            across urban development, design research and visual
-            communication.
+            I’m a multidisciplinary researcher and designer
+            working across urban development, design research
+            and visual communication.
           </p>
 
           <p>
-            My work combines spatial analysis, participatory research
-            and creative design to explore how places function and how
-            people experience them. I enjoy translating complex
-            questions and research findings into clear insights,
-            engaging visuals and practical concepts that others can
-            understand and use.
+            My work combines spatial analysis, participatory
+            research and creative design to explore how places
+            function and how people experience them. I enjoy
+            translating complex questions and research findings
+            into clear insights, engaging visuals and practical
+            concepts that others can understand and use.
           </p>
 
           <p>
-            I enjoy working across disciplines, connecting different
-            perspectives and moving between analytical thinking and
-            hands-on creative work.
+            I enjoy working across disciplines, connecting
+            different perspectives and moving between analytical
+            thinking and hands-on creative work.
           </p>
 
           <section>
@@ -432,12 +449,12 @@
 
             <p>
               Bachelor in Engineering, Design &amp; Innovation,
-              direction Product Design at the University of Applied
-              Sciences Amsterdam (2010-2015)
+              direction Product Design at the University of
+              Applied Sciences Amsterdam (2010-2015)
               <br>
-              Master of Science in Metropolitan Analysis Design &amp;
-              Engineering at the Technical Universtity of Delft and
-              University of Wageningen (2024-2026)
+              Master of Science in Metropolitan Analysis Design
+              &amp; Engineering at the Technical Universtity
+              of Delft and University of Wageningen (2024-2026)
             </p>
           </section>
 
@@ -498,7 +515,7 @@
 
     </section>
 
-    <!-- PROJECTS — UNCHANGED -->
+    <!-- PROJECTS — ORIGINAL GRID -->
 
     <section class="content-section" id="projects" aria-label="Projects">
       <div class="projects" id="project-grid"></div>
@@ -518,7 +535,6 @@
     const grid = document.getElementById('project-grid');
 
     // Build the project grid.
-    // Each project uses its own HTML page from projects.js.
 
     for (const p of projects) {
       const a = document.createElement('a');
@@ -547,7 +563,7 @@
       grid.appendChild(a);
     }
 
-    // Open About Me or Projects.
+    // Show About Me or Projects.
 
     function showSection(section) {
       landing.classList.add('open');
@@ -578,7 +594,7 @@
       });
     }
 
-    // Smoothly return to the homepage.
+    // Return to homepage.
 
     function showHome() {
       window.scrollTo({
@@ -622,7 +638,7 @@
       showHome();
     });
 
-    // Browser back and forward buttons.
+    // Browser back and forward.
 
     window.addEventListener('popstate', function() {
       const section = location.hash.replace('#', '');
@@ -634,7 +650,7 @@
       }
     });
 
-    // Open a section directly from a link.
+    // Open a section directly.
 
     const initialSection = location.hash.replace('#', '');
 
