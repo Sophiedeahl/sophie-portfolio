@@ -205,7 +205,7 @@
           <a class="identity" href="index.html" id="home-link">
             <strong>SOPHIE DEAHL</strong>
             <em>2026 PORTFOLIO</em>
-            <span>URBAN RESEARCHER<br>& DESIGNER</span>
+            <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
           </a>
 
           <nav class="landing-nav" aria-label="Main navigation">
@@ -251,18 +251,19 @@
     const homeLink = document.getElementById('home-link');
     const grid = document.getElementById('project-grid');
 
-    // Build the existing project grid.
+    // Build the project grid.
+    // Each project uses its own HTML page from projects.js.
 
     for (const p of projects) {
       const a = document.createElement('a');
       a.className = 'project';
 
-      // Mobility Hub opens commissioned-1.html.
-      // All other projects keep their original links.
+      // Use the dedicated HTML link if it exists.
+      // Otherwise keep the original project page as fallback.
 
-      a.href = p.id === 'mobility-hub'
-        ? 'commissioned-1.html'
-        : 'project.html?id=' + encodeURIComponent(p.id);
+      a.href = p.href || (
+        'project.html?id=' + encodeURIComponent(p.id)
+      );
 
       const thumb = document.createElement('div');
       thumb.className = 'thumb';
