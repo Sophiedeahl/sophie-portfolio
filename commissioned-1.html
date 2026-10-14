@@ -19,107 +19,91 @@
       margin: 0;
       background: #fafafa;
       color: #111;
-      font-family: Arial, Helvetica, sans-serif;
     }
 
     /* =====================================
-       SHARED ALIGNMENT
-       Header and project use the same edges
+       HEADER — MATCHES INDEX.HTML
+       WHEN PROJECTS IS OPEN
        ===================================== */
 
-    .page-width {
-      width: calc(100% - 9.6%);
+    .landing {
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      padding: 28px 5.5% 0;
+    }
+
+    .landing-inner {
+      width: 100%;
       max-width: 1700px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
 
-    /* =====================================
-       HEADER
-       ===================================== */
-
-    .project-header {
-      padding-top: 20px;
-    }
-
-    .header-line {
+    .landing-line {
+      width: 100%;
       height: 1px;
-      background: #b5b5b5;
+      background: #aaa;
     }
 
-    .header-row {
+    .landing-row {
       display: flex;
       justify-content: space-between;
       align-items: stretch;
       gap: 40px;
-      padding: 32px 3px;
+      padding: 50px 5px;
     }
 
-    .project-header .identity {
-      display: flex;
-      flex-direction: column;
-      color: #111;
-      text-decoration: none;
-      font-size: clamp(30px, 3.9vw, 53px);
-      line-height: 1.1;
-      letter-spacing: -0.055em;
+    .landing .identity {
+      font-size: clamp(30px, 4vw, 60px);
+      line-height: 1.12;
+      letter-spacing: -.055em;
       flex-shrink: 0;
     }
 
-    .project-header .identity strong {
-      font-weight: 700;
-    }
-
-    .project-header .identity em {
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    .project-header .identity span {
-      font-weight: 400;
-    }
-
-    .header-nav {
+    .landing-nav {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-end;
+      min-width: 0;
       text-align: right;
     }
 
-    .header-nav a {
-      color: #111;
-      text-decoration: none;
-      font-size: clamp(30px, 3.6vw, 48px);
+    .landing-nav a {
+      font-size: clamp(30px, 3.5vw, 54px);
       font-weight: 700;
-      letter-spacing: -0.055em;
-      line-height: 1.1;
+      font-style: normal;
+      letter-spacing: -.05em;
+      line-height: 1.12;
       white-space: nowrap;
+      cursor: pointer;
+      color: inherit;
+      text-decoration: none;
     }
 
-    .header-nav a:hover {
+    .landing-nav a:hover,
+    .landing-nav a:focus-visible {
       font-weight: 400;
       font-style: italic;
     }
 
     /* =====================================
-       PROJECT LAYOUT
+       PROJECT CONTENT
        ===================================== */
 
     .project-content {
-      padding-top: 48px;
-      padding-bottom: 110px;
+      width: 100%;
+      max-width: 1700px;
+      margin: 0 auto;
+      padding: 36px 5.5% 110px;
     }
 
     .project-layout {
       display: grid;
-
-      /* Both columns fit exactly between
-         the header's left and right edges */
-
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      column-gap: 48px;
-
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+      column-gap: 35px;
       align-items: start;
     }
 
@@ -129,17 +113,16 @@
 
     .project-text {
       min-width: 0;
-      max-width: 100%;
     }
 
     .project-title {
       font-size: clamp(34px, 3.5vw, 48px);
       line-height: 1.07;
-      letter-spacing: -0.055em;
+      letter-spacing: -.055em;
       font-weight: 700;
       font-style: italic;
-      margin: 0 0 34px;
       max-width: 410px;
+      margin: 0 0 34px;
     }
 
     .project-year {
@@ -155,11 +138,11 @@
     }
 
     .project-text p {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Arimo', Arial, sans-serif;
       font-size: 20px;
       font-weight: 400;
       line-height: 1.08;
-      letter-spacing: -0.025em;
+      letter-spacing: -.025em;
       margin: 0 0 24px;
       text-align: justify;
     }
@@ -175,13 +158,13 @@
     }
 
     /* =====================================
-       RIGHT COLUMN: IMAGES
+       RIGHT COLUMN
        ===================================== */
 
     .project-images {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 15px;
       min-width: 0;
       width: 100%;
     }
@@ -194,8 +177,10 @@
 
     .project-image-row {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 20px;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+      gap: 15px;
       align-items: start;
       width: 100%;
     }
@@ -204,46 +189,40 @@
       display: block;
       width: 100%;
       height: auto;
-      min-width: 0;
     }
 
     /* =====================================
-       MOBILE
+       MOBILE — MATCHES INDEX.HTML
        ===================================== */
 
     @media (max-width: 700px) {
 
-      .page-width {
-        width: 90%;
+      .landing {
+        padding: 25px 5% 0;
       }
 
-      .project-header {
-        padding-top: 20px;
-      }
-
-      .header-row {
+      .landing-row {
         flex-direction: column;
-        gap: 40px;
-        padding: 30px 3px;
+        gap: 50px;
+        padding: 35px 5px;
       }
 
-      .project-header .identity {
-        font-size: clamp(27px, 6vw, 40px);
+      .landing .identity {
+        font-size: clamp(26px, 6vw, 40px);
       }
 
-      .header-nav {
+      .landing-nav {
         align-items: flex-start;
         text-align: left;
-        gap: 20px;
+        gap: 25px;
       }
 
-      .header-nav a {
-        font-size: clamp(27px, 6vw, 40px);
+      .landing-nav a {
+        font-size: clamp(26px, 6vw, 40px);
       }
 
       .project-content {
-        padding-top: 40px;
-        padding-bottom: 70px;
+        padding: 36px 5% 70px;
       }
 
       .project-layout {
@@ -271,29 +250,43 @@
 <body>
 
   <!-- =====================================
-       HEADER
+       SAME HEADER AS HOMEPAGE
        ===================================== -->
 
-  <header class="project-header page-width">
+  <header class="landing">
 
-    <div class="header-line"></div>
+    <div class="landing-inner">
 
-    <div class="header-row">
+      <div class="landing-line"></div>
 
-      <a class="identity" href="index.html">
-        <strong>SOPHIE DEAHL</strong>
-        <em>2026 PORTFOLIO</em>
-        <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
-      </a>
+      <div class="landing-row">
 
-      <nav class="header-nav" aria-label="Main navigation">
-        <a href="index.html#about">ABOUT ME</a>
-        <a href="index.html#projects">PROJECTS</a>
-      </nav>
+        <a class="identity" href="index.html">
+          <strong>SOPHIE DEAHL</strong>
+          <em>2026 PORTFOLIO</em>
+          <span>
+            URBAN RESEARCHER<br>&amp; DESIGNER
+          </span>
+        </a>
+
+        <nav class="landing-nav"
+             aria-label="Main navigation">
+
+          <a href="index.html#about">
+            ABOUT ME
+          </a>
+
+          <a href="index.html#projects">
+            PROJECTS
+          </a>
+
+        </nav>
+
+      </div>
+
+      <div class="landing-line"></div>
 
     </div>
-
-    <div class="header-line"></div>
 
   </header>
 
@@ -302,7 +295,7 @@
        PROJECT CONTENT
        ===================================== -->
 
-  <main class="project-content page-width">
+  <main class="project-content">
 
     <div class="project-layout">
 
@@ -320,9 +313,17 @@
 
         <div class="project-collaboration">
           Collaboration with
-          <a href="https://advier.nl/" target="_blank" rel="noopener noreferrer">Advier</a>
+          <a
+            href="https://advier.nl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Advier</a>
           &amp;
-          <a href="https://www.svp-svp.nl/" target="_blank" rel="noopener noreferrer">SVP</a>
+          <a
+            href="https://www.svp-svp.nl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >SVP</a>
         </div>
 
         <p>
@@ -360,7 +361,7 @@
 
       <section class="project-images">
 
-        <!-- BIG IMAGE: SAME AS THUMBNAIL -->
+        <!-- BIG IMAGE: EXISTING THUMBNAIL -->
 
         <img
           class="project-image-large"
