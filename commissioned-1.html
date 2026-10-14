@@ -45,27 +45,15 @@
       font-style: italic;
     }
 
-    .pdf-container {
-      width: 100%;
-      margin: 30px auto 0;
+    .project-content {
+      max-width: 1150px;
+      margin: 35px auto 0;
     }
 
-    .pdf-container iframe {
+    .project-image {
       display: block;
       width: 100%;
-      height: 1100px;
-      border: 0;
-      background: white;
-    }
-
-    .pdf-fallback {
-      margin-top: 20px;
-      font-size: 14px;
-    }
-
-    .pdf-fallback a {
-      color: inherit;
-      text-decoration: underline;
+      height: auto;
     }
 
     @media (max-width: 700px) {
@@ -77,9 +65,8 @@
         font-size: 16px;
       }
 
-      .pdf-container iframe {
-        height: 75vh;
-        min-height: 450px;
+      .project-content {
+        margin-top: 20px;
       }
     }
   </style>
@@ -101,18 +88,13 @@
 
     </header>
 
-    <div class="pdf-container">
+    <div class="project-content">
 
-      <iframe
-        src="commissioned-1.pdf#toolbar=0"
-        title="Mobility Hub research for Municipality of Utrecht">
-      </iframe>
-
-      <p class="pdf-fallback">
-        <a href="commissioned-1.pdf" target="_blank" rel="noopener">
-          Open the full project PDF
-        </a>
-      </p>
+      <img
+        class="project-image"
+        src="assets/commissioned-1-page.png"
+        alt="Mobility Hub research for Municipality of Utrecht, including project description, maps and research process"
+      >
 
     </div>
 
