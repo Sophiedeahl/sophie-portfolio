@@ -19,12 +19,15 @@
       margin: 0;
       background: #fafafa;
       color: #111;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* HEADER */
+    /* =====================================
+       HEADER
+       ===================================== */
 
     .project-header {
-      padding: 28px 5.5% 0;
+      padding: 20px 4.8% 0;
     }
 
     .header-inner {
@@ -35,7 +38,7 @@
     .header-line {
       height: 1px;
       width: 100%;
-      background: #aaa;
+      background: #b5b5b5;
     }
 
     .header-row {
@@ -43,7 +46,7 @@
       justify-content: space-between;
       align-items: stretch;
       gap: 40px;
-      padding: 50px 5px;
+      padding: 32px 3px;
     }
 
     .project-header .identity {
@@ -51,9 +54,9 @@
       flex-direction: column;
       color: #111;
       text-decoration: none;
-      font-size: clamp(30px, 4vw, 60px);
-      line-height: 1.12;
-      letter-spacing: -.055em;
+      font-size: clamp(30px, 3.9vw, 53px);
+      line-height: 1.1;
+      letter-spacing: -0.055em;
       flex-shrink: 0;
     }
 
@@ -81,10 +84,10 @@
     .header-nav a {
       color: #111;
       text-decoration: none;
-      font-size: clamp(30px, 3.5vw, 54px);
+      font-size: clamp(30px, 3.6vw, 48px);
       font-weight: 700;
-      letter-spacing: -.05em;
-      line-height: 1.12;
+      letter-spacing: -0.055em;
+      line-height: 1.1;
       white-space: nowrap;
     }
 
@@ -93,70 +96,77 @@
       font-style: italic;
     }
 
-    /* PROJECT CONTENT */
+    /* =====================================
+       PROJECT PAGE LAYOUT
+       ===================================== */
 
     .project-content {
       max-width: 1700px;
       margin: 0 auto;
-      padding: 65px 5.5% 100px;
+      padding: 75px 6.7% 110px;
     }
 
     .project-layout {
       display: grid;
-      grid-template-columns: 35% 1fr;
-      gap: 7%;
+      grid-template-columns: 35% minmax(0, 1fr);
+      column-gap: 7%;
       align-items: start;
     }
 
-    /* LEFT COLUMN */
+    /* =====================================
+       LEFT COLUMN
+       ===================================== */
 
     .project-text {
-      max-width: 450px;
+      max-width: 410px;
     }
 
     .project-title {
-      font-size: clamp(36px, 4vw, 60px);
-      line-height: 1.08;
-      letter-spacing: -.055em;
+      font-size: clamp(34px, 3.5vw, 48px);
+      line-height: 1.07;
+      letter-spacing: -0.055em;
       font-weight: 700;
       font-style: italic;
-      margin: 0 0 24px;
+      margin: 0 0 34px;
     }
 
     .project-year {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .project-collaboration {
-      font-size: 17px;
-      line-height: 1.5;
-      margin-bottom: 45px;
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 42px;
     }
 
-  .project-text p {
-  font-family: inherit;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-  margin: 0 0 26px;
-  text-align: left;
-}
+    /* PROJECT DESCRIPTION */
+
+    .project-text p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin: 0 0 24px;
+      text-align: justify;
     }
 
     .project-text a {
       color: inherit;
       text-decoration: underline;
-      text-underline-offset: 3px;
+      text-underline-offset: 2px;
     }
 
     .project-text a:hover {
       font-style: italic;
     }
 
-    /* RIGHT COLUMN */
+    /* =====================================
+       RIGHT COLUMN: IMAGES
+       ===================================== */
 
     .project-images {
       display: flex;
@@ -175,6 +185,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+      align-items: start;
     }
 
     .project-image-small {
@@ -183,49 +194,56 @@
       height: auto;
     }
 
-    /* MOBILE */
+    /* =====================================
+       MOBILE
+       ===================================== */
 
     @media (max-width: 700px) {
 
       .project-header {
-        padding: 25px 5% 0;
+        padding: 20px 5% 0;
       }
 
       .header-row {
         flex-direction: column;
-        gap: 50px;
-        padding: 35px 5px;
+        gap: 40px;
+        padding: 30px 3px;
       }
 
       .project-header .identity {
-        font-size: clamp(26px, 6vw, 40px);
+        font-size: clamp(27px, 6vw, 40px);
       }
 
       .header-nav {
         align-items: flex-start;
         text-align: left;
-        gap: 25px;
+        gap: 20px;
       }
 
       .header-nav a {
-        font-size: clamp(26px, 6vw, 40px);
+        font-size: clamp(27px, 6vw, 40px);
       }
 
       .project-content {
-        padding: 40px 5% 60px;
+        padding: 40px 6% 70px;
       }
 
       .project-layout {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 35px;
+      }
+
+      .project-text {
+        max-width: none;
       }
 
       .project-title {
         font-size: 38px;
       }
 
-      .project-text {
-        max-width: none;
+      .project-text p {
+        font-size: 18px;
+        line-height: 1.2;
       }
 
       .project-image-row {
@@ -233,12 +251,13 @@
       }
     }
   </style>
-
 </head>
 
 <body>
 
-  <!-- PORTFOLIO HEADER -->
+  <!-- =====================================
+       PORTFOLIO HEADER
+       ===================================== -->
 
   <header class="project-header">
 
@@ -254,7 +273,7 @@
           <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
         </a>
 
-        <nav class="header-nav">
+        <nav class="header-nav" aria-label="Main navigation">
           <a href="index.html#about">ABOUT ME</a>
           <a href="index.html#projects">PROJECTS</a>
         </nav>
@@ -268,7 +287,9 @@
   </header>
 
 
-  <!-- PROJECT PAGE -->
+  <!-- =====================================
+       PROJECT CONTENT
+       ===================================== -->
 
   <main class="project-content">
 
@@ -288,9 +309,17 @@
 
         <div class="project-collaboration">
           Collaboration with
-          <a href="https://advier.nl/" target="_blank" rel="noopener noreferrer">Advier</a>
+          <a
+            href="https://advier.nl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Advier</a>
           &amp;
-          <a href="https://www.svp-svp.nl/" target="_blank" rel="noopener noreferrer">SVP</a>
+          <a
+            href="https://www.svp-svp.nl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >SVP</a>
         </div>
 
         <p>
@@ -328,12 +357,12 @@
 
       <section class="project-images">
 
-        <!-- BIG IMAGE: EXISTING PROJECT THUMBNAIL -->
+        <!-- BIG IMAGE: SAME AS PROJECT THUMBNAIL -->
 
         <img
           class="project-image-large"
           src="assets/commissioned-1.png"
-          alt="Mobility Hub research for Municipality of Utrecht"
+          alt="Mobility Hub research map of Utrecht"
         >
 
         <!-- TWO SMALL IMAGES -->
@@ -345,7 +374,7 @@
           <img
             class="project-image-small"
             src="assets/commissioned1-smallleft.png"
-            alt="Mobility Hub spatial analysis map"
+            alt="Mobility Hub research methodology"
           >
 
           <!-- BOTTOM RIGHT -->
@@ -353,7 +382,7 @@
           <img
             class="project-image-small"
             src="assets/commissioned1-smallright.png"
-            alt="Mobility Hub research methodology diagram"
+            alt="Mobility Hub spatial analysis map"
           >
 
         </div>
