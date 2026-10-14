@@ -1,0 +1,122 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mobility Hub Research — Sophie Deahl</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #fafafa;
+      color: #111;
+    }
+
+    .project-page {
+      max-width: 1700px;
+      margin: 0 auto;
+      padding: 28px 5.5% 80px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+    }
+
+    .project-header a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: clamp(16px, 2vw, 26px);
+      letter-spacing: -.04em;
+    }
+
+    .project-header a:hover {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .pdf-container {
+      width: 100%;
+      margin: 30px auto 0;
+    }
+
+    .pdf-container iframe {
+      display: block;
+      width: 100%;
+      height: 1100px;
+      border: 0;
+      background: white;
+    }
+
+    .pdf-fallback {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .pdf-fallback a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .project-page {
+        padding: 20px 5% 50px;
+      }
+
+      .project-header a {
+        font-size: 16px;
+      }
+
+      .pdf-container iframe {
+        height: 75vh;
+        min-height: 450px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="project-page">
+
+    <header class="project-header">
+
+      <a href="index.html">
+        SOPHIE DEAHL
+      </a>
+
+      <a href="index.html#projects">
+        BACK TO PROJECTS
+      </a>
+
+    </header>
+
+    <div class="pdf-container">
+
+      <iframe
+        src="commissioned-1.pdf#toolbar=0"
+        title="Mobility Hub research for Municipality of Utrecht">
+      </iframe>
+
+      <p class="pdf-fallback">
+        <a href="commissioned-1.pdf" target="_blank" rel="noopener">
+          Open the full project PDF
+        </a>
+      </p>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
