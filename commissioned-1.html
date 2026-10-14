@@ -8,13 +8,17 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: #fafafa;
       color: #111;
     }
 
-    /* SAME HEADER AS THE MAIN PORTFOLIO */
+    /* PORTFOLIO HEADER */
 
     .landing {
       padding: 28px 5.5% 0;
@@ -72,22 +76,92 @@
       font-style: italic;
     }
 
-    /* PROJECT CONTENT */
+    /* PROJECT LAYOUT */
 
     .project-content {
       width: 100%;
       max-width: 1700px;
       margin: 0 auto;
-      padding: 28px 5.5% 80px;
+      padding: 65px 5.5% 100px;
     }
 
-    .project-image {
-      display: block;
-      width: 100%;
-      max-width: 1150px;
-      height: auto;
-      margin: 0 auto;
+    .project-layout {
+      display: grid;
+      grid-template-columns: 35% 1fr;
+      gap: 7%;
+      align-items: start;
     }
+
+    /* LEFT COLUMN */
+
+    .project-text {
+      max-width: 450px;
+    }
+
+    .project-title {
+      font-size: clamp(36px, 4vw, 60px);
+      line-height: 1.08;
+      letter-spacing: -.055em;
+      font-weight: 700;
+      font-style: italic;
+      margin: 0 0 24px;
+    }
+
+    .project-year {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .project-collaboration {
+      font-size: 17px;
+      line-height: 1.5;
+      margin-bottom: 45px;
+    }
+
+    .project-text p {
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0 0 24px;
+    }
+
+    .project-text a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .project-text a:hover {
+      font-style: italic;
+    }
+
+    /* RIGHT COLUMN: IMAGES */
+
+    .project-images {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .project-image-large {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .project-image-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .project-image-small {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* MOBILE */
 
     @media (max-width: 700px) {
       .landing {
@@ -115,7 +189,24 @@
       }
 
       .project-content {
-        padding: 20px 5% 50px;
+        padding: 40px 5% 60px;
+      }
+
+      .project-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .project-title {
+        font-size: 38px;
+      }
+
+      .project-text {
+        max-width: none;
+      }
+
+      .project-image-row {
+        gap: 12px;
       }
     }
   </style>
@@ -124,7 +215,7 @@
 <body>
   <main>
 
-    <!-- SAME HEADER AS INDEX.HTML -->
+    <!-- SAME HEADER AS THE HOMEPAGE -->
 
     <section class="landing">
       <div class="landing-inner">
@@ -151,14 +242,95 @@
       </div>
     </section>
 
-    <!-- MOBILITY HUB PROJECT -->
+    <!-- PROJECT CONTENT -->
 
     <section class="project-content">
-      <img
-        class="project-image"
-        src="assets/commissioned-1-page.png"
-        alt="Mobility Hub research for Municipality of Utrecht"
-      >
+
+      <div class="project-layout">
+
+        <!-- LEFT: TITLE AND TEXT -->
+
+        <div class="project-text">
+
+          <h1 class="project-title">
+            Mobility Hub research for Municipality of Utrecht
+          </h1>
+
+          <div class="project-year">
+            2021
+          </div>
+
+          <div class="project-collaboration">
+            Collaboration with
+            <a href="https://advier.nl/" target="_blank" rel="noopener noreferrer">Advier</a>
+            &amp;
+            <a href="https://www.svp-svp.nl/" target="_blank" rel="noopener noreferrer">SVP</a>
+          </div>
+
+          <p>
+            For the Municipality of Utrecht, I designed and
+            carried out a spatial research method to identify
+            suitable locations for pilot mobility hubs.
+          </p>
+
+          <p>
+            Using Google Maps and hand-drawn maps, the research
+            focused on public transport connections, walking
+            distances, and opportunities to connect different
+            modes of transport. The method was developed as a
+            clear, step-by-step process, making the analysis
+            transparent and easy for the municipality to follow.
+          </p>
+
+          <p>
+            By combining these findings with additional spatial
+            and accessibility criteria, the team selected three
+            promising locations for pilot mobility hubs. The
+            results contributed to a broader advisory
+            <a
+              href="https://uploads-ssl.webflow.com/623870c44121abe6970a958b/623870c44121ab76990a9b63_210413_Kookboek%20Buurthub%20Utrecht.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >report</a>
+            for the municipality.
+          </p>
+
+        </div>
+
+        <!-- RIGHT: ONE LARGE IMAGE + TWO SMALL IMAGES -->
+
+        <div class="project-images">
+
+          <!-- LARGE IMAGE -->
+
+          <img
+            class="project-image-large"
+            src="assets/mobility-hub-map-1.png"
+            alt="Mobility Hub research map"
+          >
+
+          <!-- TWO SMALL IMAGES -->
+
+          <div class="project-image-row">
+
+            <img
+              class="project-image-small"
+              src="assets/mobility-hub-map-2.png"
+              alt="Mobility Hub spatial analysis"
+            >
+
+            <img
+              class="project-image-small"
+              src="assets/mobility-hub-diagram-3.png"
+              alt="Mobility Hub research methodology"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
   </main>
