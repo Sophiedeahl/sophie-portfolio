@@ -232,3 +232,55 @@ footer{
     filter:grayscale(1) contrast(1.4) brightness(.85);
   }
 }
+
+
+/* ABOUT ME — LARGER TEXT AND ORIGINAL PROPORTIONS */
+
+@media (min-width: 1001px) {
+
+  .about-layout {
+    grid-template-columns:
+      minmax(0, 1.03fr)
+      minmax(0, 1.8fr)
+      minmax(0, .95fr);
+    column-gap: 6%;
+  }
+
+  .about-middle p {
+    font-size: clamp(18px, 1.32vw, 21px);
+    line-height: 1.18;
+    letter-spacing: -.025em;
+  }
+
+  .about-middle h2,
+  .about-right h2 {
+    font-size: clamp(20px, 1.48vw, 23px);
+  }
+
+  .about-right li {
+    font-size: clamp(18px, 1.32vw, 21px);
+    line-height: 1.18;
+  }
+
+  .about-contact p,
+  .about-contact a {
+    font-size: clamp(18px, 1.32vw, 21px);
+  }
+
+  .about-contact h2 {
+    font-size: clamp(30px, 2.4vw, 36px);
+  }
+
+  .about-layout {
+    padding-top: 28px;
+    padding-bottom: 65px;
+  }
+
+  .about-middle section {
+    margin-top: 46px;
+  }
+
+  .about-right section + section {
+    margin-top: 54px;
+  }
+}
