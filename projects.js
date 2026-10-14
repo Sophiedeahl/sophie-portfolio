@@ -5,14 +5,16 @@ const projects = [
     category:'Commissioned Projects',
     title:'Mobility Hub research for Municipality of Utrecht',
     image:'assets/commissioned-1.png',
-    pdf:'projects/mobility-hub.pdf'
+    pdf:'projects/mobility-hub.pdf',
+    href:'commissioned-1.html'
   },
   {
     id:'msc-2',
     category:'MSc Projects',
     title:'Collaboration in Urban Densification',
     image:'assets/msc-2.png',
-    pdf:'projects/msc-2.pdf'
+    pdf:'projects/msc-2.pdf',
+    href:'msc-2.html'
   },
   {
     id:'msc-1',
