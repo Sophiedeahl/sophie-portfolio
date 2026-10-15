@@ -22,7 +22,9 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* HEADER */
+    /* ======================================
+       HEADER — ORIGINAL STYLING
+       ====================================== */
 
     .landing {
       min-height: 0;
@@ -85,7 +87,9 @@
       font-style: italic;
     }
 
-    /* PROJECT CONTENT */
+    /* ======================================
+       PROJECT CONTENT
+       ====================================== */
 
     .project-content {
       width: 100%;
@@ -94,7 +98,9 @@
       padding: 30px 5.5% 110px;
     }
 
-    /* HERO IMAGE */
+    /* ======================================
+       HERO IMAGE — ORIGINAL STYLING
+       ====================================== */
 
     .project-hero {
       position: relative;
@@ -148,7 +154,9 @@
       letter-spacing: -.065em;
     }
 
-    /* DESCRIPTION AND IMAGE GRID */
+    /* ======================================
+       FIRST ROW: TEXT LEFT, IMAGE RIGHT
+       ====================================== */
 
     .project-details {
       display: grid;
@@ -206,37 +214,45 @@
       margin: 0 0 26px;
     }
 
-    /* TWO SUPPORTING IMAGES */
+    /* ======================================
+       PROJECT IMAGES
+       ====================================== */
 
-    .project-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      align-items: start;
-      min-width: 0;
-    }
-
-    .project-gallery a {
+    .project-image-link {
       display: block;
       width: 100%;
-      height: auto;
-      overflow: visible;
-      background: transparent;
+      overflow: hidden;
       cursor: zoom-in;
     }
 
-    .project-gallery img {
+    .project-image {
       display: block;
       width: 100%;
       height: auto;
       transition: transform .25s ease;
     }
 
-    .project-gallery a:hover img {
+    .project-image-link:hover .project-image {
       transform: scale(1.025);
     }
 
-    /* MOBILE */
+    /* ======================================
+       SECOND ROW: IMAGE LEFT, TEXT RIGHT
+       ====================================== */
+
+    .project-analysis {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, 1fr);
+      gap: 6%;
+      align-items: start;
+      margin-top: 75px;
+    }
+
+    /* ======================================
+       MOBILE — ORIGINAL STYLING
+       ====================================== */
 
     @media (max-width: 700px) {
 
@@ -299,8 +315,10 @@
         font-size: 18px;
       }
 
-      .project-gallery {
-        gap: 12px;
+      .project-analysis {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-top: 55px;
       }
     }
   </style>
@@ -309,7 +327,9 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- ======================================
+       HEADER
+       ====================================== -->
 
   <header class="landing">
     <div class="landing-inner">
@@ -336,7 +356,9 @@
     </div>
   </header>
 
-  <!-- PROJECT CONTENT -->
+  <!-- ======================================
+       PROJECT CONTENT
+       ====================================== -->
 
   <main class="project-content">
 
@@ -357,11 +379,11 @@
 
     </section>
 
-    <!-- DESCRIPTION AND SUPPORTING IMAGES -->
+    <!-- ======================================
+         FIRST ROW: RESEARCH + WORKSHOP PHOTO
+         ====================================== -->
 
     <section class="project-details">
-
-      <!-- LEFT COLUMN -->
 
       <div class="project-copy">
 
@@ -382,47 +404,91 @@
         <div class="project-rule"></div>
 
         <p>
-          How does collaboration between stakeholders shape urban
-          densification? This thesis research explored the development
-          of rooftop extensions in Rotterdam through qualitative
-          observations of two stakeholder sessions organised by the
-          municipality. Seating maps, detailed field notes and 11
-          interviews were used to examine participation, dialogue and
-          power dynamics. The research revealed a gap between positive
-          perceptions of collaboration and actual progress, showing
-          how unequal dependencies can prevent shared ambitions from
-          becoming collective action.
+          Rooftop extensions offer opportunities to create
+          additional housing within existing urban areas,
+          but their implementation depends on collaboration
+          between stakeholders with different interests,
+          responsibilities and resources.
+        </p>
+
+        <p>
+          For my MSc thesis, I investigated how collaboration
+          unfolded during learning-and-working sessions
+          organised by the Municipality of Rotterdam.
+          Through observations of two sessions, detailed
+          field notes, seating maps and 11 interviews,
+          I explored how stakeholders interacted, who
+          influenced the discussions and whether these
+          exchanges led to collective action.
         </p>
 
       </div>
 
-      <!-- RIGHT COLUMN: TWO IMAGES -->
-
-      <div class="project-gallery">
-
-        <a
-          href="assets/msc2-small1.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open first urban densification research image"
+      <a
+        class="project-image-link"
+        href="assets/msc-2-workshop.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open photograph of a rooftop extension stakeholder workshop"
+      >
+        <img
+          class="project-image"
+          src="assets/msc-2-workshop.png"
+          alt="Stakeholders participating in a Rotterdam rooftop extension learning-and-working session"
+          loading="lazy"
         >
-          <img
-            src="assets/msc2-small1.png"
-            alt="Urban densification research image 1"
-          >
-        </a>
+      </a>
 
-        <a
-          href="assets/msc2-small2.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open second urban densification research image"
+    </section>
+
+    <!-- ======================================
+         SECOND ROW: FRAMEWORK + FINDINGS
+         ====================================== -->
+
+    <section class="project-analysis">
+
+      <a
+        class="project-image-link"
+        href="assets/msc-2-framework.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open conceptual framework diagram"
+      >
+        <img
+          class="project-image"
+          src="assets/msc-2-framework.png"
+          alt="Conceptual framework connecting interdependence, governance, quality of dialogue, capacity for joint action and power"
+          loading="lazy"
         >
-          <img
-            src="assets/msc2-small2.png"
-            alt="Urban densification research image 2"
-          >
-        </a>
+      </a>
+
+      <div class="project-copy">
+
+        <div class="project-rule"></div>
+
+        <p>
+          Drawing on collaborative governance literature,
+          I developed an analytical framework to examine
+          interdependence, governance, quality of dialogue,
+          capacity for joint action and power.
+        </p>
+
+        <p>
+          The research revealed that while the sessions
+          encouraged contact and learning, they did not
+          lead to shared commitments. A central finding
+          was that stakeholders depended on one another
+          unequally: those with the greatest influence
+          over implementation could also afford to wait.
+        </p>
+
+        <p>
+          The thesis highlights how successful urban
+          collaboration depends not only on bringing
+          people together, but also on understanding
+          the power relations and incentives that shape
+          their ability to act.
+        </p>
 
       </div>
 
@@ -430,7 +496,7 @@
 
   </main>
 
-    <script src="projects.js"></script>
+  <script src="projects.js"></script>
 
 </body>
 </html>
