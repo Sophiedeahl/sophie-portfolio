@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Concept Development &amp; Design Sketches for IX Game — Sophie Deahl</title>
+  <title>Stad op het Spel — Sophie Deahl</title>
 
   <link rel="stylesheet" href="style.css">
 
@@ -22,7 +22,7 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* HEADER — SAME AS HOMEPAGE */
+    /* HEADER */
 
     .landing {
       min-height: 0;
@@ -85,7 +85,7 @@
       font-style: italic;
     }
 
-    /* PROJECT CONTENT */
+    /* MAIN CONTENT */
 
     .project-content {
       width: 100%;
@@ -94,14 +94,14 @@
       padding: 30px 5.5% 110px;
     }
 
-    /* HERO IMAGE WITH TITLE */
+    /* HERO */
 
     .project-hero {
       position: relative;
       width: 100%;
       height: clamp(400px, 44vw, 620px);
       overflow: hidden;
-      background: #e9ece7;
+      background: #fafafa;
       isolation: isolate;
     }
 
@@ -109,8 +109,8 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center;
+      object-fit: contain;
+      object-position: 72% center;
     }
 
     .project-hero::after {
@@ -119,9 +119,9 @@
       inset: 0;
       background: linear-gradient(
         90deg,
-        rgba(250, 250, 250, .68) 0%,
-        rgba(250, 250, 250, .32) 42%,
-        rgba(250, 250, 250, 0) 75%
+        rgba(250, 250, 250, .95) 0%,
+        rgba(250, 250, 250, .75) 25%,
+        rgba(250, 250, 250, 0) 65%
       );
       z-index: 1;
       pointer-events: none;
@@ -148,7 +148,7 @@
       letter-spacing: -.065em;
     }
 
-    /* TEXT AND IMAGE GRID */
+    /* INTRODUCTION */
 
     .project-details {
       display: grid;
@@ -196,7 +196,6 @@
     }
 
     .project-copy p {
-      font-family: Arial, Helvetica, sans-serif;
       font-size: clamp(18px, 1.5vw, 21px);
       font-weight: 400;
       line-height: 1.38;
@@ -206,34 +205,100 @@
       margin: 0 0 26px;
     }
 
-    /* TWO-COLUMN IMAGE GRID */
+    /* INTRODUCTION IMAGE */
 
-    .project-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      align-items: start;
+    .project-intro-image {
+      margin: 0;
       min-width: 0;
     }
 
-    .project-gallery a {
+    .project-intro-image img {
       display: block;
       width: 100%;
       height: auto;
-      overflow: visible;
-      background: transparent;
+    }
+
+    /* SECTION HEADINGS */
+
+    .section-heading {
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -.05em;
+      line-height: 1.1;
+      margin: 0 0 25px;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      font-size: clamp(18px, 1.5vw, 21px);
+      line-height: 1.38;
+      letter-spacing: -.025em;
+      margin: 0 0 30px;
+    }
+
+    /* EARLY SKETCHES */
+
+    .concept-section {
+      margin-top: 90px;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 35px;
+      align-items: start;
+    }
+
+    .concept-image {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .concept-image a,
+    .development-image a {
+      display: block;
       cursor: zoom-in;
     }
 
-    .project-gallery img {
+    .concept-image img {
+      display: block;
+      width: 100%;
+      height: 260px;
+      object-fit: contain;
+    }
+
+    figcaption {
+      margin-top: 14px;
+      font-size: 15px;
+      line-height: 1.4;
+      color: #555;
+    }
+
+    /* LATER DEVELOPMENT */
+
+    .development-section {
+      margin-top: 100px;
+    }
+
+    .development-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6%;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .development-image {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .development-image img {
       display: block;
       width: 100%;
       height: auto;
-      transition: transform .25s ease;
-    }
-
-    .project-gallery a:hover img {
-      transform: scale(1.025);
     }
 
     /* MOBILE */
@@ -272,11 +337,15 @@
         height: 480px;
       }
 
+      .project-hero > img {
+        object-position: center 30%;
+      }
+
       .project-hero::after {
         background: linear-gradient(
           0deg,
-          rgba(250, 250, 250, .78) 0%,
-          rgba(250, 250, 250, .18) 75%
+          rgba(250, 250, 250, .95) 0%,
+          rgba(250, 250, 250, .15) 75%
         );
       }
 
@@ -299,8 +368,24 @@
         font-size: 18px;
       }
 
-      .project-gallery {
-        gap: 12px;
+      .concept-section,
+      .development-section {
+        margin-top: 60px;
+      }
+
+      .concept-grid,
+      .development-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .concept-image img {
+        height: auto;
+        max-height: 320px;
+      }
+
+      figcaption {
+        font-size: 14px;
       }
     }
   </style>
@@ -336,78 +421,234 @@
     </div>
   </header>
 
-  <!-- PROJECT CONTENT -->
+  <!-- PROJECT -->
 
   <main class="project-content">
 
-    <!-- LARGE HERO IMAGE -->
+    <!-- HERO -->
 
     <section class="project-hero">
 
       <img
-        src="assets/commissioned-3.png"
-        alt="Concept Development and Design Sketches for IX Game"
+        src="assets/commissioned-3-entry.png"
+        alt="Early concept sketch of a team entering a circular installation of immersive screens"
       >
 
       <div class="project-hero-content">
         <h1 class="project-title">
-          Concept Development &amp; Design Sketches for IX Game
+          Stad op het Spel
         </h1>
       </div>
 
     </section>
 
-    <!-- DESCRIPTION AND SUPPORTING IMAGES -->
+    <!-- PROJECT DESCRIPTION -->
 
     <section class="project-details">
-
-      <!-- LEFT COLUMN -->
 
       <div class="project-copy">
 
         <div class="project-meta">
 
-          <span class="project-year">YEAR</span>
+          <span class="project-year">2025</span>
 
-          <!-- Collaborator or client details go here -->
+          <span>
+            <a
+              href="https://www.ciiic.nl/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >CIIIC Innovation Impact Challenge</a>
+          </span>
 
         </div>
 
         <div class="project-rule"></div>
 
         <p>
-          Project description to be added.
+          Developed through a collaboration between
+          MAD Movement and MoMoLab, this project originated
+          in the 2025 CIIIC Innovation Impact Challenge
+          on urban development. I joined MAD Movement during
+          the initial open call and contributed to the first
+          concept-development phase after the project
+          progressed to the next round.
+        </p>
+
+        <p>
+          Together, we explored how an immersive, collaborative
+          game could help policymakers experience the long-term
+          consequences of their decisions. Inspired by future
+          scenarios for the Netherlands towards 2050, the concept
+          invites teams into a circle of large digital screens,
+          where they encounter policy dilemmas and explore
+          different possible futures.
+        </p>
+
+        <p>
+          My contribution focused on researching existing
+          immersive experiences, developing early ideas,
+          and creating the first spatial sketches of the
+          circular screen installation and participant journey.
+          These drawings helped communicate the initial concept
+          before its further development by the collaborating
+          teams.
         </p>
 
       </div>
 
-      <!-- RIGHT COLUMN: TWO SUPPORTING IMAGES -->
+      <!-- YOUR INTRODUCTION SKETCH -->
 
-      <div class="project-gallery">
+      <figure class="project-intro-image">
 
-        <a
-          href="assets/commissioned3-small1.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open first IX Game design image"
+        <img
+          src="assets/commissioned-3-introduction.png"
+          alt="Early sketch showing a team being introduced to Stad op het Spel"
+          loading="lazy"
         >
-          <img
-            src="assets/commissioned3-small1.png"
-            alt="IX Game concept and design sketch 1"
-          >
-        </a>
 
-        <a
-          href="assets/commissioned3-small2.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open second IX Game design image"
-        >
-          <img
-            src="assets/commissioned3-small2.png"
-            alt="IX Game concept and design sketch 2"
+        <figcaption>
+          Initial participant journey — introduction to the game.
+          Sketch by Sophie Deahl.
+        </figcaption>
+
+      </figure>
+
+    </section>
+
+    <!-- YOUR CONCEPT SKETCHES -->
+
+    <section class="concept-section">
+
+      <h2 class="section-heading">Early concept sketches</h2>
+
+      <p class="section-intro">
+        The first drawings explored how participants would move
+        through the experience, interact with future scenarios,
+        and reflect on their decisions as a team.
+      </p>
+
+      <div class="concept-grid">
+
+        <figure class="concept-image">
+
+          <a
+            href="assets/commissioned-3-immersion.png"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-        </a>
+            <img
+              src="assets/commissioned-3-immersion.png"
+              alt="Participants surrounded by immersive screens showing future scenarios"
+              loading="lazy"
+            >
+          </a>
+
+          <figcaption>
+            Exploring possible futures.
+          </figcaption>
+
+        </figure>
+
+        <figure class="concept-image">
+
+          <a
+            href="assets/commissioned-3-interaction.png"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/commissioned-3-interaction.png"
+              alt="Participants interacting with a future AI agent through a screen"
+              loading="lazy"
+            >
+          </a>
+
+          <figcaption>
+            Interacting with future agents.
+          </figcaption>
+
+        </figure>
+
+        <figure class="concept-image">
+
+          <a
+            href="assets/commissioned-3-reflection.png"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/commissioned-3-reflection.png"
+              alt="Participants recording a message for their future selves"
+              loading="lazy"
+            >
+          </a>
+
+          <figcaption>
+            Leaving a message for the future.
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+    </section>
+
+    <!-- FURTHER DEVELOPMENT -->
+
+    <section class="development-section">
+
+      <h2 class="section-heading">Further development</h2>
+
+      <p class="section-intro">
+        Following the initial concept phase, the game was
+        developed further through the collaboration between
+        MAD Movement and MoMoLab. The visualisations below
+        illustrate the later direction of the experience.
+      </p>
+
+      <div class="development-grid">
+
+        <figure class="development-image">
+
+          <a
+            href="assets/commissioned-3-momolab-concept1.png"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/commissioned-3-momolab-concept1.png"
+              alt="Later visualisation of the immersive game by MoMoLab"
+              loading="lazy"
+            >
+          </a>
+
+          <figcaption>
+            Later game concept visualisation.
+            Illustration by MoMoLab.
+          </figcaption>
+
+        </figure>
+
+        <figure class="development-image">
+
+          <a
+            href="assets/commissioned-3-momolab-concept2.png"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/commissioned-3-momolab-concept2.png"
+              alt="Further development of the interactive game concept by MoMoLab"
+              loading="lazy"
+            >
+          </a>
+
+          <figcaption>
+            Development of the interactive experience.
+            Illustration by MoMoLab.
+          </figcaption>
+
+        </figure>
 
       </div>
 
@@ -415,7 +656,7 @@
 
   </main>
 
-    <script src="projects.js"></script>
+  <script src="projects.js"></script>
 
 </body>
 </html>
