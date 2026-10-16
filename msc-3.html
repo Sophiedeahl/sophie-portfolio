@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ideation for an Immersive Urban Futures Game — Sophie Deahl</title>
+  <title>Just Energy Transition — Bridging Communities and Institutions — Sophie Deahl</title>
 
   <link rel="stylesheet" href="style.css">
 
@@ -22,7 +22,7 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* HEADER — SAME AS OTHER PROJECT PAGES */
+    /* HEADER — SAME AS HOMEPAGE */
 
     .landing {
       min-height: 0;
@@ -56,29 +56,6 @@
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .landing .identity strong,
-    .landing .identity em,
-    .landing .identity span {
-      display: block;
-    }
-
-    .landing .identity strong {
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    .landing .identity em {
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    .landing .identity span {
-      font-weight: 400;
-      font-style: normal;
     }
 
     .landing-nav {
@@ -117,14 +94,14 @@
       padding: 30px 5.5% 110px;
     }
 
-    /* HERO — ORIGINAL IMAGE AND TITLE */
+    /* HERO IMAGE WITH TITLE — UNCHANGED */
 
     .project-hero {
       position: relative;
       width: 100%;
       height: clamp(400px, 44vw, 620px);
       overflow: hidden;
-      background: #fafafa;
+      background: #e9ece7;
       isolation: isolate;
     }
 
@@ -132,7 +109,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
     }
 
@@ -162,7 +139,7 @@
     }
 
     .project-title {
-      max-width: 1050px;
+      max-width: 850px;
       margin: 0;
       font-size: clamp(42px, 5.7vw, 86px);
       font-weight: 700;
@@ -171,7 +148,7 @@
       letter-spacing: -.065em;
     }
 
-    /* TEXT LEFT — IMAGE RIGHT */
+    /* TEXT AND VIDEO GRID */
 
     .project-details {
       display: grid;
@@ -216,7 +193,9 @@
       margin-bottom: 28px;
     }
 
-    .project-copy p {
+    .project-copy p,
+    .project-section-copy p {
+      font-family: Arial, Helvetica, sans-serif;
       font-size: clamp(18px, 1.5vw, 21px);
       font-weight: 400;
       line-height: 1.38;
@@ -226,90 +205,44 @@
       margin: 0 0 26px;
     }
 
-    .project-intro-image {
-      margin: 0;
+    /* FIRST VIDEO */
+
+    .project-video {
+      width: 100%;
       min-width: 0;
     }
 
-    .project-intro-image img {
+    .project-video video {
       display: block;
       width: 100%;
       height: auto;
-      object-fit: contain;
+      background: #111;
     }
 
-    /* THREE CONCEPT SKETCHES */
+    /* ADDITIONAL SECTIONS — NO DIVIDING LINES */
 
-    .concept-section {
+    .project-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 6%;
+      align-items: start;
       margin-top: 85px;
     }
 
-    .concept-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-      align-items: start;
-    }
-
-    .concept-image {
-      margin: 0;
+    .project-section-image,
+    .project-section-copy {
       min-width: 0;
     }
 
-    .concept-image a {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-      cursor: zoom-in;
-    }
-
-    .concept-image img {
+    .project-section-image img,
+    .project-section-image video {
       display: block;
       width: 100%;
       height: auto;
-      object-fit: contain;
-      transition: transform .25s ease;
     }
 
-    .concept-image a:hover img {
-      transform: scale(1.015);
-    }
-
-    /* TWO MOMOLAB VISUALISATIONS */
-
-    .development-section {
-      margin-top: 90px;
-    }
-
-    .development-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      align-items: start;
-    }
-
-    .development-image {
-      margin: 0;
-      min-width: 0;
-    }
-
-    .development-image a {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-      cursor: zoom-in;
-    }
-
-    .development-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      transition: transform .25s ease;
-    }
-
-    .development-image a:hover img {
-      transform: scale(1.015);
+    .project-section-image video {
+      background: #111;
     }
 
     /* MOBILE */
@@ -371,27 +304,24 @@
         padding-top: 28px;
       }
 
-      .project-copy p {
-        font-size: 18px;
-      }
-
-      .concept-section,
-      .development-section {
-        margin-top: 60px;
-      }
-
-      .concept-grid,
-      .development-grid {
+      .project-section {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 28px;
+        margin-top: 65px;
+      }
+
+      .project-copy p,
+      .project-section-copy p {
+        font-size: 18px;
       }
     }
   </style>
+
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER — UNCHANGED -->
 
   <header class="landing">
     <div class="landing-inner">
@@ -422,24 +352,24 @@
 
   <main class="project-content">
 
-    <!-- HERO -->
+    <!-- ORIGINAL HERO — UNCHANGED -->
 
     <section class="project-hero">
 
       <img
-        src="assets/commissioned-3-entry.png"
-        alt="Early concept sketch of an immersive screen installation"
+        src="assets/msc-3.png"
+        alt="Just Energy Transition — Bridging Communities and Institutions"
       >
 
       <div class="project-hero-content">
         <h1 class="project-title">
-          Ideation for an Immersive Urban Futures Game
+          Just Energy Transition — Bridging Communities and Institutions
         </h1>
       </div>
 
     </section>
 
-    <!-- TEXT LEFT, INTRODUCTION IMAGE RIGHT -->
+    <!-- INTRODUCTION: TEXT LEFT, VIDEO RIGHT -->
 
     <section class="project-details">
 
@@ -451,20 +381,26 @@
 
           <span>
             <a
-              href="https://www.ciiic.nl/"
+              href="https://www.ams-institute.org/education/msc-metropolitan-analysis-design-and-engineering/"
               target="_blank"
               rel="noopener noreferrer"
-            >CIIIC Innovation Impact Challenge</a>
+            >MSc MADE</a>
           </span>
-
-          <span>MAD Movement</span>
 
           <span>
             <a
-              href="https://momolab.nl/"
+              href="https://www.energielabzuidoost.nl/"
               target="_blank"
               rel="noopener noreferrer"
-            >MoMoLab</a>
+            >Energie Lab Zuidoost</a>
+          </span>
+
+          <span>
+            <a
+              href="https://egk-centre.nl/about-us/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Stichting EGK</a>
           </span>
 
         </div>
@@ -472,139 +408,156 @@
         <div class="project-rule"></div>
 
         <p>
-          Developed through a collaboration between MAD Movement
-          and MoMoLab, this project began as part of the 2025
-          CIIIC Innovation Impact Challenge on urban development.
-          I joined MAD Movement during the initial open call
-          and contributed to the early concept-development phase.
+          As part of the MSc MADE programme, I worked
+          in a team of five on a living lab project
+          with Energie Lab Zuidoost, exploring how
+          to support a more inclusive and just energy
+          transition in Amsterdam Zuidoost.
         </p>
 
         <p>
-          The idea was to create an immersive, collaborative game
-          that would allow policymakers to explore the long-term
-          consequences of urban development decisions. Drawing
-          on future scenarios for the Netherlands towards 2050,
-          we imagined an experience in which participants enter
-          a circular installation of digital screens, encounter
-          policy dilemmas and explore different possible futures
-          together.
-        </p>
-
-        <p>
-          My work focused on researching existing immersive
-          experiences, exploring initial concepts and developing
-          spatial sketches of the installation and participant
-          journey. These drawings helped communicate how the
-          experience could unfold, from entering the space to
-          interacting with future scenarios and reflecting
-          on collective decisions.
-        </p>
-
-        <p>
-          The concept was subsequently developed further by
-          MAD Movement and MoMoLab, whose later visualisations
-          are also shown below.
+          Through field research and interviews with
+          residents and local organisations, we
+          investigated barriers to participation.
+          Our research highlighted the importance
+          of trust and the role of community bridge
+          builders in connecting residents with
+          institutions and available support.
         </p>
 
       </div>
 
-      <figure class="project-intro-image">
+      <div class="project-video">
+
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="assets/msc-3-thumbnail.jpg"
+          aria-label="Just Energy Transition project video"
+        >
+          <source src="assets/msc-3.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: WORKSHOP IMAGE LEFT, TEXT RIGHT -->
+
+    <section class="project-section">
+
+      <div class="project-section-image">
 
         <img
-          src="assets/commissioned-3-introduction.png"
-          alt="Sketch of participants being introduced to the immersive game"
+          src="assets/msc-3-workshop.jpg"
+          alt="Community stakeholders working together during a co-creation session"
           loading="lazy"
         >
 
-      </figure>
+      </div>
 
-    </section>
+      <div class="project-section-copy">
 
-    <!-- THREE EARLY CONCEPT SKETCHES -->
+        <p>
+          Building on our field research, we identified
+          bridge builders: people and organisations
+          already trusted within the community.
+          We invited them to three co-creation sessions
+          to explore the challenges they encounter
+          and the support needed for more meaningful
+          collaboration.
+        </p>
 
-    <section class="concept-section">
-
-      <div class="concept-grid">
-
-        <figure class="concept-image">
-          <a
-            href="assets/commissioned-3-immersion.png"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/commissioned-3-immersion.png"
-              alt="Participants surrounded by screens showing future scenarios"
-              loading="lazy"
-            >
-          </a>
-        </figure>
-
-        <figure class="concept-image">
-          <a
-            href="assets/commissioned-3-interaction.png"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/commissioned-3-interaction.png"
-              alt="Participants interacting with a future AI agent"
-              loading="lazy"
-            >
-          </a>
-        </figure>
-
-        <figure class="concept-image">
-          <a
-            href="assets/commissioned-3-reflection.png"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/commissioned-3-reflection.png"
-              alt="Participants recording a message for their future selves"
-              loading="lazy"
-            >
-          </a>
-        </figure>
+        <p>
+          These conversations revealed tensions around
+          institutional accountability, access to
+          subsidies and fragmented relationships
+          between local initiatives.
+        </p>
 
       </div>
 
     </section>
 
-    <!-- TWO LATER MOMOLAB VISUALISATIONS -->
+    <!-- SECTION 3: TEXT LEFT, SECOND VIDEO RIGHT -->
 
-    <section class="development-section">
+    <section class="project-section">
 
-      <div class="development-grid">
+      <div class="project-section-copy">
 
-        <figure class="development-image">
-          <a
-            href="assets/commissioned-3-momolab-concept1.png"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/commissioned-3-momolab-concept1.png"
-              alt="Later immersive game visualisation by MoMoLab"
-              loading="lazy"
-            >
-          </a>
-        </figure>
+        <p>
+          The co-creation sessions brought together
+          bridge builders and institutional stakeholders
+          to openly discuss challenges and explore
+          opportunities for collaboration.
+        </p>
 
-        <figure class="development-image">
-          <a
-            href="assets/commissioned-3-momolab-concept2.png"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/commissioned-3-momolab-concept2.png"
-              alt="Interactive game concept visualisation by MoMoLab"
-              loading="lazy"
-            >
-          </a>
-        </figure>
+        <p>
+          Participants emphasised the importance of
+          ongoing dialogue and neutral spaces where
+          difficult conversations could take place
+          without being directed by the municipality.
+          The sessions helped make existing tensions
+          visible and created a starting point for
+          more open collaboration.
+        </p>
+
+      </div>
+
+      <div class="project-section-image">
+
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="assets/msc-3-video-2-thumbnail.jpg"
+          aria-label="Co-creation process video"
+        >
+          <source src="assets/msc-3-video-2.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 4: STAKEHOLDER MAP LEFT, TEXT RIGHT -->
+
+    <section class="project-section">
+
+      <div class="project-section-image">
+
+        <img
+          src="assets/msc-3-network-map.jpg"
+          alt="Stakeholder network map showing community and institutional relationships in Amsterdam Zuidoost"
+          loading="lazy"
+        >
+
+      </div>
+
+      <div class="project-section-copy">
+
+        <p>
+          A major part of my contribution was
+          translating our research and co-creation
+          process into visual material. The stakeholder
+          map brings together community organisations,
+          bridge builders and institutional actors,
+          making the complexity of the local network
+          visible.
+        </p>
+
+        <p>
+          Alongside field research and interviews,
+          I took a leading role in visualising
+          our findings through the stakeholder map,
+          explanatory video and project website.
+          These materials helped communicate our
+          recommendations to Energie Lab Zuidoost
+          and the municipality.
+        </p>
 
       </div>
 
@@ -612,9 +565,10 @@
 
   </main>
 
-  <!-- PREVIOUS / NEXT PROJECT NAVIGATION -->
+  <!-- PREVIOUS AND NEXT PROJECT NAVIGATION -->
 
   <script src="projects.js"></script>
 
 </body>
+
 </html>
