@@ -94,7 +94,7 @@
       padding: 30px 5.5% 110px;
     }
 
-    /* HERO IMAGE WITH TITLE */
+    /* HERO IMAGE WITH TITLE — UNCHANGED */
 
     .project-hero {
       position: relative;
@@ -148,7 +148,7 @@
       letter-spacing: -.065em;
     }
 
-    /* TEXT AND VIDEO GRID */
+    /* TEXT AND VIDEO GRID — UNCHANGED */
 
     .project-details {
       display: grid;
@@ -206,7 +206,7 @@
       margin: 0 0 26px;
     }
 
-    /* VIDEO BESIDE PROJECT TEXT */
+    /* VIDEO BESIDE PROJECT TEXT — UNCHANGED */
 
     .project-video {
       width: 100%;
@@ -218,6 +218,45 @@
       width: 100%;
       height: auto;
       background: #111;
+    }
+
+    /* ADDITIONAL PROJECT SECTIONS */
+
+    .project-section {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, 1fr);
+      gap: 6%;
+      align-items: start;
+      border-top: 1px solid #bbb;
+      margin-top: 45px;
+      padding-top: 35px;
+    }
+
+    .project-section-image {
+      min-width: 0;
+    }
+
+    .project-section-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .project-section-copy {
+      min-width: 0;
+    }
+
+    .project-section-copy p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(18px, 1.5vw, 21px);
+      font-weight: 400;
+      line-height: 1.38;
+      letter-spacing: -.025em;
+      text-align: justify;
+      hyphens: none;
+      margin: 0 0 26px;
     }
 
     /* MOBILE */
@@ -282,6 +321,17 @@
       .project-copy p {
         font-size: 18px;
       }
+
+      .project-section {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-top: 35px;
+        padding-top: 28px;
+      }
+
+      .project-section-copy p {
+        font-size: 18px;
+      }
     }
   </style>
 
@@ -289,7 +339,7 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER — UNCHANGED -->
 
   <header class="landing">
     <div class="landing-inner">
@@ -320,7 +370,7 @@
 
   <main class="project-content">
 
-    <!-- LARGE HERO IMAGE -->
+    <!-- HERO — COMPLETELY UNCHANGED -->
 
     <section class="project-hero">
 
@@ -341,8 +391,6 @@
 
     <section class="project-details">
 
-      <!-- LEFT COLUMN -->
-
       <div class="project-copy">
 
         <div class="project-meta">
@@ -362,12 +410,24 @@
         <div class="project-rule"></div>
 
         <p>
-          Project description to be added.
+          As part of the MSc MADE programme, I worked
+          in a team of five on a living lab project
+          with Energie Lab Zuidoost, exploring how
+          to support a more inclusive and just energy
+          transition in Amsterdam Zuidoost.
+        </p>
+
+        <p>
+          Through field research and interviews with
+          residents and local organisations, we
+          investigated barriers to participation.
+          Our research highlighted the importance
+          of trust and the role of community bridge
+          builders in connecting residents with
+          institutions and available support.
         </p>
 
       </div>
-
-      <!-- RIGHT COLUMN: VIDEO WITH SOUND AND PLAY BUTTON -->
 
       <div class="project-video">
 
@@ -385,6 +445,85 @@
 
     </section>
 
+    <!-- FIELD RESEARCH AND CO-CREATION -->
+
+    <section class="project-section">
+
+      <div class="project-section-image">
+
+        <img
+          src="assets/msc-3-workshop.jpg"
+          alt="Community stakeholders collaboratively mapping relationships during a co-creation session"
+          loading="lazy"
+        >
+
+      </div>
+
+      <div class="project-section-copy">
+
+        <p>
+          Building on our field research, we identified
+          bridge builders: people and organisations
+          already trusted within the community.
+          We invited them to three co-creation sessions
+          to explore the challenges they encounter
+          and the support needed for more meaningful
+          collaboration.
+        </p>
+
+        <p>
+          These conversations revealed tensions around
+          institutional accountability, access to
+          subsidies and fragmented relationships
+          between local initiatives. Together, we
+          explored how existing networks could better
+          connect residents, community organisations
+          and the municipality.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- VISUALISING THE RESEARCH -->
+
+    <section class="project-section">
+
+      <div class="project-section-image">
+
+        <img
+          src="assets/msc-3-network-map.jpg"
+          alt="Stakeholder network map visualising community organisations, residents and institutions in Amsterdam Zuidoost"
+          loading="lazy"
+        >
+
+      </div>
+
+      <div class="project-section-copy">
+
+        <p>
+          A major part of my contribution was
+          translating the research and co-creation
+          process into visual material. The stakeholder
+          map brings together community organisations,
+          residents and institutional actors, making
+          the complexity of the local network visible.
+        </p>
+
+        <p>
+          Alongside field research and interviews,
+          I took a leading role in visualising
+          our findings through the stakeholder map,
+          an explanatory video and the project website.
+          These materials helped communicate our
+          recommendations to Energie Lab Zuidoost
+          and the municipality.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
 
   <!-- PREVIOUS AND NEXT PROJECT NAVIGATION -->
@@ -392,5 +531,5 @@
   <script src="projects.js"></script>
 
 </body>
-  
+
 </html>
