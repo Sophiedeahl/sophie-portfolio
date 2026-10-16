@@ -220,19 +220,17 @@
       background: #111;
     }
 
-    /* SECOND ROW — PROCESS AND RESULTS */
+    /* FULL-WIDTH PROCESS AND RESULTS */
 
     .project-visuals {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1.15fr);
-      gap: 6%;
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      gap: 55px;
       margin-top: 60px;
     }
 
     .project-visual {
+      width: 100%;
       min-width: 0;
       margin: 0;
     }
@@ -253,7 +251,7 @@
     }
 
     .project-visual a:hover img {
-      transform: scale(1.015);
+      transform: scale(1.01);
     }
 
     .project-visual figcaption {
@@ -261,6 +259,20 @@
       font-size: 15px;
       line-height: 1.4;
       color: #555;
+    }
+
+    /* PROCESS DIAGRAM — FULL PAGE WIDTH */
+
+    .project-process {
+      width: 100%;
+    }
+
+    /* RESULTS — BELOW PROCESS, SLIGHTLY SMALLER */
+
+    .project-results {
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* MOBILE */
@@ -327,9 +339,16 @@
       }
 
       .project-visuals {
-        grid-template-columns: 1fr;
         gap: 35px;
         margin-top: 40px;
+      }
+
+      .project-results {
+        width: 100%;
+      }
+
+      .project-visual figcaption {
+        font-size: 14px;
       }
     }
   </style>
@@ -455,13 +474,16 @@
 
     </section>
 
-    <!-- SECOND ROW: PROCESS AND RESULTS -->
+    <!-- PROCESS AND RESULTS -->
 
-    <section class="project-visuals" aria-label="Mapping process and results">
+    <section
+      class="project-visuals"
+      aria-label="Participatory mapping process and results"
+    >
 
-      <!-- LEFT: PROCESS DIAGRAM -->
+      <!-- FULL-WIDTH PROCESS DIAGRAM -->
 
-      <figure class="project-visual">
+      <figure class="project-visual project-process">
 
         <a
           href="assets/msc-1-process.png"
@@ -471,7 +493,7 @@
         >
           <img
             src="assets/msc-1-process.png"
-            alt="Diagram illustrating how participatory drawings are collected, scanned and digitally processed"
+            alt="Three stages of the participatory mapping process: drawing on transparent sheets, scanning and digitising, and overlaying responses"
             loading="lazy"
           >
         </a>
@@ -482,9 +504,9 @@
 
       </figure>
 
-      <!-- RIGHT: LAYERED MAPPING RESULTS -->
+      <!-- MAPPING RESULTS BELOW -->
 
-      <figure class="project-visual">
+      <figure class="project-visual project-results">
 
         <a
           href="assets/msc-1-results.png"
@@ -494,7 +516,7 @@
         >
           <img
             src="assets/msc-1-results.png"
-            alt="Layered participatory mapping results showing residents' annotated experiences of Amsterdam-Noord"
+            alt="Digitised participatory mapping results showing annotated experiences of Amsterdam-Noord"
             loading="lazy"
           >
         </a>
