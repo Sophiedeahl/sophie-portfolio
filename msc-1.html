@@ -220,6 +220,49 @@
       background: #111;
     }
 
+    /* SECOND ROW — PROCESS AND RESULTS */
+
+    .project-visuals {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.15fr);
+      gap: 6%;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    .project-visual {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .project-visual a {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      cursor: zoom-in;
+    }
+
+    .project-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      transition: transform .25s ease;
+    }
+
+    .project-visual a:hover img {
+      transform: scale(1.015);
+    }
+
+    .project-visual figcaption {
+      margin-top: 14px;
+      font-size: 15px;
+      line-height: 1.4;
+      color: #555;
+    }
+
     /* MOBILE */
 
     @media (max-width: 700px) {
@@ -281,6 +324,12 @@
 
       .project-copy p {
         font-size: 18px;
+      }
+
+      .project-visuals {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-top: 40px;
       }
     }
   </style>
@@ -362,19 +411,31 @@
         <div class="project-rule"></div>
 
         <p>
-          To explore how residents experience neighbourhood change in
-          Amsterdam-Noord, a participatory mapping tool was developed
-          using transparent maps. During interviews, participants
-          visualised their experiences and perceptions directly onto
-          the maps. These individual perspectives were then digitised
-          and layered to identify recurring themes, spatial patterns
-          and shared experiences, translating qualitative insights
-          into a collective spatial understanding of gentrification.
+          How has the arrival of Amsterdam's North/South metro line
+          affected the neighbourhoods it connects? As part of a
+          research project exploring gentrification in Amsterdam-Noord,
+          we developed a participatory mapping tool to understand
+          how residents perceived changes in their neighbourhood.
+        </p>
+
+        <p>
+          During twelve guided interviews, participants drew directly
+          onto reusable transparent sheets placed over a printed map.
+          Their drawings were scanned, digitally cleaned where
+          necessary, and layered to identify recurring observations
+          and spatial patterns.
+        </p>
+
+        <p>
+          By combining an accessible, hands-on research method with
+          digital spatial analysis, the project explored how individual
+          experiences could be brought together to build a richer
+          understanding of urban change.
         </p>
 
       </div>
 
-      <!-- RIGHT COLUMN: AUTOPLAY LOOPING VIDEO -->
+      <!-- RIGHT COLUMN: EXISTING VIDEO -->
 
       <div class="project-video">
 
@@ -384,13 +445,66 @@
           loop
           playsinline
           preload="auto"
-          aria-label="Participatory Mapping project video"
+          aria-label="Participants drawing on transparent maps during participatory mapping interviews"
         >
           <source src="assets/msc-1.mp4" type="video/mp4">
           Your browser does not support HTML video.
         </video>
 
       </div>
+
+    </section>
+
+    <!-- SECOND ROW: PROCESS AND RESULTS -->
+
+    <section class="project-visuals" aria-label="Mapping process and results">
+
+      <!-- LEFT: PROCESS DIAGRAM -->
+
+      <figure class="project-visual">
+
+        <a
+          href="assets/msc-1-process.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open participatory mapping process diagram"
+        >
+          <img
+            src="assets/msc-1-process.png"
+            alt="Diagram illustrating how participatory drawings are collected, scanned and digitally processed"
+            loading="lazy"
+          >
+        </a>
+
+        <figcaption>
+          Research process — from analogue participation to digital analysis.
+        </figcaption>
+
+      </figure>
+
+      <!-- RIGHT: LAYERED MAPPING RESULTS -->
+
+      <figure class="project-visual">
+
+        <a
+          href="assets/msc-1-results.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open layered participatory mapping results"
+        >
+          <img
+            src="assets/msc-1-results.png"
+            alt="Layered participatory mapping results showing residents' annotated experiences of Amsterdam-Noord"
+            loading="lazy"
+          >
+        </a>
+
+        <figcaption>
+          Digitised mapping results — combining individual perspectives
+          to explore patterns of neighbourhood change.
+        </figcaption>
+
+      </figure>
 
     </section>
 
