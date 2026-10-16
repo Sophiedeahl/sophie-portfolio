@@ -3,7 +3,7 @@ const projects = [
   {
     id: 'mobility-hub',
     category: 'Commissioned Projects',
-    title: 'Mobility Hub research for Municipality of Utrecht',
+    title: 'Mapping Mobility: Identifying Opportunities for Neighbourhood Hubs',
     image: 'assets/commissioned-1.png',
     pdf: 'projects/mobility-hub.pdf',
     href: 'commissioned-1.html'
@@ -27,8 +27,8 @@ const projects = [
   {
     id: 'ix-game',
     category: 'Commissioned Projects',
-    title: 'Concept Development & Design Sketches for IX Game',
-    image: 'assets/commissioned-3.png',
+    title: 'Ideation for an Immersive Urban Futures Game',
+    image: 'assets/commissioned-3-entry.png',
     pdf: 'projects/ix-game.pdf',
     href: 'commissioned-3.html'
   },
