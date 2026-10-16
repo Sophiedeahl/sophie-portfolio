@@ -4,7 +4,7 @@ const projects = [
     id: 'mobility-hub',
     category: 'Commissioned Projects',
     title: 'Mapping Mobility: Identifying Opportunities for Neighbourhood Hubs',
-    image: 'assets/commissioned-1.png',
+    image: 'assets/commissioned-1-2.png',
     pdf: 'projects/mobility-hub.pdf',
     href: 'commissioned-1.html'
   },
