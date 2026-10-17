@@ -143,18 +143,18 @@
       letter-spacing: -.065em;
     }
 
-    /* DESCRIPTION AND IMAGES */
+    /* DESCRIPTION AND IMAGE */
 
     .project-details {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-      gap: 6%;
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
       padding-top: 35px;
     }
 
     .project-copy {
       min-width: 0;
+      width: 100%;
     }
 
     .project-meta {
@@ -199,18 +199,19 @@
       margin: 0 0 26px;
     }
 
+    .project-copy p:last-child {
+      margin-bottom: 0;
+    }
+
     .project-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      align-items: start;
+      display: block;
+      width: 100%;
       min-width: 0;
     }
 
     .project-gallery a {
       display: block;
       width: 100%;
-      height: auto;
       overflow: visible;
       background: transparent;
       cursor: zoom-in;
@@ -220,6 +221,7 @@
       display: block;
       width: 100%;
       height: auto;
+      object-fit: contain;
       transition: transform .25s ease;
     }
 
@@ -280,17 +282,12 @@
       }
 
       .project-details {
-        grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 32px;
         padding-top: 28px;
       }
 
       .project-copy p {
         font-size: 18px;
-      }
-
-      .project-gallery {
-        gap: 12px;
       }
     }
   </style>
@@ -340,22 +337,51 @@
 
     <section class="project-details">
 
-      <!-- LEFT COLUMN -->
+      <!-- PROJECT DESCRIPTION -->
 
       <div class="project-copy">
+
         <div class="project-meta">
-          <span class="project-year">YEAR</span>
-          <!-- Add client or collaborator here -->
+          <span class="project-year">2026</span>
+          <a
+            href="https://vorm.nl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >VORM</a>
         </div>
 
         <div class="project-rule"></div>
 
         <p>
-          Project description to be added.
+          The Dutch housing shortage is creating an urgent need
+          for new residential development, while electricity grid
+          congestion is making it increasingly difficult to connect
+          new homes. For VORM, understanding what this meant across
+          its development portfolio was challenging, as information
+          was spread across regional grid maps, connection
+          requirements and individual project plans.
         </p>
+
+        <p>
+          To bring this information together, I developed a
+          questionnaire to collect project-specific data across
+          49 residential developments. By combining the responses
+          with spatial information and technical criteria, I
+          assessed potential grid connection risks and identified
+          approximately 13 priority projects requiring further
+          investigation.
+        </p>
+
+        <p>
+          The analysis helped clarify where grid congestion could
+          affect project development and where further coordination
+          with grid operators or exploration of alternative energy
+          solutions might be needed.
+        </p>
+
       </div>
 
-      <!-- RIGHT COLUMN -->
+      <!-- FULL-WIDTH IMAGE -->
 
       <div class="project-gallery">
 
@@ -363,23 +389,11 @@
           href="assets/commissioned2-small1.png"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open first energy grid analysis image"
+          aria-label="Open energy grid analysis image"
         >
           <img
             src="assets/commissioned2-small1.png"
-            alt="Energy grid analysis image 1"
-          >
-        </a>
-
-        <a
-          href="assets/commissioned2-small2.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open second energy grid analysis image"
-        >
-          <img
-            src="assets/commissioned2-small2.png"
-            alt="Energy grid analysis image 2"
+            alt="Visual overview of the energy grid analysis process"
           >
         </a>
 
@@ -389,7 +403,7 @@
 
   </main>
 
-    <script src="projects.js"></script>
+  <script src="projects.js"></script>
 
 </body>
 </html>
