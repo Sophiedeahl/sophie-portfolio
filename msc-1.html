@@ -19,21 +19,21 @@
       margin: 0;
       background: #fafafa;
       color: #111;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
-    /* HEADER — SAME AS HOMEPAGE */
+    /* HEADER */
 
     .landing {
       min-height: 0;
       display: flex;
       align-items: center;
-      padding: 28px 5.5% 0;
+      padding: 35px 5.5% 0;
     }
 
     .landing-inner {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
     }
 
@@ -48,11 +48,11 @@
       justify-content: space-between;
       align-items: stretch;
       gap: 40px;
-      padding: 50px 5px;
+      padding: 26px 5px;
     }
 
     .landing .identity {
-      font-size: clamp(30px, 4vw, 60px);
+      font-size: clamp(24px, 2.35vw, 34px);
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
@@ -68,7 +68,7 @@
     }
 
     .landing-nav a {
-      font-size: clamp(30px, 3.5vw, 54px);
+      font-size: clamp(23px, 2.2vw, 32px);
       font-weight: 700;
       font-style: normal;
       letter-spacing: -.05em;
@@ -89,9 +89,9 @@
 
     .project-content {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 30px 5.5% 110px;
+      padding: 24px 5.5% 90px;
     }
 
     /* HERO IMAGE */
@@ -99,7 +99,7 @@
     .project-hero {
       position: relative;
       width: 100%;
-      height: clamp(400px, 44vw, 620px);
+      height: clamp(310px, 33vw, 450px);
       overflow: hidden;
       background: #e9ece7;
       isolation: isolate;
@@ -141,7 +141,7 @@
     .project-title {
       max-width: 850px;
       margin: 0;
-      font-size: clamp(42px, 5.7vw, 86px);
+      font-size: clamp(34px, 4vw, 58px);
       font-weight: 700;
       font-style: italic;
       line-height: .98;
@@ -169,7 +169,7 @@
       flex-wrap: wrap;
       align-items: baseline;
       gap: 12px 24px;
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.4;
       margin-bottom: 28px;
     }
@@ -196,8 +196,8 @@
     }
 
     .project-copy p {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(18px, 1.5vw, 21px);
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
+      font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 400;
       line-height: 1.38;
       letter-spacing: -.025em;
@@ -208,25 +208,22 @@
 
     /* VIDEO BESIDE PROJECT TEXT */
 
-  
+    .project-video {
+      width: 100%;
+      max-width: 740px;
+      min-width: 0;
+      align-self: center;
+      justify-self: center;
+    }
 
-.project-video {
-  width: 100%;
-  max-width: 740px;
-  min-width: 0;
-  align-self: center;
-  justify-self: center;
-}
+    .project-video video {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #111;
+    }
 
-.project-video video {
-  display: block;
-  width: 100%;
-  height: auto;
-  background: #111;
-}
-
-
-    /* FULL-WIDTH PROCESS AND RESULTS */
+    /* PROCESS AND RESULTS */
 
     .project-visuals {
       display: flex;
@@ -260,13 +257,9 @@
       transform: scale(1.01);
     }
 
-    /* PROCESS DIAGRAM — FULL PAGE WIDTH */
-
     .project-process {
       width: 100%;
     }
-
-    /* RESULTS — BELOW PROCESS, SLIGHTLY SMALLER */
 
     .project-results {
       width: 85%;
@@ -383,7 +376,7 @@
 
   <main class="project-content">
 
-    <!-- LARGE HERO IMAGE -->
+    <!-- HERO IMAGE -->
 
     <section class="project-hero">
 
@@ -444,23 +437,20 @@
           they highlighted places they felt had changed for better (green)
           or worse (red), along with other observations. Each map became
           a personal interpretation of the same neighbourhood. The drawings were then digitalized and overlayed to explore
-          where experiences overlapped or differed. 
+          where experiences overlapped or differed.
         </p>
 
         <p>
-        What I find interesting about this approach is how it brings together
+          What I find interesting about this approach is how it brings together
           two very different ways of understanding a concept like gentrification:
           the personal, sometimes subjective experiences of
           residents and the spatial patterns that emerge when
           those experiences are viewed together.
         </p>
 
-        
-        </p>
-
       </div>
 
-      <!-- RIGHT COLUMN: EXISTING VIDEO -->
+      <!-- RIGHT COLUMN: VIDEO -->
 
       <div class="project-video">
 
@@ -480,14 +470,12 @@
 
     </section>
 
-    <!-- PROCESS AND RESULTS -->
+    <!-- PROCESS DIAGRAM -->
 
     <section
       class="project-visuals"
       aria-label="Participatory mapping process and results"
     >
-
-      <!-- FULL-WIDTH PROCESS DIAGRAM -->
 
       <figure class="project-visual project-process">
 
@@ -509,8 +497,6 @@
     </section>
 
   </main>
-
-  <!-- PREVIOUS AND NEXT PROJECT NAVIGATION -->
 
   <script src="projects.js"></script>
 
