@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,21 +19,21 @@
       margin: 0;
       background: #fafafa;
       color: #111;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
-    /* HEADER */
+    /* COMPACT HEADER */
 
     .landing {
       min-height: 0;
       display: flex;
       align-items: center;
-      padding: 28px 5.5% 0;
+      padding: 35px 5.5% 0;
     }
 
     .landing-inner {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
     }
 
@@ -47,14 +48,37 @@
       justify-content: space-between;
       align-items: stretch;
       gap: 40px;
-      padding: 50px 5px;
+      padding: 26px 5px;
     }
 
     .landing .identity {
-      font-size: clamp(30px, 4vw, 60px);
+      font-size: clamp(24px, 2.35vw, 34px);
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .landing .identity strong,
+    .landing .identity em,
+    .landing .identity span {
+      display: block;
+    }
+
+    .landing .identity strong {
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .landing .identity em {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .landing .identity span {
+      font-weight: 400;
+      font-style: normal;
     }
 
     .landing-nav {
@@ -67,7 +91,7 @@
     }
 
     .landing-nav a {
-      font-size: clamp(30px, 3.5vw, 54px);
+      font-size: clamp(23px, 2.2vw, 32px);
       font-weight: 700;
       font-style: normal;
       letter-spacing: -.05em;
@@ -88,17 +112,17 @@
 
     .project-content {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 30px 5.5% 110px;
+      padding: 24px 5.5% 90px;
     }
 
-    /* HERO IMAGE */
+    /* HERO */
 
     .project-hero {
       position: relative;
       width: 100%;
-      height: clamp(400px, 44vw, 620px);
+      height: clamp(310px, 33vw, 450px);
       overflow: hidden;
       background: #e9ece7;
       isolation: isolate;
@@ -118,9 +142,9 @@
       inset: 0;
       background: linear-gradient(
         90deg,
-        rgba(250, 250, 250, .68) 0%,
-        rgba(250, 250, 250, .32) 42%,
-        rgba(250, 250, 250, 0) 75%
+        rgba(0, 0, 0, .55) 0%,
+        rgba(0, 0, 0, .18) 48%,
+        rgba(0, 0, 0, 0) 80%
       );
       z-index: 1;
       pointer-events: none;
@@ -140,95 +164,152 @@
     .project-title {
       max-width: 850px;
       margin: 0;
-      font-size: clamp(42px, 5.7vw, 86px);
+      color: #fff;
+      font-size: clamp(34px, 4vw, 58px);
       font-weight: 700;
       font-style: italic;
       line-height: .98;
       letter-spacing: -.065em;
     }
 
-    /* DESCRIPTION AND IMAGE GRID */
-
-    .project-details {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-      gap: 6%;
-      align-items: start;
-      padding-top: 35px;
-    }
-
-    .project-copy {
-      min-width: 0;
-    }
+    /* METADATA */
 
     .project-meta {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
       gap: 12px 24px;
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.4;
-      margin-bottom: 28px;
+      margin: 30px 0 28px;
     }
 
     .project-year {
       font-weight: 700;
     }
 
-    .project-copy a {
+    .project-meta a {
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
 
-    .project-copy a:hover {
+    .project-meta a:hover {
       font-style: italic;
     }
 
-    .project-rule {
-      width: 100%;
-      height: 1px;
-      background: #bbb;
-      margin-bottom: 28px;
-    }
+    /* STORY AND PRODUCT IMAGE */
 
-    .project-copy p {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(18px, 1.5vw, 21px);
-      font-weight: 400;
-      line-height: 1.38;
-      letter-spacing: -.025em;
-      text-align: justify;
-      hyphens: none;
-      margin: 0 0 26px;
-    }
-
-    .project-gallery {
+    .project-story {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+      gap: 5%;
       align-items: start;
+    }
+
+    .project-text {
+      min-width: 0;
+      max-width: 620px;
+    }
+
+    .project-question {
+      margin: 0 0 25px;
+      font-size: clamp(20px, 1.8vw, 26px);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.15;
+      letter-spacing: -.045em;
+    }
+
+    .project-text p {
+      margin: 0 0 22px;
+      font-size: clamp(16px, 1.2vw, 17px);
+      font-weight: 400;
+      line-height: 1.42;
+      letter-spacing: -.025em;
+      text-align: left;
+    }
+
+    .project-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .product-image {
       min-width: 0;
     }
 
-    .project-gallery a {
+    .product-image a {
       display: block;
       width: 100%;
-      height: auto;
-      overflow: visible;
-      background: transparent;
+      overflow: hidden;
+      background: #e9e9e9;
       cursor: zoom-in;
     }
 
-    .project-gallery img {
+    .product-image img {
       display: block;
       width: 100%;
       height: auto;
       transition: transform .25s ease;
     }
 
-    .project-gallery a:hover img {
-      transform: scale(1.025);
+    .product-image a:hover img {
+      transform: scale(1.015);
+    }
+
+    /* SKETCH SHEET */
+
+    .sketch-section {
+      margin-top: 48px;
+    }
+
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: #bbb;
+      margin-bottom: 22px;
+    }
+
+    .sketch-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-bottom: 20px;
+    }
+
+    .sketch-heading h2 {
+      margin: 0;
+      font-size: clamp(20px, 1.7vw, 25px);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.15;
+      letter-spacing: -.045em;
+    }
+
+    .sketch-heading span {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .sketch-image a {
+      display: block;
+      width: 100%;
+      cursor: zoom-in;
+    }
+
+    .sketch-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform .25s ease;
+    }
+
+    .sketch-image a:hover img {
+      transform: scale(1.01);
     }
 
     /* MOBILE */
@@ -270,8 +351,8 @@
       .project-hero::after {
         background: linear-gradient(
           0deg,
-          rgba(250, 250, 250, .78) 0%,
-          rgba(250, 250, 250, .18) 75%
+          rgba(0, 0, 0, .62) 0%,
+          rgba(0, 0, 0, .08) 75%
         );
       }
 
@@ -284,20 +365,33 @@
         max-width: 100%;
       }
 
-      .project-details {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding-top: 28px;
+      .project-meta {
+        margin: 26px 0;
       }
 
-      .project-copy p {
+      .project-story {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .project-text {
+        max-width: 100%;
+      }
+
+      .project-text p {
         font-size: 18px;
       }
 
-      .project-gallery {
-        gap: 12px;
+      .sketch-section {
+        margin-top: 42px;
+      }
+
+      .sketch-heading {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
+
   </style>
 </head>
 
@@ -315,7 +409,10 @@
         <a class="identity" href="index.html">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
-          <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
+          <span>
+            URBAN RESEARCHER<br>
+            &amp; DESIGNER
+          </span>
         </a>
 
         <nav class="landing-nav" aria-label="Main navigation">
@@ -340,7 +437,7 @@
 
       <img
         src="assets/other-2.png"
-        alt="Female Interaction Design for TomTom"
+        alt="TomTom Charm concept"
       >
 
       <div class="project-hero-content">
@@ -351,61 +448,125 @@
 
     </section>
 
-    <!-- DESCRIPTION AND IMAGES -->
+    <!-- METADATA -->
 
-    <section class="project-details">
+    <div class="project-meta">
 
-      <!-- LEFT COLUMN -->
+      <span class="project-year">2015</span>
 
-      <div class="project-copy">
+      <a
+        href="https://www.tomtom.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >TomTom</a>
 
-        <div class="project-meta">
+      <a
+        href="https://hansdegooijer.nl/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Hans de Gooijer</a>
 
-          <span class="project-year">YEAR</span>
+      <span>BEng Graduation Project</span>
 
-          <span>
-            <a
-              href="https://www.tomtom.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >TomTom</a>
-          </span>
+    </div>
 
-        </div>
+    <!-- STORY + PRODUCT RENDER -->
 
-        <div class="project-rule"></div>
+    <section class="project-story">
+
+      <div class="project-text">
+
+        <h2 class="project-question">
+          What if designing for women is less about appearance
+          and more about understanding their needs?
+        </h2>
 
         <p>
-          Project description to be added.
+          For my BEng graduation project, I was invited by
+          designer Hans de Gooijer to join a team exploring
+          female interaction design for TomTom. Rather than
+          relying on stereotypes about what makes a product
+          appealing to women, we wanted to understand what
+          they actually valued in an in-car device.
+        </p>
+
+        <p>
+          Through a questionnaire with 50 women, we discovered
+          that safety was a major concern, from external threats
+          to the risk of falling asleep while driving. Based on
+          these findings, we developed <strong>TomTom Charm</strong>,
+          a small device inspired by lucky charms hanging from
+          rear-view mirrors. The concept combined an emergency
+          button, sound and light alarms, location sharing and
+          a camera to record incidents. We developed it into
+          a non-functional 3D-printed prototype.
+        </p>
+
+        <p>
+          What I found most interesting was how the research
+          challenged our initial expectations. Rather than
+          leading us towards a distinctly feminine-looking
+          product, it revealed a need we hadn't anticipated.
+          It reinforced the importance of questioning
+          assumptions and letting user research guide
+          design decisions.
+        </p>
+
+        <p>
+          Looking back 11 years later, it's interesting to see
+          similar personal safety products on the market,
+          not only for cars but also for safety in public spaces.
+          It shows how relevant this topic remains today.
         </p>
 
       </div>
 
-      <!-- RIGHT COLUMN -->
-
-      <div class="project-gallery">
+      <div class="product-image">
 
         <a
-          href="assets/other2-small1.png"
+          href="assets/tomtom1.png"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open first TomTom interaction design image"
+          aria-label="Open TomTom Charm product image"
         >
           <img
-            src="assets/other2-small1.png"
-            alt="Female Interaction Design for TomTom — image 1"
+            src="assets/tomtom1.png"
+            alt="TomTom Charm concept hanging from a rear-view mirror at night"
           >
         </a>
 
+      </div>
+
+    </section>
+
+    <!-- CONCEPT SKETCHES -->
+
+    <section class="sketch-section">
+
+      <div class="section-rule"></div>
+
+      <div class="sketch-heading">
+
+        <h2>From research to concept</h2>
+
+        <span>
+          TomTom Charm — concept sketches and interaction scenarios
+        </span>
+
+      </div>
+
+      <div class="sketch-image">
+
         <a
-          href="assets/other2-small2.png"
+          href="assets/tomtom2.png"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open second TomTom interaction design image"
+          aria-label="Open TomTom Charm concept sketches"
         >
           <img
-            src="assets/other2-small2.png"
-            alt="Female Interaction Design for TomTom — image 2"
+            src="assets/tomtom2.png"
+            alt="Sketches exploring the TomTom Charm design, its placement over the rear-view mirror, emergency interaction and charging"
+            loading="lazy"
           >
         </a>
 
@@ -415,7 +576,9 @@
 
   </main>
 
-    <script src="projects.js"></script>
+  <!-- PROJECT NAVIGATION -->
+
+  <script src="projects.js"></script>
 
 </body>
 </html>
