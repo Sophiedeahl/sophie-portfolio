@@ -117,7 +117,7 @@
       padding: 30px 5.5% 110px;
     }
 
-    /* HERO — ORIGINAL IMAGE AND TITLE */
+    /* HERO */
 
     .project-hero {
       position: relative;
@@ -171,7 +171,7 @@
       letter-spacing: -.065em;
     }
 
-    /* TEXT LEFT — IMAGE RIGHT */
+    /* TEXT LEFT — INTRODUCTION AND REFLECTION RIGHT */
 
     .project-details {
       display: grid;
@@ -226,27 +226,49 @@
       margin: 0 0 26px;
     }
 
-    .project-intro-image {
+    /* TWO SKETCHES BESIDE THE TEXT */
+
+    .project-side-images {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      min-width: 0;
+      align-self: start;
+    }
+
+    .project-side-image {
       margin: 0;
       min-width: 0;
     }
 
-    .project-intro-image img {
+    .project-side-image a {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .project-side-image img {
       display: block;
       width: 100%;
       height: auto;
       object-fit: contain;
+      transition: transform .25s ease;
     }
 
-    /* THREE CONCEPT SKETCHES */
+    .project-side-image a:hover img {
+      transform: scale(1.015);
+    }
+
+    /* BOTTOM ROW — INTERACTION LEFT, ENTRY RIGHT */
 
     .concept-section {
-      margin-top: 85px;
+      margin-top: 35px;
     }
 
     .concept-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
       align-items: start;
     }
@@ -272,43 +294,6 @@
     }
 
     .concept-image a:hover img {
-      transform: scale(1.015);
-    }
-
-    /* TWO MOMOLAB VISUALISATIONS */
-
-    .development-section {
-      margin-top: 90px;
-    }
-
-    .development-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      align-items: start;
-    }
-
-    .development-image {
-      margin: 0;
-      min-width: 0;
-    }
-
-    .development-image a {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-      cursor: zoom-in;
-    }
-
-    .development-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      transition: transform .25s ease;
-    }
-
-    .development-image a:hover img {
       transform: scale(1.015);
     }
 
@@ -375,13 +360,15 @@
         font-size: 18px;
       }
 
-      .concept-section,
-      .development-section {
-        margin-top: 60px;
+      .project-side-images {
+        gap: 25px;
       }
 
-      .concept-grid,
-      .development-grid {
+      .concept-section {
+        margin-top: 40px;
+      }
+
+      .concept-grid {
         grid-template-columns: 1fr;
         gap: 35px;
       }
@@ -439,9 +426,11 @@
 
     </section>
 
-    <!-- TEXT LEFT, INTRODUCTION IMAGE RIGHT -->
+    <!-- TEXT LEFT, INTRODUCTION AND REFLECTION RIGHT -->
 
     <section class="project-details">
+
+      <!-- LEFT COLUMN: ORIGINAL TEXT -->
 
       <div class="project-copy">
 
@@ -457,7 +446,13 @@
             >CIIIC Innovation Impact Challenge</a>
           </span>
 
-          <span>MAD Movement</span>
+          <span>
+            <a
+              href="https://madmovement.pizza/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >MAD Movement</a>
+          </span>
 
           <span>
             <a
@@ -508,19 +503,45 @@
 
       </div>
 
-      <figure class="project-intro-image">
+      <!-- RIGHT COLUMN: INTRODUCTION, THEN REFLECTION -->
 
-        <img
-          src="assets/commissioned-3-introduction.png"
-          alt="Sketch of participants being introduced to the immersive game"
-          loading="lazy"
-        >
+      <div class="project-side-images">
 
-      </figure>
+        <figure class="project-side-image">
+          <a
+            href="assets/commissioned-3-introduction.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open introduction sketch"
+          >
+            <img
+              src="assets/commissioned-3-introduction.png"
+              alt="Sketch of participants being introduced to the immersive game"
+              loading="lazy"
+            >
+          </a>
+        </figure>
+
+        <figure class="project-side-image">
+          <a
+            href="assets/commissioned-3-reflection.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open reflection sketch"
+          >
+            <img
+              src="assets/commissioned-3-reflection.png"
+              alt="Participants reflecting on their experience"
+              loading="lazy"
+            >
+          </a>
+        </figure>
+
+      </div>
 
     </section>
 
-    <!-- THREE EARLY CONCEPT SKETCHES -->
+    <!-- BOTTOM ROW: INTERACTION LEFT, ENTRY RIGHT -->
 
     <section class="concept-section">
 
@@ -528,23 +549,10 @@
 
         <figure class="concept-image">
           <a
-            href="assets/commissioned-3-entry.png"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/commissioned-3-entry.png"
-              alt="Participants surrounded by screens showing future scenarios"
-              loading="lazy"
-            >
-          </a>
-        </figure>
-
-        <figure class="concept-image">
-          <a
             href="assets/commissioned-3-interaction.png"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Open interaction sketch"
           >
             <img
               src="assets/commissioned-3-interaction.png"
@@ -556,51 +564,14 @@
 
         <figure class="concept-image">
           <a
-            href="assets/commissioned-3-reflection.png"
+            href="assets/commissioned-3-entry.png"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Open entry sketch"
           >
             <img
-              src="assets/commissioned-3-reflection.png"
-              alt="Participants recording a message for their future selves"
-              loading="lazy"
-            >
-          </a>
-        </figure>
-
-      </div>
-
-    </section>
-
-    <!-- TWO LATER MOMOLAB VISUALISATIONS -->
-
-    <section class="development-section">
-
-      <div class="development-grid">
-
-        <figure class="development-image">
-          <a
-            href="assets/commissioned-3-momolab-concept1.png"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/commissioned-3-momolab-concept1.png"
-              alt="Later immersive game visualisation by MoMoLab"
-              loading="lazy"
-            >
-          </a>
-        </figure>
-
-        <figure class="development-image">
-          <a
-            href="assets/commissioned-3-momolab-concept2.png"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/commissioned-3-momolab-concept2.png"
-              alt="Interactive game concept visualisation by MoMoLab"
+              src="assets/commissioned-3-entry.png"
+              alt="Participants entering the immersive screen installation"
               loading="lazy"
             >
           </a>
