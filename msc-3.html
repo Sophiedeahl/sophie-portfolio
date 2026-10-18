@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,21 +19,21 @@
       margin: 0;
       background: #fafafa;
       color: #111;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
-    /* HEADER — SAME AS HOMEPAGE */
+    /* COMPACT HEADER */
 
     .landing {
       min-height: 0;
       display: flex;
       align-items: center;
-      padding: 28px 5.5% 0;
+      padding: 35px 5.5% 0;
     }
 
     .landing-inner {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
     }
 
@@ -47,11 +48,11 @@
       justify-content: space-between;
       align-items: stretch;
       gap: 40px;
-      padding: 50px 5px;
+      padding: 26px 5px;
     }
 
     .landing .identity {
-      font-size: clamp(30px, 4vw, 60px);
+      font-size: clamp(24px, 2.35vw, 34px);
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
@@ -67,7 +68,7 @@
     }
 
     .landing-nav a {
-      font-size: clamp(30px, 3.5vw, 54px);
+      font-size: clamp(23px, 2.2vw, 32px);
       font-weight: 700;
       font-style: normal;
       letter-spacing: -.05em;
@@ -88,17 +89,17 @@
 
     .project-content {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 30px 5.5% 110px;
+      padding: 24px 5.5% 90px;
     }
 
-    /* HERO IMAGE WITH TITLE — UNCHANGED */
+    /* HERO IMAGE */
 
     .project-hero {
       position: relative;
       width: 100%;
-      height: clamp(400px, 44vw, 620px);
+      height: clamp(310px, 33vw, 450px);
       overflow: hidden;
       background: #e9ece7;
       isolation: isolate;
@@ -140,14 +141,14 @@
     .project-title {
       max-width: 850px;
       margin: 0;
-      font-size: clamp(42px, 5.7vw, 86px);
+      font-size: clamp(34px, 4vw, 58px);
       font-weight: 700;
       font-style: italic;
       line-height: .98;
       letter-spacing: -.065em;
     }
 
-    /* TEXT AND VIDEO GRID */
+    /* INTRODUCTION: TEXT AND VIDEO */
 
     .project-details {
       display: grid;
@@ -166,7 +167,7 @@
       flex-wrap: wrap;
       align-items: baseline;
       gap: 12px 24px;
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.4;
       margin-bottom: 28px;
     }
@@ -194,8 +195,8 @@
 
     .project-copy p,
     .project-section-copy p {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(18px, 1.5vw, 21px);
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
+      font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 400;
       line-height: 1.38;
       letter-spacing: -.025em;
@@ -218,7 +219,7 @@
       background: #111;
     }
 
-    /* ADDITIONAL SECTIONS — NO DIVIDING LINES */
+    /* ADDITIONAL SECTIONS */
 
     .project-section {
       display: grid;
@@ -320,7 +321,7 @@
 
 <body>
 
-  <!-- HEADER — UNCHANGED -->
+  <!-- HEADER -->
 
   <header class="landing">
     <div class="landing-inner">
@@ -351,7 +352,7 @@
 
   <main class="project-content">
 
-    <!-- ORIGINAL HERO — UNCHANGED -->
+    <!-- HERO -->
 
     <section class="project-hero">
 
@@ -443,7 +444,7 @@
 
     </section>
 
-    <!-- SECTION 2: WORKSHOP IMAGE LEFT, TEXT RIGHT -->
+    <!-- WORKSHOP IMAGE LEFT, TEXT RIGHT -->
 
     <section class="project-section">
 
@@ -480,7 +481,7 @@
 
     </section>
 
-    <!-- SECTION 3: TEXT LEFT, SECOND VIDEO RIGHT -->
+    <!-- TEXT LEFT, SECOND VIDEO RIGHT -->
 
     <section class="project-section">
 
@@ -522,7 +523,7 @@
 
     </section>
 
-    <!-- SECTION 4: STAKEHOLDER MAP LEFT, TEXT RIGHT -->
+    <!-- STAKEHOLDER MAP LEFT, TEXT RIGHT -->
 
     <section class="project-section">
 
@@ -564,10 +565,9 @@
 
   </main>
 
-  <!-- PREVIOUS AND NEXT PROJECT NAVIGATION -->
+  <!-- PREVIOUS / NEXT PROJECT NAVIGATION -->
 
   <script src="projects.js"></script>
 
 </body>
-
 </html>
