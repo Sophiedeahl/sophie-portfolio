@@ -172,7 +172,7 @@
       letter-spacing: -.065em;
     }
 
-    /* TEXT AND SKETCH GALLERY */
+    /* TEXT AND IMAGE GALLERY */
 
     .project-details {
       display: grid;
@@ -228,7 +228,7 @@
       margin: 0 0 26px;
     }
 
-    /* FOUR SKETCHES IN A BALANCED GRID */
+    /* FOUR SKETCHES */
 
     .project-gallery {
       display: grid;
@@ -241,6 +241,7 @@
     .project-gallery figure {
       margin: 0;
       min-width: 0;
+      aspect-ratio: 1 / 1;
     }
 
     .project-gallery a {
@@ -264,10 +265,6 @@
 
     .project-gallery a:hover img {
       transform: scale(1.025);
-    }
-
-    .project-gallery figure {
-      aspect-ratio: 1 / 1;
     }
 
     /* MOBILE */
@@ -340,6 +337,7 @@
     }
 
     @media (max-width: 420px) {
+
       .project-gallery {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -386,13 +384,13 @@
 
   <main class="project-content">
 
-    <!-- HERO -->
+    <!-- NEW HERO IMAGE -->
 
     <section class="project-hero">
 
       <img
-        src="assets/commissioned-3-entry.png"
-        alt="Early concept sketch of an immersive screen installation"
+        src="assets/commissioned-3-entry2.png"
+        alt="Hand-drawn concept sketch of people exploring a circular immersive installation"
       >
 
       <div class="project-hero-content">
@@ -403,11 +401,11 @@
 
     </section>
 
-    <!-- TEXT AND GALLERY -->
+    <!-- DESCRIPTION AND GALLERY -->
 
     <section class="project-details">
 
-      <!-- LEFT: TEXT -->
+      <!-- LEFT COLUMN: TEXT -->
 
       <div class="project-copy">
 
@@ -494,12 +492,12 @@
           >Dutch Design Week 2026</a>.
           It's exciting to see how an idea I contributed to
           during its early development has grown into a public
-          experience. 
+          experience.
         </p>
 
       </div>
 
-      <!-- RIGHT: FOUR SKETCHES -->
+      <!-- RIGHT COLUMN: FOUR ORIGINAL SKETCHES -->
 
       <div class="project-gallery">
 
