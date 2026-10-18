@@ -22,7 +22,7 @@
       font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
-    /* HEADER */
+    /* COMPACT HEADER */
 
     .landing {
       min-height: 0;
@@ -58,6 +58,12 @@
       flex-shrink: 0;
       color: inherit;
       text-decoration: none;
+    }
+
+    .landing .identity strong,
+    .landing .identity em,
+    .landing .identity span {
+      display: block;
     }
 
     .landing-nav {
@@ -150,20 +156,33 @@
       letter-spacing: -.065em;
     }
 
-    /* INTRODUCTION */
+    /* SHARED CONTENT GRID */
 
-    .project-details {
+    .project-details,
+    .project-section {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.15fr);
       gap: 6%;
       align-items: start;
+    }
+
+    .project-details {
       padding-top: 35px;
     }
 
+    .project-section {
+      margin-top: 55px;
+    }
+
     .project-copy,
-    .project-section-copy {
+    .project-section-copy,
+    .project-media {
       min-width: 0;
     }
+
+    /* METADATA */
 
     .project-meta {
       display: flex;
@@ -198,8 +217,11 @@
       margin-bottom: 28px;
     }
 
+    /* BODY TEXT */
+
     .project-copy p,
-    .project-section-copy p {
+    .project-section-copy p,
+    .project-reflection p {
       font-family: 'Arimo', Arial, Helvetica, sans-serif;
       font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 400;
@@ -210,73 +232,63 @@
       margin: 0 0 26px;
     }
 
-    /* VISUALS */
+    /* IMAGES AND VIDEOS */
 
-    .project-visual {
-      width: 100%;
-      min-width: 0;
-    }
-
-    .project-visual img {
+    .project-media img,
+    .project-media video {
       display: block;
       width: 100%;
       height: auto;
     }
 
-    .project-visual a {
+    .project-media video {
+      background: #111;
+    }
+
+    .project-media a {
       display: block;
       cursor: zoom-in;
     }
 
-    /* VIDEO PLACEHOLDERS */
+    /* SECOND VIDEO: WIDE AND CENTRED */
 
-    .video-placeholder {
+    .project-video-wide {
+      margin: 55px auto 0;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #f0f0ee;
-      border: 1px solid #dededb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      text-align: center;
+      max-width: 850px;
     }
 
-    .video-placeholder p {
-      max-width: 300px;
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.5;
-      color: #555;
-      letter-spacing: -.01em;
-    }
-
-    /* ADDITIONAL SECTIONS */
-
-    .project-section {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      gap: 6%;
-      align-items: start;
-      margin-top: 65px;
-    }
-
-    .project-section-image,
-    .project-section-copy {
-      min-width: 0;
-    }
-
-    .project-section-image img {
+    .project-video-wide video {
       display: block;
       width: 100%;
       height: auto;
+      background: #111;
     }
 
-    /* FINAL REFLECTION */
+    /* NETWORK MAP */
+
+    .project-network {
+      margin-top: 65px;
+    }
+
+    .project-network a {
+      display: block;
+      width: 100%;
+      cursor: zoom-in;
+    }
+
+    .project-network img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* REFLECTION */
 
     .project-reflection {
-      max-width: 690px;
-      margin-top: 65px;
+      max-width: 720px;
+      margin-top: 45px;
     }
 
     /* MOBILE */
@@ -343,16 +355,25 @@
       }
 
       .project-section {
-        margin-top: 45px;
+        margin-top: 40px;
       }
 
       .project-copy p,
-      .project-section-copy p {
+      .project-section-copy p,
+      .project-reflection p {
         font-size: 18px;
       }
 
-      .project-reflection {
+      .project-video-wide {
+        margin-top: 40px;
+      }
+
+      .project-network {
         margin-top: 45px;
+      }
+
+      .project-reflection {
+        margin-top: 35px;
       }
     }
   </style>
@@ -409,7 +430,7 @@
 
     </section>
 
-    <!-- INTRODUCTION -->
+    <!-- INTRODUCTION + FIRST VIDEO -->
 
     <section class="project-details">
 
@@ -479,30 +500,26 @@
 
       </div>
 
-      <!-- VIDEO POSITION RESERVED FOR CONSENT-CLEARED EDIT -->
+      <div class="project-media">
 
-      <div class="video-placeholder">
-        <p>
-          Project video excerpt<br>
-          A consent-cleared version can be added here.
-        </p>
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="assets/msc-3-thumbnail.jpg"
+          aria-label="Just Energy Transition project video excerpt"
+        >
+          <source src="assets/msc-3.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+
       </div>
 
     </section>
 
-    <!-- CO-CREATION -->
+    <!-- CO-CREATION + WORKSHOP PHOTO -->
 
     <section class="project-section">
-
-      <div class="project-section-image">
-
-        <img
-          src="assets/msc-3-workshop.jpg"
-          alt="Community stakeholders working together during a co-creation session"
-          loading="lazy"
-        >
-
-      </div>
 
       <div class="project-section-copy">
 
@@ -526,90 +543,78 @@
 
       </div>
 
-    </section>
+      <div class="project-media">
 
-    <!-- CO-CREATION VIDEO -->
-
-    <section class="project-section">
-
-      <div class="project-section-copy">
-
-        <p>
-          The co-creation process was not about finding
-          a quick technical solution. It was about making
-          relationships and tensions visible, and creating
-          opportunities for people from different positions
-          to understand one another.
-        </p>
-
-      </div>
-
-      <!-- VIDEO POSITION RESERVED FOR CONSENT-CLEARED EDIT -->
-
-      <div class="video-placeholder">
-        <p>
-          Co-creation process excerpt<br>
-          A consent-cleared version can be added here.
-        </p>
-      </div>
-
-    </section>
-
-    <!-- STAKEHOLDER NETWORK MAP -->
-
-    <section class="project-section">
-
-      <div class="project-section-image">
-
-        <a
-          href="assets/msc-3-network-map.jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open stakeholder network map"
+        <img
+          src="assets/msc-3-workshop.jpg"
+          alt="Community stakeholders working together during a co-creation session"
+          loading="lazy"
         >
-          <img
-            src="assets/msc-3-network-map.jpg"
-            alt="Stakeholder network map showing relationships between community organisations, bridge builders and institutions in Amsterdam Zuidoost"
-            loading="lazy"
-          >
-        </a>
-
-      </div>
-
-      <div class="project-section-copy">
-
-        <p>
-          Alongside the research and facilitation, I took
-          a leading role in translating our findings into
-          visual material. I developed a stakeholder network
-          map to make the relationships between community
-          organisations, bridge builders and institutions
-          more visible, and contributed to an explanatory
-          video and project website to communicate our
-          process and recommendations.
-        </p>
 
       </div>
 
     </section>
 
-    <!-- REFLECTION -->
+    <!-- SECOND VIDEO: WIDE AND CENTRED -->
+
+    <section class="project-video-wide">
+
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        poster="assets/msc-3-video-2-thumbnail.jpg"
+        aria-label="Co-creation process video excerpt"
+      >
+        <source src="assets/msc-3-video-2.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+
+    </section>
+
+    <!-- LARGE STAKEHOLDER NETWORK MAP -->
+
+    <section class="project-network">
+
+      <a
+        href="assets/msc-3-network-map.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open stakeholder network map at full size"
+      >
+        <img
+          src="assets/msc-3-network-map.jpg"
+          alt="Stakeholder network map showing relationships between community organisations, bridge builders and institutions in Amsterdam Zuidoost"
+          loading="lazy"
+        >
+      </a>
+
+    </section>
+
+    <!-- YOUR CONTRIBUTION + REFLECTION -->
 
     <section class="project-reflection">
 
-      <div class="project-section-copy">
+      <p>
+        Alongside the research and facilitation, I took
+        a leading role in translating our findings into
+        visual material. I developed a stakeholder network
+        map to make the relationships between community
+        organisations, bridge builders and institutions
+        more visible, and contributed to an explanatory
+        video and project website to communicate our
+        process and recommendations.
+      </p>
 
-        <p>
-          This project made me realise that a just energy
-          transition is not only about providing resources
-          or inviting people to participate. It also requires
-          recognising existing community knowledge, investing
-          in relationships and creating conditions in which
-          different perspectives can genuinely influence
-          decisions.
-        </p>
-
-      </div>
+      <p>
+        This project made me realise that a just energy
+        transition is not only about providing resources
+        or inviting people to participate. It also requires
+        recognising existing community knowledge, investing
+        in relationships and creating conditions in which
+        different perspectives can genuinely influence
+        decisions.
+      </p>
 
     </section>
 
