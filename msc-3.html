@@ -22,7 +22,7 @@
       font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
-    /* COMPACT HEADER */
+    /* HEADER */
 
     .landing {
       min-height: 0;
@@ -56,6 +56,8 @@
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
+      color: inherit;
+      text-decoration: none;
     }
 
     .landing-nav {
@@ -94,7 +96,7 @@
       padding: 24px 5.5% 90px;
     }
 
-    /* HERO IMAGE */
+    /* HERO */
 
     .project-hero {
       position: relative;
@@ -148,7 +150,7 @@
       letter-spacing: -.065em;
     }
 
-    /* INTRODUCTION: TEXT AND VIDEO */
+    /* INTRODUCTION */
 
     .project-details {
       display: grid;
@@ -158,7 +160,8 @@
       padding-top: 35px;
     }
 
-    .project-copy {
+    .project-copy,
+    .project-section-copy {
       min-width: 0;
     }
 
@@ -176,13 +179,15 @@
       font-weight: 700;
     }
 
-    .project-copy a {
+    .project-copy a,
+    .project-section-copy a {
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
 
-    .project-copy a:hover {
+    .project-copy a:hover,
+    .project-section-copy a:hover {
       font-style: italic;
     }
 
@@ -205,18 +210,45 @@
       margin: 0 0 26px;
     }
 
-    /* FIRST VIDEO */
+    /* VISUALS */
 
-    .project-video {
+    .project-visual {
       width: 100%;
       min-width: 0;
     }
 
-    .project-video video {
+    .project-visual img {
       display: block;
       width: 100%;
       height: auto;
-      background: #111;
+    }
+
+    .project-visual a {
+      display: block;
+      cursor: zoom-in;
+    }
+
+    /* VIDEO PLACEHOLDERS */
+
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #f0f0ee;
+      border: 1px solid #dededb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .video-placeholder p {
+      max-width: 300px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+      letter-spacing: -.01em;
     }
 
     /* ADDITIONAL SECTIONS */
@@ -226,7 +258,7 @@
       grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
       gap: 6%;
       align-items: start;
-      margin-top: 85px;
+      margin-top: 65px;
     }
 
     .project-section-image,
@@ -234,15 +266,17 @@
       min-width: 0;
     }
 
-    .project-section-image img,
-    .project-section-image video {
+    .project-section-image img {
       display: block;
       width: 100%;
       height: auto;
     }
 
-    .project-section-image video {
-      background: #111;
+    /* FINAL REFLECTION */
+
+    .project-reflection {
+      max-width: 690px;
+      margin-top: 65px;
     }
 
     /* MOBILE */
@@ -298,21 +332,27 @@
         max-width: 100%;
       }
 
-      .project-details {
+      .project-details,
+      .project-section {
         grid-template-columns: 1fr;
         gap: 28px;
+      }
+
+      .project-details {
         padding-top: 28px;
       }
 
       .project-section {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        margin-top: 65px;
+        margin-top: 45px;
       }
 
       .project-copy p,
       .project-section-copy p {
         font-size: 18px;
+      }
+
+      .project-reflection {
+        margin-top: 45px;
       }
     }
   </style>
@@ -369,7 +409,7 @@
 
     </section>
 
-    <!-- INTRODUCTION: TEXT LEFT, VIDEO RIGHT -->
+    <!-- INTRODUCTION -->
 
     <section class="project-details">
 
@@ -408,43 +448,49 @@
         <div class="project-rule"></div>
 
         <p>
-          As part of the MSc MADE programme, I worked
-          in a team of five on a living lab project
-          with Energie Lab Zuidoost, exploring how
-          to support a more inclusive and just energy
-          transition in Amsterdam Zuidoost.
+          <strong><em>
+            How can an energy transition be just if the people
+            most affected struggle to be heard?
+          </em></strong>
         </p>
 
         <p>
-          Through field research and interviews with
-          residents and local organisations, we
-          investigated barriers to participation.
-          Our research highlighted the importance
-          of trust and the role of community bridge
-          builders in connecting residents with
-          institutions and available support.
+          During my MSc MADE, I worked in a team of five
+          with Energie Lab Zuidoost to explore this question
+          in Amsterdam Zuidoost. While the energy transition
+          is often discussed in terms of technology,
+          infrastructure and policy, our research focused
+          on something less tangible: the relationships
+          between residents, community organisations
+          and institutions.
+        </p>
+
+        <p>
+          Through fieldwork and interviews, we learned how
+          difficult it can be for residents to navigate
+          institutional systems and access available support.
+          We also encountered people and organisations already
+          doing the work of connecting these different worlds.
+          These <em>bridge builders</em> had established
+          relationships and trust within their communities,
+          yet their role was not always recognised or
+          supported by institutions.
         </p>
 
       </div>
 
-      <div class="project-video">
+      <!-- VIDEO POSITION RESERVED FOR CONSENT-CLEARED EDIT -->
 
-        <video
-          controls
-          playsinline
-          preload="metadata"
-          poster="assets/msc-3-thumbnail.jpg"
-          aria-label="Just Energy Transition project video"
-        >
-          <source src="assets/msc-3.mp4" type="video/mp4">
-          Your browser does not support HTML video.
-        </video>
-
+      <div class="video-placeholder">
+        <p>
+          Project video excerpt<br>
+          A consent-cleared version can be added here.
+        </p>
       </div>
 
     </section>
 
-    <!-- WORKSHOP IMAGE LEFT, TEXT RIGHT -->
+    <!-- CO-CREATION -->
 
     <section class="project-section">
 
@@ -461,102 +507,106 @@
       <div class="project-section-copy">
 
         <p>
-          Building on our field research, we identified
-          bridge builders: people and organisations
-          already trusted within the community.
-          We invited them to three co-creation sessions
-          to explore the challenges they encounter
-          and the support needed for more meaningful
-          collaboration.
-        </p>
-
-        <p>
-          These conversations revealed tensions around
-          institutional accountability, access to
-          subsidies and fragmented relationships
+          Building on these insights, we organised three
+          co-creation sessions with community bridge builders
+          and institutional stakeholders. Rather than immediately
+          searching for solutions, we created space to discuss
+          the challenges they experienced in their work.
+          Conversations touched on institutional accountability,
+          access to subsidies and fragmented relationships
           between local initiatives.
         </p>
 
+        <p>
+          What stood out to me was how important it was to
+          create a setting where these tensions could be
+          discussed openly, without the municipality
+          directing the conversation.
+        </p>
+
       </div>
 
     </section>
 
-    <!-- TEXT LEFT, SECOND VIDEO RIGHT -->
+    <!-- CO-CREATION VIDEO -->
 
     <section class="project-section">
 
       <div class="project-section-copy">
 
         <p>
-          The co-creation sessions brought together
-          bridge builders and institutional stakeholders
-          to openly discuss challenges and explore
-          opportunities for collaboration.
-        </p>
-
-        <p>
-          Participants emphasised the importance of
-          ongoing dialogue and neutral spaces where
-          difficult conversations could take place
-          without being directed by the municipality.
-          The sessions helped make existing tensions
-          visible and created a starting point for
-          more open collaboration.
+          The co-creation process was not about finding
+          a quick technical solution. It was about making
+          relationships and tensions visible, and creating
+          opportunities for people from different positions
+          to understand one another.
         </p>
 
       </div>
 
-      <div class="project-section-image">
+      <!-- VIDEO POSITION RESERVED FOR CONSENT-CLEARED EDIT -->
 
-        <video
-          controls
-          playsinline
-          preload="metadata"
-          poster="assets/msc-3-video-2-thumbnail.jpg"
-          aria-label="Co-creation process video"
-        >
-          <source src="assets/msc-3-video-2.mp4" type="video/mp4">
-          Your browser does not support HTML video.
-        </video>
-
+      <div class="video-placeholder">
+        <p>
+          Co-creation process excerpt<br>
+          A consent-cleared version can be added here.
+        </p>
       </div>
 
     </section>
 
-    <!-- STAKEHOLDER MAP LEFT, TEXT RIGHT -->
+    <!-- STAKEHOLDER NETWORK MAP -->
 
     <section class="project-section">
 
       <div class="project-section-image">
 
-        <img
-          src="assets/msc-3-network-map.jpg"
-          alt="Stakeholder network map showing community and institutional relationships in Amsterdam Zuidoost"
-          loading="lazy"
+        <a
+          href="assets/msc-3-network-map.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open stakeholder network map"
         >
+          <img
+            src="assets/msc-3-network-map.jpg"
+            alt="Stakeholder network map showing relationships between community organisations, bridge builders and institutions in Amsterdam Zuidoost"
+            loading="lazy"
+          >
+        </a>
 
       </div>
 
       <div class="project-section-copy">
 
         <p>
-          A major part of my contribution was
-          translating our research and co-creation
-          process into visual material. The stakeholder
-          map brings together community organisations,
-          bridge builders and institutional actors,
-          making the complexity of the local network
-          visible.
+          Alongside the research and facilitation, I took
+          a leading role in translating our findings into
+          visual material. I developed a stakeholder network
+          map to make the relationships between community
+          organisations, bridge builders and institutions
+          more visible, and contributed to an explanatory
+          video and project website to communicate our
+          process and recommendations.
         </p>
 
+      </div>
+
+    </section>
+
+    <!-- REFLECTION -->
+
+    <section class="project-reflection">
+
+      <div class="project-section-copy">
+
         <p>
-          Alongside field research and interviews,
-          I took a leading role in visualising
-          our findings through the stakeholder map,
-          explanatory video and project website.
-          These materials helped communicate our
-          recommendations to Energie Lab Zuidoost
-          and the municipality.
+          This project made me realise that a just energy
+          transition is not only about providing resources
+          or inviting people to participate. It also requires
+          recognising existing community knowledge, investing
+          in relationships and creating conditions in which
+          different perspectives can genuinely influence
+          decisions.
         </p>
 
       </div>
