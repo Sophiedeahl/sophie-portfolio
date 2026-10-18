@@ -19,23 +19,21 @@
       margin: 0;
       background: #fafafa;
       color: #111;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
-    /* ======================================
-       HEADER — ORIGINAL STYLING
-       ====================================== */
+    /* HEADER */
 
     .landing {
       min-height: 0;
       display: flex;
       align-items: center;
-      padding: 28px 5.5% 0;
+      padding: 35px 5.5% 0;
     }
 
     .landing-inner {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
     }
 
@@ -50,11 +48,11 @@
       justify-content: space-between;
       align-items: stretch;
       gap: 40px;
-      padding: 50px 5px;
+      padding: 26px 5px;
     }
 
     .landing .identity {
-      font-size: clamp(30px, 4vw, 60px);
+      font-size: clamp(24px, 2.35vw, 34px);
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
@@ -70,7 +68,7 @@
     }
 
     .landing-nav a {
-      font-size: clamp(30px, 3.5vw, 54px);
+      font-size: clamp(23px, 2.2vw, 32px);
       font-weight: 700;
       font-style: normal;
       letter-spacing: -.05em;
@@ -87,25 +85,21 @@
       font-style: italic;
     }
 
-    /* ======================================
-       PROJECT CONTENT
-       ====================================== */
+    /* PROJECT CONTENT */
 
     .project-content {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 30px 5.5% 110px;
+      padding: 24px 5.5% 90px;
     }
 
-    /* ======================================
-       HERO IMAGE — ORIGINAL STYLING
-       ====================================== */
+    /* HERO IMAGE */
 
     .project-hero {
       position: relative;
       width: 100%;
-      height: clamp(400px, 44vw, 620px);
+      height: clamp(310px, 33vw, 450px);
       overflow: hidden;
       background: #e9ece7;
       isolation: isolate;
@@ -147,16 +141,14 @@
     .project-title {
       max-width: 850px;
       margin: 0;
-      font-size: clamp(42px, 5.7vw, 86px);
+      font-size: clamp(34px, 4vw, 58px);
       font-weight: 700;
       font-style: italic;
       line-height: .98;
       letter-spacing: -.065em;
     }
 
-    /* ======================================
-       FIRST ROW: TEXT LEFT, IMAGE RIGHT
-       ====================================== */
+    /* FIRST ROW: TEXT LEFT, IMAGE RIGHT */
 
     .project-details {
       display: grid;
@@ -177,7 +169,7 @@
       flex-wrap: wrap;
       align-items: baseline;
       gap: 12px 24px;
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.4;
       margin-bottom: 28px;
     }
@@ -204,8 +196,8 @@
     }
 
     .project-copy p {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(18px, 1.5vw, 21px);
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
+      font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 400;
       line-height: 1.38;
       letter-spacing: -.025em;
@@ -214,9 +206,7 @@
       margin: 0 0 26px;
     }
 
-    /* ======================================
-       PROJECT IMAGES
-       ====================================== */
+    /* PROJECT IMAGES */
 
     .project-image-link {
       display: block;
@@ -236,9 +226,7 @@
       transform: scale(1.025);
     }
 
-    /* ======================================
-       SECOND ROW: IMAGE LEFT, TEXT RIGHT
-       ====================================== */
+    /* SECOND ROW: IMAGE LEFT, TEXT RIGHT */
 
     .project-analysis {
       display: grid;
@@ -250,9 +238,7 @@
       margin-top: 75px;
     }
 
-    /* ======================================
-       MOBILE — ORIGINAL STYLING
-       ====================================== */
+    /* MOBILE */
 
     @media (max-width: 700px) {
 
@@ -327,9 +313,7 @@
 
 <body>
 
-  <!-- ======================================
-       HEADER
-       ====================================== -->
+  <!-- HEADER -->
 
   <header class="landing">
     <div class="landing-inner">
@@ -356,13 +340,11 @@
     </div>
   </header>
 
-  <!-- ======================================
-       PROJECT CONTENT
-       ====================================== -->
+  <!-- PROJECT CONTENT -->
 
   <main class="project-content">
 
-    <!-- LARGE HERO IMAGE -->
+    <!-- HERO IMAGE -->
 
     <section class="project-hero">
 
@@ -379,9 +361,7 @@
 
     </section>
 
-    <!-- ======================================
-         FIRST ROW: RESEARCH + WORKSHOP PHOTO
-         ====================================== -->
+    <!-- FIRST ROW: RESEARCH + WORKSHOP PHOTO -->
 
     <section class="project-details">
 
@@ -403,36 +383,32 @@
 
         <div class="project-rule"></div>
 
-        
-<p>
-  <strong><em>
-    Why doesn't bringing people together always lead to action?
-  </em></strong>
-</p>
+        <p>
+          <strong><em>
+            Why doesn't bringing people together always lead to action?
+          </em></strong>
+        </p>
 
-<p>
-  Rooftop extensions could create much-needed housing without
-  taking up more urban land. But turning that potential into
-  actual homes is not just a technical challenge. It depends
-  on people with different interests finding ways to work
-  together.
-</p>
+        <p>
+          Rooftop extensions could create much-needed housing without
+          taking up more urban land. But turning that potential into
+          actual homes is not just a technical challenge. It depends
+          on people with different interests finding ways to work
+          together.
+        </p>
 
-<p>
-  For my MSc thesis, I stepped into the meeting rooms where
-  these conversations were happening. During two sessions
-  organised by the Municipality of Rotterdam, I observed
-  who spoke, who listened, how people positioned themselves
-  and how discussions unfolded. Using field notes, seating
-  maps and 11 interviews, I tried to understand the dynamics
-  behind the formal conversations. I particularly enjoyed
-  this detective-like way of researching: looking closely
-  at small interactions to understand much larger urban
-  challenges.
-</p>
-
-
-
+        <p>
+          For my MSc thesis, I stepped into the meeting rooms where
+          these conversations were happening. During two sessions
+          organised by the Municipality of Rotterdam, I observed
+          who spoke, who listened, how people positioned themselves
+          and how discussions unfolded. Using field notes, seating
+          maps and 11 interviews, I tried to understand the dynamics
+          behind the formal conversations. I particularly enjoyed
+          this detective-like way of researching: looking closely
+          at small interactions to understand much larger urban
+          challenges.
+        </p>
 
       </div>
 
@@ -453,9 +429,7 @@
 
     </section>
 
-    <!-- ======================================
-         SECOND ROW: FRAMEWORK + FINDINGS
-         ====================================== -->
+    <!-- SECOND ROW: FRAMEWORK + FINDINGS -->
 
     <section class="project-analysis">
 
@@ -479,23 +453,22 @@
         <div class="project-rule"></div>
 
         <p>
-  What surprised me was that bringing people together didn't
-  necessarily bring them closer to action. The sessions
-  encouraged learning and exchange, but not shared
-  commitments. Those with the greatest influence over
-  implementation could also afford to wait, while others
-  depended on their decisions.
-</p>
+          What surprised me was that bringing people together didn't
+          necessarily bring them closer to action. The sessions
+          encouraged learning and exchange, but not shared
+          commitments. Those with the greatest influence over
+          implementation could also afford to wait, while others
+          depended on their decisions.
+        </p>
 
-<p>
-  It made me think differently about urban design. We spend
-  so much time considering how the environments we create
-  influence citizens, but what about the people making
-  decisions about our cities? We cannot design their
-  behaviour, but we can shape the conditions in which they
-  meet, negotiate and collaborate.
-</p>
-   
+        <p>
+          It made me think differently about urban design. We spend
+          so much time considering how the environments we create
+          influence citizens, but what about the people making
+          decisions about our cities? We cannot design their
+          behaviour, but we can shape the conditions in which they
+          meet, negotiate and collaborate.
+        </p>
 
       </div>
 
