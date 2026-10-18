@@ -22,7 +22,7 @@
       font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
-    /* COMPACT HEADER */
+    /* HEADER */
 
     .landing {
       min-height: 0;
@@ -142,7 +142,7 @@
       inset: 0;
       background: linear-gradient(
         90deg,
-        rgba(0, 0, 0, .55) 0%,
+        rgba(0, 0, 0, .52) 0%,
         rgba(0, 0, 0, .18) 48%,
         rgba(0, 0, 0, 0) 80%
       );
@@ -181,7 +181,7 @@
       gap: 12px 24px;
       font-size: 15px;
       line-height: 1.4;
-      margin: 30px 0 28px;
+      margin: 30px 0 26px;
     }
 
     .project-year {
@@ -198,43 +198,35 @@
       font-style: italic;
     }
 
-    /* STORY AND PRODUCT IMAGE */
+    /* TEXT AND IMAGE */
 
     .project-story {
       display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 5%;
       align-items: start;
     }
 
     .project-text {
       min-width: 0;
-      max-width: 620px;
-    }
-
-    .project-question {
-      margin: 0 0 25px;
-      font-size: clamp(20px, 1.8vw, 26px);
-      font-weight: 700;
-      font-style: italic;
-      line-height: 1.15;
-      letter-spacing: -.045em;
+      max-width: 590px;
     }
 
     .project-text p {
-      margin: 0 0 22px;
+      margin: 0 0 23px;
       font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 400;
-      line-height: 1.42;
+      line-height: 1.38;
       letter-spacing: -.025em;
       text-align: left;
+      hyphens: none;
     }
 
     .project-text p:last-child {
       margin-bottom: 0;
     }
+
+    /* PRODUCT IMAGE */
 
     .product-image {
       min-width: 0;
@@ -243,6 +235,7 @@
     .product-image a {
       display: block;
       width: 100%;
+      height: clamp(420px, 43vw, 610px);
       overflow: hidden;
       background: #e9e9e9;
       cursor: zoom-in;
@@ -251,7 +244,9 @@
     .product-image img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 44%;
       transition: transform .25s ease;
     }
 
@@ -262,37 +257,7 @@
     /* SKETCH SHEET */
 
     .sketch-section {
-      margin-top: 48px;
-    }
-
-    .section-rule {
-      width: 100%;
-      height: 1px;
-      background: #bbb;
-      margin-bottom: 22px;
-    }
-
-    .sketch-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-      margin-bottom: 20px;
-    }
-
-    .sketch-heading h2 {
-      margin: 0;
-      font-size: clamp(20px, 1.7vw, 25px);
-      font-weight: 700;
-      font-style: italic;
-      line-height: 1.15;
-      letter-spacing: -.045em;
-    }
-
-    .sketch-heading span {
-      font-size: 14px;
-      line-height: 1.4;
+      margin-top: 28px;
     }
 
     .sketch-image a {
@@ -371,7 +336,7 @@
 
       .project-story {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 25px;
       }
 
       .project-text {
@@ -382,13 +347,17 @@
         font-size: 18px;
       }
 
-      .sketch-section {
-        margin-top: 42px;
+      .product-image a {
+        height: auto;
       }
 
-      .sketch-heading {
-        align-items: flex-start;
-        flex-direction: column;
+      .product-image img {
+        height: auto;
+        object-fit: contain;
+      }
+
+      .sketch-section {
+        margin-top: 25px;
       }
     }
 
@@ -409,10 +378,7 @@
         <a class="identity" href="index.html">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
-          <span>
-            URBAN RESEARCHER<br>
-            &amp; DESIGNER
-          </span>
+          <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
         </a>
 
         <nav class="landing-nav" aria-label="Main navigation">
@@ -437,7 +403,7 @@
 
       <img
         src="assets/other-2.png"
-        alt="TomTom Charm concept"
+        alt="Female Interaction Design for TomTom"
       >
 
       <div class="project-hero-content">
@@ -470,16 +436,11 @@
 
     </div>
 
-    <!-- STORY + PRODUCT RENDER -->
+    <!-- STORY AND PRODUCT IMAGE -->
 
     <section class="project-story">
 
       <div class="project-text">
-
-        <h2 class="project-question">
-          What if designing for women is less about appearance
-          and more about understanding their needs?
-        </h2>
 
         <p>
           For my BEng graduation project, I was invited by
@@ -531,7 +492,7 @@
         >
           <img
             src="assets/tomtom1.png"
-            alt="TomTom Charm concept hanging from a rear-view mirror at night"
+            alt="TomTom Charm hanging from a rear-view mirror at night"
           >
         </a>
 
@@ -539,21 +500,9 @@
 
     </section>
 
-    <!-- CONCEPT SKETCHES -->
+    <!-- FULL-WIDTH CONCEPT SKETCHES -->
 
     <section class="sketch-section">
-
-      <div class="section-rule"></div>
-
-      <div class="sketch-heading">
-
-        <h2>From research to concept</h2>
-
-        <span>
-          TomTom Charm — concept sketches and interaction scenarios
-        </span>
-
-      </div>
 
       <div class="sketch-image">
 
@@ -565,7 +514,7 @@
         >
           <img
             src="assets/tomtom2.png"
-            alt="Sketches exploring the TomTom Charm design, its placement over the rear-view mirror, emergency interaction and charging"
+            alt="Hand-drawn concept sketches showing the TomTom Charm and its interaction scenarios"
             loading="lazy"
           >
         </a>
@@ -575,8 +524,6 @@
     </section>
 
   </main>
-
-  <!-- PROJECT NAVIGATION -->
 
   <script src="projects.js"></script>
 
