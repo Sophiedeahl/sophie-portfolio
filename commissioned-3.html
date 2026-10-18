@@ -19,21 +19,21 @@
       margin: 0;
       background: #fafafa;
       color: #111;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
-    /* HEADER — SAME AS OTHER PROJECT PAGES */
+    /* HEADER */
 
     .landing {
       min-height: 0;
       display: flex;
       align-items: center;
-      padding: 28px 5.5% 0;
+      padding: 35px 5.5% 0;
     }
 
     .landing-inner {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
     }
 
@@ -48,11 +48,11 @@
       justify-content: space-between;
       align-items: stretch;
       gap: 40px;
-      padding: 50px 5px;
+      padding: 26px 5px;
     }
 
     .landing .identity {
-      font-size: clamp(30px, 4vw, 60px);
+      font-size: clamp(24px, 2.35vw, 34px);
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
@@ -91,7 +91,7 @@
     }
 
     .landing-nav a {
-      font-size: clamp(30px, 3.5vw, 54px);
+      font-size: clamp(23px, 2.2vw, 32px);
       font-weight: 700;
       font-style: normal;
       letter-spacing: -.05em;
@@ -112,17 +112,17 @@
 
     .project-content {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 30px 5.5% 110px;
+      padding: 24px 5.5% 90px;
     }
 
-    /* HERO */
+    /* HERO IMAGE */
 
     .project-hero {
       position: relative;
       width: 100%;
-      height: clamp(400px, 44vw, 620px);
+      height: clamp(310px, 33vw, 450px);
       overflow: hidden;
       background: #fafafa;
       isolation: isolate;
@@ -162,20 +162,22 @@
     }
 
     .project-title {
-      max-width: 1050px;
+      max-width: 850px;
       margin: 0;
-      font-size: clamp(42px, 5.7vw, 86px);
+      font-size: clamp(34px, 4vw, 58px);
       font-weight: 700;
       font-style: italic;
       line-height: .98;
       letter-spacing: -.065em;
     }
 
-    /* TEXT LEFT — INTRODUCTION AND REFLECTION RIGHT */
+    /* TEXT AND IMAGE GRID */
 
     .project-details {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.15fr);
       gap: 6%;
       align-items: start;
       padding-top: 35px;
@@ -190,7 +192,7 @@
       flex-wrap: wrap;
       align-items: baseline;
       gap: 12px 24px;
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.4;
       margin-bottom: 28px;
     }
@@ -217,7 +219,8 @@
     }
 
     .project-copy p {
-      font-size: clamp(18px, 1.5vw, 21px);
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
+      font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 400;
       line-height: 1.38;
       letter-spacing: -.025em;
@@ -226,7 +229,7 @@
       margin: 0 0 26px;
     }
 
-    /* TWO SKETCHES BESIDE THE TEXT */
+    /* TWO SKETCHES BESIDE TEXT */
 
     .project-side-images {
       display: flex;
@@ -260,7 +263,7 @@
       transform: scale(1.015);
     }
 
-    /* BOTTOM ROW — INTERACTION LEFT, ENTRY RIGHT */
+    /* BOTTOM IMAGE GRID */
 
     .concept-section {
       margin-top: 35px;
@@ -409,7 +412,7 @@
 
   <main class="project-content">
 
-    <!-- HERO -->
+    <!-- HERO IMAGE -->
 
     <section class="project-hero">
 
@@ -426,11 +429,9 @@
 
     </section>
 
-    <!-- TEXT LEFT, INTRODUCTION AND REFLECTION RIGHT -->
+    <!-- TEXT LEFT, SKETCHES RIGHT -->
 
     <section class="project-details">
-
-      <!-- LEFT COLUMN: ORIGINAL TEXT -->
 
       <div class="project-copy">
 
@@ -467,43 +468,49 @@
         <div class="project-rule"></div>
 
         <p>
-          Developed through a collaboration between MAD Movement
-          and MoMoLab, this project began as part of the 2025
-          CIIIC Innovation Impact Challenge on urban development.
-          I joined MAD Movement during the initial open call
-          and contributed to the early concept-development phase.
+          <strong><em>
+            What if policymakers could step inside the future
+            consequences of their decisions?
+          </em></strong>
         </p>
 
         <p>
-          The idea was to create an immersive, collaborative game
-          that would allow policymakers to explore the long-term
-          consequences of urban development decisions. Drawing
-          on future scenarios for the Netherlands towards 2050,
-          we imagined an experience in which participants enter
-          a circular installation of digital screens, encounter
-          policy dilemmas and explore different possible futures
-          together.
+          This was the starting point for an idea developed by
+          MAD Movement and MoMoLab as part of the 2025 CIIIC
+          Innovation Impact Challenge. The ambition was to create
+          an immersive game in which policymakers could explore
+          different futures for Dutch cities towards 2050,
+          not individually, but together.
         </p>
 
         <p>
-          My work focused on researching existing immersive
-          experiences, exploring initial concepts and developing
-          spatial sketches of the installation and participant
-          journey. These drawings helped communicate how the
-          experience could unfold, from entering the space to
-          interacting with future scenarios and reflecting
-          on collective decisions.
+          I joined MAD Movement during the initial open call and
+          helped explore what such an experience could look and
+          feel like. I researched existing immersive installations,
+          sketched spatial concepts and imagined how participants
+          might move through the experience: entering a circular
+          space surrounded by screens, encountering future
+          scenarios, discussing difficult choices and reflecting
+          on their collective decisions.
         </p>
 
         <p>
-          The concept was subsequently developed further by
-          MAD Movement and MoMoLab, whose later visualisations
-          are also shown below.
+          What I enjoyed most was translating a fairly abstract
+          idea into something people could actually picture.
+          The sketches weren't finished designs; they were a way
+          to ask questions, test possibilities and give the team
+          something concrete to discuss.
+        </p>
+
+        <p>
+          The concept was later developed further by MAD Movement
+          and MoMoLab. My contribution focused on the early
+          research, ideation and spatial sketches shown here.
         </p>
 
       </div>
 
-      <!-- RIGHT COLUMN: INTRODUCTION, THEN REFLECTION -->
+      <!-- RIGHT COLUMN: INTRODUCTION AND REFLECTION -->
 
       <div class="project-side-images">
 
@@ -541,7 +548,7 @@
 
     </section>
 
-    <!-- BOTTOM ROW: INTERACTION LEFT, ENTRY RIGHT -->
+    <!-- BOTTOM ROW: INTERACTION AND ENTRY -->
 
     <section class="concept-section">
 
@@ -582,8 +589,6 @@
     </section>
 
   </main>
-
-  <!-- PREVIOUS / NEXT PROJECT NAVIGATION -->
 
   <script src="projects.js"></script>
 
