@@ -117,7 +117,7 @@
       padding: 24px 5.5% 90px;
     }
 
-    /* HERO IMAGE */
+    /* HERO */
 
     .project-hero {
       position: relative;
@@ -134,6 +134,7 @@
       height: 100%;
       object-fit: contain;
       object-position: center;
+      padding: 8px 0 25px;
     }
 
     .project-hero::after {
@@ -142,9 +143,9 @@
       inset: 0;
       background: linear-gradient(
         90deg,
-        rgba(250, 250, 250, .68) 0%,
-        rgba(250, 250, 250, .32) 42%,
-        rgba(250, 250, 250, 0) 75%
+        rgba(250, 250, 250, .65) 0%,
+        rgba(250, 250, 250, .25) 35%,
+        rgba(250, 250, 250, 0) 65%
       );
       z-index: 1;
       pointer-events: none;
@@ -171,14 +172,12 @@
       letter-spacing: -.065em;
     }
 
-    /* TEXT AND IMAGE GRID */
+    /* TEXT AND SKETCH GALLERY */
 
     .project-details {
       display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1.15fr);
-      gap: 6%;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 7%;
       align-items: start;
       padding-top: 35px;
     }
@@ -229,75 +228,46 @@
       margin: 0 0 26px;
     }
 
-    /* TWO SKETCHES BESIDE TEXT */
+    /* FOUR SKETCHES IN A BALANCED GRID */
 
-    .project-side-images {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      min-width: 0;
-      align-self: start;
-    }
-
-    .project-side-image {
-      margin: 0;
-      min-width: 0;
-    }
-
-    .project-side-image a {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-      cursor: zoom-in;
-    }
-
-    .project-side-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      transition: transform .25s ease;
-    }
-
-    .project-side-image a:hover img {
-      transform: scale(1.015);
-    }
-
-    /* BOTTOM IMAGE GRID */
-
-    .concept-section {
-      margin-top: 35px;
-    }
-
-    .concept-grid {
+    .project-gallery {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
+      gap: 20px;
       align-items: start;
+      min-width: 0;
     }
 
-    .concept-image {
+    .project-gallery figure {
       margin: 0;
       min-width: 0;
     }
 
-    .concept-image a {
-      display: block;
+    .project-gallery a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
+      height: 100%;
       overflow: hidden;
       cursor: zoom-in;
+      text-decoration: none;
     }
 
-    .concept-image img {
+    .project-gallery img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
       transition: transform .25s ease;
     }
 
-    .concept-image a:hover img {
-      transform: scale(1.015);
+    .project-gallery a:hover img {
+      transform: scale(1.025);
+    }
+
+    .project-gallery figure {
+      aspect-ratio: 1 / 1;
     }
 
     /* MOBILE */
@@ -355,7 +325,7 @@
 
       .project-details {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 35px;
         padding-top: 28px;
       }
 
@@ -363,20 +333,24 @@
         font-size: 18px;
       }
 
-      .project-side-images {
-        gap: 25px;
+      .project-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
       }
+    }
 
-      .concept-section {
-        margin-top: 40px;
-      }
-
-      .concept-grid {
+    @media (max-width: 420px) {
+      .project-gallery {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 18px;
+      }
+
+      .project-gallery figure {
+        aspect-ratio: 4 / 3;
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -412,7 +386,7 @@
 
   <main class="project-content">
 
-    <!-- HERO IMAGE -->
+    <!-- HERO -->
 
     <section class="project-hero">
 
@@ -429,9 +403,11 @@
 
     </section>
 
-    <!-- TEXT LEFT, SKETCHES RIGHT -->
+    <!-- TEXT AND GALLERY -->
 
     <section class="project-details">
+
+      <!-- LEFT: TEXT -->
 
       <div class="project-copy">
 
@@ -475,28 +451,59 @@
         </p>
 
         <p>
-          This was the starting point for an idea developed by MAD Movement and MoMoLab as part of the 2025 CIIIC Innovation Impact Challenge. The ambition was to create an immersive game in which policymakers could explore different futures for Dutch cities towards 2050, not individually, but together.
+          This was the starting point for an idea developed by
+          MAD Movement and MoMoLab as part of the 2025 CIIIC
+          Innovation Impact Challenge. The ambition was to create
+          an immersive game in which policymakers could explore
+          different futures for Dutch cities towards 2050,
+          not individually, but together.
         </p>
 
         <p>
-       I joined MAD Movement during the initial open call and helped explore what such an experience could look and feel like. I researched existing immersive installations, sketched spatial concepts and imagined how participants might move through the experience: entering a circular space surrounded by screens, encountering future scenarios, discussing difficult choices and reflecting on their collective decisions.
+          I joined MAD Movement during the initial open call and
+          helped explore what such an experience could look and
+          feel like. I researched existing immersive installations,
+          sketched spatial concepts and imagined how participants
+          might move through the experience: entering a circular
+          space surrounded by screens, encountering future
+          scenarios, discussing difficult choices and reflecting
+          on their collective decisions.
         </p>
 
         <p>
-          What I enjoyed most was translating a fairly abstract idea into something people could actually picture. The sketches weren't finished designs; they were a way to ask questions, test possibilities and give the team something concrete to discuss.
+          What I enjoyed most was translating a fairly abstract
+          idea into something people could actually picture.
+          The sketches weren't finished designs; they were a way
+          to ask questions, test possibilities and give the team
+          something concrete to discuss.
         </p>
 
         <p>
-    The concept has since developed into Stad op het Spel, an immersive experience by MAD Movement and MoMoLab that is being presented at Dutch Design Week 2026. It's exciting to see how an idea I contributed to during its early development has grown into a public experience. 
+          The concept has since developed into
+          <a
+            href="https://stadophetspel.nl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          ><em>Stad op het Spel</em></a>,
+          an immersive experience by MAD Movement and MoMoLab
+          that is being presented at
+          <a
+            href="https://ddw.nl/nl/programma/stad-op-het-spel"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Dutch Design Week 2026</a>.
+          It's exciting to see how an idea I contributed to
+          during its early development has grown into a public
+          experience. 
         </p>
 
       </div>
 
-      <!-- RIGHT COLUMN: INTRODUCTION AND REFLECTION -->
+      <!-- RIGHT: FOUR SKETCHES -->
 
-      <div class="project-side-images">
+      <div class="project-gallery">
 
-        <figure class="project-side-image">
+        <figure>
           <a
             href="assets/commissioned-3-introduction.png"
             target="_blank"
@@ -505,38 +512,13 @@
           >
             <img
               src="assets/commissioned-3-introduction.png"
-              alt="Sketch of participants being introduced to the immersive game"
+              alt="Participants being introduced to the immersive game"
               loading="lazy"
             >
           </a>
         </figure>
 
-        <figure class="project-side-image">
-          <a
-            href="assets/commissioned-3-reflection.png"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open reflection sketch"
-          >
-            <img
-              src="assets/commissioned-3-reflection.png"
-              alt="Participants reflecting on their experience"
-              loading="lazy"
-            >
-          </a>
-        </figure>
-
-      </div>
-
-    </section>
-
-    <!-- BOTTOM ROW: INTERACTION AND ENTRY -->
-
-    <section class="concept-section">
-
-      <div class="concept-grid">
-
-        <figure class="concept-image">
+        <figure>
           <a
             href="assets/commissioned-3-interaction.png"
             target="_blank"
@@ -551,7 +533,22 @@
           </a>
         </figure>
 
-        <figure class="concept-image">
+        <figure>
+          <a
+            href="assets/commissioned-3-reflection.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open reflection sketch"
+          >
+            <img
+              src="assets/commissioned-3-reflection.png"
+              alt="Participants reflecting on their experience"
+              loading="lazy"
+            >
+          </a>
+        </figure>
+
+        <figure>
           <a
             href="assets/commissioned-3-entry.png"
             target="_blank"
@@ -560,7 +557,7 @@
           >
             <img
               src="assets/commissioned-3-entry.png"
-              alt="Participants entering the immersive screen installation"
+              alt="Participants entering the immersive installation"
               loading="lazy"
             >
           </a>
@@ -571,6 +568,8 @@
     </section>
 
   </main>
+
+  <!-- PREVIOUS / NEXT PROJECT NAVIGATION -->
 
   <script src="projects.js"></script>
 
