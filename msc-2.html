@@ -117,7 +117,7 @@
       padding: 24px 5.5% 90px;
     }
 
-    /* HERO IMAGE */
+    /* HERO IMAGE — UNCHANGED */
 
     .project-hero {
       position: relative;
@@ -171,21 +171,7 @@
       letter-spacing: -.065em;
     }
 
-    /* FIRST ROW: TEXT LEFT, IMAGE RIGHT */
-
-    .project-details {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1.15fr);
-      gap: 6%;
-      align-items: start;
-      padding-top: 35px;
-    }
-
-    .project-copy {
-      min-width: 0;
-    }
+    /* METADATA */
 
     .project-meta {
       display: flex;
@@ -194,35 +180,58 @@
       gap: 12px 24px;
       font-size: 15px;
       line-height: 1.4;
-      margin-bottom: 28px;
+      margin: 26px 0 30px;
     }
 
     .project-year {
       font-weight: 700;
     }
 
-    .project-copy a {
+    .project-meta a {
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
 
-    .project-copy a:hover {
+    .project-meta a:hover {
       font-style: italic;
     }
+
+    /* FOUR EQUAL-WIDTH BLOCKS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+      column-gap: 5%;
+      row-gap: 45px;
+      align-items: start;
+    }
+
+    .project-block {
+      min-width: 0;
+      width: 100%;
+    }
+
+    /* TEXT BLOCKS */
 
     .project-copy p {
       font-family: 'Arimo', Arial, Helvetica, sans-serif;
       font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 400;
-      line-height: 1.38;
+      line-height: 1.42;
       letter-spacing: -.025em;
       text-align: justify;
       hyphens: none;
-      margin: 0 0 26px;
+      margin: 0 0 24px;
     }
 
-    /* PROJECT IMAGES */
+    .project-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* IMAGES */
 
     .project-image-link {
       display: block;
@@ -242,38 +251,11 @@
       transform: scale(1.025);
     }
 
-    /* EXTRA IMAGE BELOW RIGHT-HAND TEXT */
+    /* EXTRA IMAGE UNDER RIGHT-HAND TEXT */
 
     .project-extra-image {
       margin-top: 30px;
       width: 100%;
-    }
-
-    .project-placeholder {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #e9ece7;
-      border: 1px solid #d7d9d5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 14px;
-      letter-spacing: -.01em;
-    }
-
-    /* SECOND ROW: IMAGE LEFT, TEXT RIGHT */
-
-    .project-analysis {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(0, 1fr);
-      gap: 6%;
-      align-items: start;
-      margin-top: 75px;
     }
 
     /* MOBILE */
@@ -308,6 +290,8 @@
         padding: 22px 5% 70px;
       }
 
+      /* Keep the original mobile banner too */
+
       .project-hero {
         height: 480px;
       }
@@ -329,20 +313,17 @@
         max-width: 100%;
       }
 
-      .project-details {
+      .project-meta {
+        margin: 26px 0;
+      }
+
+      .project-grid {
         grid-template-columns: 1fr;
-        gap: 28px;
-        padding-top: 28px;
+        row-gap: 30px;
       }
 
       .project-copy p {
         font-size: 18px;
-      }
-
-      .project-analysis {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        margin-top: 55px;
       }
 
       .project-extra-image {
@@ -386,7 +367,7 @@
 
   <main class="project-content">
 
-    <!-- HERO IMAGE -->
+    <!-- ORIGINAL BANNER -->
 
     <section class="project-hero">
 
@@ -403,25 +384,29 @@
 
     </section>
 
-    <!-- FIRST ROW: TEXT LEFT, WORKSHOP IMAGE RIGHT -->
+    <!-- PROJECT INFORMATION -->
 
-    <section class="project-details">
+    <div class="project-meta">
 
-      <div class="project-copy">
+      <span class="project-year">2026</span>
 
-        <div class="project-meta">
+      <span>
+        <a
+          href="https://www.ams-institute.org/education/msc-metropolitan-analysis-design-and-engineering/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >MSc MADE</a>
+      </span>
 
-          <span class="project-year">2026</span>
+    </div>
 
-          <span>
-            <a
-              href="https://www.ams-institute.org/education/msc-metropolitan-analysis-design-and-engineering/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >MSc MADE</a>
-          </span>
+    <!-- FOUR-BLOCK GRID -->
 
-        </div>
+    <section class="project-grid">
+
+      <!-- BLOCK 1: TOP LEFT — INTRODUCTION -->
+
+      <div class="project-block project-copy">
 
         <p>
           <strong><em>
@@ -452,49 +437,51 @@
 
       </div>
 
-      <!-- RIGHT: WORKSHOP PHOTO -->
+      <!-- BLOCK 2: TOP RIGHT — WORKSHOP PHOTO -->
 
-      <a
-        class="project-image-link"
-        href="assets/msc-2-workshop.png"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open photograph of a rooftop extension stakeholder workshop"
-      >
-        <img
-          class="project-image"
-          src="assets/msc-2-workshop.png"
-          alt="Stakeholders participating in a Rotterdam rooftop extension learning-and-working session"
-          loading="lazy"
+      <div class="project-block">
+
+        <a
+          class="project-image-link"
+          href="assets/msc-2-workshop.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open workshop photograph"
         >
-      </a>
+          <img
+            class="project-image"
+            src="assets/msc-2-workshop.png"
+            alt="Stakeholders participating in a Rotterdam rooftop extension workshop"
+            loading="lazy"
+          >
+        </a>
 
-    </section>
+      </div>
 
-    <!-- SECOND ROW: FRAMEWORK LEFT, FINDINGS AND EXTRA IMAGE RIGHT -->
+      <!-- BLOCK 3: BOTTOM LEFT — FRAMEWORK IMAGE -->
 
-    <section class="project-analysis">
+      <div class="project-block">
 
-      <!-- LEFT: FRAMEWORK IMAGE -->
-
-      <a
-        class="project-image-link"
-        href="assets/msc-2-framework.png"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open conceptual framework diagram"
-      >
-        <img
-          class="project-image"
-          src="assets/msc-2-framework.png"
-          alt="Conceptual framework connecting interdependence, governance, quality of dialogue, capacity for joint action and power"
-          loading="lazy"
+        <a
+          class="project-image-link"
+          href="assets/msc-2-framework.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open framework image"
         >
-      </a>
+          <img
+            class="project-image"
+            src="assets/msc-2-framework.png"
+            alt="Visual framework for rooftop extensions and collaboration"
+            loading="lazy"
+          >
+        </a>
 
-      <!-- RIGHT: FINDINGS AND EXTRA IMAGE -->
+      </div>
 
-      <div class="project-copy">
+      <!-- BLOCK 4: BOTTOM RIGHT — FINDINGS AND EXTRA IMAGE -->
+
+      <div class="project-block project-copy">
 
         <p>
           What surprised me was that bringing people together didn't
@@ -514,32 +501,24 @@
           meet, negotiate and collaborate.
         </p>
 
-        <!-- EXTRA IMAGE PLACEHOLDER UNDER RIGHT-HAND TEXT -->
+        <!-- ADDITIONAL IMAGE -->
 
         <div class="project-extra-image">
-
-          <!-- Replace the placeholder below with this image
-               when you have uploaded msc-2-extra.png:
 
           <a
             class="project-image-link"
             href="assets/msc-2-extra.png"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Open additional project image"
           >
             <img
               class="project-image"
               src="assets/msc-2-extra.png"
-              alt="Additional image from the thesis research"
+              alt="Additional image from the urban densification project"
               loading="lazy"
             >
           </a>
-
-          -->
-
-          <div class="project-placeholder">
-            Additional image
-          </div>
 
         </div>
 
