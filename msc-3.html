@@ -171,6 +171,10 @@
       letter-spacing: -.065em;
     }
 
+    .project-title span {
+      display: block;
+    }
+
     /* METADATA */
 
     .project-meta {
@@ -222,13 +226,15 @@
       max-width: 620px;
     }
 
+    /* SMALLER SECTION HEADINGS */
+
     .project-text h2 {
-      margin: 0 0 16px;
-      font-size: clamp(19px, 1.6vw, 23px);
+      margin: 0 0 12px;
+      font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 700;
       font-style: italic;
-      line-height: 1.15;
-      letter-spacing: -.04em;
+      line-height: 1.38;
+      letter-spacing: -.025em;
     }
 
     .project-text p {
@@ -367,7 +373,8 @@
         max-width: 100%;
       }
 
-      .project-text p {
+      .project-text p,
+      .project-text h2 {
         font-size: 18px;
       }
 
@@ -381,7 +388,6 @@
         max-width: 100%;
       }
 
-      /* Keep the co-creation text before its image on mobile */
       .co-creation-text {
         order: 1;
       }
@@ -438,7 +444,9 @@
 
       <div class="project-hero-content">
         <h1 class="project-title">
-          Just Energy Transition — Bridging Communities and Institutions
+          <span>Just Energy Transition:</span>
+          <span>Bridging Communities</span>
+          <span>and Institutions</span>
         </h1>
       </div>
 
@@ -482,9 +490,26 @@
         </h2>
 
         <p>
-         During a five-month Living Lab, we worked with Energie Lab Zuidoost and Stichting EGK Centre to explore why the energy transition in Amsterdam Zuidoost was progressing more slowly than hoped. In a neighbourhood shaped by social inequalities and a complex history of relationships with institutions, we wanted to understand what was actually standing in the way and how we could help it move forward
-  </p>
-Through fieldwork and interviews, we explored the relationships between residents, community organisations and institutions. We found that trust was a major challenge, shaped by both historical experiences and present-day institutional structures. We also learned about the importance of local *bridge builders*: people who connect communities with institutions, often without receiving the recognition or support their work deserves.
+          During a five-month Living Lab, we worked with
+          Energie Lab Zuidoost and Stichting EGK Centre to
+          explore why the energy transition in Amsterdam Zuidoost
+          was progressing more slowly than hoped. In a
+          neighbourhood shaped by social inequalities and a
+          complex history of relationships with institutions,
+          we wanted to understand what was actually standing
+          in the way and how we could help it move forward.
+        </p>
+
+        <p>
+          Through fieldwork and interviews, we explored the
+          relationships between residents, community organisations
+          and institutions. We found that trust was a major
+          challenge, shaped by both historical experiences and
+          present-day institutional structures. We also learned
+          about the importance of local <em>bridge builders</em>:
+          people who connect communities with institutions,
+          often without receiving the recognition or support
+          their work deserves.
         </p>
 
       </div>
@@ -525,18 +550,24 @@ Through fieldwork and interviews, we explored the relationships between resident
         <h2>Co-creation and dialogue</h2>
 
         <p>
-          We organised three co-creation sessions with community bridge builders
-          and institutional stakeholders. We created space to
-          discuss challenges around trust, accountability and
-          access to resources, allowing different perspectives
-          to be heard. In one of the sessions we gathered insights for developing a
-          stakeholder network map. In this map we gave every stakeholder a spot, so people can find each other and tried to visualise the relationships
-          between them.
-          We also produced an explanatory video, of which two
-          excerpts are shown here.
-  </p>
-          </p>
-           The project strengthened my interest in the social
+          We organised three co-creation sessions with community
+          bridge builders and institutional stakeholders.
+          We created space to discuss challenges around trust,
+          accountability and access to resources, allowing
+          different perspectives to be heard.
+        </p>
+
+        <p>
+          In one of the sessions, we gathered insights for
+          developing a stakeholder network map. We gave every
+          stakeholder a place on the map to help people find
+          each other and to visualise the relationships between
+          them. We also produced an explanatory video, of which
+          two excerpts are shown here.
+        </p>
+
+        <p>
+          The project strengthened my interest in the social
           side of urban transitions, where relationships,
           community knowledge and trust are just as important
           as technical solutions.
@@ -546,18 +577,15 @@ Through fieldwork and interviews, we explored the relationships between resident
 
     </section>
 
-    <!-- SECTION 3: VISUAL RESEARCH + SECOND VIDEO -->
+    <!-- SECOND VIDEO -->
 
     <section class="project-row">
 
       <div class="project-text">
-
-        <h2>Visualising complex relationships</h2>
-
         <p>
-         
+          The video brings together insights from our research
+          and co-creation process.
         </p>
-
       </div>
 
       <div class="project-media">
@@ -577,13 +605,16 @@ Through fieldwork and interviews, we explored the relationships between resident
 
     </section>
 
-   
-        </p>
+    <!-- STAKEHOLDER NETWORK MAP -->
 
+    <section class="network-section">
+
+      <div class="project-text network-text">
         <p>
-         
+          The stakeholder network map visualises the connections
+          between residents, community organisations, bridge
+          builders and institutions in Amsterdam Zuidoost.
         </p>
-
       </div>
 
       <div class="network-image">
@@ -606,8 +637,6 @@ Through fieldwork and interviews, we explored the relationships between resident
     </section>
 
   </main>
-
-  <!-- PREVIOUS / NEXT PROJECT NAVIGATION -->
 
   <script src="projects.js"></script>
 
