@@ -199,15 +199,19 @@
 
     /* FOUR EQUAL-WIDTH BLOCKS */
 
-    .project-grid {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-      column-gap: 5%;
-      row-gap: 45px;
-      align-items: start;
-    }
+  .project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5%;
+  align-items: start;
+}
+
+.project-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
 
     .project-block {
       min-width: 0;
