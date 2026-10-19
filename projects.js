@@ -52,7 +52,7 @@ const projects = [
     id: 'other-2',
     category: 'Other Projects',
     title: 'Female Interaction Design for TomTom',
-    image: 'assets/other-2.png',
+    image: 'assets/tomtom1.png',
     pdf: 'projects/other-2.pdf',
     href: 'other-2.html'
   },
