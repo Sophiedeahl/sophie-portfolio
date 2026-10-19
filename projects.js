@@ -35,7 +35,7 @@ const projects = [
   {
     id: 'msc-3',
     category: 'MSc Projects',
-    title: 'Just Energy Transition — Bridging Communities and Institutions',
+    title: 'Just Energy Transition: Bridging Communities and Institutions',
     image: 'assets/msc-3.png',
     pdf: 'projects/msc-3.pdf',
     href: 'msc-3.html'
@@ -59,7 +59,7 @@ const projects = [
   {
     id: 'other-3',
     category: 'Other Projects',
-    title: 'Social entrepreneurship in Zanzibar, Tanzania',
+    title: 'Turning Waste Into Opportunity',
     image: 'assets/other-3.png',
     pdf: 'projects/other-3.pdf',
     href: 'other-3.html'
@@ -67,7 +67,7 @@ const projects = [
   {
     id: 'interactive-explainers',
     category: 'Commissioned Projects',
-    title: 'Interactive Explainers for Dutch Metropolitan Innovations',
+    title: 'Explainers for Dutch Metropolitan Innovations',
     image: 'assets/commissioned-4.png',
     pdf: 'projects/interactive-explainers.pdf',
     href: 'commissioned-4.html'
