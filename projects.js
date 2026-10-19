@@ -28,7 +28,7 @@ const projects = [
     id: 'ix-game',
     category: 'Commissioned Projects',
     title: 'Ideation for an Immersive Urban Futures Game',
-    image: 'assets/commissioned-3-entry.png',
+    image: 'assets/entry.png',
     pdf: 'projects/ix-game.pdf',
     href: 'commissioned-3.html'
   },
@@ -60,7 +60,7 @@ const projects = [
     id: 'other-3',
     category: 'Other Projects',
     title: 'Turning Waste Into Opportunity',
-    image: 'assets/other-3.png',
+    image: 'assets/other-4.png',
     pdf: 'projects/other-3.pdf',
     href: 'other-3.html'
   },
