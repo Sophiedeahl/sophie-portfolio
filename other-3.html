@@ -197,10 +197,56 @@
       font-style: italic;
     }
 
-    /* PROJECT STORY */
+    /* TWO-COLUMN STORY LAYOUT */
+
+    .project-details {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 5%;
+      align-items: start;
+    }
+
+    /* PHOTOGRAPHS ON LEFT */
+
+    .project-gallery {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .project-gallery a {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .project-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform .25s ease;
+    }
+
+    .project-gallery a:hover img {
+      transform: scale(1.015);
+    }
+
+    .photo-credit {
+      grid-column: 1 / -1;
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #666;
+      font-style: italic;
+    }
+
+    /* STORY ON RIGHT */
 
     .project-story {
-      max-width: 800px;
+      min-width: 0;
+      max-width: 620px;
     }
 
     .project-story h2 {
@@ -223,44 +269,6 @@
 
     .project-story p:last-child {
       margin-bottom: 0;
-    }
-
-    /* TWO PHOTOGRAPHS */
-
-    .project-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 38px;
-      align-items: start;
-    }
-
-    .project-gallery a {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-      cursor: zoom-in;
-    }
-
-    .project-gallery img {
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: transform .25s ease;
-    }
-
-    .project-gallery a:hover img {
-      transform: scale(1.015);
-    }
-
-    /* PHOTO CREDIT */
-
-    .photo-credit {
-      margin: 12px 0 0;
-      font-size: 13px;
-      line-height: 1.4;
-      color: #666;
-      font-style: italic;
     }
 
     /* MOBILE */
@@ -320,6 +328,15 @@
         margin-top: 26px;
       }
 
+      .project-details {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .project-gallery {
+        gap: 12px;
+      }
+
       .project-story {
         max-width: 100%;
       }
@@ -327,12 +344,6 @@
       .project-story h2,
       .project-story p {
         font-size: 18px;
-      }
-
-      .project-gallery {
-        grid-template-columns: 1fr;
-        gap: 22px;
-        margin-top: 30px;
       }
     }
   </style>
@@ -406,75 +417,79 @@
 
     </div>
 
-    <!-- QUESTION AND STORY -->
+    <!-- PHOTOS LEFT / TEXT RIGHT -->
 
-    <section class="project-story">
+    <section class="project-details">
 
-      <h2>
-        How can discarded materials become an opportunity
-        for local women?
-      </h2>
+      <!-- TWO PHOTOGRAPHS -->
 
-      <p>
-        During five months with CHAKO Zanzibar, I helped set up
-        a workshop where local women could turn discarded
-        materials into products to sell. It started with
-        raising funds in the Netherlands to buy the first
-        machines, but once I arrived in Zanzibar, the work
-        became much more hands-on. I supported training,
-        explored opportunities to sell the products in
-        local shops and helped get the workshop running.
-      </p>
+      <div class="project-gallery">
 
-      <p>
-        What stayed with me most was learning to work in a
-        different cultural context. Things didn't always go
-        as planned, and I had to learn to be patient, adapt
-        my expectations and listen to the people I was
-        working with. The workshop was still taking shape
-        when I left, but it continued to grow and remains
-        active today.
-      </p>
+        <a
+          href="assets/other3-small1.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open first Zanzibar project photograph"
+        >
+          <img
+            src="assets/other3-small1.png"
+            alt="CHAKO Zanzibar workshop project photograph"
+            loading="lazy"
+          >
+        </a>
+
+        <a
+          href="assets/other3-small2.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open second Zanzibar project photograph"
+        >
+          <img
+            src="assets/other3-small2.png"
+            alt="CHAKO Zanzibar workshop project photograph"
+            loading="lazy"
+          >
+        </a>
+
+        <p class="photo-credit">
+          All photographs courtesy of CHAKO Zanzibar.
+        </p>
+
+      </div>
+
+      <!-- QUESTION AND STORY -->
+
+      <div class="project-story">
+
+        <h2>
+          How can discarded materials become an opportunity
+          for local women?
+        </h2>
+
+        <p>
+          During five months with CHAKO Zanzibar, I helped set up
+          a workshop where local women could turn discarded
+          materials into products to sell. It started with
+          raising funds in the Netherlands to buy the first
+          machines, but once I arrived in Zanzibar, the work
+          became much more hands-on. I supported training,
+          explored opportunities to sell the products in
+          local shops and helped get the workshop running.
+        </p>
+
+        <p>
+          What stayed with me most was learning to work in a
+          different cultural context. Things didn't always go
+          as planned, and I had to learn to be patient, adapt
+          my expectations and listen to the people I was
+          working with. The workshop was still taking shape
+          when I left, but it continued to grow and remains
+          active today.
+        </p>
+
+      </div>
 
     </section>
-
-    <!-- TWO PHOTOGRAPHS -->
-
-    <section class="project-gallery" aria-label="CHAKO Zanzibar photographs">
-
-      <a
-        href="assets/other3-small1.png"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open first Zanzibar project photograph"
-      >
-        <img
-          src="assets/other3-small1.png"
-          alt="CHAKO Zanzibar workshop project photograph"
-          loading="lazy"
-        >
-      </a>
-
-      <a
-        href="assets/other3-small2.png"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open second Zanzibar project photograph"
-      >
-        <img
-          src="assets/other3-small2.png"
-          alt="CHAKO Zanzibar workshop project photograph"
-          loading="lazy"
-        >
-      </a>
-
-    </section>
-
-    <!-- PHOTOGRAPHY CREDIT -->
-
-    <p class="photo-credit">
-      All photographs courtesy of CHAKO Zanzibar.
-    </p>
 
   </main>
 
