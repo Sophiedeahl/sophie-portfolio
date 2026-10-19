@@ -56,6 +56,29 @@
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .landing .identity strong,
+    .landing .identity em,
+    .landing .identity span {
+      display: block;
+    }
+
+    .landing .identity strong {
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .landing .identity em {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .landing .identity span {
+      font-weight: 400;
+      font-style: normal;
     }
 
     .landing-nav {
@@ -85,7 +108,7 @@
       font-style: italic;
     }
 
-    /* PROJECT CONTENT */
+    /* MAIN CONTENT */
 
     .project-content {
       width: 100%;
@@ -94,12 +117,12 @@
       padding: 24px 5.5% 90px;
     }
 
-    /* HERO IMAGE WITH TITLE */
+    /* THINNER BANNER */
 
     .project-hero {
       position: relative;
       width: 100%;
-      height: clamp(310px, 33vw, 450px);
+      height: 230px;
       overflow: hidden;
       background: #e9ece7;
       isolation: isolate;
@@ -119,9 +142,9 @@
       inset: 0;
       background: linear-gradient(
         90deg,
-        rgba(250, 250, 250, .68) 0%,
-        rgba(250, 250, 250, .32) 42%,
-        rgba(250, 250, 250, 0) 75%
+        rgba(250, 250, 250, .80) 0%,
+        rgba(250, 250, 250, .48) 48%,
+        rgba(250, 250, 250, .05) 100%
       );
       z-index: 1;
       pointer-events: none;
@@ -131,7 +154,7 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      padding: clamp(24px, 3vw, 45px);
+      padding: 30px 35px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -141,30 +164,14 @@
     .project-title {
       max-width: 850px;
       margin: 0;
-      font-size: clamp(34px, 4vw, 58px);
+      font-size: clamp(32px, 3.5vw, 52px);
       font-weight: 700;
       font-style: italic;
       line-height: .98;
       letter-spacing: -.065em;
     }
 
-    /* TEXT + MAP GRID */
-
-    .project-details {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1.15fr);
-      gap: 6%;
-      align-items: start;
-      padding-top: 35px;
-    }
-
-    /* LEFT: TEXT */
-
-    .project-copy {
-      min-width: 0;
-    }
+    /* PROJECT METADATA */
 
     .project-meta {
       display: flex;
@@ -173,73 +180,109 @@
       gap: 12px 24px;
       font-size: 15px;
       line-height: 1.4;
-      margin-bottom: 28px;
+      margin: 24px 0 30px;
     }
 
     .project-year {
       font-weight: 700;
     }
 
+    .project-meta a,
     .project-copy a {
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
 
+    .project-meta a:hover,
     .project-copy a:hover {
       font-style: italic;
     }
 
-    .project-rule {
-      width: 100%;
-      height: 1px;
-      background: #bbb;
-      margin-bottom: 28px;
+    /* FOUR-BLOCK GRID */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+      column-gap: 5%;
+      row-gap: 45px;
+      align-items: start;
     }
 
+    .project-block {
+      min-width: 0;
+      width: 100%;
+    }
+
+    /* TEXT BLOCKS */
+
     .project-copy p {
-      font-family: 'Arimo', Arial, Helvetica, sans-serif;
       font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 400;
-      line-height: 1.38;
+      line-height: 1.42;
       letter-spacing: -.025em;
       text-align: justify;
       hyphens: none;
-      margin: 0 0 26px;
+      margin: 0 0 24px;
     }
 
-    /* RIGHT: INTERACTIVE MAP */
+    .project-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* INTERACTIVE MAP BLOCK */
 
     .project-map {
-      min-width: 0;
-      height: 560px;
+      width: 100%;
+      height: 440px;
       overflow: hidden;
+      background: #e9ece7;
     }
 
     .project-map iframe {
       display: block;
       width: 100%;
-      height: 620px;
+      height: 500px;
       border: 0;
       margin-top: -60px;
     }
 
-    /* SECOND ROW: IMAGE LEFT, TEXT RIGHT */
+    /* IMAGE BLOCK */
 
-    .project-analysis {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(0, 1fr);
-      gap: 6%;
-      align-items: start;
-      margin-top: 75px;
+    .project-image-link {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      cursor: zoom-in;
     }
 
-    .project-analysis-image {
+    .project-image {
       display: block;
       width: 100%;
       height: auto;
+      transition: transform .25s ease;
+    }
+
+    .project-image-link:hover .project-image {
+      transform: scale(1.025);
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+      .project-grid {
+        column-gap: 4%;
+      }
+
+      .project-map {
+        height: 380px;
+      }
+
+      .project-map iframe {
+        height: 440px;
+      }
     }
 
     /* MOBILE */
@@ -275,15 +318,7 @@
       }
 
       .project-hero {
-        height: 480px;
-      }
-
-      .project-hero::after {
-        background: linear-gradient(
-          0deg,
-          rgba(250, 250, 250, .78) 0%,
-          rgba(250, 250, 250, .18) 75%
-        );
+        height: 210px;
       }
 
       .project-hero-content {
@@ -291,14 +326,17 @@
       }
 
       .project-title {
-        font-size: clamp(35px, 8vw, 56px);
+        font-size: clamp(30px, 7vw, 44px);
         max-width: 100%;
       }
 
-      .project-details {
+      .project-meta {
+        margin: 22px 0 26px;
+      }
+
+      .project-grid {
         grid-template-columns: 1fr;
-        gap: 28px;
-        padding-top: 28px;
+        row-gap: 30px;
       }
 
       .project-copy p {
@@ -306,17 +344,11 @@
       }
 
       .project-map {
-        height: 450px;
+        height: 420px;
       }
 
       .project-map iframe {
-        height: 510px;
-      }
-
-      .project-analysis {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        margin-top: 55px;
+        height: 480px;
       }
     }
   </style>
@@ -334,7 +366,7 @@
 
       <div class="landing-row">
 
-        <a class="identity" href="index.html">
+        <a class="identity" href="index.html#projects">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
           <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
@@ -356,7 +388,7 @@
 
   <main class="project-content">
 
-    <!-- LARGE HERO IMAGE -->
+    <!-- THIN BANNER -->
 
     <section class="project-hero">
 
@@ -374,34 +406,36 @@
 
     </section>
 
-    <!-- FIRST ROW: TEXT LEFT, MAP RIGHT -->
+    <!-- METADATA -->
 
-    <section class="project-details">
+    <div class="project-meta">
 
-      <div class="project-copy">
+      <span class="project-year">2021</span>
 
-        <div class="project-meta">
+      <span>
+        Collaboration with
+        <a
+          href="https://advier.nl/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Advier</a>
+        &amp;
+        <a
+          href="https://www.svp-svp.nl/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >SVP</a>
+      </span>
 
-          <span class="project-year">2021</span>
+    </div>
 
-          <span>
-            Collaboration with
-            <a
-              href="https://advier.nl/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Advier</a>
-            &amp;
-            <a
-              href="https://www.svp-svp.nl/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >SVP</a>
-          </span>
+    <!-- FOUR EQUAL-WIDTH BLOCKS -->
 
-        </div>
+    <section class="project-grid">
 
-        <div class="project-rule"></div>
+      <!-- BLOCK 1: TOP LEFT — INTRODUCTORY TEXT -->
+
+      <div class="project-block project-copy">
 
         <p>
           <strong><em>Where do mobility hubs make sense?</em></strong>
@@ -430,38 +464,54 @@
 
       </div>
 
-      <!-- INTERACTIVE MAP -->
+      <!-- BLOCK 2: TOP RIGHT — INTERACTIVE MAP -->
 
-      <div class="project-map">
+      <div class="project-block project-map">
+
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1F2jnrixLhoqBuyDujyhGvXZ8xrTC1nH8"
           title="Utrecht mobility research map"
           loading="lazy"
           allowfullscreen>
         </iframe>
+
       </div>
 
-    </section>
+      <!-- BLOCK 3: BOTTOM LEFT — SPATIAL ANALYSIS IMAGE -->
 
-    <!-- SECOND ROW: IMAGE LEFT, TEXT RIGHT -->
+      <div class="project-block">
 
-    <section class="project-analysis">
-
-      <div>
-        <img
-          class="project-analysis-image"
-          src="assets/commissioned-1-2.png"
-          alt="Spatial analysis of mobility services and urban destinations in Utrecht"
-          loading="lazy"
+        <a
+          class="project-image-link"
+          href="assets/commissioned-1-2.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open mobility analysis image"
         >
+          <img
+            class="project-image"
+            src="assets/commissioned-1-2.png"
+            alt="Spatial analysis of mobility services and urban destinations in Utrecht"
+            loading="lazy"
+          >
+        </a>
+
       </div>
 
-      <div class="project-copy">
+      <!-- BLOCK 4: BOTTOM RIGHT — REFLECTION TEXT -->
 
-        <div class="project-rule"></div>
+      <div class="project-block project-copy">
 
         <p>
-          What I liked about this project was the challenge of making sense of a city through information that was scattered across different sources. It was part detective work, part spatial puzzle: figuring out which connections were relevant, where opportunities might exist and how to make those findings understandable to others. It's the kind of work I enjoy most, somewhere between research, visual thinking and practical urban questions.
+          What I liked about this project was the challenge of
+          making sense of a city through information that was
+          scattered across different sources. It was part
+          detective work, part spatial puzzle: figuring out which
+          connections were relevant, where opportunities might
+          exist and how to make those findings understandable to
+          others. It's the kind of work I enjoy most, somewhere
+          between research, visual thinking and practical urban
+          questions.
         </p>
 
         <p>
