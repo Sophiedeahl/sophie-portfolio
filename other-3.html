@@ -197,7 +197,7 @@
       font-style: italic;
     }
 
-    /* TWO-COLUMN LAYOUT */
+    /* TWO-COLUMN STORY LAYOUT */
 
     .project-details {
       display: grid;
@@ -206,42 +206,16 @@
       align-items: start;
     }
 
-    /* PHOTOGRAPHS ON LEFT */
+    /* LEFT COLUMN: IMAGES 3 AND 4 */
 
-    .project-gallery {
+    .project-gallery-left {
       min-width: 0;
       display: grid;
       grid-template-columns: 1fr;
       gap: 20px;
     }
 
-    .project-gallery a {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-      cursor: zoom-in;
-    }
-
-    .project-gallery img {
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: transform .25s ease;
-    }
-
-    .project-gallery a:hover img {
-      transform: scale(1.015);
-    }
-
-    .photo-credit {
-      margin: 0;
-      font-size: 13px;
-      line-height: 1.4;
-      color: #666;
-      font-style: italic;
-    }
-
-    /* STORY ON RIGHT */
+    /* RIGHT COLUMN: STORY */
 
     .project-story {
       min-width: 0;
@@ -269,6 +243,49 @@
 
     .project-story p:last-child {
       margin-bottom: 0;
+    }
+
+    /* BOTTOM: IMAGES 1 AND 2 */
+
+    .project-gallery-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+      align-items: start;
+    }
+
+    /* ALL GALLERY IMAGES */
+
+    .project-gallery-left a,
+    .project-gallery-bottom a {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .project-gallery-left img,
+    .project-gallery-bottom img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform .25s ease;
+    }
+
+    .project-gallery-left a:hover img,
+    .project-gallery-bottom a:hover img {
+      transform: scale(1.015);
+    }
+
+    /* PHOTOGRAPHY CREDIT */
+
+    .photo-credit {
+      margin: 12px 0 0;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #666;
+      font-style: italic;
     }
 
     /* MOBILE */
@@ -333,7 +350,7 @@
         gap: 30px;
       }
 
-      .project-gallery {
+      .project-gallery-left {
         gap: 16px;
       }
 
@@ -344,6 +361,12 @@
       .project-story h2,
       .project-story p {
         font-size: 18px;
+      }
+
+      .project-gallery-bottom {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 30px;
       }
     }
   </style>
@@ -415,47 +438,41 @@
 
     </div>
 
-    <!-- PHOTOS LEFT / TEXT RIGHT -->
+    <!-- IMAGES 3 AND 4 LEFT / STORY RIGHT -->
 
     <section class="project-details">
 
-      <!-- TWO PHOTOGRAPHS -->
-
-      <div class="project-gallery">
+      <div class="project-gallery-left">
 
         <a
-          href="assets/chako-1.jpg"
+          href="assets/chako-3.jpg"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open first Zanzibar project photograph"
+          aria-label="Open third CHAKO Zanzibar photograph"
         >
           <img
-            src="assets/chako-1.jpg"
-            alt="CHAKO Zanzibar workshop project photograph"
+            src="assets/chako-3.jpg"
+            alt="CHAKO Zanzibar project photograph"
             loading="lazy"
           >
         </a>
 
         <a
-          href="assets/chako-2.jpg"
+          href="assets/chako-4.jpg"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open second Zanzibar project photograph"
+          aria-label="Open fourth CHAKO Zanzibar photograph"
         >
           <img
-            src="assets/chako-2.jpg"
-            alt="CHAKO Zanzibar workshop project photograph"
+            src="assets/chako-4.jpg"
+            alt="CHAKO Zanzibar project photograph"
             loading="lazy"
           >
         </a>
-
-        <p class="photo-credit">
-          All photographs courtesy of CHAKO Zanzibar.
-        </p>
 
       </div>
 
-      <!-- QUESTION AND STORY -->
+      <!-- STORY -->
 
       <div class="project-story">
 
@@ -488,6 +505,47 @@
       </div>
 
     </section>
+
+    <!-- IMAGES 1 AND 2 BELOW -->
+
+    <section
+      class="project-gallery-bottom"
+      aria-label="More photographs from CHAKO Zanzibar"
+    >
+
+      <a
+        href="assets/chako-1.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open first CHAKO Zanzibar photograph"
+      >
+        <img
+          src="assets/chako-1.jpg"
+          alt="CHAKO Zanzibar project photograph"
+          loading="lazy"
+        >
+      </a>
+
+      <a
+        href="assets/chako-2.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open second CHAKO Zanzibar photograph"
+      >
+        <img
+          src="assets/chako-2.jpg"
+          alt="CHAKO Zanzibar project photograph"
+          loading="lazy"
+        >
+      </a>
+
+    </section>
+
+    <!-- PHOTOGRAPHY CREDIT -->
+
+    <p class="photo-credit">
+      All photographs courtesy of CHAKO Zanzibar.
+    </p>
 
   </main>
 
