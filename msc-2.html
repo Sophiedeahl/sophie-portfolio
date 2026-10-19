@@ -56,6 +56,29 @@
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .landing .identity strong,
+    .landing .identity em,
+    .landing .identity span {
+      display: block;
+    }
+
+    .landing .identity strong {
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .landing .identity em {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .landing .identity span {
+      font-weight: 400;
+      font-style: normal;
     }
 
     .landing-nav {
@@ -219,7 +242,7 @@
       transform: scale(1.025);
     }
 
-    /* NEW IMAGE UNDER THE LEFT TEXT */
+    /* EXTRA IMAGE BELOW RIGHT-HAND TEXT */
 
     .project-extra-image {
       margin-top: 30px;
@@ -239,12 +262,6 @@
       color: #777;
       font-size: 14px;
       letter-spacing: -.01em;
-    }
-
-    .project-extra-image img {
-      display: block;
-      width: 100%;
-      height: auto;
     }
 
     /* SECOND ROW: IMAGE LEFT, TEXT RIGHT */
@@ -347,7 +364,7 @@
 
       <div class="landing-row">
 
-        <a class="identity" href="index.html">
+        <a class="identity" href="index.html#projects">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
           <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
@@ -386,11 +403,9 @@
 
     </section>
 
-    <!-- FIRST ROW: RESEARCH + WORKSHOP PHOTO -->
+    <!-- FIRST ROW: TEXT LEFT, WORKSHOP IMAGE RIGHT -->
 
     <section class="project-details">
-
-      <!-- LEFT COLUMN: TEXT AND NEW IMAGE -->
 
       <div class="project-copy">
 
@@ -435,11 +450,76 @@
           challenges.
         </p>
 
-        <!-- NEW IMAGE PLACEHOLDER BELOW TEXT -->
+      </div>
+
+      <!-- RIGHT: WORKSHOP PHOTO -->
+
+      <a
+        class="project-image-link"
+        href="assets/msc-2-workshop.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open photograph of a rooftop extension stakeholder workshop"
+      >
+        <img
+          class="project-image"
+          src="assets/msc-2-workshop.png"
+          alt="Stakeholders participating in a Rotterdam rooftop extension learning-and-working session"
+          loading="lazy"
+        >
+      </a>
+
+    </section>
+
+    <!-- SECOND ROW: FRAMEWORK LEFT, FINDINGS AND EXTRA IMAGE RIGHT -->
+
+    <section class="project-analysis">
+
+      <!-- LEFT: FRAMEWORK IMAGE -->
+
+      <a
+        class="project-image-link"
+        href="assets/msc-2-framework.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open conceptual framework diagram"
+      >
+        <img
+          class="project-image"
+          src="assets/msc-2-framework.png"
+          alt="Conceptual framework connecting interdependence, governance, quality of dialogue, capacity for joint action and power"
+          loading="lazy"
+        >
+      </a>
+
+      <!-- RIGHT: FINDINGS AND EXTRA IMAGE -->
+
+      <div class="project-copy">
+
+        <p>
+          What surprised me was that bringing people together didn't
+          necessarily bring them closer to action. The sessions
+          encouraged learning and exchange, but not shared
+          commitments. Those with the greatest influence over
+          implementation could also afford to wait, while others
+          depended on their decisions.
+        </p>
+
+        <p>
+          It made me think differently about urban design. We spend
+          so much time considering how the environments we create
+          influence citizens, but what about the people making
+          decisions about our cities? We cannot design their
+          behaviour, but we can shape the conditions in which they
+          meet, negotiate and collaborate.
+        </p>
+
+        <!-- EXTRA IMAGE PLACEHOLDER UNDER RIGHT-HAND TEXT -->
 
         <div class="project-extra-image">
 
-          <!-- Replace this placeholder with an image when ready:
+          <!-- Replace the placeholder below with this image
+               when you have uploaded msc-2-extra.png:
 
           <a
             class="project-image-link"
@@ -463,68 +543,6 @@
 
         </div>
 
-      </div>
-
-      <!-- RIGHT COLUMN: WORKSHOP PHOTO -->
-
-      <a
-        class="project-image-link"
-        href="assets/msc-2-workshop.png"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open photograph of a rooftop extension stakeholder workshop"
-      >
-        <img
-          class="project-image"
-          src="assets/msc-2-workshop.png"
-          alt="Stakeholders participating in a Rotterdam rooftop extension learning-and-working session"
-          loading="lazy"
-        >
-      </a>
-
-    </section>
-
-    <!-- SECOND ROW: FRAMEWORK + FINDINGS -->
-
-    <section class="project-analysis">
-
-      <a
-        class="project-image-link"
-        href="assets/msc-2-framework.png"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open conceptual framework diagram"
-      >
-        <img
-          class="project-image"
-          src="assets/msc-2-framework.png"
-          alt="Conceptual framework connecting interdependence, governance, quality of dialogue, capacity for joint action and power"
-          loading="lazy"
-        >
-      </a>
-
-      <div class="project-copy">
-
-        <p>
-          What surprised me was that bringing people together didn't
-          necessarily bring them closer to action. The sessions
-          encouraged learning and exchange, but not shared
-          commitments. Those with the greatest influence over
-          implementation could also afford to wait, while others
-          depended on their decisions.
-        </p>
-
-        <p>
-          It made me think differently about urban design. We spend
-          so much time considering how the environments we create
-          influence citizens, but what about the people making
-          decisions about our cities? We cannot design their
-          behaviour, but we can shape the conditions in which they
-          meet, negotiate and collaborate.
-        </p>
-
-          <div class="project-extra-image">
-            
       </div>
 
     </section>
