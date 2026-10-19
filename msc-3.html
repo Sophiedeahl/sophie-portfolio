@@ -22,7 +22,7 @@
       font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
-    /* COMPACT HEADER */
+    /* HEADER */
 
     .landing {
       min-height: 0;
@@ -108,7 +108,7 @@
       font-style: italic;
     }
 
-    /* PROJECT CONTENT */
+    /* MAIN CONTENT */
 
     .project-content {
       width: 100%;
@@ -184,7 +184,7 @@
       gap: 12px 24px;
       font-size: 15px;
       line-height: 1.4;
-      margin: 30px 0 22px;
+      margin: 30px 0 28px;
     }
 
     .project-year {
@@ -201,32 +201,11 @@
       font-style: italic;
     }
 
-    /* EDITORIAL GRID */
-
-    .project-row {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-      gap: 5%;
-      align-items: center;
-      margin-top: 28px;
-    }
-
-    .project-row + .project-row {
-      margin-top: 34px;
-    }
-
-    .project-text,
-    .project-media {
-      min-width: 0;
-    }
+    /* TEXT */
 
     .project-text {
-      max-width: 620px;
+      min-width: 0;
     }
-
-    /* SMALLER SECTION HEADINGS */
 
     .project-text h2 {
       margin: 0 0 12px;
@@ -238,50 +217,58 @@
     }
 
     .project-text p {
+      margin: 0 0 20px;
       font-size: clamp(16px, 1.2vw, 17px);
       font-weight: 400;
       line-height: 1.42;
       letter-spacing: -.025em;
       text-align: left;
-      margin: 0 0 18px;
     }
 
     .project-text p:last-child {
       margin-bottom: 0;
     }
 
-    /* VIDEO AND IMAGE */
+    /* INTRODUCTION: TEXT LEFT, VIDEOS RIGHT */
 
-    .project-media video,
-    .project-media img {
+    .intro-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 5%;
+      align-items: start;
+    }
+
+    .intro-text {
+      max-width: 620px;
+    }
+
+    .video-stack {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .video-stack video {
       display: block;
       width: 100%;
       height: auto;
-    }
-
-    .project-media video {
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
       background: #111;
     }
 
-    .project-media img {
-      object-fit: cover;
+    /* CO-CREATION TEXT */
+
+    .co-creation-section {
+      margin-top: 48px;
+      max-width: 900px;
     }
 
-    /* NETWORK MAP SECTION */
+    /* LARGE STAKEHOLDER MAP */
 
     .network-section {
-      display: grid;
-      grid-template-columns:
-        minmax(0, .7fr)
-        minmax(0, 1.3fr);
-      gap: 5%;
-      align-items: center;
-      margin-top: 42px;
-      padding: 30px 0;
-    }
-
-    .network-text {
-      max-width: 350px;
+      margin-top: 40px;
     }
 
     .network-image a {
@@ -299,6 +286,34 @@
     }
 
     .network-image a:hover img {
+      transform: scale(1.01);
+    }
+
+    /* TWO PHOTOGRAPHS */
+
+    .photo-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 35px;
+      align-items: start;
+    }
+
+    .photo-section a {
+      display: block;
+      width: 100%;
+      cursor: zoom-in;
+      overflow: hidden;
+    }
+
+    .photo-section img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform .25s ease;
+    }
+
+    .photo-section a:hover img {
       transform: scale(1.015);
     }
 
@@ -359,18 +374,9 @@
         margin-top: 26px;
       }
 
-      .project-row {
+      .intro-section {
         grid-template-columns: 1fr;
-        gap: 22px;
-        margin-top: 25px;
-      }
-
-      .project-row + .project-row {
-        margin-top: 38px;
-      }
-
-      .project-text {
-        max-width: 100%;
+        gap: 28px;
       }
 
       .project-text p,
@@ -378,22 +384,22 @@
         font-size: 18px;
       }
 
+      .video-stack {
+        gap: 18px;
+      }
+
+      .co-creation-section {
+        margin-top: 38px;
+      }
+
       .network-section {
-        grid-template-columns: 1fr;
-        gap: 25px;
         margin-top: 30px;
       }
 
-      .network-text {
-        max-width: 100%;
-      }
-
-      .co-creation-text {
-        order: 1;
-      }
-
-      .co-creation-image {
-        order: 2;
+      .photo-section {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin-top: 28px;
       }
     }
   </style>
@@ -429,7 +435,7 @@
     </div>
   </header>
 
-  <!-- PROJECT CONTENT -->
+  <!-- MAIN CONTENT -->
 
   <main class="project-content">
 
@@ -452,7 +458,7 @@
 
     </section>
 
-    <!-- PROJECT METADATA -->
+    <!-- METADATA -->
 
     <div class="project-meta">
 
@@ -478,11 +484,11 @@
 
     </div>
 
-    <!-- SECTION 1: INTRODUCTION + FIRST VIDEO -->
+    <!-- INTRODUCTION AND BOTH VIDEOS -->
 
-    <section class="project-row">
+    <section class="intro-section">
 
-      <div class="project-text">
+      <div class="project-text intro-text">
 
         <h2>
           How can an energy transition be just if the people
@@ -514,7 +520,7 @@
 
       </div>
 
-      <div class="project-media">
+      <div class="video-stack">
 
         <video
           controls
@@ -526,69 +532,6 @@
           <source src="assets/msc-3.mp4" type="video/mp4">
           Your browser does not support HTML video.
         </video>
-
-      </div>
-
-    </section>
-
-    <!-- SECTION 2: WORKSHOP IMAGE + CO-CREATION TEXT -->
-
-    <section class="project-row">
-
-      <div class="project-media co-creation-image">
-
-        <img
-          src="assets/msc-3-workshop.jpg"
-          alt="Community stakeholders participating in a co-creation workshop"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="project-text co-creation-text">
-
-        <h2>Co-creation and dialogue</h2>
-
-        <p>
-          We organised three co-creation sessions with community
-          bridge builders and institutional stakeholders.
-          We created space to discuss challenges around trust,
-          accountability and access to resources, allowing
-          different perspectives to be heard.
-        </p>
-
-        <p>
-          In one of the sessions, we gathered insights for
-          developing a stakeholder network map. We gave every
-          stakeholder a place on the map to help people find
-          each other and to visualise the relationships between
-          them. We also produced an explanatory video, of which
-          two excerpts are shown here.
-        </p>
-
-        <p>
-          The project strengthened my interest in the social
-          side of urban transitions, where relationships,
-          community knowledge and trust are just as important
-          as technical solutions.
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- SECOND VIDEO -->
-
-    <section class="project-row">
-
-      <div class="project-text">
-        <p>
-          The video brings together insights from our research
-          and co-creation process.
-        </p>
-      </div>
-
-      <div class="project-media">
 
         <video
           controls
@@ -605,17 +548,40 @@
 
     </section>
 
-    <!-- STAKEHOLDER NETWORK MAP -->
+    <!-- CO-CREATION TEXT -->
+
+    <section class="co-creation-section project-text">
+
+      <h2>Co-creation and dialogue</h2>
+
+      <p>
+        We organised three co-creation sessions with community
+        bridge builders and institutional stakeholders. We created
+        space to discuss challenges around trust, accountability
+        and access to resources, allowing different perspectives
+        to be heard.
+      </p>
+
+      <p>
+        In one of the sessions, we gathered insights for developing
+        a stakeholder network map. We gave every stakeholder a place
+        on the map to help people find each other and to visualise
+        the relationships between them. We also produced an
+        explanatory video, of which two excerpts are shown above.
+      </p>
+
+      <p>
+        The project strengthened my interest in the social side
+        of urban transitions, where relationships, community
+        knowledge and trust are just as important as technical
+        solutions.
+      </p>
+
+    </section>
+
+    <!-- LARGE STAKEHOLDER NETWORK MAP -->
 
     <section class="network-section">
-
-      <div class="project-text network-text">
-        <p>
-          The stakeholder network map visualises the connections
-          between residents, community organisations, bridge
-          builders and institutions in Amsterdam Zuidoost.
-        </p>
-      </div>
 
       <div class="network-image">
 
@@ -627,12 +593,44 @@
         >
           <img
             src="assets/msc-3-network-map.jpg"
-            alt="Stakeholder network map showing relationships between residents, community organisations, bridge builders and institutions in Amsterdam Zuidoost"
+            alt="Stakeholder network map showing connections between residents, community organisations, bridge builders and institutions in Amsterdam Zuidoost"
             loading="lazy"
           >
         </a>
 
       </div>
+
+    </section>
+
+    <!-- TWO WORKSHOP PHOTOGRAPHS -->
+
+    <section class="photo-section">
+
+      <a
+        href="assets/msc-3-workshop.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open first workshop photograph"
+      >
+        <img
+          src="assets/msc-3-workshop.jpg"
+          alt="Community stakeholders participating in a co-creation workshop"
+          loading="lazy"
+        >
+      </a>
+
+      <a
+        href="assets/msc-3-workshop-2.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open second workshop photograph"
+      >
+        <img
+          src="assets/msc-3-workshop-2.jpg"
+          alt="Additional photograph from the Just Energy Transition project"
+          loading="lazy"
+        >
+      </a>
 
     </section>
 
