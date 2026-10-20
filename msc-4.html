@@ -19,7 +19,7 @@
       margin: 0;
       background: #fafafa;
       color: #111;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
     /* HEADER */
@@ -28,12 +28,12 @@
       min-height: 0;
       display: flex;
       align-items: center;
-      padding: 28px 5.5% 0;
+      padding: 35px 5.5% 0;
     }
 
     .landing-inner {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
     }
 
@@ -48,14 +48,37 @@
       justify-content: space-between;
       align-items: stretch;
       gap: 40px;
-      padding: 50px 5px;
+      padding: 26px 5px;
     }
 
     .landing .identity {
-      font-size: clamp(30px, 4vw, 60px);
+      font-size: clamp(24px, 2.35vw, 34px);
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .landing .identity strong,
+    .landing .identity em,
+    .landing .identity span {
+      display: block;
+    }
+
+    .landing .identity strong {
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .landing .identity em {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .landing .identity span {
+      font-weight: 400;
+      font-style: normal;
     }
 
     .landing-nav {
@@ -68,7 +91,7 @@
     }
 
     .landing-nav a {
-      font-size: clamp(30px, 3.5vw, 54px);
+      font-size: clamp(23px, 2.2vw, 32px);
       font-weight: 700;
       font-style: normal;
       letter-spacing: -.05em;
@@ -89,17 +112,17 @@
 
     .project-content {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 30px 5.5% 110px;
+      padding: 24px 5.5% 90px;
     }
 
-    /* HERO IMAGE */
+    /* HERO */
 
     .project-hero {
       position: relative;
       width: 100%;
-      height: clamp(400px, 44vw, 620px);
+      height: 230px;
       overflow: hidden;
       background: #e9ece7;
       isolation: isolate;
@@ -110,7 +133,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center 60%;
     }
 
     .project-hero::after {
@@ -119,9 +142,9 @@
       inset: 0;
       background: linear-gradient(
         90deg,
-        rgba(250, 250, 250, .68) 0%,
-        rgba(250, 250, 250, .32) 42%,
-        rgba(250, 250, 250, 0) 75%
+        rgba(250, 250, 250, .8) 0%,
+        rgba(250, 250, 250, .4) 45%,
+        rgba(250, 250, 250, 0) 100%
       );
       z-index: 1;
       pointer-events: none;
@@ -131,7 +154,7 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      padding: clamp(24px, 3vw, 45px);
+      padding: 30px 35px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -139,97 +162,116 @@
     }
 
     .project-title {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0;
-      font-size: clamp(42px, 5.7vw, 86px);
+      font-size: clamp(32px, 3.8vw, 56px);
       font-weight: 700;
       font-style: italic;
       line-height: .98;
       letter-spacing: -.065em;
     }
 
-    /* DESCRIPTION AND IMAGE GRID */
-
-    .project-details {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-      gap: 6%;
-      align-items: start;
-      padding-top: 35px;
-    }
-
-    .project-copy {
-      min-width: 0;
-    }
+    /* METADATA */
 
     .project-meta {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
       gap: 12px 24px;
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.4;
-      margin-bottom: 28px;
+      margin: 26px 0 30px;
     }
 
     .project-year {
       font-weight: 700;
     }
 
-    .project-copy a {
+    .project-meta a {
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
 
-    .project-copy a:hover {
+    .project-meta a:hover {
       font-style: italic;
     }
 
-    .project-rule {
-      width: 100%;
-      height: 1px;
-      background: #bbb;
-      margin-bottom: 28px;
-    }
+    /* EQUAL-WIDTH GRID */
 
-    .project-copy p {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(18px, 1.5vw, 21px);
-      font-weight: 400;
-      line-height: 1.38;
-      letter-spacing: -.025em;
-      text-align: justify;
-      hyphens: none;
-      margin: 0 0 26px;
-    }
-
-    .project-gallery {
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      column-gap: 5%;
+      row-gap: 38px;
       align-items: start;
+    }
+
+    /* TEXT */
+
+    .project-copy {
       min-width: 0;
     }
 
-    .project-gallery a {
+    .project-copy p {
+      font-size: clamp(16px, 1.2vw, 17px);
+      font-weight: 400;
+      line-height: 1.42;
+      letter-spacing: -.025em;
+      text-align: justify;
+      hyphens: none;
+      margin: 0 0 24px;
+    }
+
+    .project-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-question {
+      font-weight: 700 !important;
+      font-style: italic;
+      text-align: left !important;
+    }
+
+    /* IMAGES */
+
+    .project-image-link {
       display: block;
       width: 100%;
-      height: auto;
-      overflow: visible;
-      background: transparent;
+      overflow: hidden;
       cursor: zoom-in;
     }
 
-    .project-gallery img {
+    .project-image {
       display: block;
       width: 100%;
       height: auto;
       transition: transform .25s ease;
     }
 
-    .project-gallery a:hover img {
+    .project-image-link:hover .project-image {
       transform: scale(1.025);
+    }
+
+    .project-caption {
+      margin: 9px 0 0;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #555;
+    }
+
+    .project-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #e9ece7;
+      border: 1px solid #d7d9d5;
+      color: #777;
+      text-align: center;
+      font-size: 14px;
+      padding: 20px;
     }
 
     /* MOBILE */
@@ -265,15 +307,7 @@
       }
 
       .project-hero {
-        height: 480px;
-      }
-
-      .project-hero::after {
-        background: linear-gradient(
-          0deg,
-          rgba(250, 250, 250, .78) 0%,
-          rgba(250, 250, 250, .18) 75%
-        );
+        height: 210px;
       }
 
       .project-hero-content {
@@ -281,22 +315,25 @@
       }
 
       .project-title {
-        font-size: clamp(35px, 8vw, 56px);
+        font-size: clamp(30px, 7vw, 44px);
         max-width: 100%;
       }
 
-      .project-details {
+      .project-meta {
+        margin: 22px 0 26px;
+      }
+
+      .project-grid {
         grid-template-columns: 1fr;
-        gap: 28px;
-        padding-top: 28px;
+        row-gap: 26px;
       }
 
       .project-copy p {
         font-size: 18px;
       }
 
-      .project-gallery {
-        gap: 12px;
+      .project-caption {
+        font-size: 13px;
       }
     }
   </style>
@@ -314,7 +351,7 @@
 
       <div class="landing-row">
 
-        <a class="identity" href="index.html">
+        <a class="identity" href="index.html#projects">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
           <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
@@ -342,7 +379,7 @@
 
       <img
         src="assets/msc-4.png"
-        alt="Zaanstraat — Visualising a New Neighbourhood"
+        alt="Conceptual visualisation of the Zaanstraat neighbourhood"
       >
 
       <div class="project-hero-content">
@@ -353,70 +390,155 @@
 
     </section>
 
-    <!-- DESCRIPTION AND IMAGES -->
+    <!-- METADATA -->
 
-    <section class="project-details">
+    <div class="project-meta">
 
-      <!-- LEFT COLUMN -->
+      <span class="project-year">2025</span>
+
+      <span>
+        <a
+          href="https://www.ams-institute.org/education/msc-metropolitan-analysis-design-and-engineering/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >MSc MADE</a>
+      </span>
+
+      <span>
+        In collaboration with the Municipality of Amsterdam
+      </span>
+
+    </div>
+
+    <!-- PROJECT GRID -->
+
+    <section class="project-grid">
+
+      <!-- TOP LEFT: TEXT -->
 
       <div class="project-copy">
 
-        <div class="project-meta">
-
-          <span class="project-year">YEAR</span>
-
-          <span>
-            <a
-              href="https://www.ams-institute.org/education/msc-metropolitan-analysis-design-and-engineering/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >MSc MADE</a>
-          </span>
-
-        </div>
-
-        <div class="project-rule"></div>
+        <p class="project-question">
+          How do you make a future neighbourhood feel real
+          before it exists?
+        </p>
 
         <p>
-          Project description to be added.
+          As part of an MSc project developed in collaboration
+          with the Municipality of Amsterdam, our team explored
+          possible futures for the Zaanstraat neighbourhood.
+          We imagined how green public spaces, shared facilities
+          and new connections between buildings could encourage
+          a more social and sustainable way of living.
+        </p>
+
+        <p>
+          Together with a classmate, I translated our team's
+          ideas into a series of architectural collages and
+          spatial illustrations. I particularly enjoyed this
+          more conceptual side of urban design: using images
+          not just to show what a place might look like,
+          but to communicate how it could feel and how
+          people might use it.
+        </p>
+
+        <p>
+          The illustrations helped bring the proposals to life,
+          making the neighbourhood's potential character
+          easier to imagine and discuss.
         </p>
 
       </div>
 
-      <!-- RIGHT COLUMN -->
+      <!-- TOP RIGHT: MAIN VISUALISATION -->
 
-      <div class="project-gallery">
+      <div>
 
         <a
+          class="project-image-link"
+          href="assets/msc-4.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Zaanstraat neighbourhood visualisation"
+        >
+          <img
+            class="project-image"
+            src="assets/msc-4.png"
+            alt="Public green spaces, biodiversity and active mobility in the proposed Zaanstraat neighbourhood"
+            loading="lazy"
+          >
+        </a>
+
+        <p class="project-caption">
+          Public Green — imagining a greener and more connected neighbourhood.
+        </p>
+
+      </div>
+
+      <!-- BOTTOM LEFT: WORKSHOP CONCEPT -->
+
+      <div>
+
+        <a
+          class="project-image-link"
           href="assets/msc4-small1.png"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open first Zaanstraat visualisation image"
+          aria-label="Open workshop concept illustration"
         >
           <img
+            class="project-image"
             src="assets/msc4-small1.png"
-            alt="Zaanstraat — image 1"
+            alt="Conceptual illustration of a shared neighbourhood workshop"
+            loading="lazy"
           >
         </a>
 
+        <p class="project-caption">
+          The Workshop — shared spaces for making, repairing
+          and exchanging skills.
+        </p>
+
+      </div>
+
+      <!-- BOTTOM RIGHT: ELEVATED COMMUNITY -->
+
+      <div>
+
         <a
+          class="project-image-link"
           href="assets/msc4-small2.png"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open second Zaanstraat visualisation image"
+          aria-label="Open elevated community concept illustration"
         >
           <img
+            class="project-image"
             src="assets/msc4-small2.png"
-            alt="Zaanstraat — image 2"
+            alt="Conceptual illustration of connected green rooftops and elevated community spaces"
+            loading="lazy"
           >
         </a>
 
+        <p class="project-caption">
+          Elevated Community — connecting rooftops to create
+          new communal spaces above street level.
+        </p>
+
+      </div>
+
+      <!-- OPTIONAL THIRD DETAIL IMAGE -->
+
+      <div class="project-placeholder">
+        Sharing Neighbourhood illustration<br>
+        Add image filename here
       </div>
 
     </section>
 
   </main>
-    <script src="projects.js"></script>
+
+  <script src="projects.js"></script>
 
 </body>
 </html>
