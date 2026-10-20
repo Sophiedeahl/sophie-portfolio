@@ -116,7 +116,7 @@
       padding: 24px 5.5% 90px;
     }
 
-    /* HERO */
+    /* HERO BANNER */
 
     .project-hero {
       position: relative;
@@ -196,13 +196,12 @@
       font-style: italic;
     }
 
-    /* TWO-COLUMN GRID */
+    /* TOP TWO-COLUMN LAYOUT */
 
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       column-gap: 5%;
-      row-gap: 35px;
       align-items: start;
     }
 
@@ -246,11 +245,14 @@
       transform: scale(1.025);
     }
 
-    .project-caption {
-      margin: 9px 0 0;
-      font-size: 13px;
-      line-height: 1.4;
-      color: #555;
+    /* THREE BOTTOM IMAGES */
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 35px;
+      align-items: start;
     }
 
     /* MOBILE */
@@ -309,6 +311,12 @@
 
       .project-copy p {
         font-size: 18px;
+      }
+
+      .project-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 26px;
       }
     }
   </style>
@@ -385,11 +393,9 @@
 
     </div>
 
-    <!-- CONTENT -->
+    <!-- TOP ROW: TEXT LEFT / PUBLIC GREEN RIGHT -->
 
     <section class="project-grid">
-
-      <!-- TOP LEFT: TEXT -->
 
       <div class="project-copy">
 
@@ -410,8 +416,6 @@
 
       </div>
 
-      <!-- TOP RIGHT: PUBLIC GREEN -->
-
       <div>
 
         <a
@@ -429,86 +433,67 @@
           >
         </a>
 
-        <p class="project-caption">
-          Public Green
-        </p>
-
       </div>
 
-      <!-- SECOND ROW LEFT: WORKSHOP -->
+    </section>
 
-      <div>
+    <!-- BOTTOM ROW: THREE IMAGES SIDE BY SIDE -->
 
-        <a
-          class="project-image-link"
-          href="assets/ze2.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open Workshop collage"
+    <section
+      class="project-gallery"
+      aria-label="Zaanstraat architectural collages"
+    >
+
+      <!-- THE WORKSHOP -->
+
+      <a
+        class="project-image-link"
+        href="assets/ze2.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Workshop collage"
+      >
+        <img
+          class="project-image"
+          src="assets/ze2.png"
+          alt="Shared workshop with green roof and public space"
+          loading="lazy"
         >
-          <img
-            class="project-image"
-            src="assets/ze2.png"
-            alt="Shared workshop with green roof and public space"
-            loading="lazy"
-          >
-        </a>
+      </a>
 
-        <p class="project-caption">
-          The Workshop
-        </p>
+      <!-- ELEVATED COMMUNITY -->
 
-      </div>
-
-      <!-- SECOND ROW RIGHT: ELEVATED COMMUNITY -->
-
-      <div>
-
-        <a
-          class="project-image-link"
-          href="assets/ze3.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open Elevated Community collage"
+      <a
+        class="project-image-link"
+        href="assets/ze3.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Elevated Community collage"
+      >
+        <img
+          class="project-image"
+          src="assets/ze3.png"
+          alt="Connected green rooftops and elevated community spaces"
+          loading="lazy"
         >
-          <img
-            class="project-image"
-            src="assets/ze3.png"
-            alt="Connected green rooftops and elevated community spaces"
-            loading="lazy"
-          >
-        </a>
+      </a>
 
-        <p class="project-caption">
-          Elevated Community
-        </p>
+      <!-- SHARING NEIGHBOURHOOD -->
 
-      </div>
-
-      <!-- THIRD ROW LEFT: SHARING NEIGHBOURHOOD -->
-
-      <div>
-
-        <a
-          class="project-image-link"
-          href="assets/ze4.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open Sharing Neighbourhood collage"
+      <a
+        class="project-image-link"
+        href="assets/ze4.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Sharing Neighbourhood collage"
+      >
+        <img
+          class="project-image"
+          src="assets/ze4.png"
+          alt="Residential building with shared facilities and community spaces"
+          loading="lazy"
         >
-          <img
-            class="project-image"
-            src="assets/ze4.png"
-            alt="Residential building with shared facilities and community spaces"
-            loading="lazy"
-          >
-        </a>
-
-        <p class="project-caption">
-          Sharing Neighbourhood
-        </p>
-
-      </div>
+      </a>
 
     </section>
 
