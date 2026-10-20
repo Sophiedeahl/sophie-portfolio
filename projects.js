@@ -84,7 +84,7 @@ const projects = [
     id: 'msc-4',
     category: 'MSc Projects',
     title: 'Zaanstraat — Visualising a New Neighbourhood',
-    image: 'assets/msc-4.png',
+    image: 'assets/ze1.png',
     pdf: 'projects/msc-4.pdf',
     href: 'msc-4.html'
   }
