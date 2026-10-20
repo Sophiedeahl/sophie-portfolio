@@ -97,7 +97,6 @@
       letter-spacing: -.05em;
       line-height: 1.12;
       white-space: nowrap;
-      cursor: pointer;
       color: inherit;
       text-decoration: none;
     }
@@ -133,7 +132,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 60%;
+      object-position: center 57%;
     }
 
     .project-hero::after {
@@ -142,7 +141,7 @@
       inset: 0;
       background: linear-gradient(
         90deg,
-        rgba(250, 250, 250, .8) 0%,
+        rgba(250, 250, 250, .82) 0%,
         rgba(250, 250, 250, .4) 45%,
         rgba(250, 250, 250, 0) 100%
       );
@@ -197,13 +196,13 @@
       font-style: italic;
     }
 
-    /* EQUAL-WIDTH GRID */
+    /* TWO-COLUMN GRID */
 
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       column-gap: 5%;
-      row-gap: 38px;
+      row-gap: 35px;
       align-items: start;
     }
 
@@ -225,12 +224,6 @@
 
     .project-copy p:last-child {
       margin-bottom: 0;
-    }
-
-    .project-question {
-      font-weight: 700 !important;
-      font-style: italic;
-      text-align: left !important;
     }
 
     /* IMAGES */
@@ -258,20 +251,6 @@
       font-size: 13px;
       line-height: 1.4;
       color: #555;
-    }
-
-    .project-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #e9ece7;
-      border: 1px solid #d7d9d5;
-      color: #777;
-      text-align: center;
-      font-size: 14px;
-      padding: 20px;
     }
 
     /* MOBILE */
@@ -331,10 +310,6 @@
       .project-copy p {
         font-size: 18px;
       }
-
-      .project-caption {
-        font-size: 13px;
-      }
     }
   </style>
 
@@ -373,13 +348,13 @@
 
   <main class="project-content">
 
-    <!-- HERO -->
+    <!-- HERO: PUBLIC GREEN -->
 
     <section class="project-hero">
 
       <img
-        src="assets/msc-4.png"
-        alt="Conceptual visualisation of the Zaanstraat neighbourhood"
+        src="assets/ze1.png"
+        alt="Conceptual collage of green public space in the Zaanstraat neighbourhood"
       >
 
       <div class="project-hero-content">
@@ -410,7 +385,7 @@
 
     </div>
 
-    <!-- PROJECT GRID -->
+    <!-- CONTENT -->
 
     <section class="project-grid">
 
@@ -418,120 +393,121 @@
 
       <div class="project-copy">
 
-        <p class="project-question">
-          How do you make a future neighbourhood feel real
-          before it exists?
+        <p>
+          As part of an MSc project in collaboration with the
+          Municipality of Amsterdam, our team explored ideas
+          for the future Zaanstraat neighbourhood, focusing
+          on green spaces, shared facilities and community life.
         </p>
 
         <p>
-          As part of an MSc project developed in collaboration
-          with the Municipality of Amsterdam, our team explored
-          possible futures for the Zaanstraat neighbourhood.
-          We imagined how green public spaces, shared facilities
-          and new connections between buildings could encourage
-          a more social and sustainable way of living.
-        </p>
-
-        <p>
-          Together with a classmate, I translated our team's
-          ideas into a series of architectural collages and
-          spatial illustrations. I particularly enjoyed this
-          more conceptual side of urban design: using images
-          not just to show what a place might look like,
-          but to communicate how it could feel and how
-          people might use it.
-        </p>
-
-        <p>
-          The illustrations helped bring the proposals to life,
-          making the neighbourhood's potential character
-          easier to imagine and discuss.
+          Together with a classmate, I created a series of
+          architectural collages to bring these ideas to life.
+          We deliberately kept the visualisations open and
+          exploratory, showing possible ways the neighbourhood
+          could develop rather than presenting a fixed design.
         </p>
 
       </div>
 
-      <!-- TOP RIGHT: MAIN VISUALISATION -->
+      <!-- TOP RIGHT: PUBLIC GREEN -->
 
       <div>
 
         <a
           class="project-image-link"
-          href="assets/msc-4.png"
+          href="assets/ze1.png"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open Zaanstraat neighbourhood visualisation"
+          aria-label="Open Public Green collage"
         >
           <img
             class="project-image"
-            src="assets/msc-4.png"
-            alt="Public green spaces, biodiversity and active mobility in the proposed Zaanstraat neighbourhood"
+            src="assets/ze1.png"
+            alt="Public green spaces, biodiversity and active mobility"
             loading="lazy"
           >
         </a>
 
         <p class="project-caption">
-          Public Green — imagining a greener and more connected neighbourhood.
+          Public Green
         </p>
 
       </div>
 
-      <!-- BOTTOM LEFT: WORKSHOP CONCEPT -->
+      <!-- SECOND ROW LEFT: WORKSHOP -->
 
       <div>
 
         <a
           class="project-image-link"
-          href="assets/msc4-4.png"
+          href="assets/ze2.png"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open workshop concept illustration"
+          aria-label="Open Workshop collage"
         >
           <img
             class="project-image"
-            src="assets/msc4-4.png"
-            alt="Conceptual illustration of a shared neighbourhood workshop"
+            src="assets/ze2.png"
+            alt="Shared workshop with green roof and public space"
             loading="lazy"
           >
         </a>
 
         <p class="project-caption">
-          The Workshop — shared spaces for making, repairing
-          and exchanging skills.
+          The Workshop
         </p>
 
       </div>
 
-      <!-- BOTTOM RIGHT: ELEVATED COMMUNITY -->
+      <!-- SECOND ROW RIGHT: ELEVATED COMMUNITY -->
 
       <div>
 
         <a
           class="project-image-link"
-          href="assets/msc4-3.png"
+          href="assets/ze3.png"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open elevated community concept illustration"
+          aria-label="Open Elevated Community collage"
         >
           <img
             class="project-image"
-            src="assets/msc4-3.png"
-            alt="Conceptual illustration of connected green rooftops and elevated community spaces"
+            src="assets/ze3.png"
+            alt="Connected green rooftops and elevated community spaces"
             loading="lazy"
           >
         </a>
 
         <p class="project-caption">
-          Elevated Community — connecting rooftops to create
-          new communal spaces above street level.
+          Elevated Community
         </p>
 
       </div>
 
-      <!-- OPTIONAL THIRD DETAIL IMAGE -->
+      <!-- THIRD ROW LEFT: SHARING NEIGHBOURHOOD -->
 
-      <div class="project-placeholder">
-        Sharing Neighbourhood illustration<br>
-        Add image filename here
+      <div>
+
+        <a
+          class="project-image-link"
+          href="assets/ze4.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Sharing Neighbourhood collage"
+        >
+          <img
+            class="project-image"
+            src="assets/ze4.png"
+            alt="Residential building with shared facilities and community spaces"
+            loading="lazy"
+          >
+        </a>
+
+        <p class="project-caption">
+          Sharing Neighbourhood
+        </p>
+
       </div>
 
     </section>
