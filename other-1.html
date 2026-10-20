@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Root Hunt — Sophie Deahl</title>
+  <title>Root Hunt – From Drawing to Playable Game — Sophie Deahl</title>
 
   <link rel="stylesheet" href="style.css">
 
@@ -242,8 +242,37 @@
       text-align: left;
     }
 
-    .project-story p:last-child {
-      margin-bottom: 0;
+    /* VIDEO PLACEHOLDER */
+
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-top: 28px;
+      border: 1px solid #bbb;
+      background: #efefed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      color: #555;
+    }
+
+    .video-play-icon {
+      width: 54px;
+      height: 54px;
+      border: 1px solid #888;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      padding-left: 4px;
+    }
+
+    .video-placeholder span {
+      font-size: 13px;
+      letter-spacing: .01em;
     }
 
     /* BOTTOM IMAGE GALLERY */
@@ -365,7 +394,7 @@
 
       <div class="landing-row">
 
-        <a class="identity" href="index.html">
+        <a class="identity" href="index.html#projects">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
           <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
@@ -397,7 +426,9 @@
       >
 
       <div class="project-hero-content">
-        <h1 class="project-title">Root Hunt</h1>
+        <h1 class="project-title">
+          Root Hunt – From Drawing to Playable Game
+        </h1>
       </div>
 
     </section>
@@ -418,7 +449,7 @@
 
     </div>
 
-    <!-- DRAWINGS LEFT / TEXT RIGHT -->
+    <!-- DRAWINGS LEFT / TEXT AND VIDEO RIGHT -->
 
     <section class="project-details">
 
@@ -463,6 +494,19 @@
           tools and techniques when I'm excited about an idea.
         </p>
 
+        <!-- REPLACE WITH VIDEO LATER -->
+
+        <div class="video-placeholder"
+             aria-label="Placeholder for Root Hunt gameplay video">
+
+          <div class="video-play-icon" aria-hidden="true">
+            &#9654;
+          </div>
+
+          <span>Gameplay video coming soon</span>
+
+        </div>
+
       </div>
 
     </section>
@@ -473,8 +517,6 @@
       class="project-gallery"
       aria-label="Root Hunt environment and gameplay images"
     >
-
-      <!-- IMAGE 1 -->
 
       <a
         href="assets/root-2.png"
@@ -489,8 +531,6 @@
         >
       </a>
 
-      <!-- IMAGE 2 -->
-
       <a
         href="assets/root-3.png"
         target="_blank"
@@ -503,8 +543,6 @@
           loading="lazy"
         >
       </a>
-
-      <!-- IMAGE 3: SAME AS HERO -->
 
       <a
         href="assets/other-1.png"
