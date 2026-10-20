@@ -65,14 +65,6 @@ const projects = [
     href: 'other-3.html'
   },
   {
-    id: 'interactive-explainers',
-    category: 'Commissioned Projects',
-    title: 'Explainers for Dutch Metropolitan Innovations',
-    image: 'assets/commissioned-4.png',
-    pdf: 'projects/interactive-explainers.pdf',
-    href: 'commissioned-4.html'
-  },
-  {
     id: 'other-1',
     category: 'Other Projects',
     title: 'Root Hunt — From Drawing to Playable Game   ',
