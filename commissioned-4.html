@@ -19,7 +19,7 @@
       margin: 0;
       background: #fafafa;
       color: #111;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
     }
 
     /* HEADER */
@@ -28,12 +28,12 @@
       min-height: 0;
       display: flex;
       align-items: center;
-      padding: 28px 5.5% 0;
+      padding: 35px 5.5% 0;
     }
 
     .landing-inner {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
     }
 
@@ -48,14 +48,37 @@
       justify-content: space-between;
       align-items: stretch;
       gap: 40px;
-      padding: 50px 5px;
+      padding: 26px 5px;
     }
 
     .landing .identity {
-      font-size: clamp(30px, 4vw, 60px);
+      font-size: clamp(24px, 2.35vw, 34px);
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .landing .identity strong,
+    .landing .identity em,
+    .landing .identity span {
+      display: block;
+    }
+
+    .landing .identity strong {
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .landing .identity em {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .landing .identity span {
+      font-weight: 400;
+      font-style: normal;
     }
 
     .landing-nav {
@@ -68,7 +91,7 @@
     }
 
     .landing-nav a {
-      font-size: clamp(30px, 3.5vw, 54px);
+      font-size: clamp(23px, 2.2vw, 32px);
       font-weight: 700;
       font-style: normal;
       letter-spacing: -.05em;
@@ -89,17 +112,17 @@
 
     .project-content {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 30px 5.5% 110px;
+      padding: 24px 5.5% 90px;
     }
 
-    /* HERO IMAGE */
+    /* THINNER BANNER */
 
     .project-hero {
       position: relative;
       width: 100%;
-      height: clamp(400px, 44vw, 620px);
+      height: 230px;
       overflow: hidden;
       background: #e9ece7;
       isolation: isolate;
@@ -119,9 +142,9 @@
       inset: 0;
       background: linear-gradient(
         90deg,
-        rgba(250, 250, 250, .68) 0%,
-        rgba(250, 250, 250, .32) 42%,
-        rgba(250, 250, 250, 0) 75%
+        rgba(250, 250, 250, .75) 0%,
+        rgba(250, 250, 250, .38) 48%,
+        rgba(250, 250, 250, 0) 100%
       );
       z-index: 1;
       pointer-events: none;
@@ -131,7 +154,7 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      padding: clamp(24px, 3vw, 45px);
+      padding: 30px 35px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -139,97 +162,101 @@
     }
 
     .project-title {
-      max-width: 850px;
+      max-width: 950px;
       margin: 0;
-      font-size: clamp(42px, 5.7vw, 86px);
+      font-size: clamp(30px, 3.5vw, 52px);
       font-weight: 700;
       font-style: italic;
       line-height: .98;
       letter-spacing: -.065em;
     }
 
-    /* DESCRIPTION AND IMAGE GRID */
-
-    .project-details {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-      gap: 6%;
-      align-items: start;
-      padding-top: 35px;
-    }
-
-    .project-copy {
-      min-width: 0;
-    }
+    /* METADATA */
 
     .project-meta {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
       gap: 12px 24px;
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.4;
-      margin-bottom: 28px;
+      margin: 26px 0 30px;
     }
 
     .project-year {
       font-weight: 700;
     }
 
-    .project-copy a {
-      color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
+    /* TWO EQUAL-WIDTH COLUMNS */
 
-    .project-copy a:hover {
-      font-style: italic;
-    }
-
-    .project-rule {
-      width: 100%;
-      height: 1px;
-      background: #bbb;
-      margin-bottom: 28px;
-    }
-
-    .project-copy p {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(18px, 1.5vw, 21px);
-      font-weight: 400;
-      line-height: 1.38;
-      letter-spacing: -.025em;
-      text-align: justify;
-      hyphens: none;
-      margin: 0 0 26px;
-    }
-
-    .project-gallery {
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      column-gap: 5%;
       align-items: start;
+    }
+
+    .project-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
       min-width: 0;
     }
 
-    .project-gallery a {
+    /* TEXT */
+
+    .project-copy {
+      min-width: 0;
+    }
+
+    .project-copy p {
+      font-size: clamp(16px, 1.2vw, 17px);
+      font-weight: 400;
+      line-height: 1.42;
+      letter-spacing: -.025em;
+      text-align: justify;
+      hyphens: none;
+      margin: 0 0 24px;
+    }
+
+    .project-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* IMAGES */
+
+    .project-image-link {
       display: block;
       width: 100%;
-      height: auto;
-      overflow: visible;
-      background: transparent;
+      overflow: hidden;
       cursor: zoom-in;
     }
 
-    .project-gallery img {
+    .project-image {
       display: block;
       width: 100%;
       height: auto;
       transition: transform .25s ease;
     }
 
-    .project-gallery a:hover img {
+    .project-image-link:hover .project-image {
       transform: scale(1.025);
+    }
+
+    /* PLACEHOLDER */
+
+    .project-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #e9ece7;
+      border: 1px solid #d7d9d5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+      text-align: center;
     }
 
     /* MOBILE */
@@ -265,15 +292,7 @@
       }
 
       .project-hero {
-        height: 480px;
-      }
-
-      .project-hero::after {
-        background: linear-gradient(
-          0deg,
-          rgba(250, 250, 250, .78) 0%,
-          rgba(250, 250, 250, .18) 75%
-        );
+        height: 210px;
       }
 
       .project-hero-content {
@@ -281,22 +300,33 @@
       }
 
       .project-title {
-        font-size: clamp(35px, 8vw, 56px);
+        font-size: clamp(29px, 7vw, 44px);
         max-width: 100%;
       }
 
-      .project-details {
+      .project-meta {
+        margin: 22px 0 26px;
+      }
+
+      .project-grid {
         grid-template-columns: 1fr;
-        gap: 28px;
-        padding-top: 28px;
+        gap: 30px;
       }
 
       .project-copy p {
         font-size: 18px;
       }
 
-      .project-gallery {
-        gap: 12px;
+      .project-column {
+        gap: 24px;
+      }
+
+      .project-column-left {
+        order: 2;
+      }
+
+      .project-column-right {
+        order: 1;
       }
     }
   </style>
@@ -314,7 +344,7 @@
 
       <div class="landing-row">
 
-        <a class="identity" href="index.html">
+        <a class="identity" href="index.html#projects">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
           <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
@@ -336,7 +366,7 @@
 
   <main class="project-content">
 
-    <!-- HERO -->
+    <!-- BANNER -->
 
     <section class="project-hero">
 
@@ -353,52 +383,78 @@
 
     </section>
 
-    <!-- DESCRIPTION AND IMAGES -->
+    <!-- PROJECT INFORMATION -->
 
-    <section class="project-details">
+    <div class="project-meta">
+      <span class="project-year">2025</span>
+    </div>
 
-      <!-- LEFT COLUMN -->
+    <!-- TWO-COLUMN CONTENT -->
 
-      <div class="project-copy">
+    <section class="project-grid">
 
-        <div class="project-meta">
-          <span class="project-year">YEAR</span>
-          <!-- Add client or collaborator here -->
+      <!-- LEFT COLUMN: IMAGE PLACEHOLDER AND EXISTING IMAGE -->
+
+      <div class="project-column project-column-left">
+
+        <!-- REPLACE WITH YOUR CHOSEN IMAGE LATER -->
+
+        <div class="project-placeholder">
+          Additional image
         </div>
 
-        <div class="project-rule"></div>
-
-        <p>
-          Project description to be added.
-        </p>
-
-      </div>
-
-      <!-- RIGHT COLUMN -->
-
-      <div class="project-gallery">
-
         <a
+          class="project-image-link"
           href="assets/commissioned4-small1.png"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open first interactive explainer image"
         >
           <img
+            class="project-image"
             src="assets/commissioned4-small1.png"
             alt="Interactive Explainers — image 1"
+            loading="lazy"
           >
         </a>
 
+      </div>
+
+      <!-- RIGHT COLUMN: DESCRIPTION AND EXISTING IMAGE -->
+
+      <div class="project-column project-column-right">
+
+        <div class="project-copy">
+
+          <p>
+            Together with the team, we developed a simple, flexible
+            format for interactive explainers that make complex urban
+            challenges easier to understand. Using PowerPoint, the
+            explainers allow presenters to reveal and animate
+            information step by step, while adapting the content to
+            different audiences.
+          </p>
+
+          <p>
+            Topics range from urban mobility and heat islands to water
+            management and data governance, providing DMI with a
+            reusable visual storytelling tool for presentations.
+          </p>
+
+        </div>
+
         <a
+          class="project-image-link"
           href="assets/commissioned4-small2.png"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open second interactive explainer image"
         >
           <img
+            class="project-image"
             src="assets/commissioned4-small2.png"
             alt="Interactive Explainers — image 2"
+            loading="lazy"
           >
         </a>
 
@@ -408,7 +464,7 @@
 
   </main>
 
-    <script src="projects.js"></script>
+  <script src="projects.js"></script>
 
 </body>
 </html>
