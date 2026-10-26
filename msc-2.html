@@ -75,7 +75,7 @@
       letter-spacing: -.065em;
     }
 
-    /* METADATA AND PROJECT CATEGORIES */
+    /* METADATA */
 
     .project-meta {
       display: flex;
@@ -91,15 +91,6 @@
       font-weight: 700;
     }
 
-    .project-disciplines {
-      margin-left: auto;
-      color: #666;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: .025em;
-      text-transform: uppercase;
-    }
-
     .project-meta a {
       color: inherit;
       text-decoration: underline;
@@ -108,6 +99,22 @@
 
     .project-meta a:hover {
       font-style: italic;
+    }
+
+    /* PROJECT CATEGORIES */
+
+    .project-disciplines {
+      display: block;
+      margin: 0 0 22px;
+      padding: 0 0 20px;
+      border-bottom: 1px solid #bbb;
+      color: #111;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      letter-spacing: -.015em;
+      text-transform: uppercase;
     }
 
     /* TWO-COLUMN LAYOUT */
@@ -200,8 +207,7 @@
       }
 
       .project-disciplines {
-        flex-basis: 100%;
-        margin-left: 0;
+        font-size: 14px;
       }
 
       .project-grid {
@@ -276,7 +282,7 @@
     </section>
 
 
-    <!-- PROJECT INFORMATION AND CATEGORIES -->
+    <!-- PROJECT INFORMATION -->
 
     <div class="project-meta">
 
@@ -290,10 +296,6 @@
         >MSc MADE</a>
       </span>
 
-      <span class="project-disciplines">
-        Qualitative Research / Urban Governance
-      </span>
-
     </div>
 
 
@@ -304,6 +306,12 @@
       <!-- BLOCK 1: INTRODUCTION -->
 
       <div class="project-block project-copy">
+
+        <!-- PROJECT CATEGORIES -->
+
+        <div class="project-disciplines">
+          Qualitative Research / Urban Governance
+        </div>
 
         <p>
           <strong><em>
