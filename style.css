@@ -725,3 +725,17 @@ footer {
   }
 
 }
+
+
+
+/* Experience links – same hover effect as education */
+
+.experience-entry h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.experience-entry h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
