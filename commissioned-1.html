@@ -11,104 +11,12 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    /* ========================================
+       PROJECT PAGE ONLY
 
-    body {
-      margin: 0;
-      background: #fafafa;
-      color: #111;
-      font-family: 'Arimo', Arial, Helvetica, sans-serif;
-    }
-
-    /* HEADER */
-
-    .landing {
-      min-height: 0;
-      display: flex;
-      align-items: center;
-      padding: 35px 5.5% 0;
-    }
-
-    .landing-inner {
-      width: 100%;
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-    .landing-line {
-      width: 100%;
-      height: 1px;
-      background: #aaa;
-    }
-
-    .landing-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-      gap: 40px;
-      padding: 26px 5px;
-    }
-
-    .landing .identity {
-      font-size: clamp(24px, 2.35vw, 34px);
-      line-height: 1.12;
-      letter-spacing: -.055em;
-      flex-shrink: 0;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .landing .identity strong,
-    .landing .identity em,
-    .landing .identity span {
-      display: block;
-    }
-
-    .landing .identity strong {
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    .landing .identity em {
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    .landing .identity span {
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    .landing-nav {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
-      min-width: 0;
-      text-align: right;
-    }
-
-    .landing-nav a {
-      font-size: clamp(23px, 2.2vw, 32px);
-      font-weight: 700;
-      font-style: normal;
-      letter-spacing: -.05em;
-      line-height: 1.12;
-      white-space: nowrap;
-      cursor: pointer;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .landing-nav a:hover,
-    .landing-nav a:focus-visible {
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    /* MAIN CONTENT */
+       Header styles come from style.css,
+       exactly as on the homepage.
+    ======================================== */
 
     .project-content {
       width: 100%;
@@ -117,7 +25,7 @@
       padding: 24px 5.5% 90px;
     }
 
-    /* THINNER BANNER */
+    /* PROJECT HERO */
 
     .project-hero {
       position: relative;
@@ -187,6 +95,15 @@
       font-weight: 700;
     }
 
+    .project-disciplines {
+      margin-left: auto;
+      color: #666;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .025em;
+      text-transform: uppercase;
+    }
+
     .project-meta a,
     .project-copy a {
       color: inherit;
@@ -216,7 +133,7 @@
       width: 100%;
     }
 
-    /* TEXT BLOCKS */
+    /* PROJECT TEXT */
 
     .project-copy p {
       font-size: clamp(16px, 1.2vw, 17px);
@@ -232,7 +149,7 @@
       margin-bottom: 0;
     }
 
-    /* INTERACTIVE MAP BLOCK */
+    /* INTERACTIVE MAP */
 
     .project-map {
       width: 100%;
@@ -249,7 +166,7 @@
       margin-top: -60px;
     }
 
-    /* IMAGE BLOCK */
+    /* ANALYSIS IMAGE */
 
     .project-image-link {
       display: block;
@@ -288,31 +205,6 @@
     /* MOBILE */
 
     @media (max-width: 700px) {
-
-      .landing {
-        padding: 25px 5% 0;
-      }
-
-      .landing-row {
-        flex-direction: column;
-        gap: 50px;
-        padding: 35px 5px;
-      }
-
-      .landing .identity {
-        font-size: clamp(26px, 6vw, 40px);
-      }
-
-      .landing-nav {
-        align-items: flex-start;
-        text-align: left;
-        gap: 25px;
-      }
-
-      .landing-nav a {
-        font-size: clamp(26px, 6vw, 40px);
-      }
-
       .project-content {
         padding: 22px 5% 70px;
       }
@@ -332,6 +224,11 @@
 
       .project-meta {
         margin: 22px 0 26px;
+      }
+
+      .project-disciplines {
+        flex-basis: 100%;
+        margin-left: 0;
       }
 
       .project-grid {
@@ -357,24 +254,27 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER: SAME STRUCTURE AS INDEX.HTML -->
 
-  <header class="landing">
+  <header class="landing open" id="landing">
     <div class="landing-inner">
 
       <div class="landing-line"></div>
 
       <div class="landing-row">
 
-        <a class="identity" href="index.html#projects">
+        <a class="identity" href="index.html#about">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
-          <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
+          <span>RESEARCHER, DESIGN</span>
+          <span>&amp; VISUALISATION</span>
         </a>
 
         <nav class="landing-nav" aria-label="Main navigation">
-          <a href="index.html#about">ABOUT ME</a>
-          <a href="index.html#projects">PROJECTS</a>
+          <a href="index.html#about">ABOUT</a>
+          <a href="index.html#projects" class="active" aria-current="page">
+            PROJECTS
+          </a>
         </nav>
 
       </div>
@@ -384,11 +284,12 @@
     </div>
   </header>
 
+
   <!-- PROJECT CONTENT -->
 
   <main class="project-content">
 
-    <!-- THIN BANNER -->
+    <!-- HERO -->
 
     <section class="project-hero">
 
@@ -406,7 +307,8 @@
 
     </section>
 
-    <!-- METADATA -->
+
+    <!-- PROJECT METADATA AND CATEGORIES -->
 
     <div class="project-meta">
 
@@ -427,18 +329,25 @@
         >SVP</a>
       </span>
 
+      <span class="project-disciplines">
+        Spatial Analysis / Urban Research
+      </span>
+
     </div>
 
-    <!-- FOUR EQUAL-WIDTH BLOCKS -->
+
+    <!-- FOUR-BLOCK PROJECT GRID -->
 
     <section class="project-grid">
 
-      <!-- BLOCK 1: TOP LEFT — INTRODUCTORY TEXT -->
+      <!-- BLOCK 1: INTRODUCTORY TEXT -->
 
       <div class="project-block project-copy">
 
         <p>
-          <strong><em>Where do mobility hubs make sense?</em></strong>
+          <strong><em>
+            Where do mobility hubs make sense?
+          </em></strong>
         </p>
 
         <p>
@@ -464,7 +373,8 @@
 
       </div>
 
-      <!-- BLOCK 2: TOP RIGHT — INTERACTIVE MAP -->
+
+      <!-- BLOCK 2: INTERACTIVE MAP -->
 
       <div class="project-block project-map">
 
@@ -477,7 +387,8 @@
 
       </div>
 
-      <!-- BLOCK 3: BOTTOM LEFT — SPATIAL ANALYSIS IMAGE -->
+
+      <!-- BLOCK 3: SPATIAL ANALYSIS IMAGE -->
 
       <div class="project-block">
 
@@ -498,7 +409,8 @@
 
       </div>
 
-      <!-- BLOCK 4: BOTTOM RIGHT — REFLECTION TEXT -->
+
+      <!-- BLOCK 4: REFLECTION -->
 
       <div class="project-block project-copy">
 
@@ -531,6 +443,9 @@
     </section>
 
   </main>
+
+
+  <!-- EXISTING PROJECT DATA -->
 
   <script src="projects.js"></script>
 
