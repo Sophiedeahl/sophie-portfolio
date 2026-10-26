@@ -1,18 +1,16 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* ========================================
-   GLOBAL
-======================================== */
+/* GLOBAL */
 
 :root {
   --background: #fafafa;
   --text: #111;
-  --line: #aaa;
+  --muted: #777;
+  --line: #ccc;
 
   --body-size: 16px;
   --heading-size: 18px;
-  --body-line-height: 1.4;
+  --line-height: 1.4;
 }
 
 * {
@@ -41,79 +39,75 @@ video {
   max-width: 100%;
 }
 
-/* ========================================
-   HEADER
-======================================== */
+/* HEADER */
 
 .landing {
-  display: flex;
-  align-items: center;
-  padding: 35px 5.5% 0;
+  padding: 24px 5.5% 0;
 }
 
 .landing.open {
-  min-height: 0;
-  padding-top: 35px;
-  padding-bottom: 0;
+  padding-top: 24px;
 }
 
 .landing-inner {
-  width: 100%;
   max-width: 1500px;
   margin: 0 auto;
 }
 
 .landing-line {
-  width: 100%;
   height: 1px;
-  background: var(--line);
+  width: 100%;
+  background: #aaa;
 }
 
 .landing-row {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: flex-start;
   gap: 40px;
-  padding: 26px 5px;
+  padding: 20px 0;
 }
 
 .landing .identity {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  font-size: clamp(24px, 2.35vw, 34px);
-  line-height: 1.12;
+  font-size: clamp(21px, 2.2vw, 32px);
+  line-height: 1.1;
   letter-spacing: -.055em;
 }
 
 .landing .identity strong {
   font-weight: 700;
-  letter-spacing: -.065em;
+  letter-spacing: -.06em;
 }
 
 .landing .identity em {
   font-weight: 400;
   font-style: italic;
+  font-size: .7em;
+  margin-top: 3px;
 }
 
 .landing .identity span {
   font-weight: 400;
+  font-size: .65em;
+  letter-spacing: -.035em;
 }
 
 .landing-nav {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-end;
+  gap: 5px;
   text-align: right;
 }
 
 .landing-nav a {
-  font-size: clamp(23px, 2.2vw, 32px);
+  font-size: clamp(20px, 1.7vw, 25px);
   font-weight: 700;
-  letter-spacing: -.05em;
-  line-height: 1.12;
-  white-space: nowrap;
+  line-height: 1.15;
+  letter-spacing: -.04em;
 }
 
 .landing-nav a:hover,
@@ -123,70 +117,47 @@ video {
   font-style: italic;
 }
 
-/* ========================================
-   PAGE VISIBILITY
-======================================== */
+/* PAGE VISIBILITY */
 
 .content-section {
+  display: none;
   width: 100%;
   max-width: 1700px;
   margin: 0 auto;
-  padding: 20px 5.5% 70px;
-  display: none;
+  padding: 25px 5.5% 70px;
 }
 
 .content-section.visible {
   display: block;
 }
 
-/* ========================================
-   ABOUT PAGE
-======================================== */
+/* ABOUT LAYOUT */
 
 #about {
-  max-width: none;
-  padding: 45px 5.5% 70px;
+  padding-top: 32px;
 }
 
 .about-layout {
-  width: 100%;
-  max-width: 1700px;
+  max-width: 1500px;
   margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1.3fr)
-    minmax(0, .75fr);
-
-  column-gap: 5%;
-  row-gap: 45px;
-
-  align-items: start;
-  padding: 0 2% 40px;
 }
 
-/* ========================================
-   VIDEO AND PERSONAL DETAILS
-======================================== */
+/* TOP ROW */
 
 .about-intro {
-  grid-column: 1 / -1;
-
   display: flex;
   align-items: flex-start;
-  gap: 65px;
+  gap: 36px;
+  padding: 0 6% 32px;
+  border-bottom: 1px solid var(--line);
 }
 
 .intro-video {
+  flex: 0 0 320px;
   width: 320px;
   max-width: 100%;
-  flex: 0 0 320px;
   aspect-ratio: 16 / 9;
-
   overflow: hidden;
-  border-radius: 6px;
   background: #e9e9e6;
 }
 
@@ -198,37 +169,22 @@ video {
 }
 
 .intro-details {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  padding-top: 0;
+  border-left: 1px solid var(--line);
+  padding-left: 30px;
+  min-height: 180px;
 }
 
-/* ========================================
-   ALL ABOUT HEADINGS — SAME SIZE
-======================================== */
+/* UNIFORM ABOUT TYPOGRAPHY */
 
 #about h2 {
-  margin: 0 0 18px;
-
+  margin: 0 0 16px;
   font-family: 'Arimo', Arial, Helvetica, sans-serif;
   font-size: var(--heading-size);
   font-weight: 700;
   font-style: normal;
-
-  line-height: 1.2;
-  letter-spacing: -.025em;
+  line-height: 1.25;
+  letter-spacing: -.015em;
 }
-
-.intro-details h2 {
-  margin-bottom: 16px;
-}
-
-/* ========================================
-   ALL ABOUT BODY TEXT — SAME SIZE
-======================================== */
 
 #about p,
 #about a,
@@ -236,18 +192,18 @@ video {
 #about h3 {
   font-family: 'Arimo', Arial, Helvetica, sans-serif;
   font-size: var(--body-size);
-  line-height: var(--body-line-height);
-  letter-spacing: -.02em;
+  line-height: var(--line-height);
+  letter-spacing: -.015em;
 }
 
-/* ========================================
-   PERSONAL DETAILS
-======================================== */
+#about p {
+  margin-top: 0;
+}
 
 .intro-details p,
 .intro-details a {
   display: block;
-  margin: 0;
+  margin: 0 0 6px;
   font-weight: 400;
   font-style: normal;
   overflow-wrap: anywhere;
@@ -257,95 +213,144 @@ video {
   text-decoration: underline;
 }
 
-/* ========================================
-   BIOGRAPHY
-======================================== */
+/* THREE COLUMNS */
 
-.about-bio {
-  min-width: 0;
+.about-columns {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(0, 1.12fr)
+    minmax(0, .78fr);
+  gap: 0;
+  padding-top: 28px;
+  align-items: stretch;
 }
 
-.about-bio p {
-  margin: 0 0 20px;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* ========================================
-   EDUCATION AND EXPERIENCE
-======================================== */
-
-.about-middle {
-  min-width: 0;
-}
-
-.about-middle section + section {
-  margin-top: 38px;
-}
-
-.about-middle p {
-  margin: 0 0 20px;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.education-link {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-.education-link:hover,
-.education-link:focus-visible {
-  font-style: italic;
-}
-
-/* ========================================
-   SKILLS AND SOFTWARE
-======================================== */
-
+.about-bio,
+.about-middle,
 .about-right {
   min-width: 0;
 }
 
-.about-right section + section {
-  margin-top: 45px;
+.about-bio {
+  padding: 0 34px 0 0;
 }
 
+.about-middle {
+  border-left: 1px solid var(--line);
+  padding: 0 34px;
+}
+
+.about-right {
+  border-left: 1px solid var(--line);
+  padding: 0 0 0 34px;
+}
+
+/* BIOGRAPHY */
+
+.about-bio p {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* EDUCATION */
+
+.education-entry {
+  margin-bottom: 22px;
+}
+
+.education-entry:last-child {
+  margin-bottom: 0;
+}
+
+.education-entry p {
+  margin: 0;
+}
+
+.education-entry .degree {
+  font-weight: 700;
+}
+
+.education-entry .degree a {
+  font-weight: 700;
+}
+
+.education-entry .dates {
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.education-entry a:hover,
+.education-entry a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* EXPERIENCE: DIVIDER ABOVE, NOT BETWEEN DEGREES */
+
+.experience-section {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.experience-section p {
+  margin-bottom: 20px;
+}
+
+/* SKILLS */
+
 .about-right h3 {
-  margin: 20px 0 7px;
+  margin: 0 0 4px;
   font-weight: 700;
   font-style: normal;
 }
 
-.about-right h2 + h3 {
-  margin-top: 0;
+.skill-group {
+  margin-bottom: 15px;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
 }
 
 .about-right ul {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .about-right li {
-  margin: 0 0 3px;
+  margin: 0;
   font-weight: 400;
   font-style: italic;
 }
 
-/* ========================================
-   PROJECTS
-======================================== */
+/* SOFTWARE */
 
-.content-section .projects {
-  padding: 0;
+.software-section {
+  border-top: 1px solid var(--line);
+  margin-top: 25px;
+  padding-top: 20px;
 }
+
+.software-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 18px;
+  row-gap: 14px;
+}
+
+.software-group {
+  min-width: 0;
+}
+
+/* PROJECTS */
 
 .projects {
   max-width: 1700px;
   margin: auto;
-
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px 18px;
@@ -353,6 +358,7 @@ video {
 
 .project {
   display: block;
+  min-width: 0;
 }
 
 .thumb {
@@ -374,7 +380,6 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
   filter: grayscale(1) contrast(1.4) brightness(.85);
   transition: filter .35s, transform .35s;
 }
@@ -382,22 +387,17 @@ video {
 .overlay {
   position: absolute;
   inset: 0;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
   padding: clamp(12px, 1.4vw, 22px);
-
   background: rgba(0, 0, 0, .12);
   color: #fff;
-
   font-size: clamp(19px, 2.35vw, 38px);
   font-weight: 700;
   font-style: italic;
   letter-spacing: -.065em;
   line-height: 1.04;
-
   transition: color .35s, background .35s;
 }
 
@@ -424,9 +424,7 @@ video {
   outline-offset: 4px;
 }
 
-/* ========================================
-   PROJECT DETAIL PAGES
-======================================== */
+/* PROJECT DETAIL PAGES */
 
 .page {
   padding: 42px 6.3% 70px;
@@ -472,93 +470,118 @@ footer {
   font-size: 12px;
 }
 
-/* ========================================
-   TABLET
-======================================== */
+/* TABLET */
 
-@media (max-width: 1000px) {
-  .about-layout {
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(0, 1fr);
-
-    column-gap: 6%;
-    row-gap: 40px;
+@media (max-width: 1050px) {
+  .about-intro {
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .about-intro {
-    grid-column: 1 / -1;
+  .about-columns {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1.15fr);
+  }
+
+  .about-bio {
+    padding-right: 28px;
+  }
+
+  .about-middle {
+    padding-right: 0;
+    padding-left: 28px;
   }
 
   .about-right {
-    grid-column: 2;
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    margin-top: 30px;
+    padding: 24px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .software-section {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
   }
 }
 
-@media (max-width: 900px) {
-  .projects {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* ========================================
-   MOBILE
-======================================== */
+/* MOBILE */
 
 @media (max-width: 700px) {
   .landing {
-    padding: 25px 5% 0;
+    padding: 24px 5% 0;
   }
 
   .landing.open {
-    padding-top: 25px;
+    padding-top: 24px;
   }
 
   .landing-row {
-    flex-direction: column;
-    gap: 40px;
-    padding: 35px 5px;
+    gap: 24px;
   }
 
-  .landing .identity,
+  .landing .identity {
+    font-size: 24px;
+  }
+
   .landing-nav a {
-    font-size: clamp(26px, 6vw, 40px);
-  }
-
-  .landing-nav {
-    align-items: flex-start;
-    text-align: left;
-    gap: 25px;
+    font-size: 20px;
   }
 
   .content-section {
-    padding: 20px 5% 50px;
-  }
-
-  #about {
-    padding: 35px 5% 50px;
-  }
-
-  .about-layout {
-    grid-template-columns: 1fr;
-    row-gap: 35px;
-    padding: 0 2% 40px;
+    padding: 24px 5% 50px;
   }
 
   .about-intro {
-    grid-column: 1;
     flex-direction: column;
-    gap: 25px;
+    gap: 22px;
   }
 
   .intro-video {
+    flex: none;
     width: 100%;
     max-width: 320px;
-    flex: none;
+  }
+
+  .intro-details {
+    border-left: 0;
+    padding-left: 0;
+    min-height: 0;
+  }
+
+  .about-columns {
+    display: block;
+    padding-top: 26px;
+  }
+
+  .about-bio,
+  .about-middle,
+  .about-right {
+    border-left: 0;
+    padding: 0;
+  }
+
+  .about-middle,
+  .about-right {
+    border-top: 1px solid var(--line);
+    margin-top: 26px;
+    padding-top: 24px;
   }
 
   .about-right {
-    grid-column: 1;
+    display: block;
+  }
+
+  .software-section {
+    border-top: 1px solid var(--line);
+    margin-top: 26px;
+    padding-top: 24px;
   }
 
   .projects {
@@ -581,9 +604,7 @@ footer {
   }
 }
 
-/* ========================================
-   TOUCH AND ACCESSIBILITY
-======================================== */
+/* TOUCH DEVICES */
 
 @media (hover: none) {
   .overlay {
@@ -595,6 +616,8 @@ footer {
     filter: grayscale(1) contrast(1.4) brightness(.85);
   }
 }
+
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
   html {
