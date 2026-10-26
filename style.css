@@ -168,11 +168,13 @@ video {
   border-bottom: 1px solid var(--line);
 }
 
+/* FIXED: Square video container instead of 16:9 */
+
 .intro-video {
   flex: 0 0 320px;
   width: 320px;
   max-width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: #e9e9e6;
 }
@@ -181,8 +183,8 @@ video {
   display: block;
   width: 100%;
   height: 100%;
-object-fit: contain;
-object-position: center top;
+  object-fit: contain;
+  object-position: center;
 }
 
 .intro-details {
