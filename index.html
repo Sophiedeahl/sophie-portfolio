@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sophie Deahl — 2026 Portfolio</title>
+  <title>Researcher, Design &amp; Visualisation — Sophie Deahl</title>
 
   <link rel="stylesheet" href="style.css">
 
@@ -25,7 +26,7 @@
       box-sizing: border-box;
     }
 
-    /* COMPACT HEADER */
+    /* HEADER */
 
     .landing {
       min-height: 0;
@@ -133,639 +134,91 @@
       display: block;
     }
 
-    /* ABOUT ME */
+    /* ABOUT PAGE */
 
-    <!-- ABOUT -->
-
-<section class="content-section visible" id="about" aria-label="About">
-
-  <div class="about-layout">
-
-    <!-- TOP: INTRO VIDEO AND PERSONAL DETAILS -->
-
-    <div class="about-intro">
-
-      <div class="intro-video">
-        <video controls playsinline preload="metadata" poster="assets/about.png">
-          <source src="intro.mp4" type="video/mp4">
-          Your browser does not support HTML video.
-        </video>
-      </div>
-
-      <div class="intro-details">
-        <h1>Sophie Deahl</h1>
-
-        <p>14-01-1989</p>
-        <p>Dutch / British</p>
-        <p>London</p>
-
-        <a href="tel:+31639238922">+31 6 39238922</a>
-        <a href="mailto:deahl@hotmail.com">deahl@hotmail.com</a>
-      </div>
-
-    </div>
-
-    <!-- BOTTOM LEFT: BIOGRAPHY -->
-
-    <div class="about-bio">
-
-      <p>
-        I’m an urban researcher and designer. I study how places work
-        and how people experience them, then turn what I find into
-        visuals, tools and concepts that others can use.
-      </p>
-
-      <p>
-        I combine spatial analysis, participatory research and visual
-        design. I also design tools that help people take part in
-        planning. In my master’s thesis, I studied how stakeholders
-        collaborated on rooftop extensions in Rotterdam. I found that
-        bringing people together did not lead to shared commitments,
-        because those with the most influence over implementation
-        could also afford to wait.
-      </p>
-
-      <p>
-        I am currently in the process of relocating to London and am
-        actively seeking professional opportunities in the area.
-      </p>
-
-    </div>
-
-    <!-- BOTTOM MIDDLE: EDUCATION AND EXPERIENCE -->
-
-    <div class="about-middle">
-
-      <section>
-        <h2>EDUCATION</h2>
-
-        <p>
-          Bachelor in Engineering, Design &amp; Innovation, direction
-          <a
-            class="education-link"
-            href="https://www.hva.nl/opleidingen/engineering-product-ontwerpen"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Product Design</a>
-          at the Amsterdam University of Applied Sciences
-          (2010 to 2015)
-        </p>
-
-        <p>
-          Master of Science in
-          <a
-            class="education-link"
-            href="https://www.tudelft.nl/onderwijs/opleidingen/masters/made/msc-metropolitan-analysis-design-and-engineering"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Metropolitan Analysis Design &amp; Engineering</a>
-          at TU Delft and Wageningen University (2024 to 2026)
-        </p>
-      </section>
-
-      <section>
-        <h2>EXPERIENCE</h2>
-
-        <p>
-          After graduating in Product Design, I gradually moved into
-          urban development, starting with mobility and later working
-          on real estate projects. Over the past two and a half years,
-          my work has shifted towards more creative and research-driven
-          projects, combining urban analysis, visual design and
-          participatory approaches. With my MSc MADE now completed,
-          I want to build on this experience and focus on research and
-          design that helps people understand, shape and improve
-          their urban environments.
-        </p>
-      </section>
-
-    </div>
-
-    <!-- BOTTOM RIGHT: SKILLS AND SOFTWARE -->
-
-    <aside class="about-right">
-
-      <section>
-        <h2>SKILLS</h2>
-
-        <h3>Research</h3>
-        <ul>
-          <li>Spatial Analysis</li>
-          <li>Qualitative Research</li>
-          <li>Data Analysis</li>
-        </ul>
-
-        <h3>Design</h3>
-        <ul>
-          <li>Visual &amp; Graphic Design</li>
-          <li>Product Design</li>
-          <li>Game Design</li>
-          <li>Stop Motion</li>
-          <li>Video Editing</li>
-          <li>HTML Coding</li>
-        </ul>
-
-        <h3>Other</h3>
-        <ul>
-          <li>Creative Facilitation</li>
-          <li>Presenting</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>SOFTWARE</h2>
-
-        <h3>Design</h3>
-        <ul>
-          <li>Photoshop</li>
-          <li>Illustrator</li>
-          <li>InDesign</li>
-          <li>Canva</li>
-        </ul>
-
-        <h3>3D and games</h3>
-        <ul>
-          <li>Houdini</li>
-          <li>Unreal Engine</li>
-          <li>SolidWorks</li>
-        </ul>
-
-        <h3>Other</h3>
-        <ul>
-          <li>Excel</li>
-          <li>GitHub</li>
-          <li>iMovie</li>
-        </ul>
-      </section>
-
-    </aside>
-
-  </div>
-
-</section>
-
-    /* PROJECT GRID */
-
-    .content-section .projects {
-      padding: 0;
+    #about {
+      max-width: none;
+      padding: 45px 5.5% 70px;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .about-layout {
+      width: 100%;
+      max-width: 1700px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(0, 1.38fr)
+        minmax(0, .72fr);
+      column-gap: 5.5%;
+      row-gap: 48px;
+      align-items: start;
+      padding: 0 4% 40px;
     }
 
-    /* TABLET */
+    /* TOP: INTRO VIDEO AND PERSONAL DETAILS */
 
-    @media (max-width: 1000px) {
-
-      .about-layout {
-        grid-template-columns:
-          minmax(0, 1fr)
-          minmax(0, 1.4fr);
-        gap: 38px;
-        padding: 30px 5% 60px;
-      }
-
-      .about-right {
-        grid-column: 2;
-      }
-
-      .about-photo {
-        max-width: 350px;
-      }
+    .about-intro {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+      gap: 5.5%;
+      align-items: start;
     }
 
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-
-      .landing {
-        padding: 25px 5% 0;
-      }
-
-      .landing.open {
-        padding-top: 25px;
-        padding-bottom: 0;
-      }
-
-      .landing-row {
-        flex-direction: column;
-        gap: 50px;
-        padding: 35px 5px;
-      }
-
-      .landing .identity {
-        font-size: clamp(26px, 6vw, 40px);
-      }
-
-      .landing-nav {
-        align-items: flex-start;
-        text-align: left;
-        gap: 25px;
-      }
-
-      .landing-nav a {
-        font-size: clamp(26px, 6vw, 40px);
-      }
-
-      .content-section {
-        padding: 20px 5% 50px;
-      }
-
-      #about {
-        padding-top: 35px;
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-
-      .about-layout {
-        grid-template-columns: 1fr;
-        gap: 42px;
-        padding: 28px 22px 50px;
-      }
-
-      .about-left {
-        padding-top: 0;
-      }
-
-      .about-photo {
-        max-width: 390px;
-      }
-
-      .about-contact {
-        padding-left: 0;
-      }
-
-      .about-contact p,
-      .about-contact a,
-      .about-middle p,
-      .about-right li,
-      .about-right h3 {
-        font-size: 18px;
-      }
-
-      .about-right {
-        grid-column: auto;
-      }
+    .intro-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #e9e9e6;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      .content-section {
-        animation: none;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <main>
-
-    <!-- COMPACT HEADER -->
-
-    <section class="landing" id="landing">
-      <div class="landing-inner">
-
-        <div class="landing-line"></div>
-
-        <div class="landing-row">
-
-          <a class="identity" href="index.html#projects" id="home-link">
-            <strong>SOPHIE DEAHL</strong>
-            <em>2026 PORTFOLIO</em>
-            <span>RESEARCHER, DESIGN </span>
-            <br>&amp; VISUALISATION
-          </a>
-
-          <nav class="landing-nav" aria-label="Main navigation">
-            <a href="#about" id="about-link">ABOUT ME</a>
-            <a href="#projects" id="projects-link">PROJECTS</a>
-          </nav>
-
-        </div>
-
-        <div class="landing-line"></div>
-
-      </div>
-    </section>
-
-    <!-- ABOUT ME -->
-
-    <section class="content-section" id="about" aria-label="About Me">
-
-      <div class="about-layout">
-
-        <!-- LEFT: PORTRAIT AND CONTACT -->
-
-        <div class="about-left">
-
-          <img
-            class="about-photo"
-            src="assets/about.png"
-            alt="Portrait of Sophie Deahl"
-          >
-
-          <div class="about-contact">
-            <p>Dutch / British</p>
-
-            <a href="mailto:deahl@hotmail.com">
-              deahl@hotmail.com
-            </a>
-
-            <a href="tel:+31639238922">
-              +31 6 39238922
-            </a>
-          </div>
-
-        </div>
-
-        <!-- MIDDLE: BIOGRAPHY, EDUCATION, EXPERIENCE -->
-
-        <div class="about-middle">
-
-          <p>
-            I’m an urban researcher and designer. I study how
-            places work and how people experience them, then turn
-            what I find into visuals, tools and concepts that
-            others can use.
-          </p>
-
-          <p>
-            I combine spatial analysis, participatory research
-            and visual design. I also design tools that help
-            people take part in planning. In my master’s thesis,
-            I studied how stakeholders collaborated on rooftop
-            extensions in Rotterdam. I found that bringing people
-            together did not lead to shared commitments, because
-            those with the most influence over implementation
-            could also afford to wait.
-          </p>
-
-          <p>
-            I am currently in the process of relocating to London
-            and am actively seeking professional opportunities
-            in the area.
-          </p>
-
-          <!-- EDUCATION -->
-
-          <section>
-            <h2>EDUCATION</h2>
-
-            <p>
-              Bachelor in Engineering, Design &amp; Innovation,
-              direction
-              <a
-                class="education-link"
-                href="https://www.hva.nl/opleidingen/engineering-product-ontwerpen"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Product Design</a>
-              at the Amsterdam University of Applied Sciences
-              (2010 to 2015)
-              <br>
-              Master of Science in
-              <a
-                class="education-link"
-                href="https://www.tudelft.nl/onderwijs/opleidingen/masters/made/msc-metropolitan-analysis-design-and-engineering"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Metropolitan Analysis Design &amp; Engineering</a>
-              at TU Delft and Wageningen University
-              (2024 to 2026)
-            </p>
-          </section>
-
-          <!-- EXPERIENCE -->
-
-          <section>
-            <h2>EXPERIENCE</h2>
-
-            <p>
-              After graduating in Product Design, I gradually
-              moved into urban development, starting with mobility
-              and later working on real estate projects. Over the
-              past two and a half years, my work has shifted towards
-              more creative and research-driven projects, combining
-              urban analysis, visual design and participatory
-              approaches.
-
-              With my MSc MADE now completed, I want to build on
-              this experience and focus on research and design
-              that helps people understand, shape and improve
-              their urban environments.
-            </p>
-          </section>
-
-        </div>
-
-        <!-- RIGHT: SKILLS AND SOFTWARE -->
-
-        <aside class="about-right">
-
-          <section>
-            <h2>SKILLS</h2>
-
-            <h3>Research</h3>
-            <ul>
-              <li>Spatial Analysis</li>
-              <li>Qualitative Research</li>
-              <li>Data Analysis</li>
-            </ul>
-
-            <h3>Design</h3>
-            <ul>
-              <li>Visual &amp; Graphic Design</li>
-              <li>Product Design</li>
-              <li>Game Design</li>
-              <li>Stop Motion</li>
-              <li>Video Editing</li>
-              <li>HTML Coding</li>
-            </ul>
-
-            <h3>Other</h3>
-            <ul>
-              <li>Creative Facilitation</li>
-              <li>Presenting</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>SOFTWARE</h2>
-
-            <h3>Design</h3>
-            <ul>
-              <li>Photoshop</li>
-              <li>Illustrator</li>
-              <li>InDesign</li>
-              <li>Canva</li>
-            </ul>
-
-            <h3>3D and games</h3>
-            <ul>
-              <li>Houdini</li>
-              <li>Unreal Engine</li>
-              <li>SolidWorks</li>
-            </ul>
-
-            <h3>Other</h3>
-            <ul>
-              <li>Excel</li>
-              <li>GitHub</li>
-              <li>iMovie</li>
-            </ul>
-          </section>
-
-        </aside>
-
-      </div>
-
-    </section>
-
-    <!-- PROJECTS: VISIBLE BY DEFAULT -->
-
-    <section
-      class="content-section visible"
-      id="projects"
-      aria-label="Projects"
-    >
-      <div class="projects" id="project-grid"></div>
-    </section>
-
-  </main>
-
-  <script src="projects.js"></script>
-
-  <script>
-    const landing = document.getElementById('landing');
-    const aboutSection = document.getElementById('about');
-    const projectsSection = document.getElementById('projects');
-    const aboutLink = document.getElementById('about-link');
-    const projectsLink = document.getElementById('projects-link');
-    const homeLink = document.getElementById('home-link');
-    const grid = document.getElementById('project-grid');
-
-    // Build the project grid.
-
-    for (const p of projects) {
-      const a = document.createElement('a');
-      a.className = 'project';
-
-      a.href = p.href || (
-        'project.html?id=' + encodeURIComponent(p.id)
-      );
-
-      const thumb = document.createElement('div');
-      thumb.className = 'thumb';
-
-      const img = document.createElement('img');
-      img.src = p.image;
-      img.alt = p.title;
-
-      const overlay = document.createElement('div');
-      overlay.className = 'overlay';
-
-      const title = document.createElement('span');
-      title.textContent = p.title;
-
-      overlay.appendChild(title);
-      thumb.append(img, overlay);
-      a.appendChild(thumb);
-      grid.appendChild(a);
+    .intro-video video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    // Show About Me or Projects.
-
-    function showSection(section, scroll = true) {
-      landing.classList.add('open');
-
-      aboutSection.classList.toggle(
-        'visible',
-        section === 'about'
-      );
-
-      projectsSection.classList.toggle(
-        'visible',
-        section === 'projects'
-      );
-
-      aboutLink.classList.toggle(
-        'active',
-        section === 'about'
-      );
-
-      projectsLink.classList.toggle(
-        'active',
-        section === 'projects'
-      );
-
-      if (scroll) {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
+    .intro-details {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 9px;
+      padding-top: 2px;
     }
 
-    // About Me navigation.
+    .intro-details h1 {
+      margin: 0 0 12px;
+      font-size: clamp(24px, 2.35vw, 34px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -.055em;
+    }
 
-    aboutLink.addEventListener('click', function(event) {
-      event.preventDefault();
+    .intro-details p,
+    .intro-details a {
+      display: block;
+      margin: 0;
+      color: #111;
+      font-size: clamp(16px, 1.2vw, 17px);
+      line-height: 1.4;
+      letter-spacing: -.025em;
+      overflow-wrap: anywhere;
+    }
 
-      history.pushState(null, '', '#about');
-      showSection('about');
-    });
+    .intro-details a {
+      text-decoration: none;
+    }
 
-    // Projects navigation.
+    .intro-details a:hover {
+      text-decoration: underline;
+    }
 
-    projectsLink.addEventListener('click', function(event) {
-      event.preventDefault();
+    /* BIOGRAPHY: LEFT COLUMN */
 
-      history.pushState(null, '', '#projects');
-      showSection('projects');
-    });
-
-    // Logo always returns to Projects.
-
-    homeLink.addEventListener('click', function(event) {
-      event.preventDefault();
-
-      history.pushState(null, '', '#projects');
-      showSection('projects');
-    });
-
-    // Browser back and forward.
-
-    window.addEventListener('popstate', function() {
-      const section = location.hash.replace('#', '');
-
-      showSection(
-        section === 'about' ? 'about' : 'projects'
-      );
-    });
-
-    // Open Projects by default, unless the URL says #about.
-
-    const initialSection = location.hash.replace('#', '');
-
-    showSection(
-      initialSection === 'about' ? 'about' : 'projects',
-      false
-    );
-  </script>
-
-</body>
-</html>
+    .about-bio {
+      min-width: 0;
+   
