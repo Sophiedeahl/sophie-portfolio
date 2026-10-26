@@ -11,104 +11,8 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: #fafafa;
-      color: #111;
-      font-family: 'Arimo', Arial, Helvetica, sans-serif;
-    }
-
-    /* HEADER */
-
-    .landing {
-      min-height: 0;
-      display: flex;
-      align-items: center;
-      padding: 35px 5.5% 0;
-    }
-
-    .landing-inner {
-      width: 100%;
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-    .landing-line {
-      width: 100%;
-      height: 1px;
-      background: #aaa;
-    }
-
-    .landing-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-      gap: 40px;
-      padding: 26px 5px;
-    }
-
-    .landing .identity {
-      font-size: clamp(24px, 2.35vw, 34px);
-      line-height: 1.12;
-      letter-spacing: -.055em;
-      flex-shrink: 0;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .landing .identity strong,
-    .landing .identity em,
-    .landing .identity span {
-      display: block;
-    }
-
-    .landing .identity strong {
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    .landing .identity em {
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    .landing .identity span {
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    .landing-nav {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
-      min-width: 0;
-      text-align: right;
-    }
-
-    .landing-nav a {
-      font-size: clamp(23px, 2.2vw, 32px);
-      font-weight: 700;
-      font-style: normal;
-      letter-spacing: -.05em;
-      line-height: 1.12;
-      white-space: nowrap;
-      cursor: pointer;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .landing-nav a:hover,
-    .landing-nav a:focus-visible {
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    /* MAIN CONTENT */
+    /* PROJECT PAGE STYLES ONLY.
+       Header styling is inherited from style.css. */
 
     .project-content {
       width: 100%;
@@ -184,7 +88,7 @@
       gap: 12px 24px;
       font-size: 15px;
       line-height: 1.4;
-      margin: 30px 0 28px;
+      margin: 30px 0 20px;
     }
 
     .project-year {
@@ -199,6 +103,22 @@
 
     .project-meta a:hover {
       font-style: italic;
+    }
+
+    /* PROJECT CATEGORIES */
+
+    .project-disciplines {
+      display: block;
+      margin: 0 0 22px;
+      padding: 0 0 20px;
+      border-bottom: 1px solid #bbb;
+      color: #111;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      letter-spacing: -.015em;
+      text-transform: uppercase;
     }
 
     /* MAIN TWO-COLUMN LAYOUT */
@@ -319,30 +239,6 @@
 
     @media (max-width: 700px) {
 
-      .landing {
-        padding: 25px 5% 0;
-      }
-
-      .landing-row {
-        flex-direction: column;
-        gap: 50px;
-        padding: 35px 5px;
-      }
-
-      .landing .identity {
-        font-size: clamp(26px, 6vw, 40px);
-      }
-
-      .landing-nav {
-        align-items: flex-start;
-        text-align: left;
-        gap: 25px;
-      }
-
-      .landing-nav a {
-        font-size: clamp(26px, 6vw, 40px);
-      }
-
       .project-content {
         padding: 22px 5% 70px;
       }
@@ -370,6 +266,10 @@
 
       .project-meta {
         margin-top: 26px;
+      }
+
+      .project-disciplines {
+        font-size: 14px;
       }
 
       .project-story {
@@ -411,24 +311,27 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER: SAME AS HOMEPAGE -->
 
-  <header class="landing">
+  <header class="landing open" id="landing">
     <div class="landing-inner">
 
       <div class="landing-line"></div>
 
       <div class="landing-row">
 
-        <a class="identity" href="index.html">
+        <a class="identity" href="index.html#about">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
-          <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
+          <span>RESEARCHER, DESIGN</span>
+          <span>&amp; VISUALISATION</span>
         </a>
 
         <nav class="landing-nav" aria-label="Main navigation">
-          <a href="index.html#about">ABOUT ME</a>
-          <a href="index.html#projects">PROJECTS</a>
+          <a href="index.html#about">ABOUT</a>
+          <a href="index.html#projects" class="active" aria-current="page">
+            PROJECTS
+          </a>
         </nav>
 
       </div>
@@ -437,6 +340,7 @@
 
     </div>
   </header>
+
 
   <!-- PROJECT CONTENT -->
 
@@ -460,6 +364,7 @@
       </div>
 
     </section>
+
 
     <!-- METADATA -->
 
@@ -487,11 +392,18 @@
 
     </div>
 
+
     <!-- TEXT LEFT / TWO VIDEOS RIGHT -->
 
     <section class="project-story">
 
       <div class="project-text">
+
+        <!-- PROJECT CATEGORIES ABOVE INTRODUCTION -->
+
+        <div class="project-disciplines">
+          Qualitative Research / Co-Creation / Stakeholder Mapping
+        </div>
 
         <!-- INTRODUCTION -->
 
@@ -507,11 +419,11 @@
           </p>
 
           <p>
-         Through fieldwork and interviews, we found that trust was a major challenge, shaped by both historical experiences and institutional structures. We also discovered the importance of local bridge builders: people connecting communities and institutions, often without the recognition or support they deserve.
+            Through fieldwork and interviews, we found that trust was a major challenge, shaped by both historical experiences and institutional structures. We also discovered the importance of local bridge builders: people connecting communities and institutions, often without the recognition or support they deserve.
           </p>
 
           <p>
-          We organised three co-creation sessions bringing together community bridge builders and institutional stakeholders to discuss trust, accountability and access to resources. These conversations also informed a stakeholder network map, designed to make relationships visible and help people find each other. We produced an explanatory video, with two excerpts shown here.
+            We organised three co-creation sessions bringing together community bridge builders and institutional stakeholders to discuss trust, accountability and access to resources. These conversations also informed a stakeholder network map, designed to make relationships visible and help people find each other. We produced an explanatory video, with two excerpts shown here.
           </p>
 
           <p>
@@ -531,7 +443,8 @@
 
       </div>
 
-      <!-- BOTH VIDEOS -->
+
+      <!-- BOTH ORIGINAL VIDEOS -->
 
       <div class="video-stack">
 
@@ -561,6 +474,7 @@
 
     </section>
 
+
     <!-- LARGE STAKEHOLDER NETWORK MAP -->
 
     <section class="network-section">
@@ -584,7 +498,8 @@
 
     </section>
 
-    <!-- THREE PHOTOGRAPHS UNDER MAP -->
+
+    <!-- THREE ORIGINAL PHOTOGRAPHS -->
 
     <section class="photo-section">
 
@@ -630,6 +545,7 @@
     </section>
 
   </main>
+
 
   <script src="projects.js"></script>
 
