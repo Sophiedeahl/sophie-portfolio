@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -136,155 +135,174 @@
 
     /* ABOUT ME */
 
-    #about {
-      max-width: none;
-      padding-top: 45px;
-      padding-left: 5.5%;
-      padding-right: 5.5%;
-    }
+    <!-- ABOUT -->
 
-    .about-layout {
-      width: 100%;
-      max-width: 1700px;
-      margin: 0 auto;
-      background: #f8f8f8;
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1.08fr)
-        minmax(0, 1.38fr)
-        minmax(0, .72fr);
-      column-gap: 5.5%;
-      align-items: start;
-      padding: 30px 4% 70px;
-    }
+<section class="content-section visible" id="about" aria-label="About">
 
-    /* LEFT COLUMN: PORTRAIT AND CONTACT */
+  <div class="about-layout">
 
-    .about-left {
-      min-width: 0;
-      padding-top: 10px;
-    }
+    <!-- TOP: INTRO VIDEO AND PERSONAL DETAILS -->
 
-    .about-photo {
-      display: block;
-      width: 100%;
-      max-width: 390px;
-      aspect-ratio: .92;
-      height: auto;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 8px;
-      background: #e9e9e6;
-    }
+    <div class="about-intro">
 
-    .about-contact {
-      padding: 24px 5px 0;
-    }
+      <div class="intro-video">
+        <video controls playsinline preload="metadata" poster="assets/about.png">
+          <source src="intro.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+      </div>
 
-    .about-contact p,
-    .about-contact a {
-      display: block;
-      margin: 0;
-      color: #111;
-      font-size: clamp(16px, 1.2vw, 17px);
-      line-height: 1.4;
-      letter-spacing: -.025em;
-      text-decoration: none;
-      overflow-wrap: anywhere;
-    }
+      <div class="intro-details">
+        <h1>Sophie Deahl</h1>
 
-    .about-contact a:hover {
-      text-decoration: underline;
-    }
+        <p>14-01-1989</p>
+        <p>Dutch / British</p>
+        <p>London</p>
 
-    /* MIDDLE COLUMN */
+        <a href="tel:+31639238922">+31 6 39238922</a>
+        <a href="mailto:deahl@hotmail.com">deahl@hotmail.com</a>
+      </div>
 
-    .about-middle {
-      min-width: 0;
-    }
+    </div>
 
-    .about-middle p {
-      margin: 0 0 22px;
-      font-size: clamp(16px, 1.2vw, 17px);
-      line-height: 1.38;
-      letter-spacing: -.025em;
-      text-align: left;
-      hyphens: none;
-    }
+    <!-- BOTTOM LEFT: BIOGRAPHY -->
 
-    .about-middle h2 {
-      margin: 0 0 18px;
-      font-size: clamp(18px, 1.5vw, 21px);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -.035em;
-    }
+    <div class="about-bio">
 
-    .about-middle section {
-      margin-top: 38px;
-    }
+      <p>
+        I’m an urban researcher and designer. I study how places work
+        and how people experience them, then turn what I find into
+        visuals, tools and concepts that others can use.
+      </p>
 
-    .about-middle section p {
-      margin-bottom: 0;
-    }
+      <p>
+        I combine spatial analysis, participatory research and visual
+        design. I also design tools that help people take part in
+        planning. In my master’s thesis, I studied how stakeholders
+        collaborated on rooftop extensions in Rotterdam. I found that
+        bringing people together did not lead to shared commitments,
+        because those with the most influence over implementation
+        could also afford to wait.
+      </p>
 
-    /* EDUCATION LINKS */
+      <p>
+        I am currently in the process of relocating to London and am
+        actively seeking professional opportunities in the area.
+      </p>
 
-    .education-link {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
+    </div>
 
-    .education-link:hover,
-    .education-link:focus-visible {
-      font-style: italic;
-    }
+    <!-- BOTTOM MIDDLE: EDUCATION AND EXPERIENCE -->
 
-    /* RIGHT COLUMN */
+    <div class="about-middle">
 
-    .about-right {
-      min-width: 0;
-    }
+      <section>
+        <h2>EDUCATION</h2>
 
-    .about-right section + section {
-      margin-top: 45px;
-    }
+        <p>
+          Bachelor in Engineering, Design &amp; Innovation, direction
+          <a
+            class="education-link"
+            href="https://www.hva.nl/opleidingen/engineering-product-ontwerpen"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Product Design</a>
+          at the Amsterdam University of Applied Sciences
+          (2010 to 2015)
+        </p>
 
-    .about-right h2 {
-      margin: 0 0 20px;
-      font-size: clamp(18px, 1.5vw, 21px);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -.035em;
-    }
+        <p>
+          Master of Science in
+          <a
+            class="education-link"
+            href="https://www.tudelft.nl/onderwijs/opleidingen/masters/made/msc-metropolitan-analysis-design-and-engineering"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Metropolitan Analysis Design &amp; Engineering</a>
+          at TU Delft and Wageningen University (2024 to 2026)
+        </p>
+      </section>
 
-    .about-right h3 {
-      margin: 20px 0 6px;
-      font-size: clamp(16px, 1.2vw, 17px);
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -.025em;
-    }
+      <section>
+        <h2>EXPERIENCE</h2>
 
-    .about-right h2 + h3 {
-      margin-top: 0;
-    }
+        <p>
+          After graduating in Product Design, I gradually moved into
+          urban development, starting with mobility and later working
+          on real estate projects. Over the past two and a half years,
+          my work has shifted towards more creative and research-driven
+          projects, combining urban analysis, visual design and
+          participatory approaches. With my MSc MADE now completed,
+          I want to build on this experience and focus on research and
+          design that helps people understand, shape and improve
+          their urban environments.
+        </p>
+      </section>
 
-    .about-right ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+    </div>
 
-    .about-right li {
-      margin: 0;
-      font-size: clamp(16px, 1.2vw, 17px);
-      line-height: 1.38;
-      font-style: italic;
-      letter-spacing: -.025em;
-    }
+    <!-- BOTTOM RIGHT: SKILLS AND SOFTWARE -->
+
+    <aside class="about-right">
+
+      <section>
+        <h2>SKILLS</h2>
+
+        <h3>Research</h3>
+        <ul>
+          <li>Spatial Analysis</li>
+          <li>Qualitative Research</li>
+          <li>Data Analysis</li>
+        </ul>
+
+        <h3>Design</h3>
+        <ul>
+          <li>Visual &amp; Graphic Design</li>
+          <li>Product Design</li>
+          <li>Game Design</li>
+          <li>Stop Motion</li>
+          <li>Video Editing</li>
+          <li>HTML Coding</li>
+        </ul>
+
+        <h3>Other</h3>
+        <ul>
+          <li>Creative Facilitation</li>
+          <li>Presenting</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>SOFTWARE</h2>
+
+        <h3>Design</h3>
+        <ul>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>InDesign</li>
+          <li>Canva</li>
+        </ul>
+
+        <h3>3D and games</h3>
+        <ul>
+          <li>Houdini</li>
+          <li>Unreal Engine</li>
+          <li>SolidWorks</li>
+        </ul>
+
+        <h3>Other</h3>
+        <ul>
+          <li>Excel</li>
+          <li>GitHub</li>
+          <li>iMovie</li>
+        </ul>
+      </section>
+
+    </aside>
+
+  </div>
+
+</section>
 
     /* PROJECT GRID */
 
