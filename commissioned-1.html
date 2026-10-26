@@ -88,20 +88,11 @@
       gap: 12px 24px;
       font-size: 15px;
       line-height: 1.4;
-      margin: 24px 0 30px;
+      margin: 24px 0 20px;
     }
 
     .project-year {
       font-weight: 700;
-    }
-
-    .project-disciplines {
-      margin-left: auto;
-      color: #666;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: .025em;
-      text-transform: uppercase;
     }
 
     .project-meta a,
@@ -114,6 +105,22 @@
     .project-meta a:hover,
     .project-copy a:hover {
       font-style: italic;
+    }
+
+    /* VISIBLE PROJECT CATEGORIES */
+
+    .project-disciplines {
+      display: block;
+      margin: 0 0 22px;
+      padding: 0 0 20px;
+      border-bottom: 1px solid #bbb;
+      color: #111;
+      font-family: 'Arimo', Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      letter-spacing: -.015em;
+      text-transform: uppercase;
     }
 
     /* FOUR-BLOCK GRID */
@@ -223,12 +230,11 @@
       }
 
       .project-meta {
-        margin: 22px 0 26px;
+        margin: 22px 0 20px;
       }
 
       .project-disciplines {
-        flex-basis: 100%;
-        margin-left: 0;
+        font-size: 14px;
       }
 
       .project-grid {
@@ -308,7 +314,7 @@
     </section>
 
 
-    <!-- PROJECT METADATA AND CATEGORIES -->
+    <!-- PROJECT METADATA -->
 
     <div class="project-meta">
 
@@ -329,10 +335,13 @@
         >SVP</a>
       </span>
 
-      <span class="project-disciplines">
-        Spatial Analysis / Urban Research
-      </span>
+    </div>
 
+
+    <!-- PROJECT CATEGORIES: ABOVE INTRODUCTORY TEXT -->
+
+    <div class="project-disciplines">
+      Spatial Analysis / Urban Research
     </div>
 
 
