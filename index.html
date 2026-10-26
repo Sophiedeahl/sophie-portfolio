@@ -22,7 +22,7 @@
 
       <div class="landing-row">
 
-        <a class="identity" href="#about" id="home-link">
+        <a class="identity" href="#projects" id="home-link">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
           <span>RESEARCHER, DESIGN</span>
@@ -30,10 +30,10 @@
         </a>
 
         <nav class="landing-nav" aria-label="Main navigation">
-          <a href="#about" id="about-link" class="active" aria-current="page">
+          <a href="#about" id="about-link">
             ABOUT
           </a>
-          <a href="#projects" id="projects-link">
+          <a href="#projects" id="projects-link" class="active" aria-current="page">
             PROJECTS
           </a>
         </nav>
@@ -50,25 +50,20 @@
 
     <!-- ABOUT -->
 
-    <section class="content-section visible" id="about" aria-label="About">
+    <section class="content-section" id="about" aria-label="About">
 
       <div class="about-layout">
 
-        <!-- VIDEO AND PERSONAL DETAILS -->
+        <!-- IMAGE AND PERSONAL DETAILS -->
 
         <div class="about-intro">
 
           <div class="intro-video">
-            <video
-              controls
-              playsinline
-              preload="metadata"
-              poster="assets/about.png"
-              aria-label="Introduction video"
+            <img
+              src="assets/about.png"
+              alt="Introduction portrait"
+              style="display:block; width:100%; height:auto;"
             >
-              <source src="intro.mp4" type="video/mp4">
-              Your browser does not support video playback.
-            </video>
           </div>
 
           <div class="intro-details">
@@ -295,7 +290,7 @@
     <!-- PROJECTS -->
 
     <section
-      class="content-section"
+      class="content-section visible"
       id="projects"
       aria-label="Projects"
     >
@@ -326,7 +321,7 @@
       const grid = document.getElementById('project-grid');
 
       function showSection(section, scrollToTop) {
-        const isAbout = section !== 'projects';
+        const isAbout = section === 'about';
 
         aboutSection.classList.toggle('visible', isAbout);
         projectsSection.classList.toggle('visible', !isAbout);
@@ -368,12 +363,12 @@
       });
 
       homeLink.addEventListener('click', function (event) {
-        navigateTo('about', event);
+        navigateTo('projects', event);
       });
 
       function updateFromURL() {
         showSection(
-          location.hash === '#projects' ? 'projects' : 'about',
+          location.hash === '#about' ? 'about' : 'projects',
           false
         );
       }
