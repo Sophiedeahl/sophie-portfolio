@@ -11,81 +11,8 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: #fafafa;
-      color: #111;
-      font-family: 'Arimo', Arial, Helvetica, sans-serif;
-    }
-
-    /* HEADER */
-
-    .landing {
-      min-height: 0;
-      display: flex;
-      align-items: center;
-      padding: 35px 5.5% 0;
-    }
-
-    .landing-inner {
-      width: 100%;
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-    .landing-line {
-      width: 100%;
-      height: 1px;
-      background: #aaa;
-    }
-
-    .landing-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-      gap: 40px;
-      padding: 26px 5px;
-    }
-
-    .landing .identity {
-      font-size: clamp(24px, 2.35vw, 34px);
-      line-height: 1.12;
-      letter-spacing: -.055em;
-      flex-shrink: 0;
-    }
-
-    .landing-nav {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
-      min-width: 0;
-      text-align: right;
-    }
-
-    .landing-nav a {
-      font-size: clamp(23px, 2.2vw, 32px);
-      font-weight: 700;
-      font-style: normal;
-      letter-spacing: -.05em;
-      line-height: 1.12;
-      white-space: nowrap;
-      cursor: pointer;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .landing-nav a:hover,
-    .landing-nav a:focus-visible {
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    /* PROJECT CONTENT */
+    /* PROJECT PAGE STYLES ONLY.
+       Header styling comes from style.css. */
 
     .project-content {
       width: 100%;
@@ -94,7 +21,7 @@
       padding: 24px 5.5% 90px;
     }
 
-    /* HERO IMAGE */
+    /* HERO */
 
     .project-hero {
       position: relative;
@@ -148,7 +75,7 @@
       letter-spacing: -.065em;
     }
 
-    /* TEXT AND VIDEO GRID */
+    /* DESCRIPTION AND VIDEO */
 
     .project-details {
       display: grid;
@@ -164,6 +91,8 @@
       min-width: 0;
     }
 
+    /* METADATA AND CATEGORIES */
+
     .project-meta {
       display: flex;
       flex-wrap: wrap;
@@ -176,6 +105,15 @@
 
     .project-year {
       font-weight: 700;
+    }
+
+    .project-disciplines {
+      flex-basis: 100%;
+      color: #666;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .025em;
+      text-transform: uppercase;
     }
 
     .project-copy a {
@@ -195,6 +133,8 @@
       margin-bottom: 28px;
     }
 
+    /* PROJECT TEXT */
+
     .project-copy p {
       font-family: 'Arimo', Arial, Helvetica, sans-serif;
       font-size: clamp(16px, 1.2vw, 17px);
@@ -206,7 +146,7 @@
       margin: 0 0 26px;
     }
 
-    /* VIDEO BESIDE PROJECT TEXT */
+    /* VIDEO */
 
     .project-video {
       width: 100%;
@@ -271,30 +211,6 @@
 
     @media (max-width: 700px) {
 
-      .landing {
-        padding: 25px 5% 0;
-      }
-
-      .landing-row {
-        flex-direction: column;
-        gap: 50px;
-        padding: 35px 5px;
-      }
-
-      .landing .identity {
-        font-size: clamp(26px, 6vw, 40px);
-      }
-
-      .landing-nav {
-        align-items: flex-start;
-        text-align: left;
-        gap: 25px;
-      }
-
-      .landing-nav a {
-        font-size: clamp(26px, 6vw, 40px);
-      }
-
       .project-content {
         padding: 22px 5% 70px;
       }
@@ -345,24 +261,27 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER: SAME AS HOMEPAGE -->
 
-  <header class="landing">
+  <header class="landing open" id="landing">
     <div class="landing-inner">
 
       <div class="landing-line"></div>
 
       <div class="landing-row">
 
-        <a class="identity" href="index.html">
+        <a class="identity" href="index.html#about">
           <strong>SOPHIE DEAHL</strong>
           <em>2026 PORTFOLIO</em>
-          <span>URBAN RESEARCHER<br>&amp; DESIGNER</span>
+          <span>RESEARCHER, DESIGN</span>
+          <span>&amp; VISUALISATION</span>
         </a>
 
         <nav class="landing-nav" aria-label="Main navigation">
-          <a href="index.html#about">ABOUT ME</a>
-          <a href="index.html#projects">PROJECTS</a>
+          <a href="index.html#about">ABOUT</a>
+          <a href="index.html#projects" class="active" aria-current="page">
+            PROJECTS
+          </a>
         </nav>
 
       </div>
@@ -372,11 +291,12 @@
     </div>
   </header>
 
+
   <!-- PROJECT CONTENT -->
 
   <main class="project-content">
 
-    <!-- HERO IMAGE -->
+    <!-- HERO -->
 
     <section class="project-hero">
 
@@ -392,6 +312,7 @@
       </div>
 
     </section>
+
 
     <!-- DESCRIPTION AND VIDEO -->
 
@@ -413,6 +334,10 @@
             >MSc MADE</a>
           </span>
 
+          <span class="project-disciplines">
+            Participatory Design / Tool Design / Qualitative Research
+          </span>
+
         </div>
 
         <div class="project-rule"></div>
@@ -431,13 +356,15 @@
         </p>
 
         <p>
-          Instead of just asking people to describe these changes in
-          words alone, we also encouraged them to draw directly
-          onto maps. Using transparent sheets and coloured markers,
-          they highlighted places they felt had changed for better (green)
-          or worse (red), along with other observations. Each map became
-          a personal interpretation of the same neighbourhood. The drawings were then digitalized and overlayed to explore
-          where experiences overlapped or differed.
+          We designed and tested a participatory mapping tool to
+          explore how residents experienced neighbourhood change.
+          Using transparent sheets placed over maps and coloured
+          markers, participants could identify places they felt
+          had changed for better (green) or worse (red), along with
+          other observations. Each map became a personal
+          interpretation of the same neighbourhood. We then
+          digitised and overlaid their responses to explore where
+          experiences overlapped or differed.
         </p>
 
         <p>
@@ -449,6 +376,7 @@
         </p>
 
       </div>
+
 
       <!-- RIGHT COLUMN: VIDEO -->
 
@@ -469,6 +397,7 @@
       </div>
 
     </section>
+
 
     <!-- PROCESS DIAGRAM -->
 
@@ -497,6 +426,7 @@
     </section>
 
   </main>
+
 
   <script src="projects.js"></script>
 
