@@ -1,398 +1,322 @@
-
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="description" content="Sophie Deahl — Researcher, Design & Visualisation">
-
   <title>Researcher, Design &amp; Visualisation — Sophie Deahl</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-  <!-- HEADER -->
-
-  <header class="landing open">
-    <div class="landing-inner">
-
-      <div class="landing-line"></div>
-
-      <div class="landing-row">
-
-        <a class="identity" href="#about" aria-label="Sophie Deahl — About">
-          <strong>Sophie Deahl</strong>
-          <em>Researcher, Design &amp;</em>
-          <span>Visualisation</span>
-        </a>
-
-        <nav class="landing-nav" aria-label="Main navigation">
-          <a href="#about" data-section="about" class="active" aria-current="page">ABOUT</a>
-          <a href="#projects" data-section="projects">PROJECTS</a>
-        </nav>
-
-      </div>
-
-      <div class="landing-line"></div>
-
-    </div>
-  </header>
-
-
   <main>
 
-    <!-- ABOUT PAGE -->
+    <!-- HEADER -->
+    <header class="landing open" id="landing">
+      <div class="landing-inner">
+        <div class="landing-line"></div>
 
-    <section
-      id="about"
-      class="content-section visible"
-      aria-label="About Sophie Deahl"
-    >
+        <div class="landing-row">
+          <a class="identity" href="#about" id="home-link">
+            <strong>SOPHIE DEAHL</strong>
+            <em>2026 PORTFOLIO</em>
+            <span>RESEARCHER, DESIGN</span>
+            <span>&amp; VISUALISATION</span>
+          </a>
 
+          <nav class="landing-nav" aria-label="Main navigation">
+            <a href="#about" id="about-link" class="active"
+               aria-current="page">ABOUT</a>
+            <a href="#projects" id="projects-link">PROJECTS</a>
+          </nav>
+        </div>
+
+        <div class="landing-line"></div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="content-section visible" id="about"
+             aria-label="About">
       <div class="about-layout">
 
-        <!-- INTRO VIDEO AND PERSONAL DETAILS -->
-
+        <!-- VIDEO AND PERSONAL DETAILS -->
         <div class="about-intro">
 
           <div class="intro-video">
-
-            <video
-              controls
-              playsinline
-              preload="metadata"
-              poster="assets/about.png"
-              aria-label="Introduction video"
-            >
+            <video controls playsinline preload="metadata"
+                   poster="assets/about.png"
+                   aria-label="Introduction video">
               <source src="intro.mp4" type="video/mp4">
-
-              Your browser does not support the video element.
+              Your browser does not support video playback.
             </video>
-
           </div>
 
           <div class="intro-details">
-
-            <h1>Sophie Deahl</h1>
-
+            <h2>PERSONAL DETAILS</h2>
             <p>14-01-1989</p>
             <p>Dutch / British</p>
             <p>London</p>
-
-            <!-- Replace these with your actual contact details -->
-
-            <p class="contact-placeholder">
-              Phone: add your number
-            </p>
-
-            <p class="contact-placeholder">
-              Email: add your email address
-            </p>
-
+            <a href="mailto:deahl@hotmail.com">deahl@hotmail.com</a>
+            <a href="tel:+31639238922">+31 6 39238922</a>
           </div>
 
         </div>
 
-
-        <!-- LEFT COLUMN: BIOGRAPHY -->
-
+        <!-- BIOGRAPHY -->
         <div class="about-bio">
-
-          <h2>Biography</h2>
-
           <p>
-            Researcher working across design and visualisation.
+            I’m an urban researcher and designer. I study how
+            places work and how people experience them, then turn
+            what I find into visuals, tools and concepts that
+            others can use.
           </p>
 
           <p>
-            Add your biography here.
+            I combine spatial analysis, participatory research
+            and visual design. I also design tools that help
+            people take part in planning. In my master’s thesis,
+            I studied how stakeholders collaborated on rooftop
+            extensions in Rotterdam. I found that bringing people
+            together did not lead to shared commitments, because
+            those with the most influence over implementation
+            could also afford to wait.
           </p>
 
+          <p>
+            I am currently in the process of relocating to London
+            and am actively seeking professional opportunities
+            in the area.
+          </p>
         </div>
 
-
-        <!-- MIDDLE COLUMN: EDUCATION AND EXPERIENCE -->
-
+        <!-- EDUCATION AND EXPERIENCE -->
         <div class="about-middle">
 
           <section>
-
-            <h2>Education</h2>
+            <h2>EDUCATION</h2>
 
             <p>
-              Add your education here.
+              Bachelor in Engineering, Design &amp; Innovation,
+              direction
+              <a class="education-link"
+                 href="https://www.hva.nl/opleidingen/engineering-product-ontwerpen"
+                 target="_blank"
+                 rel="noopener noreferrer">Product Design</a>
+              at the Amsterdam University of Applied Sciences
+              (2010 to 2015)
+              <br>
+              Master of Science in
+              <a class="education-link"
+                 href="https://www.tudelft.nl/onderwijs/opleidingen/masters/made/msc-metropolitan-analysis-design-and-engineering"
+                 target="_blank"
+                 rel="noopener noreferrer">Metropolitan Analysis Design &amp; Engineering</a>
+              at TU Delft and Wageningen University
+              (2024 to 2026)
             </p>
-
           </section>
 
-
           <section>
-
-            <h2>Experience</h2>
+            <h2>EXPERIENCE</h2>
 
             <p>
-              Add your experience here.
+              After graduating in Product Design, I gradually
+              moved into urban development, starting with mobility
+              and later working on real estate projects. Over the
+              past two and a half years, my work has shifted towards
+              more creative and research-driven projects, combining
+              urban analysis, visual design and participatory
+              approaches.
             </p>
 
+            <p>
+              With my MSc MADE now completed, I want to build on
+              this experience and focus on research and design
+              that helps people understand, shape and improve
+              their urban environments.
+            </p>
           </section>
 
         </div>
 
-
-        <!-- RIGHT COLUMN: SKILLS AND SOFTWARE -->
-
-        <div class="about-right">
+        <!-- SKILLS AND SOFTWARE -->
+        <aside class="about-right">
 
           <section>
+            <h2>SKILLS</h2>
 
-            <h2>Skills</h2>
-
+            <h3>Research</h3>
             <ul>
-              <li>Add your skills here</li>
+              <li>Spatial Analysis</li>
+              <li>Qualitative Research</li>
+              <li>Data Analysis</li>
             </ul>
 
-          </section>
+            <h3>Design</h3>
+            <ul>
+              <li>Visual &amp; Graphic Design</li>
+              <li>Product Design</li>
+              <li>Game Design</li>
+              <li>Stop Motion</li>
+              <li>Video Editing</li>
+              <li>HTML Coding</li>
+            </ul>
 
+            <h3>Other</h3>
+            <ul>
+              <li>Creative Facilitation</li>
+              <li>Presenting</li>
+            </ul>
+          </section>
 
           <section>
+            <h2>SOFTWARE</h2>
 
-            <h2>Software</h2>
-
+            <h3>Design</h3>
             <ul>
-              <li>Add your software here</li>
+              <li>Photoshop</li>
+              <li>Illustrator</li>
+              <li>InDesign</li>
+              <li>Canva</li>
             </ul>
 
+            <h3>3D and games</h3>
+            <ul>
+              <li>Houdini</li>
+              <li>Unreal Engine</li>
+              <li>SolidWorks</li>
+            </ul>
+
+            <h3>Other</h3>
+            <ul>
+              <li>Excel</li>
+              <li>GitHub</li>
+              <li>iMovie</li>
+            </ul>
           </section>
 
-        </div>
-
+        </aside>
       </div>
-
     </section>
 
-
-    <!-- PROJECTS PAGE -->
-
-    <section
-      id="projects"
-      class="content-section"
-      aria-label="Projects"
-      hidden
-    >
-
+    <!-- PROJECTS -->
+    <section class="content-section" id="projects"
+             aria-label="Projects">
       <div class="projects" id="project-grid"></div>
-
-      <p
-        class="projects-empty"
-        id="projects-empty"
-        hidden
-      >
-        No projects have been added yet.
-      </p>
-
     </section>
 
   </main>
 
-
-  <!-- FOOTER -->
-
-  <footer>
-    © <span id="year"></span> Sophie Deahl
-  </footer>
-
-
-  <!-- PROJECT DATA -->
-
   <script src="projects.js"></script>
 
-
-  <!-- NAVIGATION AND PROJECT GRID -->
-
   <script>
-
     (function () {
-
       'use strict';
 
-      const sections = document.querySelectorAll('.content-section');
-
-      const links = document.querySelectorAll('[data-section]');
-
+      const aboutSection = document.getElementById('about');
+      const projectsSection = document.getElementById('projects');
+      const aboutLink = document.getElementById('about-link');
+      const projectsLink = document.getElementById('projects-link');
+      const homeLink = document.getElementById('home-link');
       const grid = document.getElementById('project-grid');
 
-      const emptyMessage = document.getElementById('projects-empty');
+      function showSection(section, scroll) {
+        const isAbout = section !== 'projects';
 
+        aboutSection.classList.toggle('visible', isAbout);
+        projectsSection.classList.toggle('visible', !isAbout);
 
-      /* SHOW ABOUT OR PROJECTS */
+        aboutLink.classList.toggle('active', isAbout);
+        projectsLink.classList.toggle('active', !isAbout);
 
-      function showSection(name) {
-
-        const sectionName = name === 'projects' ? 'projects' : 'about';
-
-        sections.forEach(function (section) {
-
-          const isActive = section.id === sectionName;
-
-          section.classList.toggle('visible', isActive);
-
-          section.hidden = !isActive;
-
-        });
-
-
-        links.forEach(function (link) {
-
-          const isActive = link.dataset.section === sectionName;
-
-          link.classList.toggle('active', isActive);
-
-          if (isActive) {
-
-            link.setAttribute('aria-current', 'page');
-
-          } else {
-
-            link.removeAttribute('aria-current');
-
-          }
-
-        });
-
-      }
-
-
-      /* CREATE PROJECT CARD */
-
-      function addProject(project) {
-
-        if (!project || typeof project !== 'object') {
-          return;
+        if (isAbout) {
+          aboutLink.setAttribute('aria-current', 'page');
+          projectsLink.removeAttribute('aria-current');
+        } else {
+          projectsLink.setAttribute('aria-current', 'page');
+          aboutLink.removeAttribute('aria-current');
         }
 
-        const title =
-          project.title ||
-          project.name ||
-          'Untitled project';
-
-        const href =
-          project.url ||
-          project.href ||
-          project.link ||
-          '#projects';
-
-        const image =
-          project.image ||
-          project.thumbnail ||
-          project.thumb ||
-          project.cover ||
-          '';
-
-        const anchor = document.createElement('a');
-
-        anchor.className = 'project';
-
-        anchor.href = href;
-
-
-        const thumb = document.createElement('div');
-
-        thumb.className = 'thumb';
-
-
-        if (image) {
-
-          const img = document.createElement('img');
-
-          img.src = image;
-
-          img.alt = '';
-
-          img.loading = 'lazy';
-
-          thumb.appendChild(img);
-
+        if (scroll) {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
         }
-
-
-        const overlay = document.createElement('div');
-
-        overlay.className = 'overlay';
-
-
-        const label = document.createElement('span');
-
-        label.textContent = title;
-
-        overlay.appendChild(label);
-
-        thumb.appendChild(overlay);
-
-        anchor.appendChild(thumb);
-
-        grid.appendChild(anchor);
-
       }
 
+      function goTo(section, event) {
+        if (event) event.preventDefault();
 
-      /* LOAD PROJECTS SAFELY */
-
-      let projectItems = [];
-
-      try {
-
-        if (
-          typeof projects !== 'undefined' &&
-          Array.isArray(projects)
-        ) {
-
-          projectItems = projects;
-
-        } else if (Array.isArray(window.projects)) {
-
-          projectItems = window.projects;
-
-        }
-
-      } catch (error) {
-
-        console.warn('Projects could not be loaded:', error);
-
+        history.pushState(null, '', '#' + section);
+        showSection(section, true);
       }
 
-
-      projectItems.forEach(addProject);
-
-      emptyMessage.hidden = projectItems.length > 0;
-
-
-      /* FOOTER YEAR */
-
-      document.getElementById('year').textContent =
-        new Date().getFullYear();
-
-
-      /* NAVIGATION */
-
-      window.addEventListener('hashchange', function () {
-
-        showSection(location.hash.slice(1));
-
+      aboutLink.addEventListener('click', function (event) {
+        goTo('about', event);
       });
 
+      projectsLink.addEventListener('click', function (event) {
+        goTo('projects', event);
+      });
 
-      /* INITIAL PAGE: ABOUT */
+      homeLink.addEventListener('click', function (event) {
+        goTo('about', event);
+      });
 
-      showSection(location.hash.slice(1));
+      window.addEventListener('popstate', function () {
+        showSection(
+          location.hash === '#projects' ? 'projects' : 'about',
+          false
+        );
+      });
 
+      window.addEventListener('hashchange', function () {
+        showSection(
+          location.hash === '#projects' ? 'projects' : 'about',
+          false
+        );
+      });
+
+      // Original project links and project data format
+      const projectData =
+        typeof projects !== 'undefined' && Array.isArray(projects)
+          ? projects
+          : [];
+
+      projectData.forEach(function (p) {
+        const a = document.createElement('a');
+        a.className = 'project';
+
+        a.href = p.href || (
+          'project.html?id=' + encodeURIComponent(p.id)
+        );
+
+        const thumb = document.createElement('div');
+        thumb.className = 'thumb';
+
+        const img = document.createElement('img');
+        img.src = p.image;
+        img.alt = p.title;
+        img.loading = 'lazy';
+
+        const overlay = document.createElement('div');
+        overlay.className = 'overlay';
+
+        const title = document.createElement('span');
+        title.textContent = p.title;
+
+        overlay.appendChild(title);
+        thumb.append(img, overlay);
+        a.appendChild(thumb);
+        grid.appendChild(a);
+      });
+
+      // About opens by default
+      showSection(
+        location.hash === '#projects' ? 'projects' : 'about',
+        false
+      );
     }());
-
   </script>
-
 </body>
-
 </html>
