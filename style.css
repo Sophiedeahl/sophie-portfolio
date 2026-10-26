@@ -1,12 +1,16 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* GLOBAL */
+
+/* ========================================
+   GLOBAL
+======================================== */
 
 :root {
   --background: #fafafa;
-  --text: #111;
-  --muted: #777;
-  --line: #ccc;
+  --text: #111111;
+  --muted: #777777;
+  --line: #cccccc;
 
   --body-size: 16px;
   --heading-size: 18px;
@@ -39,7 +43,10 @@ video {
   max-width: 100%;
 }
 
-/* HEADER */
+
+/* ========================================
+   HEADER
+======================================== */
 
 .landing {
   padding: 24px 5.5% 0;
@@ -57,7 +64,7 @@ video {
 .landing-line {
   height: 1px;
   width: 100%;
-  background: #aaa;
+  background: #aaaaaa;
 }
 
 .landing-row {
@@ -117,7 +124,10 @@ video {
   font-style: italic;
 }
 
-/* PAGE VISIBILITY */
+
+/* ========================================
+   PAGE VISIBILITY
+======================================== */
 
 .content-section {
   display: none;
@@ -131,7 +141,10 @@ video {
   display: block;
 }
 
-/* ABOUT LAYOUT */
+
+/* ========================================
+   ABOUT
+======================================== */
 
 #about {
   padding-top: 32px;
@@ -142,7 +155,10 @@ video {
   margin: 0 auto;
 }
 
-/* TOP ROW */
+
+/* ========================================
+   VIDEO + PERSONAL DETAILS
+======================================== */
 
 .about-intro {
   display: flex;
@@ -174,7 +190,10 @@ video {
   min-height: 180px;
 }
 
-/* UNIFORM ABOUT TYPOGRAPHY */
+
+/* ========================================
+   UNIFORM ABOUT TYPOGRAPHY
+======================================== */
 
 #about h2 {
   margin: 0 0 16px;
@@ -213,14 +232,19 @@ video {
   text-decoration: underline;
 }
 
-/* THREE COLUMNS */
+
+/* ========================================
+   THREE-COLUMN LAYOUT
+======================================== */
 
 .about-columns {
   display: grid;
+
   grid-template-columns:
     minmax(0, 1.05fr)
     minmax(0, 1.12fr)
     minmax(0, .78fr);
+
   gap: 0;
   padding-top: 28px;
   align-items: stretch;
@@ -246,7 +270,10 @@ video {
   padding: 0 0 0 34px;
 }
 
-/* BIOGRAPHY */
+
+/* ========================================
+   BIOGRAPHY
+======================================== */
 
 .about-bio p {
   margin-bottom: 20px;
@@ -254,7 +281,10 @@ video {
   font-style: normal;
 }
 
-/* EDUCATION */
+
+/* ========================================
+   EDUCATION
+======================================== */
 
 .education-entry {
   margin-bottom: 22px;
@@ -268,10 +298,7 @@ video {
   margin: 0;
 }
 
-.education-entry .degree {
-  font-weight: 700;
-}
-
+.education-entry .degree,
 .education-entry .degree a {
   font-weight: 700;
 }
@@ -287,7 +314,13 @@ video {
   text-underline-offset: 3px;
 }
 
-/* EXPERIENCE: DIVIDER ABOVE, NOT BETWEEN DEGREES */
+
+/* ========================================
+   EXPERIENCE
+======================================== */
+
+/* The divider goes between
+   EDUCATION and EXPERIENCE only. */
 
 .experience-section {
   margin-top: 28px;
@@ -295,11 +328,33 @@ video {
   border-top: 1px solid var(--line);
 }
 
-.experience-section p {
-  margin-bottom: 20px;
+.experience-entry {
+  margin-bottom: 24px;
 }
 
-/* SKILLS */
+.experience-entry:last-child {
+  margin-bottom: 0;
+}
+
+#about .experience-entry h3 {
+  margin: 0;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.experience-entry .dates {
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.experience-entry p {
+  margin-bottom: 16px;
+}
+
+
+/* ========================================
+   SKILLS
+======================================== */
 
 .about-right h3 {
   margin: 0 0 4px;
@@ -327,7 +382,10 @@ video {
   font-style: italic;
 }
 
-/* SOFTWARE */
+
+/* ========================================
+   SOFTWARE
+======================================== */
 
 .software-section {
   border-top: 1px solid var(--line);
@@ -346,7 +404,10 @@ video {
   min-width: 0;
 }
 
-/* PROJECTS */
+
+/* ========================================
+   PROJECTS
+======================================== */
 
 .projects {
   max-width: 1700px;
@@ -387,17 +448,22 @@ video {
 .overlay {
   position: absolute;
   inset: 0;
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
   padding: clamp(12px, 1.4vw, 22px);
+
   background: rgba(0, 0, 0, .12);
-  color: #fff;
+  color: #ffffff;
+
   font-size: clamp(19px, 2.35vw, 38px);
   font-weight: 700;
   font-style: italic;
   letter-spacing: -.065em;
   line-height: 1.04;
+
   transition: color .35s, background .35s;
 }
 
@@ -415,16 +481,19 @@ video {
 
 .project:hover .overlay,
 .project:focus-visible .overlay {
-  color: #111;
+  color: #111111;
   background: rgba(255, 255, 255, .16);
 }
 
 .project:focus-visible {
-  outline: 3px solid #111;
+  outline: 3px solid #111111;
   outline-offset: 4px;
 }
 
-/* PROJECT DETAIL PAGES */
+
+/* ========================================
+   PROJECT DETAIL PAGES
+======================================== */
 
 .page {
   padding: 42px 6.3% 70px;
@@ -453,8 +522,8 @@ h1 {
   width: 100%;
   height: 80vh;
   min-height: 500px;
-  border: 1px solid #ddd;
-  background: #eee;
+  border: 1px solid #dddddd;
+  background: #eeeeee;
 }
 
 .download {
@@ -466,13 +535,17 @@ h1 {
 
 footer {
   padding: 20px 6.3% 30px;
-  color: #777;
+  color: #777777;
   font-size: 12px;
 }
 
-/* TABLET */
+
+/* ========================================
+   TABLET
+======================================== */
 
 @media (max-width: 1050px) {
+
   .about-intro {
     padding-left: 0;
     padding-right: 0;
@@ -497,8 +570,10 @@ footer {
     grid-column: 1 / -1;
     border-left: 0;
     border-top: 1px solid var(--line);
+
     margin-top: 30px;
     padding: 24px 0 0;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -509,17 +584,23 @@ footer {
     padding-top: 0;
     border-top: 0;
   }
-}
 
-/* MOBILE */
-
-@media (max-width: 700px) {
-  .landing {
-    padding: 24px 5% 0;
+  .projects {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .landing,
   .landing.open {
-    padding-top: 24px;
+    padding: 24px 5% 0;
   }
 
   .landing-row {
@@ -602,24 +683,34 @@ footer {
     height: 65vh;
     min-height: 400px;
   }
+
 }
 
-/* TOUCH DEVICES */
+
+/* ========================================
+   TOUCH DEVICES
+======================================== */
 
 @media (hover: none) {
+
   .overlay {
     background: rgba(0, 0, 0, .12);
-    color: #fff;
+    color: #ffffff;
   }
 
   .thumb img {
     filter: grayscale(1) contrast(1.4) brightness(.85);
   }
+
 }
 
-/* ACCESSIBILITY */
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -629,4 +720,5 @@ footer {
   .overlay {
     transition: none;
   }
+
 }
