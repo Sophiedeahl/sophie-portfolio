@@ -9,6 +9,129 @@
   <title>Research, Design &amp; Visualisation — Sophie Deahl</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* PROJECT FOLD-OUT */
+
+    #project-grid {
+      overflow: visible;
+    }
+
+    #project-grid .project {
+      position: relative;
+      isolation: isolate;
+    }
+
+    #project-grid .project:hover,
+    #project-grid .project:focus-within,
+    #project-grid .project.is-open {
+      z-index: 30;
+    }
+
+    #project-grid .project .thumb {
+      position: relative;
+      z-index: 2;
+    }
+
+    #project-grid .project-info {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: clamp(12px, 1.6vw, 24px);
+      background: rgba(255, 255, 255, .91);
+      color: #111;
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(10px, 1.2vw, 18px);
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transform: perspective(700px) rotateY(-75deg);
+      transform-origin: left center;
+
+      transition:
+        opacity .24s ease,
+        transform .36s ease,
+        visibility .36s;
+
+      overflow: auto;
+      z-index: 1;
+    }
+
+    #project-grid .project.fold-left .project-info {
+      left: auto;
+      right: 100%;
+      transform-origin: right center;
+      transform: perspective(700px) rotateY(75deg);
+    }
+
+    #project-grid .project:hover .project-info,
+    #project-grid .project:focus-within .project-info,
+    #project-grid .project.is-open .project-info {
+      opacity: 1;
+      visibility: visible;
+      transform: rotateY(0deg);
+      pointer-events: auto;
+    }
+
+    #project-grid .project-info-keywords {
+      font-family: 'Arimo', Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(11px, 1vw, 15px);
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: -.015em;
+    }
+
+    #project-grid .project-info-rule {
+      border: 0;
+      border-top: 1px solid #bbb;
+      margin: 0;
+    }
+
+    #project-grid .project-info-description {
+      margin: 0;
+      font-size: clamp(12px, 1.05vw, 16px);
+      line-height: 1.42;
+      font-weight: 400;
+    }
+
+    #project-grid .project-info-year {
+      font-size: 12px;
+      opacity: .65;
+    }
+
+    @media (max-width: 700px) {
+      #project-grid .project-info {
+        left: 0 !important;
+        right: auto !important;
+        top: 100%;
+        transform-origin: top center !important;
+        transform: translateY(-8px) !important;
+      }
+
+      #project-grid .project.is-open .project-info,
+      #project-grid .project:focus-within .project-info {
+        transform: translateY(0) !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #project-grid .project-info {
+        transition: none;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -33,7 +156,9 @@
           <a href="#about" id="about-link">
             ABOUT
           </a>
-          <a href="#projects" id="projects-link" class="active" aria-current="page">
+
+          <a href="#projects" id="projects-link"
+             class="active" aria-current="page">
             PROJECTS
           </a>
         </nav>
@@ -106,7 +231,7 @@
           </section>
 
 
-          <!-- MIDDLE COLUMN: EDUCATION AND EXPERIENCE -->
+          <!-- MIDDLE COLUMN -->
 
           <div class="about-middle">
 
@@ -155,43 +280,44 @@
 
             <!-- EXPERIENCE -->
 
-          
-<!-- EXPERIENCE -->
+            <section class="experience-section">
 
-<section class="experience-section">
+              <h2>EXPERIENCE</h2>
 
-  <h2>EXPERIENCE</h2>
+              <div class="experience-entry">
+                <h3>Independent Researcher &amp; Designer</h3>
+                <p class="dates">Nov 2024 to present</p>
+              </div>
 
-  <div class="experience-entry">
-    <h3>Independent Researcher &amp; Designer</h3>
-    <p class="dates">Nov 2024 to present</p>
-  </div>
+              <div class="experience-entry">
+                <h3>
+                  Junior Consultant &amp; Designer,
+                  <a
+                    href="https://advier.nl/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >Advier BV</a>
+                </h3>
+                <p class="dates">Apr 2020 to Aug 2021</p>
+              </div>
 
-  <div class="experience-entry">
-    <h3>
-      Junior Consultant &amp; Designer,
-      <a href="https://advier.nl/"
-         target="_blank"
-         rel="noopener noreferrer">Advier BV</a>
-    </h3>
-    <p class="dates">Apr 2020 to Aug 2021</p>
-  </div>
+              <div class="experience-entry">
+                <h3>
+                  <a
+                    href="https://www.models1.co.uk/women/classic/4896-sophie-deahl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >Fashion Model</a>
+                </h3>
+                <p class="dates">2009 to present</p>
+              </div>
 
-  <div class="experience-entry">
-    <h3>
-      <a href="https://www.models1.co.uk/women/classic/4896-sophie-deahl"
-         target="_blank"
-         rel="noopener noreferrer">Fashion Model</a>
-    </h3>
-    <p class="dates">2009 to present</p>
-  </div>
+            </section>
 
-</section>
-
-</div>
+          </div>
 
 
-          <!-- RIGHT COLUMN: SKILLS AND SOFTWARE -->
+          <!-- RIGHT COLUMN -->
 
           <aside class="about-right">
 
@@ -371,12 +497,87 @@
       window.addEventListener('popstate', updateFromURL);
       window.addEventListener('hashchange', updateFromURL);
 
+
+      /* ======================================
+         PROJECT DESCRIPTIONS AND KEYWORDS
+         ====================================== */
+
       const projectData =
         typeof projects !== 'undefined' && Array.isArray(projects)
           ? projects
           : [];
 
+      const foldoutData = {
+
+        'msc-1': [
+          'PARTICIPATORY MAPPING / QUALITATIVE RESEARCH',
+          'Developing a participatory mapping tool to explore how residents experience gentrification in Amsterdam-Noord. Individual perspectives were layered to build a collective spatial understanding of neighbourhood change.',
+          '2024'
+        ],
+
+        'msc-2': [
+          'QUALITATIVE RESEARCH / URBAN GOVERNANCE',
+          'Investigating stakeholder collaboration around rooftop densification in Rotterdam. Observations, interviews and spatial mapping explored participation, power dynamics and barriers to collective action.',
+          '2026'
+        ],
+
+        'msc-3': [
+          'QUALITATIVE RESEARCH / CO-CREATION / STAKEHOLDER MAPPING',
+          'Exploring trust and collaboration in Amsterdam Zuidoost’s energy transition through interviews, co-creation sessions and stakeholder mapping, connecting community perspectives with institutions.',
+          '2025'
+        ],
+
+        'msc-4': [
+          'VISUALISATION / CONCEPT DEVELOPMENT / URBAN RESEARCH',
+          'Creating architectural collages to imagine possible futures for Amsterdam’s Zaanstraat neighbourhood, visualising green spaces, shared facilities and community life without fixing a final design.',
+          '2025'
+        ],
+
+        'commissioned-1': [
+          'SPATIAL ANALYSIS / URBAN RESEARCH',
+          'Mapping public transport, shared mobility, cycling accessibility and destinations in Utrecht to explore promising locations for neighbourhood mobility hubs.',
+          '2021'
+        ],
+
+        'commissioned-2': [
+          'DATA ANALYSIS / RISK ASSESSMENT',
+          'Analysing how electricity grid congestion might affect 49 residential developments in the Netherlands, using spatial data and technical criteria to identify projects needing further investigation.',
+          '2026'
+        ],
+
+        'commissioned-3': [
+          'GAME DESIGN / CONCEPT DESIGN / VISUALISATION',
+          'Developing ideas for an immersive game in which policymakers experience possible futures for Dutch cities. Research and spatial sketches helped make an abstract concept tangible.',
+          '2025'
+        ],
+
+        'other-1': [
+          'GAME DESIGN / 3D MODELLING / VISUAL PROGRAMMING',
+          'Designing a short immersive game set in a magical forest, developing hand-drawn creatures into a 3D environment in Houdini and a playable experience in Unreal Engine.',
+          '2025'
+        ],
+
+        'other-2': [
+          'USER RESEARCH / PRODUCT DESIGN / PROTOTYPING',
+          'Researching women’s experiences and safety concerns while driving, then designing TomTom Charm: a compact personal safety concept combining an emergency button, alarms and location sharing.',
+          '2015'
+        ],
+
+        'other-3': [
+          'SOCIAL ENTREPRENEURSHIP / CIRCULAR DESIGN',
+          'Helping establish a workshop in Zanzibar where local women turn discarded materials into products, combining hands-on training, workshop development and local sales opportunities.',
+          '2014'
+        ]
+
+      };
+
+
+      /* ======================================
+         CREATE PROJECT GRID
+         ====================================== */
+
       projectData.forEach(function (p) {
+
         const a = document.createElement('a');
         a.className = 'project';
 
@@ -405,8 +606,117 @@
         thumb.appendChild(overlay);
 
         a.appendChild(thumb);
+
+
+        /* FIND MATCHING PROJECT DESCRIPTION */
+
+        const path = (p.href || '')
+          .split('?')[0]
+          .split('#')[0];
+
+        const key = (
+          path.split('/').pop() || ''
+        ).replace(/\.html$/i, '') || p.id;
+
+        const details = foldoutData[key];
+
+
+        /* CREATE FOLD-OUT PANEL */
+
+        if (details) {
+
+          const info = document.createElement('div');
+          info.className = 'project-info';
+
+          const keywords = document.createElement('div');
+          keywords.className = 'project-info-keywords';
+          keywords.textContent = details[0];
+
+          const rule = document.createElement('hr');
+          rule.className = 'project-info-rule';
+
+          const description = document.createElement('p');
+          description.className = 'project-info-description';
+          description.textContent = details[1];
+
+          const year = document.createElement('span');
+          year.className = 'project-info-year';
+          year.textContent = details[2];
+
+          info.append(
+            keywords,
+            rule,
+            description,
+            year
+          );
+
+          a.appendChild(info);
+
+
+          /* AUTOMATIC LEFT / RIGHT POSITION */
+
+          const positionInfo = function () {
+
+            const rect = a.getBoundingClientRect();
+
+            const spaceRight =
+              window.innerWidth - rect.right;
+
+            const spaceLeft = rect.left;
+
+            a.classList.toggle(
+              'fold-left',
+              spaceRight < rect.width &&
+              spaceLeft > spaceRight
+            );
+
+          };
+
+          a.addEventListener(
+            'mouseenter',
+            positionInfo
+          );
+
+          a.addEventListener(
+            'focusin',
+            positionInfo
+          );
+
+          a.addEventListener(
+            'touchstart',
+            positionInfo,
+            { passive: true }
+          );
+
+
+          /* MOBILE TAP INTERACTION */
+
+          a.addEventListener('click', function (event) {
+
+            if (
+              window.matchMedia('(hover: none)').matches &&
+              !a.classList.contains('is-open')
+            ) {
+
+              event.preventDefault();
+
+              grid.querySelectorAll('.is-open')
+                .forEach(function (tile) {
+                  tile.classList.remove('is-open');
+                });
+
+              a.classList.add('is-open');
+
+            }
+
+          });
+
+        }
+
         grid.appendChild(a);
+
       });
+
 
       updateFromURL();
 
