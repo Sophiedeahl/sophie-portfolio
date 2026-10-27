@@ -739,3 +739,150 @@ footer {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+
+/* ==========================================
+   PROJECT FOLD-OUT DESCRIPTION PANELS
+   ========================================== */
+
+#project-grid {
+  overflow: visible;
+}
+
+#project-grid .project {
+  position: relative;
+  isolation: isolate;
+}
+
+#project-grid .project:hover,
+#project-grid .project:focus-within,
+#project-grid .project.is-open {
+  z-index: 30;
+}
+
+#project-grid .project .thumb {
+  position: relative;
+  z-index: 2;
+}
+
+/* FOLD-OUT SQUARE */
+
+#project-grid .project-info {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  padding: clamp(12px, 1.6vw, 24px);
+
+  background: rgba(255, 255, 255, 0.91);
+  color: #111;
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(10px, 1.2vw, 18px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: perspective(700px) rotateY(-75deg);
+  transform-origin: left center;
+
+  transition:
+    opacity .24s ease,
+    transform .36s ease,
+    visibility .36s;
+
+  overflow: auto;
+  z-index: 1;
+}
+
+/* FOLD OUT TO THE LEFT */
+
+#project-grid .project.fold-left .project-info {
+  left: auto;
+  right: 100%;
+
+  transform-origin: right center;
+  transform: perspective(700px) rotateY(75deg);
+}
+
+/* SHOW ON HOVER */
+
+#project-grid .project:hover .project-info,
+#project-grid .project:focus-within .project-info,
+#project-grid .project.is-open .project-info {
+  opacity: 1;
+  visibility: visible;
+  transform: rotateY(0deg);
+  pointer-events: auto;
+}
+
+/* KEYWORDS */
+
+#project-grid .project-info-keywords {
+  font-family: 'Arimo', Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(11px, 1vw, 15px);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: -.015em;
+}
+
+/* DIVIDING LINE */
+
+#project-grid .project-info-rule {
+  border: 0;
+  border-top: 1px solid #bbb;
+  margin: 0;
+}
+
+/* DESCRIPTION */
+
+#project-grid .project-info-description {
+  margin: 0;
+  font-size: clamp(12px, 1.05vw, 16px);
+  line-height: 1.42;
+  font-weight: 400;
+}
+
+/* YEAR */
+
+#project-grid .project-info-year {
+  font-size: 12px;
+  opacity: .65;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  #project-grid .project-info {
+    left: 0 !important;
+    right: auto !important;
+    top: 100%;
+
+    transform-origin: top center !important;
+    transform: translateY(-8px) !important;
+  }
+
+  #project-grid .project.is-open .project-info,
+  #project-grid .project:focus-within .project-info {
+    transform: translateY(0) !important;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-grid .project-info {
+    transition: none;
+  }
+}
+
