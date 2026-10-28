@@ -11,15 +11,28 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* PROJECT FOLD-OUT */
+
+    /* ==========================================
+       FIVE PORTRAIT PROJECT TILES
+       ========================================== */
 
     #project-grid {
       overflow: visible;
     }
 
+    @media (min-width: 1101px) {
+      #project-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+      }
+    }
+
     #project-grid .project {
       position: relative;
       isolation: isolate;
+      min-width: 0;
+      cursor: pointer;
     }
 
     #project-grid .project:hover,
@@ -31,7 +44,29 @@
     #project-grid .project .thumb {
       position: relative;
       z-index: 2;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 5 / 7;
+      overflow: hidden;
     }
+
+    #project-grid .project .thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* No titles or overlays on the images */
+
+    #project-grid .project .overlay {
+      display: none !important;
+    }
+
+
+    /* ==========================================
+       FOLD-OUT PANEL
+       ========================================== */
 
     #project-grid .project-info {
       position: absolute;
@@ -40,16 +75,19 @@
       width: 100%;
       height: 100%;
       box-sizing: border-box;
-      padding: clamp(12px, 1.6vw, 24px);
-      background: rgba(255, 255, 255, .91);
+
+      padding: clamp(12px, 1.5vw, 24px);
+
+      background: rgba(255, 255, 255, 0.94);
       color: #111;
+
       backdrop-filter: blur(7px);
       -webkit-backdrop-filter: blur(7px);
 
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: clamp(10px, 1.2vw, 18px);
+      gap: clamp(10px, 1vw, 16px);
 
       opacity: 0;
       visibility: hidden;
@@ -59,69 +97,162 @@
       transform-origin: left center;
 
       transition:
-        opacity .24s ease,
-        transform .36s ease,
-        visibility .36s;
+        opacity 0.24s ease,
+        transform 0.36s ease,
+        visibility 0.36s;
 
-      overflow: auto;
-      z-index: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      z-index: 3;
     }
+
+    /* Fold to the left when near the screen edge */
 
     #project-grid .project.fold-left .project-info {
       left: auto;
       right: 100%;
+
       transform-origin: right center;
       transform: perspective(700px) rotateY(75deg);
     }
+
+    /* Open on hover, keyboard focus or touch */
 
     #project-grid .project:hover .project-info,
     #project-grid .project:focus-within .project-info,
     #project-grid .project.is-open .project-info {
       opacity: 1;
       visibility: visible;
+      pointer-events: auto;
       transform: rotateY(0deg);
-      pointer-events: none;
     }
 
-    #project-grid .project-info-keywords {
+
+    /* ==========================================
+       FOLD-OUT TYPOGRAPHY
+       ========================================== */
+
+    #project-grid .project-info-title {
+      margin: 0;
+
       font-family: 'Arimo', Arial, sans-serif;
-      font-weight: 700;
-      font-size: clamp(11px, 1vw, 15px);
-      line-height: 1.4;
-      text-transform: uppercase;
-      letter-spacing: -.015em;
+      font-style: italic;
+      font-weight: 800;
+
+      font-size: clamp(16px, 1.65vw, 26px);
+      line-height: 1.13;
+      letter-spacing: -0.025em;
+
+      color: #111;
+      overflow-wrap: break-word;
     }
 
     #project-grid .project-info-rule {
       border: 0;
       border-top: 1px solid #bbb;
       margin: 0;
+      flex-shrink: 0;
     }
 
     #project-grid .project-info-description {
       margin: 0;
-      font-size: clamp(12px, 1.05vw, 16px);
+
+      font-family: 'Arimo', Arial, sans-serif;
+      font-size: clamp(11px, 0.92vw, 15px);
       line-height: 1.42;
       font-weight: 400;
+
+      color: #222;
     }
 
-    #project-grid .project-info-year {
-      font-size: 12px;
-      opacity: .65;
+
+    /* ==========================================
+       SEE MORE LINK
+       ========================================== */
+
+    #project-grid .project-info-link {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 7px;
+
+      margin-top: 2px;
+
+      font-family: 'Arimo', Arial, sans-serif;
+      font-size: clamp(11px, 0.95vw, 14px);
+      font-weight: 700;
+      font-style: normal;
+
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+
+      color: #111;
+      text-decoration: none;
+
+      border-bottom: 1px solid #111;
+      padding-bottom: 3px;
+
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    #project-grid .project-info-link:hover {
+      opacity: 0.55;
+    }
+
+    #project-grid .project-info-link:focus-visible {
+      outline: 2px solid #111;
+      outline-offset: 4px;
+    }
+
+
+    /* ==========================================
+       TABLET AND MOBILE
+       ========================================== */
+
+    @media (max-width: 1100px) {
+      #project-grid .project-info-title {
+        font-size: clamp(15px, 2vw, 24px);
+      }
+
+      #project-grid .project-info-description {
+        font-size: clamp(11px, 1.35vw, 15px);
+      }
     }
 
     @media (max-width: 700px) {
+
       #project-grid .project-info {
         left: 0 !important;
         right: auto !important;
+
         top: 100%;
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        max-height: 75vh;
+
         transform-origin: top center !important;
         transform: translateY(-8px) !important;
       }
 
+      #project-grid .project:hover .project-info,
       #project-grid .project.is-open .project-info,
       #project-grid .project:focus-within .project-info {
         transform: translateY(0) !important;
+      }
+
+      #project-grid .project-info-title {
+        font-size: clamp(16px, 3vw, 23px);
+      }
+
+      #project-grid .project-info-description {
+        font-size: clamp(12px, 2vw, 15px);
+      }
+
+      #project-grid .project-info-link {
+        font-size: 12px;
       }
     }
 
@@ -130,39 +261,6 @@
         transition: none;
       }
     }
-
-    /* Five portrait tiles per row. Keep the original styling and order. */
-    @media (min-width: 1101px) {
-      #project-grid {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 10px;
-      }
-    }
-
-    #project-grid .project { min-width: 0; }
-    #project-grid .project .thumb {
-      width: 100%;
-      aspect-ratio: 5 / 7;
-      height: auto;
-      overflow: hidden;
-    }
-    #project-grid .project .thumb img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-   
-/* Scale the original title treatment with the narrower tiles. */
-@media (min-width: 1101px) {
-  #project-grid .project .overlay span {
-    font-size: clamp(14px, 1.5vw, 24px);
-    line-height: 1.22;
-    letter-spacing: 0.015em;
-    overflow-wrap: normal;
-  }
-}
 
   </style>
 
@@ -187,14 +285,20 @@
         </a>
 
         <nav class="landing-nav" aria-label="Main navigation">
+
           <a href="#about" id="about-link">
             ABOUT
           </a>
 
-          <a href="#projects" id="projects-link"
-             class="active" aria-current="page">
+          <a
+            href="#projects"
+            id="projects-link"
+            class="active"
+            aria-current="page"
+          >
             PROJECTS
           </a>
+
         </nav>
 
       </div>
@@ -209,7 +313,11 @@
 
     <!-- ABOUT -->
 
-    <section class="content-section" id="about" aria-label="About">
+    <section
+      class="content-section"
+      id="about"
+      aria-label="About"
+    >
 
       <div class="about-layout">
 
@@ -226,6 +334,7 @@
           </div>
 
           <div class="intro-details">
+
             <h2>PERSONAL DETAILS</h2>
 
             <p>Born in 1989</p>
@@ -239,6 +348,7 @@
             <a href="tel:+31639238922">
               +31 6 39238922
             </a>
+
           </div>
 
         </div>
@@ -278,6 +388,7 @@
               <div class="education-entry">
 
                 <p class="degree">
+
                   <a
                     href="https://www.tudelft.nl/onderwijs/opleidingen/masters/made/msc-metropolitan-analysis-design-and-engineering"
                     target="_blank"
@@ -285,6 +396,7 @@
                   >
                     MSc Metropolitan Analysis, Design &amp; Engineering
                   </a>
+
                 </p>
 
                 <p>TU Delft and Wageningen University</p>
@@ -295,6 +407,7 @@
               <div class="education-entry">
 
                 <p class="degree">
+
                   <a
                     href="https://www.hva.nl/opleidingen/engineering-product-ontwerpen"
                     target="_blank"
@@ -302,6 +415,7 @@
                   >
                     Bachelor Industrial Engineering / Product Design
                   </a>
+
                 </p>
 
                 <p>Amsterdam University of Applied Sciences</p>
@@ -324,6 +438,7 @@
               </div>
 
               <div class="experience-entry">
+
                 <h3>
                   Junior Consultant &amp; Designer,
                   <a
@@ -332,10 +447,13 @@
                     rel="noopener noreferrer"
                   >Advier BV</a>
                 </h3>
+
                 <p class="dates">Apr 2020 to Aug 2021</p>
+
               </div>
 
               <div class="experience-entry">
+
                 <h3>
                   <a
                     href="https://www.models1.co.uk/women/classic/4896-sophie-deahl"
@@ -343,7 +461,9 @@
                     rel="noopener noreferrer"
                   >Fashion Model</a>
                 </h3>
+
                 <p class="dates">2009 to present</p>
+
               </div>
 
             </section>
@@ -362,32 +482,41 @@
               <h2>SKILLS</h2>
 
               <div class="skill-group">
+
                 <h3>Research</h3>
+
                 <ul>
                   <li>Spatial Analysis</li>
                   <li>Qualitative Research</li>
                   <li>Data Analysis</li>
                 </ul>
+
               </div>
 
               <div class="skill-group">
+
                 <h3>Design</h3>
+
                 <ul>
                   <li>Visual &amp; Graphic Design</li>
                   <li>Product Design</li>
                   <li>Game Design</li>
                   <li>Website Design and building</li>
                   <li>Stop Motion</li>
-                  <li>Video Design & Editing</li>
+                  <li>Video Design &amp; Editing</li>
                 </ul>
+
               </div>
 
               <div class="skill-group">
+
                 <h3>Other</h3>
+
                 <ul>
                   <li>Creative Facilitation</li>
                   <li>Presenting</li>
                 </ul>
+
               </div>
 
             </section>
@@ -402,31 +531,40 @@
               <div class="software-groups">
 
                 <div class="software-group">
+
                   <h3>Design</h3>
+
                   <ul>
                     <li>Photoshop</li>
                     <li>Illustrator</li>
                     <li>InDesign</li>
                     <li>Canva</li>
                   </ul>
+
                 </div>
 
                 <div class="software-group">
+
                   <h3>3D and games</h3>
+
                   <ul>
                     <li>Houdini</li>
                     <li>Unreal Engine</li>
                     <li>SolidWorks</li>
                   </ul>
+
                 </div>
 
                 <div class="software-group">
+
                   <h3>Other</h3>
+
                   <ul>
                     <li>Excel</li>
                     <li>GitHub</li>
                     <li>iMovie</li>
                   </ul>
+
                 </div>
 
               </div>
@@ -449,7 +587,9 @@
       id="projects"
       aria-label="Projects"
     >
+
       <div class="projects" id="project-grid"></div>
+
     </section>
 
   </main>
@@ -466,30 +606,71 @@
     (function () {
       'use strict';
 
-      const aboutSection = document.getElementById('about');
-      const projectsSection = document.getElementById('projects');
+      const aboutSection =
+        document.getElementById('about');
 
-      const aboutLink = document.getElementById('about-link');
-      const projectsLink = document.getElementById('projects-link');
-      const homeLink = document.getElementById('home-link');
+      const projectsSection =
+        document.getElementById('projects');
 
-      const grid = document.getElementById('project-grid');
+      const aboutLink =
+        document.getElementById('about-link');
+
+      const projectsLink =
+        document.getElementById('projects-link');
+
+      const homeLink =
+        document.getElementById('home-link');
+
+      const grid =
+        document.getElementById('project-grid');
+
+
+      /* ======================================
+         SECTION NAVIGATION
+         ====================================== */
 
       function showSection(section, scrollToTop) {
+
         const isAbout = section === 'about';
 
-        aboutSection.classList.toggle('visible', isAbout);
-        projectsSection.classList.toggle('visible', !isAbout);
+        aboutSection.classList.toggle(
+          'visible',
+          isAbout
+        );
 
-        aboutLink.classList.toggle('active', isAbout);
-        projectsLink.classList.toggle('active', !isAbout);
+        projectsSection.classList.toggle(
+          'visible',
+          !isAbout
+        );
+
+        aboutLink.classList.toggle(
+          'active',
+          isAbout
+        );
+
+        projectsLink.classList.toggle(
+          'active',
+          !isAbout
+        );
 
         if (isAbout) {
-          aboutLink.setAttribute('aria-current', 'page');
-          projectsLink.removeAttribute('aria-current');
+          aboutLink.setAttribute(
+            'aria-current',
+            'page'
+          );
+
+          projectsLink.removeAttribute(
+            'aria-current'
+          );
         } else {
-          projectsLink.setAttribute('aria-current', 'page');
-          aboutLink.removeAttribute('aria-current');
+          projectsLink.setAttribute(
+            'aria-current',
+            'page'
+          );
+
+          aboutLink.removeAttribute(
+            'aria-current'
+          );
         }
 
         if (scrollToTop) {
@@ -498,107 +679,140 @@
             behavior: 'smooth'
           });
         }
+
       }
 
+
       function navigateTo(section, event) {
+
         if (event) {
           event.preventDefault();
         }
 
-        history.pushState(null, '', '#' + section);
+        history.pushState(
+          null,
+          '',
+          '#' + section
+        );
+
         showSection(section, true);
+
       }
 
-      aboutLink.addEventListener('click', function (event) {
-        navigateTo('about', event);
-      });
 
-      projectsLink.addEventListener('click', function (event) {
-        navigateTo('projects', event);
-      });
+      aboutLink.addEventListener(
+        'click',
+        function (event) {
+          navigateTo('about', event);
+        }
+      );
 
-      homeLink.addEventListener('click', function (event) {
-        navigateTo('projects', event);
-      });
+      projectsLink.addEventListener(
+        'click',
+        function (event) {
+          navigateTo('projects', event);
+        }
+      );
+
+      homeLink.addEventListener(
+        'click',
+        function (event) {
+          navigateTo('projects', event);
+        }
+      );
+
 
       function updateFromURL() {
+
         showSection(
-          location.hash === '#about' ? 'about' : 'projects',
+          location.hash === '#about'
+            ? 'about'
+            : 'projects',
           false
         );
+
       }
 
-      window.addEventListener('popstate', updateFromURL);
-      window.addEventListener('hashchange', updateFromURL);
+      window.addEventListener(
+        'popstate',
+        updateFromURL
+      );
+
+      window.addEventListener(
+        'hashchange',
+        updateFromURL
+      );
 
 
       /* ======================================
-         PROJECT DESCRIPTIONS AND KEYWORDS
+         PROJECT DATA
          ====================================== */
 
       const projectData =
-        typeof projects !== 'undefined' && Array.isArray(projects)
+        typeof projects !== 'undefined' &&
+        Array.isArray(projects)
           ? projects
           : [];
+
+
+      /* ======================================
+         FOLD-OUT DESCRIPTIONS
+
+         Each project now has:
+         - Description
+         - Year
+
+         No keywords or categories.
+         ====================================== */
 
       const foldoutData = {
 
         'msc-1': [
-          'PARTICIPATORY MAPPING / QUALITATIVE RESEARCH',
           'Designed a participatory mapping tool to explore how residents experience neighbourhood change in Amsterdam-Noord. Combined individual perspectives into a collective map to visualise different experiences of gentrification.',
           '2024'
         ],
 
         'msc-2': [
-          'QUALITATIVE RESEARCH / URBAN GOVERNANCE',
           'Investigated collaboration between stakeholders involved in rooftop densification in Rotterdam. Used interviews and observations to explore how participation, power dynamics and differing interests influence collaboration in urban development.',
           '2026'
         ],
 
         'msc-3': [
-          'QUALITATIVE RESEARCH / CO-CREATION / STAKEHOLDER MAPPING',
           'The energy transition in Amsterdam Zuidoost raises questions about trust and collaboration between residents and institutions. Through interviews, co-creation sessions and stakeholder mapping, we brought together different perspectives and identified opportunities for collaboration.',
           '2025'
         ],
 
         'msc-4': [
-          'VISUALISATION / CONCEPT DEVELOPMENT / URBAN RESEARCH',
           "For the Municipality of Amsterdam, a series of visual collages illustrated four key themes for a new neighbourhood planned within the existing Zaanstraat area. The collages translated urban development ideas into images, helping communicate the vision for the neighbourhood's future.",
           '2025'
         ],
 
         'commissioned-1': [
-          'SPATIAL ANALYSIS / URBAN RESEARCH',
           'The development of mobility hubs in Utrecht required a better understanding of how different transport networks connect. Spatial analysis of public transport, shared mobility, cycling accessibility and key destinations helped identify promising locations for the pilot hubs.',
           '2021'
         ],
 
         'commissioned-2': [
-          'DATA ANALYSIS / RISK ASSESSMENT',
           'Electricity grid congestion is becoming an increasing challenge for residential development in the Netherlands. An analysis of 49 housing projects combined spatial data and technical criteria to assess potential risks and identify developments requiring further investigation.',
           '2026'
         ],
 
         'commissioned-3': [
-          'GAME DESIGN / CONCEPT DESIGN / VISUALISATION',
           'An immersive game concept aimed to help policymakers experience possible futures for Dutch cities and better understand the impact of urban planning decisions. Research, concept development and visual sketches helped make these future scenarios more tangible.',
           '2025'
         ],
 
         'other-1': [
-          'GAME DESIGN / 3D MODELLING / VISUAL PROGRAMMING',
           'A magical forest became the setting for a short immersive game, bringing hand-drawn creatures to life in a 3D environment. Houdini and Unreal Engine were used to combine character design, 3D modelling and visual programming into a playable experience.',
           '2025'
         ],
 
         'other-2': [
-          'USER RESEARCH / PRODUCT DESIGN / PROTOTYPING',
           'Personal safety while driving was the starting point for TomTom Charm, a compact safety device designed for women. User research into driving experiences and safety concerns informed a product concept combining an emergency button, alarms and location sharing.',
           '2015'
         ],
 
         'other-3': [
-          'SOCIAL ENTREPRENEURSHIP / CIRCULAR DESIGN',
           'In Zanzibar, a workshop was established to create new opportunities for local women through circular design. Discarded materials were transformed into products, combining skills training, hands-on production and opportunities to sell locally.',
           '2014'
         ]
@@ -612,37 +826,45 @@
 
       projectData.forEach(function (p) {
 
-        const a = document.createElement('a');
-        a.className = 'project';
+        /* Project tile is now a div, not a link.
+           The SEE MORE link is inside the fold-out. */
 
-        a.href = p.href || (
-          'project.html?id=' + encodeURIComponent(p.id)
+        const tile = document.createElement('div');
+
+        tile.className = 'project';
+        tile.tabIndex = 0;
+
+        tile.setAttribute(
+          'aria-label',
+          p.title || 'Project'
         );
+
+
+        /* ======================================
+           PROJECT IMAGE — NO TITLE
+           ====================================== */
 
         const thumb = document.createElement('div');
         thumb.className = 'thumb';
 
         if (p.image) {
+
           const img = document.createElement('img');
+
           img.src = p.image;
           img.alt = p.title || '';
           img.loading = 'lazy';
+
           thumb.appendChild(img);
+
         }
 
-        const overlay = document.createElement('div');
-        overlay.className = 'overlay';
-
-        const title = document.createElement('span');
-        title.textContent = p.title || '';
-
-        overlay.appendChild(title);
-        thumb.appendChild(overlay);
-
-        a.appendChild(thumb);
+        tile.appendChild(thumb);
 
 
-        /* FIND MATCHING PROJECT DESCRIPTION */
+        /* ======================================
+           FIND PROJECT DESCRIPTION
+           ====================================== */
 
         const path = (p.href || '')
           .split('?')[0]
@@ -652,105 +874,213 @@
           path.split('/').pop() || ''
         ).replace(/\.html$/i, '') || p.id;
 
-        const details = foldoutData[key];
+        const details = foldoutData[key] || [
+          '',
+          ''
+        ];
 
 
-        /* CREATE FOLD-OUT PANEL */
+        /* ======================================
+           CREATE FOLD-OUT PANEL
+           ====================================== */
 
-        if (details) {
+        const info = document.createElement('div');
+        info.className = 'project-info';
 
-          const info = document.createElement('div');
-          info.className = 'project-info';
 
-          const keywords = document.createElement('div');
-          keywords.className = 'project-info-keywords';
-          keywords.textContent = details[0];
+        /* PROJECT TITLE */
 
-          const rule = document.createElement('hr');
-          rule.className = 'project-info-rule';
+        const title = document.createElement('h3');
+        title.className = 'project-info-title';
+        title.textContent = p.title || '';
 
-          const description = document.createElement('p');
-          description.className = 'project-info-description';
-          description.textContent = details[1];
 
-          const year = document.createElement('span');
-          year.className = 'project-info-year';
-          year.textContent = details[2];
+        /* DIVIDER */
 
-          info.append(
-            keywords,
-            rule,
-            description,
-            year
+        const rule = document.createElement('hr');
+        rule.className = 'project-info-rule';
+
+
+        /* SHORT DESCRIPTION */
+
+        const description = document.createElement('p');
+        description.className = 'project-info-description';
+        description.textContent = details[0];
+
+
+        /* SEE MORE LINK */
+
+        const seeMore = document.createElement('a');
+
+        seeMore.className = 'project-info-link';
+
+        seeMore.href = p.href || (
+          'project.html?id=' +
+          encodeURIComponent(p.id)
+        );
+
+        seeMore.textContent = 'SEE MORE ↗';
+
+        seeMore.setAttribute(
+          'aria-label',
+          'See more about ' + (p.title || 'this project')
+        );
+
+
+        /* ASSEMBLE PANEL */
+
+        info.append(
+          title,
+          rule,
+          description,
+          seeMore
+        );
+
+        tile.appendChild(info);
+
+
+        /* ======================================
+           AUTOMATIC LEFT / RIGHT POSITION
+           ====================================== */
+
+        const positionInfo = function () {
+
+          const rect = tile.getBoundingClientRect();
+
+          const spaceRight =
+            window.innerWidth - rect.right;
+
+          const spaceLeft =
+            rect.left;
+
+          tile.classList.toggle(
+            'fold-left',
+            spaceRight < rect.width &&
+            spaceLeft > spaceRight
           );
 
-          a.appendChild(info);
+        };
 
 
-          /* AUTOMATIC LEFT / RIGHT POSITION */
+        tile.addEventListener(
+          'mouseenter',
+          positionInfo
+        );
 
-          const positionInfo = function () {
+        tile.addEventListener(
+          'focusin',
+          positionInfo
+        );
 
-            const rect = a.getBoundingClientRect();
+        tile.addEventListener(
+          'touchstart',
+          positionInfo,
+          { passive: true }
+        );
 
-            const spaceRight =
-              window.innerWidth - rect.right;
 
-            const spaceLeft = rect.left;
+        /* ======================================
+           TOUCH / CLICK INTERACTION
 
-            a.classList.toggle(
-              'fold-left',
-              spaceRight < rect.width &&
-              spaceLeft > spaceRight
-            );
+           Clicking an image opens the fold-out.
+           Clicking SEE MORE opens the project.
+           ====================================== */
 
-          };
+        thumb.addEventListener('click', function () {
 
-          a.addEventListener(
-            'mouseenter',
-            positionInfo
+          positionInfo();
+
+          const wasOpen =
+            tile.classList.contains('is-open');
+
+          grid.querySelectorAll('.is-open')
+            .forEach(function (otherTile) {
+              otherTile.classList.remove('is-open');
+            });
+
+          tile.classList.toggle(
+            'is-open',
+            !wasOpen
           );
 
-          a.addEventListener(
-            'focusin',
-            positionInfo
-          );
-
-          a.addEventListener(
-            'touchstart',
-            positionInfo,
-            { passive: true }
-          );
+        });
 
 
-          /* MOBILE TAP INTERACTION */
+        /* KEYBOARD ACCESS */
 
-          a.addEventListener('click', function (event) {
+        tile.addEventListener(
+          'keydown',
+          function (event) {
 
             if (
-              window.matchMedia('(hover: none)').matches &&
-              !a.classList.contains('is-open')
+              event.target !== tile
+            ) {
+              return;
+            }
+
+            if (
+              event.key === 'Enter' ||
+              event.key === ' '
             ) {
 
               event.preventDefault();
 
-              grid.querySelectorAll('.is-open')
-                .forEach(function (tile) {
-                  tile.classList.remove('is-open');
-                });
+              positionInfo();
 
-              a.classList.add('is-open');
+              tile.classList.toggle('is-open');
 
             }
 
-          });
+            if (event.key === 'Escape') {
+              tile.classList.remove('is-open');
+            }
 
-        }
+          }
+        );
 
-        grid.appendChild(a);
+
+        /* CLOSE OTHER PANELS ON FOCUS */
+
+        tile.addEventListener('focusin', function () {
+
+          grid.querySelectorAll('.is-open')
+            .forEach(function (otherTile) {
+
+              if (otherTile !== tile) {
+                otherTile.classList.remove('is-open');
+              }
+
+            });
+
+        });
+
+
+        grid.appendChild(tile);
 
       });
 
+
+      /* ======================================
+         CLOSE FOLD-OUT WHEN CLICKING ELSEWHERE
+         ====================================== */
+
+      document.addEventListener('click', function (event) {
+
+        if (!event.target.closest('#project-grid .project')) {
+
+          grid.querySelectorAll('.is-open')
+            .forEach(function (tile) {
+              tile.classList.remove('is-open');
+            });
+
+        }
+
+      });
+
+
+      /* ======================================
+         INITIAL SECTION
+         ====================================== */
 
       updateFromURL();
 
