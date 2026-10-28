@@ -12,7 +12,7 @@
 
   <style>
     /* ==========================================
-       PROJECT GRID
+       FIVE PORTRAIT PROJECT TILES
        ========================================== */
 
     #project-grid {
@@ -29,14 +29,11 @@
 
     #project-grid .project {
       position: relative;
-      display: block;
       isolation: isolate;
       min-width: 0;
       cursor: default;
     }
 
-    #project-grid .project:hover,
-    #project-grid .project:focus-within,
     #project-grid .project.is-open {
       z-index: 30;
     }
@@ -57,7 +54,7 @@
       object-fit: cover;
     }
 
-    /* Hide the old titles on the photographs */
+    /* Remove all titles from the photographs */
 
     #project-grid .project .overlay {
       display: none !important;
@@ -94,10 +91,9 @@
       visibility: hidden;
 
       /*
-       * IMPORTANT:
-       * The fold-out is informational only.
-       * Mouse events pass through it to the
-       * neighbouring project photographs.
+       * The panel never intercepts the mouse.
+       * This allows neighbouring images to
+       * remain accessible underneath it.
        */
       pointer-events: none;
 
@@ -123,7 +119,7 @@
       transform: perspective(700px) rotateY(75deg);
     }
 
-    /* Only one fold-out opens at a time */
+    /* Show only the active fold-out */
 
     #project-grid .project.is-open .project-info {
       opacity: 1;
@@ -131,9 +127,20 @@
       transform: rotateY(0deg);
     }
 
+    /*
+     * Explicitly hide inactive panels.
+     * This prevents old text from lingering.
+     */
+
+    #project-grid .project:not(.is-open) .project-info {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+
 
     /* ==========================================
-       FOLD-OUT TITLE AND DESCRIPTION
+       FOLD-OUT TYPOGRAPHY
        ========================================== */
 
     #project-grid .project-info-title {
@@ -235,7 +242,7 @@
 
 
     /* ==========================================
-       SMALLER SCREENS
+       TABLET AND MOBILE
        ========================================== */
 
     @media (max-width: 1100px) {
@@ -779,9 +786,6 @@
 
       /* ======================================
          PROJECT DESCRIPTIONS
-
-         No categories, keywords or years
-         displayed in the fold-out.
          ====================================== */
 
       const foldoutData = {
@@ -821,9 +825,9 @@
 
       /* ======================================
          OPEN / CLOSE PROJECTS
-
-         Only one fold-out can be open.
          ====================================== */
+
+      let activeProject = null;
 
       function closeAllProjects() {
 
@@ -831,6 +835,8 @@
           .forEach(function (tile) {
             tile.classList.remove('is-open');
           });
+
+        activeProject = null;
 
       }
 
@@ -842,16 +848,12 @@
           return;
         }
 
-        if (tile.classList.contains('is-open')) {
+        if (activeProject === tile &&
+            tile.classList.contains('is-open')) {
           return;
         }
 
         closeAllProjects();
-
-        /*
-         * Fold left for projects near the
-         * right edge of the screen.
-         */
 
         const rect = tile.getBoundingClientRect();
 
@@ -868,6 +870,8 @@
         );
 
         tile.classList.add('is-open');
+
+        activeProject = tile;
 
       }
 
@@ -907,7 +911,7 @@
         }
 
 
-        /* SEE MORE — ON THE IMAGE */
+        /* SEE MORE ON THE IMAGE */
 
         const seeMore = document.createElement('a');
 
@@ -930,7 +934,7 @@
         tile.appendChild(thumb);
 
 
-        /* FIND DESCRIPTION */
+        /* FIND PROJECT DESCRIPTION */
 
         const path = (p.href || '')
           .split('?')[0]
@@ -988,47 +992,7 @@
 
 
         /* ======================================
-           DESKTOP HOVER
-
-           Hovering the next image switches
-           the open fold-out immediately.
-           ====================================== */
-
-        tile.addEventListener('pointerenter', function (event) {
-
-          if (event.pointerType === 'mouse' ||
-              event.pointerType === 'pen') {
-
-            openProject(tile);
-
-          }
-
-        });
-
-
-        /*
-         * The panel is pointer-events:none,
-         * so it cannot steal hover from the
-         * image underneath it.
-         */
-
-        tile.addEventListener('pointerleave', function (event) {
-
-          if (event.pointerType === 'mouse' ||
-              event.pointerType === 'pen') {
-
-            tile.classList.remove('is-open');
-
-          }
-
-        });
-
-
-        /* ======================================
-           TOUCH
-
-           First tap opens the fold-out.
-           SEE MORE remains a normal link.
+           TOUCH INTERACTION
            ====================================== */
 
         thumb.addEventListener('click', function (event) {
@@ -1041,8 +1005,8 @@
 
             event.preventDefault();
 
-            if (tile.classList.contains('is-open')) {
-              tile.classList.remove('is-open');
+            if (activeProject === tile) {
+              closeAllProjects();
             } else {
               openProject(tile);
             }
@@ -1053,7 +1017,7 @@
 
 
         /* ======================================
-           KEYBOARD
+           KEYBOARD INTERACTION
            ====================================== */
 
         tile.addEventListener('keydown', function (event) {
@@ -1067,8 +1031,8 @@
 
             event.preventDefault();
 
-            if (tile.classList.contains('is-open')) {
-              tile.classList.remove('is-open');
+            if (activeProject === tile) {
+              closeAllProjects();
             } else {
               openProject(tile);
             }
@@ -1076,7 +1040,7 @@
           }
 
           if (event.key === 'Escape') {
-            tile.classList.remove('is-open');
+            closeAllProjects();
           }
 
         });
@@ -1093,8 +1057,78 @@
 
 
       /* ======================================
-         CLOSE WHEN CLICKING OUTSIDE
+         IMPORTANT HOVER FIX
+
+         Instead of relying on pointerleave,
+         detect the image directly beneath
+         the mouse coordinates.
+
+         This prevents an old fold-out from
+         staying open when moving to another
+         project.
          ====================================== */
+
+      grid.addEventListener('pointermove', function (event) {
+
+        if (event.pointerType !== 'mouse' &&
+            event.pointerType !== 'pen') {
+          return;
+        }
+
+        const x = event.clientX;
+        const y = event.clientY;
+
+        let hoveredTile = null;
+
+        const tiles = grid.querySelectorAll('.project');
+
+        for (const tile of tiles) {
+
+          const thumb = tile.querySelector('.thumb');
+
+          if (!thumb) {
+            continue;
+          }
+
+          const rect = thumb.getBoundingClientRect();
+
+          const inside =
+            x >= rect.left &&
+            x <= rect.right &&
+            y >= rect.top &&
+            y <= rect.bottom;
+
+          if (inside) {
+            hoveredTile = tile;
+            break;
+          }
+
+        }
+
+        if (hoveredTile) {
+          openProject(hoveredTile);
+        } else {
+          closeAllProjects();
+        }
+
+      });
+
+
+      /* Close when leaving the whole grid */
+
+      grid.addEventListener('pointerleave', function (event) {
+
+        if (event.pointerType === 'mouse' ||
+            event.pointerType === 'pen') {
+
+          closeAllProjects();
+
+        }
+
+      });
+
+
+      /* Close when clicking outside */
 
       document.addEventListener('click', function (event) {
 
