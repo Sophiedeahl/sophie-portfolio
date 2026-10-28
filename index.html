@@ -11,9 +11,8 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-
     /* ==========================================
-       FIVE PORTRAIT PROJECT TILES
+       PROJECT GRID
        ========================================== */
 
     #project-grid {
@@ -30,9 +29,10 @@
 
     #project-grid .project {
       position: relative;
+      display: block;
       isolation: isolate;
       min-width: 0;
-      cursor: pointer;
+      cursor: default;
     }
 
     #project-grid .project:hover,
@@ -57,7 +57,7 @@
       object-fit: cover;
     }
 
-    /* No titles or overlays on the images */
+    /* Hide the old titles on the photographs */
 
     #project-grid .project .overlay {
       display: none !important;
@@ -65,18 +65,19 @@
 
 
     /* ==========================================
-       FOLD-OUT PANEL
+       FOLD-OUT BESIDE THE IMAGE
        ========================================== */
 
     #project-grid .project-info {
       position: absolute;
       top: 0;
       left: 100%;
+
       width: 100%;
       height: 100%;
       box-sizing: border-box;
 
-      padding: clamp(12px, 1.5vw, 24px);
+      padding: clamp(12px, 1.6vw, 24px);
 
       background: rgba(255, 255, 255, 0.94);
       color: #111;
@@ -87,10 +88,17 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: clamp(10px, 1vw, 16px);
+      gap: clamp(10px, 1.2vw, 18px);
 
       opacity: 0;
       visibility: hidden;
+
+      /*
+       * IMPORTANT:
+       * The fold-out is informational only.
+       * Mouse events pass through it to the
+       * neighbouring project photographs.
+       */
       pointer-events: none;
 
       transform: perspective(700px) rotateY(-75deg);
@@ -101,13 +109,11 @@
         transform 0.36s ease,
         visibility 0.36s;
 
-      overflow-y: auto;
-      overflow-x: hidden;
-
-      z-index: 3;
+      overflow: auto;
+      z-index: 1;
     }
 
-    /* Fold to the left when near the screen edge */
+    /* Fold to the left near the right edge */
 
     #project-grid .project.fold-left .project-info {
       left: auto;
@@ -117,20 +123,17 @@
       transform: perspective(700px) rotateY(75deg);
     }
 
-    /* Open on hover, keyboard focus or touch */
+    /* Only one fold-out opens at a time */
 
-    #project-grid .project:hover .project-info,
-    #project-grid .project:focus-within .project-info,
     #project-grid .project.is-open .project-info {
       opacity: 1;
       visibility: visible;
-      pointer-events: auto;
       transform: rotateY(0deg);
     }
 
 
     /* ==========================================
-       FOLD-OUT TYPOGRAPHY
+       FOLD-OUT TITLE AND DESCRIPTION
        ========================================== */
 
     #project-grid .project-info-title {
@@ -168,47 +171,71 @@
 
 
     /* ==========================================
-       SEE MORE LINK
+       SEE MORE — ON THE ORIGINAL IMAGE
        ========================================== */
 
-    #project-grid .project-info-link {
+    #project-grid .project-see-more {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      z-index: 5;
+
       display: inline-flex;
       align-items: center;
-      align-self: flex-start;
-      gap: 7px;
+      gap: 6px;
 
-      margin-top: 2px;
+      padding: 8px 10px;
+
+      background: rgba(255, 255, 255, 0.94);
+      color: #111;
 
       font-family: 'Arimo', Arial, sans-serif;
-      font-size: clamp(11px, 0.95vw, 14px);
+      font-size: clamp(11px, 0.9vw, 14px);
       font-weight: 700;
       font-style: normal;
 
+      line-height: 1;
       letter-spacing: 0.025em;
       text-transform: uppercase;
-
-      color: #111;
       text-decoration: none;
 
-      border-bottom: 1px solid #111;
-      padding-bottom: 3px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(5px);
 
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s;
+
+      pointer-events: none;
       cursor: pointer;
-      flex-shrink: 0;
     }
 
-    #project-grid .project-info-link:hover {
-      opacity: 0.55;
+    #project-grid .project.is-open .project-see-more,
+    #project-grid .project:focus-within .project-see-more {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
     }
 
-    #project-grid .project-info-link:focus-visible {
+    #project-grid .project-see-more:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    #project-grid .project-see-more:focus-visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
       outline: 2px solid #111;
-      outline-offset: 4px;
+      outline-offset: 3px;
     }
 
 
     /* ==========================================
-       TABLET AND MOBILE
+       SMALLER SCREENS
        ========================================== */
 
     @media (max-width: 1100px) {
@@ -222,12 +249,11 @@
     }
 
     @media (max-width: 700px) {
-
       #project-grid .project-info {
         left: 0 !important;
         right: auto !important;
-
         top: 100%;
+
         width: 100%;
         height: auto;
         min-height: 100%;
@@ -237,9 +263,7 @@
         transform: translateY(-8px) !important;
       }
 
-      #project-grid .project:hover .project-info,
-      #project-grid .project.is-open .project-info,
-      #project-grid .project:focus-within .project-info {
+      #project-grid .project.is-open .project-info {
         transform: translateY(0) !important;
       }
 
@@ -251,17 +275,19 @@
         font-size: clamp(12px, 2vw, 15px);
       }
 
-      #project-grid .project-info-link {
-        font-size: 12px;
+      #project-grid .project-see-more {
+        left: 10px;
+        bottom: 10px;
+        font-size: 11px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      #project-grid .project-info {
+      #project-grid .project-info,
+      #project-grid .project-see-more {
         transition: none;
       }
     }
-
   </style>
 
 </head>
@@ -388,7 +414,6 @@
               <div class="education-entry">
 
                 <p class="degree">
-
                   <a
                     href="https://www.tudelft.nl/onderwijs/opleidingen/masters/made/msc-metropolitan-analysis-design-and-engineering"
                     target="_blank"
@@ -396,7 +421,6 @@
                   >
                     MSc Metropolitan Analysis, Design &amp; Engineering
                   </a>
-
                 </p>
 
                 <p>TU Delft and Wageningen University</p>
@@ -407,7 +431,6 @@
               <div class="education-entry">
 
                 <p class="degree">
-
                   <a
                     href="https://www.hva.nl/opleidingen/engineering-product-ontwerpen"
                     target="_blank"
@@ -415,7 +438,6 @@
                   >
                     Bachelor Industrial Engineering / Product Design
                   </a>
-
                 </p>
 
                 <p>Amsterdam University of Applied Sciences</p>
@@ -587,9 +609,7 @@
       id="projects"
       aria-label="Projects"
     >
-
       <div class="projects" id="project-grid"></div>
-
     </section>
 
   </main>
@@ -731,6 +751,8 @@
           false
         );
 
+        closeAllProjects();
+
       }
 
       window.addEventListener(
@@ -756,68 +778,98 @@
 
 
       /* ======================================
-         FOLD-OUT DESCRIPTIONS
+         PROJECT DESCRIPTIONS
 
-         Each project now has:
-         - Description
-         - Year
-
-         No keywords or categories.
+         No categories, keywords or years
+         displayed in the fold-out.
          ====================================== */
 
       const foldoutData = {
 
-        'msc-1': [
+        'msc-1':
           'Designed a participatory mapping tool to explore how residents experience neighbourhood change in Amsterdam-Noord. Combined individual perspectives into a collective map to visualise different experiences of gentrification.',
-          '2024'
-        ],
 
-        'msc-2': [
+        'msc-2':
           'Investigated collaboration between stakeholders involved in rooftop densification in Rotterdam. Used interviews and observations to explore how participation, power dynamics and differing interests influence collaboration in urban development.',
-          '2026'
-        ],
 
-        'msc-3': [
+        'msc-3':
           'The energy transition in Amsterdam Zuidoost raises questions about trust and collaboration between residents and institutions. Through interviews, co-creation sessions and stakeholder mapping, we brought together different perspectives and identified opportunities for collaboration.',
-          '2025'
-        ],
 
-        'msc-4': [
+        'msc-4':
           "For the Municipality of Amsterdam, a series of visual collages illustrated four key themes for a new neighbourhood planned within the existing Zaanstraat area. The collages translated urban development ideas into images, helping communicate the vision for the neighbourhood's future.",
-          '2025'
-        ],
 
-        'commissioned-1': [
+        'commissioned-1':
           'The development of mobility hubs in Utrecht required a better understanding of how different transport networks connect. Spatial analysis of public transport, shared mobility, cycling accessibility and key destinations helped identify promising locations for the pilot hubs.',
-          '2021'
-        ],
 
-        'commissioned-2': [
+        'commissioned-2':
           'Electricity grid congestion is becoming an increasing challenge for residential development in the Netherlands. An analysis of 49 housing projects combined spatial data and technical criteria to assess potential risks and identify developments requiring further investigation.',
-          '2026'
-        ],
 
-        'commissioned-3': [
+        'commissioned-3':
           'An immersive game concept aimed to help policymakers experience possible futures for Dutch cities and better understand the impact of urban planning decisions. Research, concept development and visual sketches helped make these future scenarios more tangible.',
-          '2025'
-        ],
 
-        'other-1': [
+        'other-1':
           'A magical forest became the setting for a short immersive game, bringing hand-drawn creatures to life in a 3D environment. Houdini and Unreal Engine were used to combine character design, 3D modelling and visual programming into a playable experience.',
-          '2025'
-        ],
 
-        'other-2': [
+        'other-2':
           'Personal safety while driving was the starting point for TomTom Charm, a compact safety device designed for women. User research into driving experiences and safety concerns informed a product concept combining an emergency button, alarms and location sharing.',
-          '2015'
-        ],
 
-        'other-3': [
-          'In Zanzibar, a workshop was established to create new opportunities for local women through circular design. Discarded materials were transformed into products, combining skills training, hands-on production and opportunities to sell locally.',
-          '2014'
-        ]
+        'other-3':
+          'In Zanzibar, a workshop was established to create new opportunities for local women through circular design. Discarded materials were transformed into products, combining skills training, hands-on production and opportunities to sell locally.'
 
       };
+
+
+      /* ======================================
+         OPEN / CLOSE PROJECTS
+
+         Only one fold-out can be open.
+         ====================================== */
+
+      function closeAllProjects() {
+
+        grid.querySelectorAll('.project.is-open')
+          .forEach(function (tile) {
+            tile.classList.remove('is-open');
+          });
+
+      }
+
+
+      function openProject(tile) {
+
+        if (!tile) {
+          closeAllProjects();
+          return;
+        }
+
+        if (tile.classList.contains('is-open')) {
+          return;
+        }
+
+        closeAllProjects();
+
+        /*
+         * Fold left for projects near the
+         * right edge of the screen.
+         */
+
+        const rect = tile.getBoundingClientRect();
+
+        const spaceRight =
+          window.innerWidth - rect.right;
+
+        const spaceLeft =
+          rect.left;
+
+        tile.classList.toggle(
+          'fold-left',
+          spaceRight < rect.width &&
+          spaceLeft > spaceRight
+        );
+
+        tile.classList.add('is-open');
+
+      }
 
 
       /* ======================================
@@ -825,9 +877,6 @@
          ====================================== */
 
       projectData.forEach(function (p) {
-
-        /* Project tile is now a div, not a link.
-           The SEE MORE link is inside the fold-out. */
 
         const tile = document.createElement('div');
 
@@ -840,9 +889,7 @@
         );
 
 
-        /* ======================================
-           PROJECT IMAGE — NO TITLE
-           ====================================== */
+        /* PROJECT IMAGE */
 
         const thumb = document.createElement('div');
         thumb.className = 'thumb';
@@ -859,60 +906,12 @@
 
         }
 
-        tile.appendChild(thumb);
 
-
-        /* ======================================
-           FIND PROJECT DESCRIPTION
-           ====================================== */
-
-        const path = (p.href || '')
-          .split('?')[0]
-          .split('#')[0];
-
-        const key = (
-          path.split('/').pop() || ''
-        ).replace(/\.html$/i, '') || p.id;
-
-        const details = foldoutData[key] || [
-          '',
-          ''
-        ];
-
-
-        /* ======================================
-           CREATE FOLD-OUT PANEL
-           ====================================== */
-
-        const info = document.createElement('div');
-        info.className = 'project-info';
-
-
-        /* PROJECT TITLE */
-
-        const title = document.createElement('h3');
-        title.className = 'project-info-title';
-        title.textContent = p.title || '';
-
-
-        /* DIVIDER */
-
-        const rule = document.createElement('hr');
-        rule.className = 'project-info-rule';
-
-
-        /* SHORT DESCRIPTION */
-
-        const description = document.createElement('p');
-        description.className = 'project-info-description';
-        description.textContent = details[0];
-
-
-        /* SEE MORE LINK */
+        /* SEE MORE — ON THE IMAGE */
 
         const seeMore = document.createElement('a');
 
-        seeMore.className = 'project-info-link';
+        seeMore.className = 'project-see-more';
 
         seeMore.href = p.href || (
           'project.html?id=' +
@@ -926,132 +925,165 @@
           'See more about ' + (p.title || 'this project')
         );
 
+        thumb.appendChild(seeMore);
 
-        /* ASSEMBLE PANEL */
+        tile.appendChild(thumb);
+
+
+        /* FIND DESCRIPTION */
+
+        const path = (p.href || '')
+          .split('?')[0]
+          .split('#')[0];
+
+        const key = (
+          path.split('/').pop() || ''
+        ).replace(/\.html$/i, '') || p.id;
+
+        const descriptionText =
+          foldoutData[key] ||
+          foldoutData[p.id] ||
+          'Explore this project in more detail.';
+
+
+        /* CREATE FOLD-OUT */
+
+        const info = document.createElement('div');
+
+        info.className = 'project-info';
+
+
+        /* TITLE */
+
+        const title = document.createElement('h3');
+
+        title.className = 'project-info-title';
+        title.textContent = p.title || '';
+
+
+        /* DIVIDER */
+
+        const rule = document.createElement('hr');
+
+        rule.className = 'project-info-rule';
+
+
+        /* DESCRIPTION */
+
+        const description = document.createElement('p');
+
+        description.className = 'project-info-description';
+        description.textContent = descriptionText;
+
+
+        /* ASSEMBLE */
 
         info.append(
           title,
           rule,
-          description,
-          seeMore
+          description
         );
 
         tile.appendChild(info);
 
 
         /* ======================================
-           AUTOMATIC LEFT / RIGHT POSITION
+           DESKTOP HOVER
+
+           Hovering the next image switches
+           the open fold-out immediately.
            ====================================== */
 
-        const positionInfo = function () {
+        tile.addEventListener('pointerenter', function (event) {
 
-          const rect = tile.getBoundingClientRect();
+          if (event.pointerType === 'mouse' ||
+              event.pointerType === 'pen') {
 
-          const spaceRight =
-            window.innerWidth - rect.right;
+            openProject(tile);
 
-          const spaceLeft =
-            rect.left;
-
-          tile.classList.toggle(
-            'fold-left',
-            spaceRight < rect.width &&
-            spaceLeft > spaceRight
-          );
-
-        };
-
-
-        tile.addEventListener(
-          'mouseenter',
-          positionInfo
-        );
-
-        tile.addEventListener(
-          'focusin',
-          positionInfo
-        );
-
-        tile.addEventListener(
-          'touchstart',
-          positionInfo,
-          { passive: true }
-        );
-
-
-        /* ======================================
-           TOUCH / CLICK INTERACTION
-
-           Clicking an image opens the fold-out.
-           Clicking SEE MORE opens the project.
-           ====================================== */
-
-        thumb.addEventListener('click', function () {
-
-          positionInfo();
-
-          const wasOpen =
-            tile.classList.contains('is-open');
-
-          grid.querySelectorAll('.is-open')
-            .forEach(function (otherTile) {
-              otherTile.classList.remove('is-open');
-            });
-
-          tile.classList.toggle(
-            'is-open',
-            !wasOpen
-          );
+          }
 
         });
 
 
-        /* KEYBOARD ACCESS */
+        /*
+         * The panel is pointer-events:none,
+         * so it cannot steal hover from the
+         * image underneath it.
+         */
 
-        tile.addEventListener(
-          'keydown',
-          function (event) {
+        tile.addEventListener('pointerleave', function (event) {
 
-            if (
-              event.target !== tile
-            ) {
-              return;
-            }
+          if (event.pointerType === 'mouse' ||
+              event.pointerType === 'pen') {
 
-            if (
-              event.key === 'Enter' ||
-              event.key === ' '
-            ) {
+            tile.classList.remove('is-open');
 
-              event.preventDefault();
+          }
 
-              positionInfo();
+        });
 
-              tile.classList.toggle('is-open');
 
-            }
+        /* ======================================
+           TOUCH
 
-            if (event.key === 'Escape') {
+           First tap opens the fold-out.
+           SEE MORE remains a normal link.
+           ====================================== */
+
+        thumb.addEventListener('click', function (event) {
+
+          if (event.target.closest('.project-see-more')) {
+            return;
+          }
+
+          if (window.matchMedia('(hover: none)').matches) {
+
+            event.preventDefault();
+
+            if (tile.classList.contains('is-open')) {
               tile.classList.remove('is-open');
+            } else {
+              openProject(tile);
             }
 
           }
-        );
+
+        });
 
 
-        /* CLOSE OTHER PANELS ON FOCUS */
+        /* ======================================
+           KEYBOARD
+           ====================================== */
+
+        tile.addEventListener('keydown', function (event) {
+
+          if (event.target !== tile) {
+            return;
+          }
+
+          if (event.key === 'Enter' ||
+              event.key === ' ') {
+
+            event.preventDefault();
+
+            if (tile.classList.contains('is-open')) {
+              tile.classList.remove('is-open');
+            } else {
+              openProject(tile);
+            }
+
+          }
+
+          if (event.key === 'Escape') {
+            tile.classList.remove('is-open');
+          }
+
+        });
+
 
         tile.addEventListener('focusin', function () {
-
-          grid.querySelectorAll('.is-open')
-            .forEach(function (otherTile) {
-
-              if (otherTile !== tile) {
-                otherTile.classList.remove('is-open');
-              }
-
-            });
-
+          openProject(tile);
         });
 
 
@@ -1061,18 +1093,13 @@
 
 
       /* ======================================
-         CLOSE FOLD-OUT WHEN CLICKING ELSEWHERE
+         CLOSE WHEN CLICKING OUTSIDE
          ====================================== */
 
       document.addEventListener('click', function (event) {
 
         if (!event.target.closest('#project-grid .project')) {
-
-          grid.querySelectorAll('.is-open')
-            .forEach(function (tile) {
-              tile.classList.remove('is-open');
-            });
-
+          closeAllProjects();
         }
 
       });
