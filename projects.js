@@ -3,7 +3,7 @@ const projects = [
   {
     id: 'mobility-hub',
     category: 'Commissioned Projects',
-    title: 'Mapping Mobility: Identifying Opportunities for Neighbourhood Hubs',
+    title: 'Identifying Opportunities for Neighbourhood Hubs in Utrecht',
     image: 'assets/commissioned-1-2.png',
     pdf: 'projects/mobility-hub.pdf',
     href: 'commissioned-1.html'
@@ -11,7 +11,7 @@ const projects = [
   {
     id: 'msc-2',
     category: 'MSc Projects',
-    title: 'Collaboration in Urban Densification',
+    title: 'Collaboration in Urban Densification in Rotterdam',
     image: 'assets/msc-2.png',
     pdf: 'projects/msc-2.pdf',
     href: 'msc-2.html'
@@ -19,7 +19,7 @@ const projects = [
   {
     id: 'msc-1',
     category: 'MSc Projects',
-    title: 'Participatory Mapping — Understanding Gentrification',
+    title: 'Participatory Mapping — Understanding Gentrification in Amsterdam-Noord',
     image: 'assets/msc-1.png',
     pdf: 'projects/msc-1.pdf',
     href: 'msc-1.html'
@@ -35,7 +35,7 @@ const projects = [
   {
     id: 'msc-3',
     category: 'MSc Projects',
-    title: 'Just Energy Transition: Bridging Communities and Institutions',
+    title: 'Just Energy Transition: Bridging Communities and Institutions in Amsterdam-Zuidoost',
     image: 'assets/msc-3.png',
     pdf: 'projects/msc-3.pdf',
     href: 'msc-3.html'
@@ -59,7 +59,7 @@ const projects = [
   {
     id: 'other-3',
     category: 'Other Projects',
-    title: 'Turning Waste Into Opportunity',
+    title: 'Turning Waste Into Opportunity in Zanzibar, Tanzania',
     image: 'assets/other-4.png',
     pdf: 'projects/other-3.pdf',
     href: 'other-3.html'
@@ -75,7 +75,7 @@ const projects = [
   {
     id: 'msc-4',
     category: 'MSc Projects',
-    title: 'Zaanstraat — Visualising a New Neighbourhood',
+    title: 'Zaanstraat — Visualising a New Neighbourhood in Amsterdam',
     image: 'assets/ze1.png',
     pdf: 'projects/msc-4.pdf',
     href: 'msc-4.html'
