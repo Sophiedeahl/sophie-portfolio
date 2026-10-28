@@ -31,7 +31,6 @@
       position: relative;
       isolation: isolate;
       min-width: 0;
-      cursor: default;
     }
 
     #project-grid .project.is-open {
@@ -45,6 +44,7 @@
       height: auto;
       aspect-ratio: 5 / 7;
       overflow: hidden;
+      cursor: pointer;
     }
 
     #project-grid .project .thumb img {
@@ -54,7 +54,7 @@
       object-fit: cover;
     }
 
-    /* Remove all titles from the photographs */
+    /* Hide the old titles on the images */
 
     #project-grid .project .overlay {
       display: none !important;
@@ -91,9 +91,8 @@
       visibility: hidden;
 
       /*
-       * The panel never intercepts the mouse.
-       * This allows neighbouring images to
-       * remain accessible underneath it.
+       * The fold-out cannot block
+       * neighbouring photographs.
        */
       pointer-events: none;
 
@@ -109,8 +108,6 @@
       z-index: 1;
     }
 
-    /* Fold to the left near the right edge */
-
     #project-grid .project.fold-left .project-info {
       left: auto;
       right: 100%;
@@ -119,18 +116,11 @@
       transform: perspective(700px) rotateY(75deg);
     }
 
-    /* Show only the active fold-out */
-
     #project-grid .project.is-open .project-info {
       opacity: 1;
       visibility: visible;
       transform: rotateY(0deg);
     }
-
-    /*
-     * Explicitly hide inactive panels.
-     * This prevents old text from lingering.
-     */
 
     #project-grid .project:not(.is-open) .project-info {
       opacity: 0 !important;
@@ -178,7 +168,7 @@
 
 
     /* ==========================================
-       SEE MORE — ON THE ORIGINAL IMAGE
+       SEE MORE — WHITE BOX, BLACK TEXT
        ========================================== */
 
     #project-grid .project-see-more {
@@ -228,8 +218,8 @@
     }
 
     #project-grid .project-see-more:hover {
-      background: #111;
-      color: #fff;
+      background: rgba(255, 255, 255, 0.94);
+      color: #111;
     }
 
     #project-grid .project-see-more:focus-visible {
@@ -934,6 +924,24 @@
         tile.appendChild(thumb);
 
 
+        /* ======================================
+           CLICK ANYWHERE ON THE PHOTOGRAPH
+
+           The SEE MORE link keeps working
+           independently.
+           ====================================== */
+
+        thumb.addEventListener('click', function (event) {
+
+          if (event.target.closest('.project-see-more')) {
+            return;
+          }
+
+          window.location.href = seeMore.href;
+
+        });
+
+
         /* FIND PROJECT DESCRIPTION */
 
         const path = (p.href || '')
@@ -992,31 +1000,6 @@
 
 
         /* ======================================
-           TOUCH INTERACTION
-           ====================================== */
-
-        thumb.addEventListener('click', function (event) {
-
-          if (event.target.closest('.project-see-more')) {
-            return;
-          }
-
-          if (window.matchMedia('(hover: none)').matches) {
-
-            event.preventDefault();
-
-            if (activeProject === tile) {
-              closeAllProjects();
-            } else {
-              openProject(tile);
-            }
-
-          }
-
-        });
-
-
-        /* ======================================
            KEYBOARD INTERACTION
            ====================================== */
 
@@ -1057,15 +1040,11 @@
 
 
       /* ======================================
-         IMPORTANT HOVER FIX
+         HOVER INTERACTION
 
-         Instead of relying on pointerleave,
-         detect the image directly beneath
-         the mouse coordinates.
-
-         This prevents an old fold-out from
-         staying open when moving to another
-         project.
+         Detect which photograph is directly
+         underneath the mouse, rather than
+         relying on pointerleave events.
          ====================================== */
 
       grid.addEventListener('pointermove', function (event) {
@@ -1114,7 +1093,7 @@
       });
 
 
-      /* Close when leaving the whole grid */
+      /* Close when leaving the grid */
 
       grid.addEventListener('pointerleave', function (event) {
 
