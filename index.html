@@ -153,14 +153,17 @@
       height: 100%;
       object-fit: cover;
     }
-    /* Scale the original title treatment with the narrower tiles. */
-    @media (min-width: 1101px) {
-      #project-grid .project .overlay span {
-        font-size: clamp(14px, 1.5vw, 24px);
-        line-height: 1.12;
-        overflow-wrap: normal;
-      }
-    }
+   
+/* Scale the original title treatment with the narrower tiles. */
+@media (min-width: 1101px) {
+  #project-grid .project .overlay span {
+    font-size: clamp(14px, 1.5vw, 24px);
+    line-height: 1.22;
+    letter-spacing: 0.015em;
+    overflow-wrap: normal;
+  }
+}
+
   </style>
 
 </head>
