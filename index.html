@@ -1,4 +1,5 @@
 
+<style>
 /* ==========================================
    PROJECT IMAGES — COLOUR HOVER EFFECT
    ========================================== */
@@ -9,18 +10,17 @@
   transition: filter 0.4s ease;
 }
 
-/* When hovering over the grid,
-   all images turn black and white */
+/* All other images become black and white */
 #project-grid:has(.project:hover) .project .thumb img {
   filter: grayscale(100%);
 }
 
-/* Only the hovered image stays coloured */
-#project-grid .project:hover .thumb img {
+/* Hovered image stays coloured */
+#project-grid:has(.project:hover) .project:hover .thumb img {
   filter: grayscale(0%);
 }
 
-/* Keep keyboard-focused project coloured */
+/* Keyboard accessibility */
 #project-grid:has(.project:focus-within)
   .project:not(:focus-within) .thumb img {
   filter: grayscale(100%);
@@ -76,8 +76,46 @@
   }
 }
 
+
+/* ==========================================
+   ABOUT PAGE — PORTRAIT IMAGE FIX
+   ========================================== */
+
+#about .intro-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#about .intro-video img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center top;
+}
+
+#about .about-intro {
+  align-items: start;
+}
+
+#about .intro-video::before,
+#about .intro-video::after {
+  display: none;
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
 @media (prefers-reduced-motion: reduce) {
   #project-grid .project .thumb img {
     transition: none;
   }
 }
+</style>
