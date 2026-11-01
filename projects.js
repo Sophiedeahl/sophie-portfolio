@@ -41,30 +41,6 @@ const projects = [
     href: 'msc-3.html'
   },
   {
-    id: 'energy-grid',
-    category: 'Commissioned Projects',
-    title: 'Energy Grid Analysis for real estate projects',
-    image: 'assets/commissioned-2.png',
-    pdf: 'projects/energy-grid.pdf',
-    href: 'commissioned-2.html'
-  },
-  {
-    id: 'other-2',
-    category: 'Other Projects',
-    title: 'Female Interaction Design for TomTom',
-    image: 'assets/tomtom1.png',
-    pdf: 'projects/other-2.pdf',
-    href: 'other-2.html'
-  },
-  {
-    id: 'other-3',
-    category: 'Other Projects',
-    title: 'Turning Waste Into Opportunity in Zanzibar, Tanzania',
-    image: 'assets/other-4.png',
-    pdf: 'projects/other-3.pdf',
-    href: 'other-3.html'
-  },
-  {
     id: 'other-1',
     category: 'Other Projects',
     title: 'Root Hunt — From Drawing to Playable Game   ',
@@ -79,6 +55,30 @@ const projects = [
     image: 'assets/ze1.png',
     pdf: 'projects/msc-4.pdf',
     href: 'msc-4.html'
+  },
+  {
+    id: 'other-2',
+    category: 'Other Projects',
+    title: 'Female Interaction Design for TomTom',
+    image: 'assets/tomtom1.png',
+    pdf: 'projects/other-2.pdf',
+    href: 'other-2.html'
+  },
+  {
+    id: 'energy-grid',
+    category: 'Commissioned Projects',
+    title: 'Energy Grid Analysis for real estate projects',
+    image: 'assets/commissioned-2.png',
+    pdf: 'projects/energy-grid.pdf',
+    href: 'commissioned-2.html'
+  },
+  {
+    id: 'other-3',
+    category: 'Other Projects',
+    title: 'Turning Waste Into Opportunity in Zanzibar, Tanzania',
+    image: 'assets/other-4.png',
+    pdf: 'projects/other-3.pdf',
+    href: 'other-3.html'
   }
 ];
 
