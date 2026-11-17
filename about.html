@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Me — Sophie Deahl</title>
-
+  <title>About — Sophie Deahl</title>
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -25,23 +25,22 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* SAME HEADER AS THE PORTFOLIO */
+    a {
+      color: inherit;
+    }
+
+    /* HEADER */
 
     .landing {
-      min-height: 0;
-      display: flex;
-      align-items: center;
       padding: 16px 5.5% 0;
     }
 
     .landing-inner {
-      width: 100%;
       max-width: 1700px;
       margin: 0 auto;
     }
 
     .landing-line {
-      width: 100%;
       height: 1px;
       background: #aaa;
     }
@@ -59,6 +58,8 @@
       line-height: 1.12;
       letter-spacing: -.055em;
       flex-shrink: 0;
+      color: inherit;
+      text-decoration: none;
     }
 
     .landing-nav {
@@ -66,19 +67,15 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-end;
-      min-width: 0;
       text-align: right;
     }
 
     .landing-nav a {
       font-size: clamp(30px, 3.5vw, 54px);
       font-weight: 700;
-      font-style: normal;
       letter-spacing: -.05em;
       line-height: 1.12;
       white-space: nowrap;
-      cursor: pointer;
-      color: inherit;
       text-decoration: none;
     }
 
@@ -88,180 +85,209 @@
       font-style: italic;
     }
 
-    /* ABOUT ME CONTENT */
+    /* PAGE */
 
-    .about-content {
-      width: 100%;
+    .about-page {
       max-width: 1700px;
       margin: 0 auto;
-      padding: 47px 5.5% 100px;
+      padding: 80px 5.5% 130px;
     }
 
-    .about-panel {
-      width: 100%;
-      background: #f8f8f8;
-      padding: 27px 7% 65px;
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
-    .about-grid {
+    /* INTRODUCTION */
+
+    .intro {
       display: grid;
-      grid-template-columns:
-        minmax(0, 1.03fr)
-        minmax(0, 1.72fr)
-        minmax(0, 0.95fr);
-      column-gap: 7%;
-      align-items: start;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 9%;
+      padding-bottom: 100px;
     }
 
-    /* LEFT COLUMN */
-
-    .about-left {
-      padding-top: 86px;
-    }
-
-    .about-photo {
-      display: block;
-      width: 100%;
-      max-width: 260px;
-      height: auto;
-      aspect-ratio: 1 / 1.05;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 8px;
-      background: #e9e9e6;
-    }
-
-    .about-contact {
-      padding: 25px 8px 0;
-    }
-
-    .about-name {
-      margin: 0 0 12px;
-      font-size: clamp(25px, 2.4vw, 34px);
-      font-weight: 700;
-      font-style: italic;
-      line-height: 1.05;
-      letter-spacing: -.055em;
-      white-space: nowrap;
-    }
-
-    .about-contact p,
-    .about-contact a {
-      display: block;
+    .intro h1 {
       margin: 0;
-      color: #111;
-      font-size: 17px;
-      line-height: 1.14;
-      text-decoration: none;
-    }
-
-    .about-contact a:hover {
-      text-decoration: underline;
-    }
-
-    /* MIDDLE COLUMN */
-
-    .about-middle {
-      min-width: 0;
-    }
-
-    .about-middle p {
-      margin: 0 0 20px;
-      font-size: 17px;
-      line-height: 1.2;
-      letter-spacing: -.025em;
-      text-align: justify;
-      hyphens: none;
-    }
-
-    .about-section {
-      margin-top: 46px;
-    }
-
-    .about-section h2 {
-      margin: 0 0 23px;
-      font-size: 20px;
+      font-size: clamp(56px, 8vw, 130px);
+      line-height: .92;
+      letter-spacing: -.075em;
       font-weight: 700;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: -.025em;
     }
 
-    .about-section p {
-      margin-bottom: 0;
+    .intro h1 span {
+      display: block;
     }
 
-    .about-section + .about-section {
-      margin-top: 47px;
+    .intro h1 span:nth-child(2) {
+      font-style: italic;
+      font-weight: 400;
     }
 
-    /* RIGHT COLUMN */
-
-    .about-right {
-      min-width: 0;
+    .intro-text {
+      align-self: end;
+      max-width: 650px;
     }
 
-    .about-right section + section {
-      margin-top: 54px;
+    .intro-text p {
+      font-size: clamp(20px, 2vw, 29px);
+      line-height: 1.35;
+      letter-spacing: -.035em;
+      margin: 0;
     }
 
-    .about-right h2 {
+    /* SECTION DIVIDERS */
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      border-top: 1px solid #111;
+      padding: 22px 0 55px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(25px, 3vw, 42px);
+      font-weight: 700;
+      letter-spacing: -.055em;
+    }
+
+    .section-heading span {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* CAPABILITIES */
+
+    .capabilities {
+      margin-bottom: 115px;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 9%;
+    }
+
+    .capability {
+      padding: 30px 0 42px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .capability-number {
+      display: block;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    .capability h3 {
+      font-size: clamp(25px, 3vw, 39px);
+      line-height: 1.1;
+      letter-spacing: -.055em;
+      font-weight: 500;
       margin: 0 0 24px;
-      font-size: 20px;
-      font-weight: 700;
-      font-style: normal;
+    }
+
+    .capability p {
+      max-width: 490px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0 0 25px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-list span {
+      border: 1px solid #c7c7c7;
+      border-radius: 2px;
+      padding: 9px 12px;
+      font-size: 12px;
       line-height: 1.2;
-      letter-spacing: -.025em;
     }
 
-    .about-right h3 {
-      margin: 22px 0 6px;
-      font-size: 17px;
+    /* SOFTWARE */
+
+    .software {
+      margin-bottom: 110px;
+    }
+
+    .software-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 55px;
+    }
+
+    .software-group h3 {
+      font-size: 15px;
       font-weight: 700;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: -.025em;
+      margin: 0 0 25px;
     }
 
-    .about-right h2 + h3 {
-      margin-top: 0;
-    }
-
-    .about-right ul {
+    .software-group ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
 
-    .about-right li {
-      margin: 0;
-      font-size: 17px;
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.2;
+    .software-group li {
+      font-size: clamp(17px, 1.7vw, 23px);
+      line-height: 1.65;
       letter-spacing: -.025em;
+    }
+
+    /* CLOSING */
+
+    .closing {
+      border-top: 1px solid #111;
+      padding-top: 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+    }
+
+    .closing p {
+      margin: 0;
+      max-width: 700px;
+      font-size: clamp(23px, 3vw, 43px);
+      line-height: 1.15;
+      letter-spacing: -.05em;
+    }
+
+    .closing a {
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid #111;
+      padding-bottom: 7px;
+      white-space: nowrap;
+    }
+
+    .closing a:hover {
+      font-style: italic;
     }
 
     /* TABLET */
 
-    @media (max-width: 1050px) {
-      .about-panel {
-        padding: 28px 5% 60px;
+    @media (max-width: 1000px) {
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 55px;
       }
 
-      .about-grid {
-        grid-template-columns:
-          minmax(0, 1fr)
-          minmax(0, 1.5fr);
-        gap: 40px;
-      }
-
-      .about-right {
-        grid-column: 2;
-      }
-
-      .about-left {
-        padding-top: 60px;
+      .intro-text {
+        max-width: 700px;
       }
     }
 
@@ -274,7 +300,7 @@
 
       .landing-row {
         flex-direction: column;
-        gap: 50px;
+        gap: 45px;
         padding: 35px 5px;
       }
 
@@ -292,41 +318,41 @@
         font-size: clamp(26px, 6vw, 40px);
       }
 
-      .about-content {
-        padding: 30px 5% 70px;
+      .about-page {
+        padding: 65px 5% 90px;
       }
 
-      .about-panel {
-        padding: 25px 20px 45px;
+      .intro {
+        padding-bottom: 85px;
       }
 
-      .about-grid {
+      .intro h1 {
+        font-size: clamp(65px, 14vw, 100px);
+      }
+
+      .capability-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
       }
 
-      .about-left {
-        padding-top: 0;
+      .software-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 25px;
       }
 
-      .about-photo {
-        max-width: 260px;
+      .capabilities,
+      .software {
+        margin-bottom: 85px;
       }
 
-      .about-contact {
-        padding-left: 0;
+      .closing {
+        flex-direction: column;
+        align-items: flex-start;
       }
+    }
 
-      .about-right {
-        grid-column: auto;
-      }
-
-      .about-middle p {
-        font-size: 17px;
-      }
-
-      .about-section {
-        margin-top: 38px;
+    @media (max-width: 420px) {
+      .software-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -361,161 +387,189 @@
     </div>
   </header>
 
-  <!-- ABOUT ME PAGE -->
+  <!-- MAIN CONTENT -->
 
-  <main class="about-content">
+  <main class="about-page">
 
-    <div class="about-panel">
+    <!-- INTRO -->
 
-      <div class="about-grid">
+    <section class="intro">
 
-        <!-- LEFT: PHOTO AND CONTACT -->
+      <div>
+        <h1>
+          <span>Research.</span>
+          <span>Design.</span>
+          <span>Make.</span>
+        </h1>
+      </div>
 
-        <div class="about-left">
+      <div class="intro-text">
+        <p>
+          Working across urban research, participatory
+          processes and visual design — translating
+          complex questions into clear insights,
+          useful tools and engaging experiences.
+        </p>
+      </div>
 
-          <img
-            class="about-photo"
-            src="assets/about.png"
-            alt="Portrait of Sophie Deahl"
-          >
+    </section>
 
-          <div class="about-contact">
+    <!-- CAPABILITIES -->
 
-            <h1 class="about-name">
-              SOPHIE DEAHL
-            </h1>
+    <section class="capabilities">
 
-            <p>Dutch / British</p>
+      <div class="section-heading">
+        <h2>What I do</h2>
+        <span>01 / Capabilities</span>
+      </div>
 
-            <a href="mailto:deahl@hotmail.com">
-              deahl@hotmail.com
-            </a>
+      <div class="capability-grid">
 
-            <a href="tel:+31639238922">
-              +31 6 39238922
-            </a>
+        <article class="capability">
+          <span class="capability-number">01 —</span>
 
+          <h3>Urban research<br>&amp; analysis</h3>
+
+          <p>
+            Investigating how places function, how
+            people use them and how decisions shape
+            the built environment.
+          </p>
+
+          <div class="skill-list">
+            <span>Qualitative research</span>
+            <span>Stakeholder interviews</span>
+            <span>Spatial analysis</span>
+            <span>Data analysis</span>
+            <span>Policy research</span>
+            <span>Research synthesis</span>
           </div>
+        </article>
 
-        </div>
+        <article class="capability">
+          <span class="capability-number">02 —</span>
 
-        <!-- MIDDLE: BIOGRAPHY, EDUCATION, EXPERIENCE -->
-
-        <div class="about-middle">
-
-          <p>
-           I’m an urban researcher and designer. I study how places work and how people experience them, then turn what I find into visuals, tools and concepts that others can use.
-
-
-          </p>
+          <h3>Participatory<br>processes</h3>
 
           <p>
-          I combine spatial analysis, participatory research and visual design. I also design tools that help people take part in planning. In my master’s thesis, I studied how stakeholders collaborated on rooftop extensions in Rotterdam. I found that bringing people together did not lead to shared commitments, because those with the most influence over implementation could also afford to wait.
-
-
+            Exploring ways to involve people in
+            research, design and decision-making
+            through collaborative and creative methods.
           </p>
+
+          <div class="skill-list">
+            <span>Stakeholder engagement</span>
+            <span>Participatory design</span>
+            <span>Co-creation</span>
+            <span>Creative facilitation</span>
+            <span>Workshop design</span>
+            <span>Presentations</span>
+          </div>
+        </article>
+
+        <article class="capability">
+          <span class="capability-number">03 —</span>
+
+          <h3>Design &amp;<br>visual storytelling</h3>
 
           <p>
-         I am currently based in the Netherlands and looking for work in London.
+            Making complex ideas accessible through
+            visual communication, concepts,
+            physical products and creative media.
           </p>
 
-          <section class="about-section">
+          <div class="skill-list">
+            <span>Graphic design</span>
+            <span>Information design</span>
+            <span>Product design</span>
+            <span>Concept development</span>
+            <span>Prototyping</span>
+            <span>Video editing</span>
+            <span>Stop-motion animation</span>
+          </div>
+        </article>
 
-            <h2>EDUCATION</h2>
+        <article class="capability">
+          <span class="capability-number">04 —</span>
 
-            <p>
-              Bachelor in Engineering, Design &amp; Innovation,
-              direction Product Design at the Amsterdam University of
-              Applied Sciences (2010 to 2015)
-              <br>
-              Master of Science in Metropolitan Analysis Design
-              &amp; Engineering at TU Delft
-              and Wageningen University (2024 to 2026)
-            </p>
+          <h3>Interactive<br>&amp; digital design</h3>
 
-          </section>
+          <p>
+            Experimenting with digital environments,
+            interactive experiences and visual tools
+            to communicate and explore ideas.
+          </p>
 
-          <section class="about-section">
-
-            <h2>EXPERIENCE</h2>
-
-            <p>
-            Since 2020, I have worked in urban development research, design and consultancy. I help make cities more sustainable by combining analysis with design that involves the people who live there.
-            </p>
-
-          </section>
-
-        </div>
-
-        <!-- RIGHT: SKILLS AND SOFTWARE -->
-
-        <aside class="about-right">
-
-          <section>
-
-            <h2>SKILLS</h2>
-
-            <h3>Research</h3>
-            <ul>
-              <li>Spatial Analysis</li>
-              <li>Qualitative Research</li>
-              <li>Data Analysis</li>
-            </ul>
-              
-            </ul>
-
-            <h3>Design</h3>
-            <ul>
-              <li>Visual &amp; Graphic Design</li>
-              <li>Product Design & development</li>
-              <li>Game Design</li>
-              <li>Video Editing</li>
-              <li>Web Design</li>
-              <li>HTML Coding</li>
-
-              
-            <h3>Other</h3>
-            <ul>
-              <li>Presentations & presenting</li>
-         
-            </ul>
-            </ul>
-
-          </section>
-
-          <section>
-
-            <h2>SOFTWARE</h2>
-
-            <h3>Design</h3>
-            <ul>
-              <li>Photoshop</li>
-              <li>Illustrator</li>
-              <li>InDesign</li>
-              <li>Canva</li>
-            </ul>
-
-            <h3>3D and games</h3>
-            <ul>
-              <li>Houdini</li>
-              <li>Unreal Engine</li>
-              <li>SolidWorks</li>
-            </ul>
-
-            <h3>Other</h3>
-            <ul>
-              <li>Excel</li>
-              <li>GitHub</li>
-              <li>iMovie</li>
-            </ul>
-
-          </section>
-
-        </aside>
+          <div class="skill-list">
+            <span>Game design</span>
+            <span>3D visualisation</span>
+            <span>Interactive concepts</span>
+            <span>Web design</span>
+            <span>HTML</span>
+            <span>Digital prototyping</span>
+          </div>
+        </article>
 
       </div>
 
-    </div>
+    </section>
+
+    <!-- SOFTWARE -->
+
+    <section class="software">
+
+      <div class="section-heading">
+        <h2>Tools &amp; software</h2>
+        <span>02 / Toolkit</span>
+      </div>
+
+      <div class="software-grid">
+
+        <div class="software-group">
+          <h3>Graphic &amp; visual</h3>
+          <ul>
+            <li>Adobe Illustrator</li>
+            <li>Adobe Photoshop</li>
+            <li>Adobe InDesign</li>
+            <li>Canva</li>
+            <li>iMovie</li>
+          </ul>
+        </div>
+
+        <div class="software-group">
+          <h3>3D &amp; interactive</h3>
+          <ul>
+            <li>Houdini</li>
+            <li>Unreal Engine</li>
+            <li>SolidWorks</li>
+          </ul>
+        </div>
+
+        <div class="software-group">
+          <h3>Data &amp; digital</h3>
+          <ul>
+            <li>Microsoft Excel</li>
+            <li>HTML</li>
+            <li>GitHub</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CLOSING -->
+
+    <section class="closing">
+      <p>
+        Curious about the work behind
+        these skills?
+      </p>
+
+      <a href="index.html#projects">
+        Explore projects ↗
+      </a>
+    </section>
 
   </main>
 
