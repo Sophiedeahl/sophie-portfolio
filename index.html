@@ -39,7 +39,6 @@
       position: relative;
       z-index: 2;
       width: 100%;
-      height: auto;
       aspect-ratio: 5 / 7;
       overflow: hidden;
       cursor: pointer;
@@ -52,9 +51,7 @@
       object-fit: cover;
       filter: grayscale(100%);
       transform: scale(1);
-      transition:
-        filter 0.4s ease,
-        transform 0.45s ease;
+      transition: filter 0.4s ease, transform 0.45s ease;
     }
 
     #project-grid .project:hover .thumb img,
@@ -134,7 +131,6 @@
       font-family: 'Arimo', Arial, sans-serif;
       font-size: clamp(11px, 0.78vw, 13px);
       line-height: 1.2;
-      font-weight: 400;
       color: #555;
     }
 
@@ -150,150 +146,41 @@
       font-family: 'Arimo', Arial, sans-serif;
       font-size: clamp(11px, 0.78vw, 13px);
       line-height: 1.38;
-      font-weight: 400;
       color: #222;
     }
 
-    /* NEW ABOUT PAGE */
+    /* SIMPLE ABOUT PAGE — SKILLS ONLY */
 
-    #about .cap-page {
-      max-width: 1500px;
-      margin: auto;
-      padding: 55px 5.5% 110px;
+    #about .simple-about {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 70px 5% 110px;
+      font-family: 'Arimo', Arial, sans-serif;
+      color: #111;
     }
 
-    #about .cap-hero {
+    #about .about-content {
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 8%;
-      padding: 30px 0 100px;
-      align-items: end;
-    }
-
-    #about .cap-hero h1 {
-      margin: 0;
-      font-size: clamp(58px, 8vw, 130px);
-      letter-spacing: -.075em;
-      line-height: .94;
-    }
-
-    #about .cap-hero h1 em {
-      font-weight: 400;
-    }
-
-    #about .cap-hero p {
-      font-size: clamp(20px, 2.1vw, 30px);
-      line-height: 1.35;
-      letter-spacing: -.025em;
-      max-width: 650px;
-      margin: 0;
-    }
-
-    #about .cap-heading {
-      border-top: 1px solid #111;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 20px;
-      padding: 22px 0 30px;
-    }
-
-    #about .cap-heading h2 {
-      font-size: clamp(26px, 3vw, 42px);
-      letter-spacing: -.045em;
-      margin: 0;
-    }
-
-    #about .cap-heading small {
-      font-size: 12px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    #about .cap-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0 8%;
-      margin-bottom: 100px;
-    }
-
-    #about .cap-item {
-      border-bottom: 1px solid #ccc;
-      padding: 35px 0 45px;
-    }
-
-    #about .cap-num {
-      color: #777;
-      font-size: 13px;
-    }
-
-    #about .cap-item h3 {
-      font-size: clamp(26px, 3vw, 40px);
-      line-height: 1.12;
-      letter-spacing: -.045em;
-      font-weight: 500;
-      margin: 22px 0;
-    }
-
-    #about .cap-item p {
-      max-width: 510px;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    #about .cap-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 22px;
-    }
-
-    #about .cap-tags span {
-      border: 1px solid #bbb;
-      padding: 8px 11px;
-      font-size: 13px;
-    }
-
-    #about .cap-tools {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 40px;
-      margin: 25px 0 110px;
     }
 
-    #about .cap-tools h3 {
-      font-size: 15px;
-      margin: 0 0 20px;
-    }
-
-    #about .cap-tools p {
-      font-size: clamp(17px, 1.6vw, 23px);
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    #about .cap-end {
+    #about .about-group {
       border-top: 1px solid #111;
-      padding-top: 35px;
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 25px;
+      padding-top: 18px;
     }
 
-    #about .cap-end p {
-      font-size: clamp(24px, 3vw, 42px);
-      letter-spacing: -.045em;
-      line-height: 1.15;
+    #about .about-group h2 {
+      margin: 0 0 25px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    #about .about-group p {
       margin: 0;
-    }
-
-    #about .cap-end a {
-      color: inherit;
-      font-weight: bold;
-      text-decoration: underline;
-      white-space: nowrap;
+      font-size: 15px;
+      line-height: 1.9;
+      font-weight: 400;
     }
 
     /* RESPONSIVE LAYOUT */
@@ -309,23 +196,8 @@
     }
 
     @media (max-width: 800px) {
-      #about .cap-hero {
-        grid-template-columns: 1fr;
-        gap: 45px;
-        padding-bottom: 70px;
-      }
-
-      #about .cap-grid {
-        grid-template-columns: 1fr;
-      }
-
-      #about .cap-tools {
+      #about .about-content {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      #about .cap-end {
-        flex-direction: column;
-        align-items: start;
       }
     }
 
@@ -356,7 +228,7 @@
     }
 
     @media (max-width: 480px) {
-      #about .cap-tools {
+      #about .about-content {
         grid-template-columns: 1fr;
       }
     }
@@ -389,6 +261,7 @@
         </a>
 
         <nav class="landing-nav" aria-label="Main navigation">
+
           <a href="#about" id="about-link">
             ABOUT
           </a>
@@ -401,6 +274,7 @@
           >
             PROJECTS
           </a>
+
         </nav>
 
       </div>
@@ -419,169 +293,66 @@
       id="about"
       aria-label="About"
     >
-      <div class="cap-page">
 
-        <div class="cap-hero">
-          <h1>
-            Research.<br>
-            <em>Design.</em><br>
-            Make.
-          </h1>
+      <div class="simple-about">
 
-          <p>
-            Working across urban research, participatory
-            processes and visual design — translating
-            complex questions into clear insights,
-            useful tools and engaging experiences.
-          </p>
-        </div>
+        <div class="about-content">
 
-        <div class="cap-heading">
-          <h2>What I do</h2>
-          <small>01 / Capabilities</small>
-        </div>
-
-        <div class="cap-grid">
-
-          <article class="cap-item">
-            <span class="cap-num">01 —</span>
-
-            <h3>Urban research<br>&amp; analysis</h3>
-
+          <div class="about-group">
+            <h2>Research</h2>
             <p>
-              Investigating how places function, how
-              people use them and how decisions shape
-              the built environment.
+              Qualitative research<br>
+              Spatial analysis<br>
+              Data analysis<br>
+              Stakeholder interviews<br>
+              Policy research
             </p>
+          </div>
 
-            <div class="cap-tags">
-              <span>Qualitative research</span>
-              <span>Stakeholder interviews</span>
-              <span>Spatial analysis</span>
-              <span>Data analysis</span>
-              <span>Policy research</span>
-              <span>Research synthesis</span>
-            </div>
-          </article>
-
-          <article class="cap-item">
-            <span class="cap-num">02 —</span>
-
-            <h3>Participatory<br>processes</h3>
-
+          <div class="about-group">
+            <h2>Design</h2>
             <p>
-              Exploring ways to involve people in
-              research, design and decision-making
-              through collaborative and creative methods.
+              Graphic design<br>
+              Product design<br>
+              Participatory design<br>
+              Game design<br>
+              Visual storytelling<br>
+              Prototyping
             </p>
+          </div>
 
-            <div class="cap-tags">
-              <span>Stakeholder engagement</span>
-              <span>Participatory design</span>
-              <span>Co-creation</span>
-              <span>Creative facilitation</span>
-              <span>Workshop design</span>
-              <span>Presentations</span>
-            </div>
-          </article>
-
-          <article class="cap-item">
-            <span class="cap-num">03 —</span>
-
-            <h3>Design &amp;<br>visual storytelling</h3>
-
+          <div class="about-group">
+            <h2>Other skills</h2>
             <p>
-              Making complex ideas accessible through
-              visual communication, concepts, physical
-              products and creative media.
+              Creative facilitation<br>
+              Presenting<br>
+              Video editing<br>
+              Stop-motion animation<br>
+              Website design
             </p>
+          </div>
 
-            <div class="cap-tags">
-              <span>Graphic design</span>
-              <span>Information design</span>
-              <span>Product design</span>
-              <span>Concept development</span>
-              <span>Prototyping</span>
-              <span>Video editing</span>
-              <span>Stop-motion animation</span>
-            </div>
-          </article>
-
-          <article class="cap-item">
-            <span class="cap-num">04 —</span>
-
-            <h3>Interactive<br>&amp; digital design</h3>
-
+          <div class="about-group">
+            <h2>Software</h2>
             <p>
-              Experimenting with digital environments,
-              interactive experiences and visual tools
-              to communicate and explore ideas.
-            </p>
-
-            <div class="cap-tags">
-              <span>Game design</span>
-              <span>3D visualisation</span>
-              <span>Interactive concepts</span>
-              <span>Web design</span>
-              <span>HTML</span>
-              <span>Digital prototyping</span>
-            </div>
-          </article>
-
-        </div>
-
-        <!-- SOFTWARE -->
-
-        <div class="cap-heading">
-          <h2>Tools &amp; software</h2>
-          <small>02 / Toolkit</small>
-        </div>
-
-        <div class="cap-tools">
-
-          <div>
-            <h3>Graphic &amp; visual</h3>
-            <p>
-              Adobe Illustrator<br>
-              Adobe Photoshop<br>
-              Adobe InDesign<br>
+              Illustrator<br>
+              Photoshop<br>
+              InDesign<br>
               Canva<br>
+              Houdini<br>
+              Unreal Engine<br>
+              SolidWorks<br>
+              Excel<br>
+              GitHub<br>
+              HTML<br>
               iMovie
             </p>
           </div>
 
-          <div>
-            <h3>3D &amp; interactive</h3>
-            <p>
-              Houdini<br>
-              Unreal Engine<br>
-              SolidWorks
-            </p>
-          </div>
-
-          <div>
-            <h3>Data &amp; digital</h3>
-            <p>
-              Microsoft Excel<br>
-              HTML<br>
-              GitHub
-            </p>
-          </div>
-
-        </div>
-
-        <div class="cap-end">
-          <p>
-            Curious about the work<br>
-            behind these skills?
-          </p>
-
-          <a href="#projects" id="about-projects-link">
-            Explore projects ↗
-          </a>
         </div>
 
       </div>
+
     </section>
 
     <!-- PROJECTS -->
@@ -697,16 +468,6 @@
       );
 
       homeLink.addEventListener(
-        'click',
-        function (event) {
-          navigateTo('projects', event);
-        }
-      );
-
-      const aboutProjectsLink =
-        document.getElementById('about-projects-link');
-
-      aboutProjectsLink.addEventListener(
         'click',
         function (event) {
           navigateTo('projects', event);
